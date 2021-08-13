@@ -43,6 +43,7 @@ Lang['nl'] = {
   ["CMD:Help:InfoAcc"] = "^3 Toon uw accountinformatie op het scherm",
   ["CMD:Help:Language"] = "^3 Stel uw eigen klanttaal in [ ^4CMD ^3| ^4ID ^3]",
   ["CMD:Help:Coords"] = "^3 Toon uw huidige coördinaten naast de minikaart",
+  ['CMD_Help_Hud'] = '^3 Update, toon of verberg de Hud^0',
 
   ["MultiChar:IncorrectData"] = "Tekengegevens onjuist: u heeft niet alle waarden correct ingevuld, verwijder dit teken en maak een nieuwe aan!",
 
@@ -51,4 +52,5 @@ Lang['nl'] = {
   ['StageCouchOnItsWay'] = 'Op weg naar uw locatie',
   ['StageCoachArrived'] = "Uw rit is gearriveerd!",
   ['StageCoachArrivedEnd'] = "U bent op uw bestemming aangekomen",
+
 }

@@ -8,38 +8,36 @@
 	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
 	<script src="./script.js" type="text/javascript"></script>
 
-	<!-- Notifications -->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script src="pNotify/pNotify.js" type="text/javascript"></script>
-	<link href="pNotify/noty.css" rel="stylesheet"></script>
-	<link href="pNotify/themes.css" rel="stylesheet"></script>
-	<script src="pNotify/noty.js" type="text/javascript"></script>
-	<!-- END OF Notifications -->
-
-	<!-- Custom Sounds -->]
+	<!-- Custom Sounds -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
 	<script src="Sounds/js/sounds.js"type="text/javascript"></script>
 	<!-- Ens of Custom Sounds -->
+
+	<!-- DokusCore UI -->
+	<link rel="stylesheet" href="Hud/hud.css">
+
 </head>
 
 <body>
-
-	<!-- LOGO -->
-	<div id="logo">
-		<div class="contenair">
-			<div class="spacer">&nbsp;</div>
-		</div>
-	</div>
-	<script type="text/javascript">
-		setInterval(function() {
-			$('#logo').fadeTo(5000, 0.3).delay(1).fadeTo(30000, 0.5).delay(1).fadeIn(5000, 0.3);
-		}, 1000);
-	</script>
-	<!-- END OF LOGO -->
+	<div id="Dokus-z1458-Core"><div class="contenair"> <div class="spacer">&nbsp;</div></div></div>
 
  <!-- Chat Theme -->
 	<div id="ChatTheme"></div>
 	<!-- End Of Chat Theme -->
 
-
+<!-- DokusCore UI -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="Hud/hud.js"></script>
+<div class="HudContainer">
+	<img class="Background" src="Hud/assets/bg.png" alt="">
+	<img class="BankIMG" src="Hud/assets/BankMoney.png" alt="">
+	<img class="MoneyIMG" src="Hud/assets/Money.png" alt="">
+	<img class="CharIDIMG" src="Hud/assets/charid.png" alt="">
+	<img class="ServerIDIMG" src="Hud/assets/serverid.png" alt="">
+	<text id="BankValue">???</text>
+	<text id="MoneyValue">???</text>
+	<text id="CharIDValue">1</text>
+	<text id="ServerIDValue">1</text>
+</div>
+<!-- END of DokusCore UI -->
 </body>

@@ -40,14 +40,15 @@ Lang["en"] = {
   ["Usage_AddMoney"] = "/addgold ID [ wallet | bank ] amount",
 
   ["CMD:Help:SetCharName"] = "^3Set your characters name^0",
-  ["CMD:Help:Discord"] = "^3   Get the Discord invite link from this server",
-  ["CMD:Help:InfoChar"] = "^3     Display your character information on the screen",
-  ["CMD:Help:Help"] = "^3         Display the F8 Help / Command menu",
+  ["CMD:Help:Discord"] = "^3   Get the Discord invite link from this server^0",
+  ["CMD:Help:InfoChar"] = "^3     Display your character information on the screen^0",
+  ["CMD:Help:Help"] = "^3         Display the F8 Help / Command menu^0",
   ["CMD:Help:SetCharName"] = "^3  Set your characters name^0",
   ["CMD:Help:AddCurrency"] = "^4   CMD ^3| ^4ID ^3| ^4Wallet ^3or ^4Bank ^3| ^4Amount^0",
-  ["CMD:Help:InfoAcc"] = "^3      Display your account information on the screen",
-  ["CMD:Help:Language"] = "^3     Set your own client language [ ^4CMD ^3| ^4ID ^3]",
-  ["CMD:Help:Coords"] = "^3       Show your current coordinates next to the minimap",
+  ["CMD:Help:InfoAcc"] = "^3      Display your account information on the screen^0",
+  ["CMD:Help:Language"] = "^3     Set your own client language [ ^4CMD ^3| ^4ID ^3]^0",
+  ["CMD:Help:Coords"] = "^3       Show your current coordinates next to the minimap^0",
+  ['CMD_Help_Hud'] = '^3       Update, Show or hide the Hud^0',
 
   ["MultiChar:IncorrectData"] = "Character Data Incorrect: You have not filled in all values correctly, please delete this character and create a new one!",
 
@@ -56,4 +57,11 @@ Lang["en"] = {
   ['StageCouchOnItsWay'] = 'On its way to your location',
   ['StageCoachArrived'] = "Your ride has arrived!",
   ['StageCoachArrivedEnd'] = "You've arrived at your destination",
+
+
+
+
+  -- NEW NEEDS TRANSLATION
+
+
 }

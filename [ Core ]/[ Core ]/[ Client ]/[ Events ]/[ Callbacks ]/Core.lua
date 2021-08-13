@@ -2,8 +2,10 @@
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
 RCC('DokusCore:C:Core:GetUserIDs', function(args)
-  local Data = TSC('DokusCore:S:Core:GetUserIDs')
-	return Data
+  local Data
+  if (args == nil) then Data = TSC('DokusCore:S:Core:GetUserIDs') end
+  if (args ~= nil) then Data = TSC('DokusCore:S:Core:GetUserIDs', { args }) end
+  return Data
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -82,12 +84,34 @@ RCC('DokusCore:C:Core:UpdateCoreUserData', function(args)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
-
-
-
-
-
+RCC('DokusCore:C:Core:DB:DelInventoryItem', function(args)
+  return TSC('DokusCore:S:Core:DB:DelInventoryItem', args)
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RCC('DokusCore:C:Core:DB:GetInventory', function(args)
+  return TSC('DokusCore:S:Core:DB:GetInventory', args)
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RCC('DokusCore:C:Core:DB:GetViaSteamAndCharID', function(args)
+  return TSC('DokusCore:S:Core:DB:GetViaSteamAndCharID', args)
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RCC('DokusCore:C:Core:DB:GetStorageViaSteamCharAndItem', function(args)
+  return TSC('DokusCore:S:Core:DB:GetStorageViaSteamCharAndItem', args)
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RCC('DokusCore:C:Core:DB:GetStorageViaBoxIDAndItem', function(args)
+  return TSC('DokusCore:S:Core:DB:GetStorageViaBoxIDAndItem', args)
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RCC('DokusCore:C:Core:GetUserServerID', function(args)
+  return GetPlayerServerId(GetPlayerPed(-1))
+end)
 
 
 

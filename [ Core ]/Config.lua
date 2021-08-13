@@ -21,17 +21,31 @@ _ShowMap        = true
 _EnableIMaps    = true
 _BankDoors      = true
 _ShowMiniMap    = true
-
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+_Modules          = {
+  Banks           = true,
+  MultiCharacters = true
+ }
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 _PayCheck       = {
   Enabled = true,
+  Notification = false,
   Interval = 30, -- minutes
   Jobs    = {
     -- Where = Bank - Wallet | Type = Gold - Money
     { Name = 'unemployed', Where = 'Bank', Type = 'Gold', Amount = 2 },
     { Name = 'Sheriff', Where = 'Bank', Type = 'Money', Amount = 2 }
+  },
+
+  VIPs = {
+    -- The Multiply multiplies the amount recieved by the players job above.
+    { Enable = false, Steam = "steam:1100001042b8cd7", Static = { false, 10 }, Multiply = 1.5 }
   }
 }
-
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 _Commands = {
   -- Information Commands
   Help        = { Users = true, Admins = true, SuperAdmin = true },
@@ -44,10 +58,12 @@ _Commands = {
   -- User Settings Commands
   SetCharName = { Users = true, Admins = true, SuperAdmin = true },
   Language    = { Users = true, Admins = true, SuperAdmin = true },
+  Hud         = { Users = true, Admins = true, SuperAdmin = true },
 
   -- Admin Commands
   AddMoney    = { Users = false, Admins = true, SuperAdmin = true },
   AddGold     = { Users = false, Admins = true, SuperAdmin = true },
   Teleport    = { Users = false, Admins = true, SuperAdmin = true },
-
 }
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------

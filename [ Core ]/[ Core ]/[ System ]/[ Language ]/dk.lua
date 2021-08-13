@@ -45,7 +45,8 @@ Lang['dk'] = {
   ["CMD:Help:InfoAcc"] = "^ 3 Vis dine kontooplysninger på skærmen",
   ["CMD:Help:Language"] = "^ 3 Indstil dit eget klientsprog [^ 4CMD ^ 3 | ^ 4ID ^ 3]",
   ["CMD:Help:Coords"] = "^ 3 Vis dine aktuelle koordinater ud for minimapunktet",
-
+  ['CMD_Help_Hud'] = '^3 Opdater, vis eller skjul Hud^0',
+  
   ["MultiChar:IncorrectData"] = "Tegndata forkert: Du har ikke udfyldt alle værdier korrekt. Slet dette tegn, og opret et nyt!",
 
   ['StageCouchAlreadyExists'] = "FEJL: Du har allerede en StageCouch! Vent på, at den er færdig med ruten!",
@@ -53,4 +54,5 @@ Lang['dk'] = {
   ['StageCouchOnItsWay'] = 'På vej til din placering',
   ['StageCoachArrived'] = "Din tur er ankommet!",
   ['StageCoachArrivedEnd'] = "Du er ankommet til din destination",
+
 }

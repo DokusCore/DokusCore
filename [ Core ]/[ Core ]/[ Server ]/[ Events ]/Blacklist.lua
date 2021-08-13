@@ -8,7 +8,16 @@ AddEventHandler("playerConnecting", function(name, k, x)
   local XBoxLive = GetPlayerIdentifier(player, 2)
   local MLive = GetPlayerIdentifier(player, 3)
   local IP = GetPlayerEndpoint(source)
-  x.defer() Wait(0)
+  local SteamOpen = StartsWith(Steam, 'steam:')
+  x.defer() Wait(100)
+  x.update(string.format("🚷".."Checking SteamID".." [...]")) Wait(250)
+  x.update(string.format("🚷".."Checking SteamID".." [......]")) Wait(250)
+  x.update(string.format("🚷".."Checking SteamID".." [.........]")) Wait(250)
+  x.update(string.format("🚷".."Checking SteamID".." [............]")) Wait(250)
+  x.update(string.format("🚷".."Checking SteamID".." [...............]")) Wait(250)
+  x.update(string.format("🚷".."Checking SteamID".." [..................]")) Wait(250)
+  if not SteamOpen then return x.done("You dont have Steam open, please start Steam and restart RedM!") end
+  Wait(1000)
   x.update(string.format("🚷".._('BlacklistCheck', _Language.Lang).." [...]")) Wait(250)
   x.update(string.format("🚷".._('BlacklistCheck', _Language.Lang).." [......]")) Wait(250)
   x.update(string.format("🚷".._('BlacklistCheck', _Language.Lang).." [.........]")) Wait(250)
@@ -31,6 +40,10 @@ AddEventHandler("playerConnecting", function(name, k, x)
   --Stop the user from entering the server if blacklisted
   if Cancel then x.done(_('YourBlacklisted', _Language.Lang).._DiscordInvite) else x.done() end
 end)
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+function StartsWith(S,V) return string.sub(S,1,string.len(V))==V end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 function BlackDBGetUserSteamID(Table, Value) local Steam

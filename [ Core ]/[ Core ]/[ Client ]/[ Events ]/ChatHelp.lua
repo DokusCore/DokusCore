@@ -6,10 +6,20 @@ TriggerEvent('chat:addSuggestion', '/help', 'Show all chat commands', {})
 TriggerEvent('chat:addSuggestion', '/infochar', 'Show your character specific information', {})
 TriggerEvent('chat:addSuggestion', '/infoacc', 'Show your account specific information', {})
 TriggerEvent('chat:addSuggestion', '/discord', "Show this server's Discord invite", {})
+
 TriggerEvent('chat:addSuggestion', '/music', "Set the system music on or off", {
   { name = "Value",       help = "true | false" },
 })
 
+TriggerEvent('chat:addSuggestion', '/hud', "Users HUD Options", {
+  { name = "Type",       help = "Update | Show | Hide" },
+})
+
+TriggerEvent('chat:addSuggestion', '/skin', "Users skin options", {
+  { name = "Type",       help = "Menu | Load | close" },
+})
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Admin Commands
 TriggerEvent('chat:addSuggestion', '/tpm', "Teleport to a map marker", {})
 TriggerEvent('chat:addSuggestion', '/addgold', 'Add gold to a users account', {
@@ -19,9 +29,17 @@ TriggerEvent('chat:addSuggestion', '/addgold', 'Add gold to a users account', {
 })
 
 TriggerEvent('chat:addSuggestion', '/addmoney', 'Add money to a users account', {
-  { name = "ID",       help = "Enter the ID of the user" },
-  { name = "Type",     help = "Wallet or Money ?" },
-  { name = "Amount",   help = "Enter the amount you want to add" },
+  { name = "sID",       help = "Enter the source ID of the user" },
+  { name = "cID",       help = "Enter the Character ID of the user" },
+  { name = "Type",      help = "Wallet or Money ?" },
+  { name = "Amount",    help = "Enter the amount you want to add" },
+})
+
+TriggerEvent('chat:addSuggestion', '/addgold', 'Add money to a users account', {
+  { name = "sID",       help = "Enter the source ID of the user" },
+  { name = "cID",       help = "Enter the Character ID of the user" },
+  { name = "Type",      help = "Wallet or Money ?" },
+  { name = "Amount",    help = "Enter the amount you want to add" },
 })
 
 TriggerEvent('chat:addSuggestion', '/blacklist add', 'Add or Remove users on/from the blacklist', {

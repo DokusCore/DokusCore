@@ -9,9 +9,24 @@ end)
 --------------------------------------------------------------------------------
 RSC('DokusCore:S:Core:GetUserIDs', function(source, args)
   local G = GetPlayerIdentifier
-  local S, L, I = G(source, 0), G(source, 1), GetPlayerEndpoint(source)
-  local X, M = G(source, 2), G(source, 3)
-  return {S, L, I, X, M}
+  if (args == nil) then
+    local S, L, I = G(source, 0), G(source, 1), GetPlayerEndpoint(source)
+    local X, M = G(source, 2), G(source, 3)
+    return {S, L, I, X, M}
+  else
+    local S, L, I = G(args[1], 0), G(args[1], 1), GetPlayerEndpoint(args[1])
+    local X, M = G(args[1], 2), G(args[1], 3)
+    return {S, L, I, X, M}
+  end
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RSC('DokusCore:S:Core:DB:GetAll', function(source, args)
+  if (args == nil) then return end local Result
+  MySQL.Async.fetchAll(args[1], {}, function(result)
+    if (result == nil or result[1] == nil) then return end
+  Result = result end) Wait(100)
+  return Result
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -37,7 +52,7 @@ RSC('DokusCore:S:Core:DB:GetViaSteamAndCharID', function(source, args)
   if (args == nil) then return end local Result
   MySQL.Async.fetchAll(args[1], {Steam = args[2], CharID = args[3]}, function(result)
     if (result == nil or result[1] == nil) then return end
-  Result = result[1] end) Wait(100) return Result
+  Result = result end) Wait(100) return Result
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -75,6 +90,7 @@ RSC('DokusCore:S:Core:DB:UpdateViaSteamAndCharID', function(source, args)
   if (Type == 'BankGold') then MySQL.Async.execute(Table, {BankGold = tonumber(Value), Steam = Steam, CharID = CharID}, function() end) end
   if (Type == 'Money') then MySQL.Async.execute(Table, {Money = tonumber(Value), Steam = Steam, CharID = CharID}, function() end) end
   if (Type == 'Gold') then MySQL.Async.execute(Table, {Gold = tonumber(Value), Steam = Steam, CharID = CharID}, function() end) end
+  if (Type == 'Skin') then MySQL.Async.execute(Table, {Skin = Value, Steam = Steam, CharID = CharID}, function() end) end
   if (Type == 'Coords') then
     local Coords = "{" .. Value[1] .. ", " .. Value[2] .. ", " .. Value[3] .. "}"
     MySQL.Async.execute(Table, {Coords = Coords, Steam = Steam, CharID = CharID}, function() end)
@@ -88,8 +104,8 @@ end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 RSC('DokusCore:S:Core:GetCoreUserData', function(source, args)
- local Data = TCC(-1, 'DokusCore:C:Core:GetCoreUserData')
- return Data
+  local Data = TCC(-1, 'DokusCore:C:Core:GetCoreUserData')
+  return Data
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -104,120 +120,54 @@ RSC('DokusCore:S:Core:System:Time', function(source, args)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RSC('DokusCore:S:Core:DB:GetInventory', function(source, args)
-  local Table, Result = DB.Inventory.Get, {}
-  MySQL.Async.fetchAll(Table, {Steam = args[1], CharID = args[2]}, function(res)
-    if (args == nil) then return end
-    for k,v in pairs(res) do table.insert(Result, v) end
-  end) Wait(100) return Result
+RSC('DokusCore:S:Core:DB:GetItems', function(source, args)
+  local Items = {}
+  MySQL.Async.fetchAll(DB.Items.GetAll, {}, function(res)
+    for k, v in pairs(res) do table.insert(Items, k, v) end
+  end) Wait(250)
+  return Items
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RSC('DokusCore:S:Core:DB:InsertInventory', function(source, args)
-  if (args[1] == nil or args[3] == nil or args[3] == nil) then return end
-  -- Handle Weapons
-  if (string.lower(args[3].Type) == 'weapon') then
-    if (args[3].Meta == nil) then Meta = {} end
-    local Table = DB.Inventory.InsertTable
-    MySQL.Async.execute(Table, {
-      Steam = args[1],
-      CharID = args[2],
-      Type = args[3].Type,
-      Item = args[3].Item,
-      Amount = args[3].Amount,
-      Meta = json.encode(Meta)
-    }, function() end)
-  end
-
-  -- Handle Items
-  if (string.lower(args[3].Type) == 'item') then
-    if (args[3].Meta == nil) then Meta = {} else Meta = args[3].Meta end
-    local Table = DB.Inventory.InsertTable
-    MySQL.Async.execute(Table, {
-      Steam = args[1],
-      CharID = args[2],
-      Type = args[3].Type,
-      Item = args[3].Item,
-      Amount = args[3].Amount,
-      Meta = json.encode(Meta)
-    }, function() end)
-  end
-
-  -- Handle Bullets
-  if (string.lower(args[3].Type) == 'bullet') then
-    if (args[3].Meta == nil) then Meta = {} else Meta = args[3].Meta end
-    local Table = DB.Inventory.InsertTable
-    MySQL.Async.execute(Table, {
-      Steam = args[1],
-      CharID = args[2],
-      Type = args[3].Type,
-      Item = args[3].Item,
-      Amount = args[3].Amount,
-      Meta = json.encode(Meta)
-    }, function() end)
-  end
+RSC('DokusCore:S:Core:GetUserServerID', function(source, args)
+  local Data = TCC(source, 'DokusCore:C:Core:GetUserServerID')
+  return Data
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RSC('DokusCore:S:Core:DB:UpdateInventory', function(source, args)
-  if (args[1] == nil or args[3] == nil or args[3] == nil) then return end
-  -- Handle Weapons
-  if (string.lower(args[3].Type) == 'weapon') then
-    local Table = DB.Inventory.GetItem
-    if (args[3].Meta == nil) then Meta = {} else Meta = args[3].Meta end
-    MySQL.Async.fetchAll(Table, {Steam = args[1], CharID = args[2], Type = args[3].Type, Item = args[3].Item}, function(res)
-      if ((res == nil) or (res[1] == nil)) then return end
-      local Amount = (res[1].Amount + args[3].Amount)
-      local Table = DB.Inventory.UpdateItem
-      MySQL.Async.execute(Table, {
-        Steam = args[1],
-        CharID = args[2],
-        Type = args[3].Type,
-        Item = args[3].Item,
-        Amount = Amount,
-        Meta = json.encode({})
-      }, function() end)
-    end)
-  end
-
-  -- Handle Items
-  if (string.lower(args[3].Type) == 'item') then
-    local Table = DB.Inventory.GetItem
-    MySQL.Async.fetchAll(Table, {Steam = args[1], CharID = args[2], Type = args[3].Type, Item = args[3].Item}, function(res)
-      if (args[3].Meta == nil) then Meta = {} else Meta = args[3].Meta end
-      if ((res == nil) or (res[1] == nil)) then return end
-      local Amount = (res[1].Amount + args[3].Amount)
-      local Table = DB.Inventory.UpdateItem
-      MySQL.Async.execute(Table, {
-        Steam = args[1],
-        CharID = args[2],
-        Type = args[3].Type,
-        Item = args[3].Item,
-        Amount = Amount,
-        Meta = json.encode({})
-      }, function() end)
-    end)
-  end
-
-  -- Handle Bullets
-  if (string.lower(args[3].Type) == 'bullet') then
-    local Table = DB.Inventory.GetItem
-    MySQL.Async.fetchAll(Table, {Steam = args[1], CharID = args[2], Type = args[3].Type, Item = args[3].Item}, function(res)
-      if (args[3].Meta == nil) then Meta = {} else Meta = args[3].Meta end
-      if ((res == nil) or (res[1] == nil)) then return end
-      local Amount = (res[1].Amount + args[3].Amount)
-      local Table = DB.Inventory.UpdateItem
-      MySQL.Async.execute(Table, {
-        Steam = args[1],
-        CharID = args[2],
-        Type = args[3].Type,
-        Item = args[3].Item,
-        Amount = Amount,
-        Meta = json.encode({})
-      }, function() end)
-    end)
-  end
+RSC('DokusCore:S:Core:DB:RemoveAllCharData', function(source, args)
+  local Steam, CharID = args[1], args[2]
+  MySQL.Async.execute(DB.Banks.DelViaSteamAndCharID, {Steam=Steam, CharID=CharID}, function() end)
+  MySQL.Async.execute(DB.Characters.DelViaSteamAndCharID, {Steam=Steam, CharID=CharID}, function() end)
+  MySQL.Async.execute(DB.Inventory.DelViaSteamAndCharID, {Steam=Steam, CharID=CharID}, function() end)
 end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

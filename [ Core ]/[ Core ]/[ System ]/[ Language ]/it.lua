@@ -43,6 +43,7 @@ Lang['it'] = {
   ["CMD:Help:InfoAcc"] = "^3 Visualizza le informazioni del tuo account sullo schermo",
   ["CMD:Help:Language"] = "^3 Imposta la tua lingua client [ ^4CMD ^3| ^4ID ^3]",
   ["CMD:Help:Coords"] = "^3 Mostra le tue coordinate attuali accanto alla minimappa",
+  ['CMD_Help_Hud'] = "^3 Aggiorna, mostra o nascondi l'Hud^0",
 
   ["MultiChar:IncorrectData"] = "Dati carattere errati: non hai inserito tutti i valori correttamente, elimina questo carattere e creane uno nuovo!",
 
@@ -51,4 +52,5 @@ Lang['it'] = {
   ['StageCouchOnItsWay'] = 'In viaggio verso la tua posizione',
   ['StageCoachArrived'] = "La tua corsa è arrivata!",
   ['StageCoachArrivedEnd'] = "Sei arrivato a destinazione",
+
 }

@@ -7,11 +7,11 @@
     font-size: 15px;
 	 padding: 10px;
 	 letter-spacing: 1px;
-font-family: "crock", crock, serif;
+font-family: "crock", crock, serif;	 
 }
 
 .noty_theme__gta.noty_bar .noty_buttons {
-    padding: 0px;
+    padding: 0px; 
 }
 
 
@@ -77,7 +77,7 @@ font-family: "crock", crock, serif;
     -webkit-animation: noty_anim_out 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     animation: noty_anim_out 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; 
 }
 
 @-webkit-keyframes noty_anim_out_left {
@@ -107,7 +107,7 @@ font-family: "crock", crock, serif;
     -webkit-animation: noty_anim_out_left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     animation: noty_anim_out_left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -webkit-animation-fill-mode: backwards;
-    animation-fill-mode: backwards;
+    animation-fill-mode: backwards; 
 }
 
 @-webkit-keyframes noty_anim_fade_in {

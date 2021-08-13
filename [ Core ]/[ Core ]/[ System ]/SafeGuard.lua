@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 CreateThread(function()
   if _Time.TimeSync and _Time.FixedTime[1] then
-    _StartError_ = true
+    _Error_ = true
     Responce(1)
   end
 
@@ -12,37 +12,33 @@ CreateThread(function()
     local Time = _AntiAFK.MaxTime
     local min5 = (Time <= 5)
     local min15 = ((Time > 5) and (Time <= 14))
-    if min5 then _StartError_ = true Responce(2)
+    if min5 then _Error_ = true Responce(2)
     elseif min15 then Responce(3) end
   end
 
   -- Check the settings with string inputs
   local Discord = _Commands.Discord
   local IsDiscord = (Discord.Users or Discord.Admins or Discord.SuperAdmin)
-  if IsEmpty(_ServerName) then _StartError_ = true Responce(4) end
-  if IsEmpty(_DiscordInvite) and IsDiscord then _StartError_ = true Responce(5) end
-  if IsEmpty(_Moderation.Users) then _StartError_ = true Responce(6) end
-  if IsEmpty(_Moderation.Admin) then _StartError_ = true Responce(7) end
-  if IsEmpty(_Moderation.SuperAdmin) then _StartError_ = true Responce(8) end
-  if IsEmpty(_StartJob.Name) then _StartError_ = true Responce(9) end
-  if _PayCheck.Enabled and _PayCheck.Jobs[1] == nil then _StartError_ = true Responce(10) end
+  if IsEmpty(_ServerName) then _Error_ = true Responce(4) end
+  if IsEmpty(_DiscordInvite) and IsDiscord then _Error_ = true Responce(5) end
+  if IsEmpty(_Moderation.Users) then _Error_ = true Responce(6) end
+  if IsEmpty(_Moderation.Admin) then _Error_ = true Responce(7) end
+  if IsEmpty(_Moderation.SuperAdmin) then _Error_ = true Responce(8) end
+  if IsEmpty(_StartJob.Name) then _Error_ = true Responce(9) end
+  if _PayCheck.Enabled and _PayCheck.Jobs[1] == nil then _Error_ = true Responce(10) end
 
   for k,v in pairs(_PayCheck.Jobs) do
     for k,v in pairs(v) do
-      if (k == 'Name') then
-        if IsEmpty(v) then Responce(11) end
-      end
+      if (k == 'Name') then if IsEmpty(v) then Responce(11) end end
     end
   end
 end)
-
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 function IsEmpty(s) return s == nil or s == '' or s == ' ' end
-function Responce(Nr)
-  print([[^6################################################################################^0]])
+function Responce(Nr) Wait(10000)
   if (Nr == 1) then
     print(Error.. 'The Time Settings in the config are incorrect!')
     print(Error.. "^1TimeSync^3 and ^1FixedTime^3 can't be enabled at the same time")

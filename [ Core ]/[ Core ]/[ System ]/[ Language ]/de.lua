@@ -45,6 +45,7 @@ Lang['de'] = {
   ["CMD:Help:InfoAcc"] = "^3 Zeigen Sie Ihre Kontoinformationen auf dem Bildschirm an",
   ["CMD:Help:Language"] = "^3 Stellen Sie Ihre eigene Client-Sprache ein [ ^4CMD ^3| ^4ID ^3]",
   ["CMD:Help:Coords"] = "^3 Zeigen Sie Ihre aktuellen Koordinaten neben der Minikarte",
+  ['CMD_Help_Hud'] = '^3 Aktualisieren, Hud anzeigen oder ausblenden^0',
 
   ["MultiChar:IncorrectData"] = "Zeichendaten falsch: Sie haben nicht alle Werte korrekt eingegeben, bitte löschen Sie dieses Zeichen und erstellen Sie ein neues!",
 
@@ -53,4 +54,5 @@ Lang['de'] = {
   ['StageCouchOnItsWay'] = 'Auf dem Weg zu Ihrem Standort',
   ['StageCoachArrived'] = "Ihre Fahrt ist angekommen!",
   ['StageCoachArrivedEnd'] = "Sie haben Ihr Ziel erreicht",
+
 }

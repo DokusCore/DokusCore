@@ -4,9 +4,9 @@
 RegisterCommand("music", function(source, args, rawCommand)
   -- Check if command can be used by users or admins
   local IsForUsers, IsForAdmins, IsForOwners = false, false, false
-  if (_Commands.Music.Users) then IsForUsers = true end
-  if (_Commands.Music.Admins) then IsForAdmins = true end
-  if (_Commands.Music.SuperAdmin) then IsForOwners = true end
+  if (_Commands.InfoAcc.Users) then IsForUsers = true end
+  if (_Commands.InfoAcc.Admins) then IsForAdmins = true end
+  if (_Commands.InfoAcc.SuperAdmin) then IsForOwners = true end
 
   -- Check if user is admin or superadmin
   local Group, Cmds, CMD = GetUserGroup(), {}, _Commands

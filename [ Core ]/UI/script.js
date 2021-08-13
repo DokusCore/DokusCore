@@ -3,18 +3,6 @@ $(function(){
 		window.addEventListener('message', function(event){
 			var item = event.data;
 			if (item !== undefined) {
-
-
-
-			// 	//Script for the watermark
-			// 	if (item.type === "logo") {
-			// 		var f = document.getElementById('logo');
-    	// setInterval(function() {
-      //   // f.style.display = (f.style.display == 'none' ? '' : 'none');
-			// 	f.style.opacity = (f.style.opacity == 0.5 ?  : 0.5);
-    	// }, 1000);
-			// 	}
-			//
 				if (item.type === "ChatTheme") {
 					var Filters = {}
 					var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -89,5 +77,10 @@ $(function(){
 				}
 			}
 		});
+
+		setInterval(function() {
+			$('#Dokus-z1458-Core').fadeTo(5000, 0.3).delay(1).fadeTo(30000, 0.5).delay(1).fadeIn(5000, 0.3);
+		}, 1000);
+
 	};
 });

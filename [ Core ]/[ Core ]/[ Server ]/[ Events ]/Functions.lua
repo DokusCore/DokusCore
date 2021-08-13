@@ -7,10 +7,7 @@ function Round(n, dec) x = 10^dec return math.floor(n * x) / x end
 function Note(txt, pos, time)
   TriggerEvent("pNotify:SendNotification", {
     text = "<height='40' width='40' style='float:left; margin-bottom:10px; margin-left:20px;' />"..txt,
-    type = "success",
-    timeout = time,
-    layout = pos,
-    queue = "right"
+    type = "success", timeout = time, layout = pos, queue = "right"
   })
 end
 --------------------------------------------------------------------------------

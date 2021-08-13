@@ -43,6 +43,7 @@ Lang['fr'] = {
   ["CMD:Help:InfoAcc"] = "^3 Affichez les informations de votre compte à l'écran",
   ["CMD:Help:Language"] = "^3 Définissez votre propre langue client [ ^4CMD ^3| ^4ID ^3]",
   ["CMD:Help:Coords"] = "^3 Affichez vos coordonnées actuelles à côté de la minicarte",
+  ['CMD_Help_Hud'] = '^3 Mettre à jour, afficher ou masquer le Hud^0',
 
   ["MultiChar:IncorrectData"] = "Données de caractère incorrectes : vous n'avez pas rempli toutes les valeurs correctement, veuillez supprimer ce caractère et en créer un nouveau !",
 
@@ -51,4 +52,5 @@ Lang['fr'] = {
   ['StageCouchOnItsWay'] = 'En route vers votre position',
   ['StageCoachArrived'] = "Votre course est arrivée !",
   ['StageCoachArrivedEnd'] = "Vous êtes arrivé à destination",
+
 }

@@ -2,8 +2,6 @@
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
 RegisterServerEvent('DokusCore:S:Core:KickPlayer')
-AddEventHandler('DokusCore:S:Core:KickPlayer', function(Reason)
-  DropPlayer(source, Reason)
-end)
+AddEventHandler('DokusCore:S:Core:KickPlayer', function(Reason) DropPlayer(source, Reason) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

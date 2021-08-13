@@ -13,3 +13,7 @@ AddEventHandler('DokusCore:C:Core:ShowTip', function(Msg, Time)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+RegisterNetEvent('DokusCore:C:Core:Notify')
+AddEventHandler('DokusCore:C:Core:Notify', function(txt, pos, time) Note(txt, pos, time) end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------

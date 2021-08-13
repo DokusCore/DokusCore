@@ -15,3 +15,11 @@ CreateThread(function()
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+function SetTime(Hour, Minute)
+	SetClockTime(Hour, Minute, 0)
+	AdvanceClockTimeTo(Hour, Minute, 0)
+	NetworkClockTimeOverride(Hour, Minute, 0, 0, true)
+	NetworkClockTimeOverride_2(Hour, Minute, 0, 0, true, true)
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------

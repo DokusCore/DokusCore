@@ -24,6 +24,7 @@ RegisterCommand("help", function(source, args, rawCommand)
   if IsForUsers and IsUser and CMD.Help.Users then table.insert(Cmds, {'^3/^5help^0', _('CMD:Help:Help', User.Language) }) end
   if IsForUsers and IsUser and CMD.AddMoney.Users then table.insert(Cmds, {'^3/^5addmoney^0  ', _('CMD:Help:AddCurrency', User.Language) }) end
   if IsForUsers and IsUser and CMD.AddGold.Users then table.insert(Cmds, {'^3/^5addgold^0   ', _('CMD:Help:AddCurrency', User.Language) }) end
+  if IsForUsers and IsUser and CMD.Hud.Users then table.insert(Cmds, {'^3/^5hud^0   ', _('CMD_Help_Hud', User.Language) }) end
 
   if IsForAdmins and IsAdmin and CMD.SetCharName.Admin then table.insert(Cmds, {'^3/^5SetCharName^0', _('CMD:Help:SetCharName', User.Language) }) end
   if IsForAdmins and IsAdmin and CMD.Discord.Admin then table.insert(Cmds, {'^3/^5Discord^0   ', _('CMD:Help:Discord', User.Language) }) end
@@ -34,6 +35,7 @@ RegisterCommand("help", function(source, args, rawCommand)
   if IsForAdmins and IsAdmin and CMD.Help.Admin then table.insert(Cmds, {'^3/^5help^0', _('CMD:Help:Help', User.Language) }) end
   if IsForAdmins and IsAdmin and CMD.AddMoney.Admin then table.insert(Cmds, {'^3/^5addmoney^0  ', _('CMD:Help:AddCurrency', User.Language) }) end
   if IsForAdmins and IsAdmin and CMD.AddGold.Admin then table.insert(Cmds, {'^3/^5addgold^0   ', _('CMD:Help:AddCurrency', User.Language) }) end
+  if IsForAdmins and IsAdmin and CMD.Hud.Users then table.insert(Cmds, {'^3/^5hud^0   ', _('CMD_Help_Hud', User.Language) }) end
 
   if IsForOwners and IsOwner and CMD.SetCharName.SuperAdmin then table.insert(Cmds, {'^3/^5SetCharName^0', _('CMD:Help:SetCharName', User.Language) }) end
   if IsForOwners and IsOwner and CMD.Discord.SuperAdmin then table.insert(Cmds, {'^3/^5Discord^0   ', _('CMD:Help:Discord', User.Language) }) end
@@ -44,8 +46,8 @@ RegisterCommand("help", function(source, args, rawCommand)
   if IsForOwners and IsOwner and CMD.Help.SuperAdmin then table.insert(Cmds, {'^3/^5help^0', _('CMD:Help:Help', User.Language) }) end
   if IsForOwners and IsOwner and CMD.AddMoney.SuperAdmin then table.insert(Cmds, {'^3/^5addmoney^0  ', _('CMD:Help:AddCurrency', User.Language) }) end
   if IsForOwners and IsOwner and CMD.AddGold.SuperAdmin then table.insert(Cmds, {'^3/^5addgold^0   ', _('CMD:Help:AddCurrency', User.Language) }) end
+  if IsForOwners and IsOwner and CMD.Hud.Users then table.insert(Cmds, {'^3/^5hud^0   ', _('CMD_Help_Hud', User.Language) }) end
 
-  print("past")
   TriggerEvent('DokusCore:C:Core:ShowNote', 'System Help', 'Check the console (F8)')
   print("^6=================================================================")
   print("^3          [ DokusCore Chat / Console Commando's ]")

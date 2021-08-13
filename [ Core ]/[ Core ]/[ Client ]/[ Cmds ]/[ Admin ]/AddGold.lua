@@ -21,14 +21,14 @@ RegisterCommand("addgold", function(source, args, rawCommand)
     local Type, Amount = nil, nil
     if not args[1] then ErrUsageMsg(_('Error_AddGoldID', User.Language), _('Usage_AddGold', User.Language)) return end
     if not args[1] then ErrUsageMsg(_('Error_AddGoldType', User.Language), _('Usage_AddGold', User.Language)) return end
-    if not args[3] then ErrUsageMsg(_('Error_AddGoldAmount', User.Language), _('Usage_AddGold', User.Language)) return end
-    if (string.lower(args[2]) == 'bank') then Type = 'bank'
-    elseif (string.lower(args[2]) == 'wallet') then Type = 'wallet' else
+    if not args[4] then ErrUsageMsg(_('Error_AddGoldAmount', User.Language), _('Usage_AddGold', User.Language)) return end
+    if (string.lower(args[3]) == 'bank') then Type = 'bank'
+    elseif (string.lower(args[3]) == 'wallet') then Type = 'wallet' else
     ErrUsageMsg(_('Error_AddGoldType', User.Language), _('Usage_AddGold', User.Language)) return end
-    local iD = string.match(args[1], "%d+")
-    local Steam = TSC('DokusCore:S:Core:GetUserIDs')
-    print(Steam[1])
-    TriggerServerEvent('DokusCore:S:Core:AddGold', Steam[1], iD, Type, math.floor(tonumber(args[3])))
+    local sID = string.match(args[1], "%d+")
+    local cID = string.match(args[2], "%d+")
+    local Steam = TSC('DokusCore:S:Core:GetUserIDs', { sID })
+    TriggerServerEvent('DokusCore:S:Core:AddGold', Steam[1], sID, cID, Type, math.floor(tonumber(args[4])))
   end
 
   if IsForUsers  and IsUser  then DoThis() end

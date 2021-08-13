@@ -7,10 +7,7 @@ function Round(n, dec) x = 10^dec return math.floor(n * x) / x end
 function Note(txt, pos, time)
   TriggerEvent("pNotify:SendNotification", {
     text = "<height='40' width='40' style='float:left; margin-bottom:10px; margin-left:20px;' />"..txt,
-    type = "success",
-    timeout = time,
-    layout = pos,
-    queue = "right"
+    type = "success", timeout = time, layout = pos, queue = "right"
   })
 end
 --------------------------------------------------------------------------------
@@ -77,9 +74,9 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 function GetUserGroup()
-  local Table = DB.Characters.GetViaSteam
-  local Data = TSC('DokusCore:S:Core:GetUserIDs')
-  local Data = TSC('DokusCore:S:Core:DB:GetViaSteam', {Table, Data[1]})
+  local Table = DB.Characters.Get
+  -- local Data = TSC('DokusCore:S:Core:GetUserIDs')
+  local Data = TSC('DokusCore:S:Core:DB:GetViaSteamAndCharID', {Table, User.Steam, User.CharID})
   local Group = Data[1].Groups
   return Group
 end
@@ -98,11 +95,5 @@ function DrawCoords(text, x, y, size)
   end
   --------------------------------------------------------------------------------
   --------------------------------------------------------------------------------
-  function SetTime(Hour, Minute)
-  	SetClockTime(Hour, Minute, 0)
-  	AdvanceClockTimeTo(Hour, Minute, 0)
-  	NetworkClockTimeOverride(Hour, Minute, 0, 0, true)
-  	NetworkClockTimeOverride_2(Hour, Minute, 0, 0, true, true)
-  end
   --------------------------------------------------------------------------------
   --------------------------------------------------------------------------------

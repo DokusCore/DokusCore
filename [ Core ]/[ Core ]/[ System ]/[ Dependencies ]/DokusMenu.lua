@@ -673,7 +673,7 @@ if (_DokusMenu.Theme.Dark) then
   local titleScale = 1.0
   local descWidth = 0.10
   local descHeight = 0.030
-  local menuWidth = 0.200
+  local menuWidth = 0.100
   local buttonHeight = 0.038
   local buttonFont = 6
   local buttonScale = 0.365
@@ -911,7 +911,7 @@ if (_DokusMenu.Theme.Dark) then
     -- Default settings
     menus[id] = { }
     menus[id].title = title or ''
-    menus[id].subTitle = 'Posibles Comidas'
+    menus[id].subTitle = ''
     menus[id].desTitle = ''
     menus[id].subMenuLeft = ''
 

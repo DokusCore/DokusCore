@@ -1,10 +1,10 @@
 --------------------------------------------------------------------------------
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
--- Savbe players coords every x seconds.
+-- Save players coords every x seconds.
 --------------------------------------------------------------------------------
 CreateThread(function()
-  while not _Modules.MultiCharacters do Wait(0)
+  while not _Modules.MultiCharacters do Wait(10000)
     local source = source
     local Ped = PlayerPedId()
     local Steam = TSC('DokusCore:S:Core:GetUserIDs')[1]
