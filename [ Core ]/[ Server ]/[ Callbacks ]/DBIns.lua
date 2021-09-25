@@ -1,0 +1,157 @@
+--------------------------------------------------------------------------------
+---------------------------------- DokusCore -----------------------------------
+--------------------------------------------------------------------------------
+local DBIns = MySQL.Async.execute
+local Low   = string.lower
+--------------------------------------------------------------------------------
+-- Insert the user into the users table
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBIns:Users', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_DBInsNoSteam') end
+  if (args[2] == nil) then return ErrorMsg('Err_DBInsNoSteamName') end
+  if (args[3] == nil) then return ErrorMsg('Err_DBInsNoIP') end
+  if (args[4] == nil) then return ErrorMsg('Err_DBInsNoLicense') end
+  if (args[5] == nil) then return ErrorMsg('Err_DBInsNoXBoxID') end
+  if (args[6] == nil) then return ErrorMsg('Err_DBInsNoMLiveID') end
+  DBIns(DB.Users.Insert, {
+    Steam = args[1], sName = args[2], IP = args[3],
+    License = args[4], XBoxLive = args[5], MLive = args[6]
+  })
+end)
+--------------------------------------------------------------------------------
+-----------------------``---------------------------------------------------------
+-- Insert the user into the settings table
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBIns:Settings', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[2] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+
+  if (Low(args[1]) == 'user') then
+    if (args[2][1] == nil) then return ErrorMsg('Err_DBInsNoSteam') end
+    if (args[2][2] == nil) then return ErrorMsg('Err_DBInsSettingsMusic') end
+    if (args[2][3] == nil) then return ErrorMsg('Err_DBInsSettingsLanguage') end
+    DBIns(DB.Settings.insert, { Steam = args[2][1], Music = args[2][2], Language = args[2][3] })
+  end
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Insert the user into the settings table
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBIns:Banks', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[2] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+
+  if (Low(args[1]) == 'user') then
+    if (args[2][1] == nil) then return ErrorMsg('Err_DBInsNoSteam') end
+    if (args[2][2] == nil) then return ErrorMsg('Err_DBInsBanksNoCharID') end
+    if (args[2][3] == nil) then return ErrorMsg('Err_DBInsBanksNoMoney') end
+    if (args[2][4] == nil) then return ErrorMsg('Err_DBInsBanksNoGold') end
+    if (args[2][5] == nil) then return ErrorMsg('Err_DBInsBanksNoBankMoney') end
+    if (args[2][6] == nil) then return ErrorMsg('Err_DBInsBanksNoBankGold') end
+    DBIns(DB.Banks.Insert, {
+      Steam = args[2][1], CharID = args[2][2], Money = args[2][3],
+      Gold = args[2][4], BankMoney = args[2][5], BankGold = args[2][6]
+    })
+  end
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Insert the users character into the database
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBIns:Characters', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[2] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+
+  if (Low(args[1]) == 'user') then
+    if (args[2][1] == nil) then return ErrorMsg('Err_DBInsNoSteam') end
+    if (args[2][2] == nil) then return ErrorMsg('Err_DBInsNoCharID') end
+    if (args[2][3] == nil) then return ErrorMsg('Err_DBInsNoGroup') end
+    if (args[2][4] == nil) then return ErrorMsg('Err_DBInsNoCharName') end
+    if (args[2][5] == nil) then return ErrorMsg('Err_DBInsNoCharGender') end
+    if (args[2][6] == nil) then return ErrorMsg('Err_DBInsNoCharNat') end
+    if (args[2][7] == nil) then return ErrorMsg('Err_DBInsNoCharBDay') end
+    if (args[2][8] == nil) then return ErrorMsg('Err_DBInsNoCharXP') end
+    if (args[2][9] == nil) then return ErrorMsg('Err_DBInsNoCharLevel') end
+    if (args[2][10] == nil) then return ErrorMsg('Err_DBInsNoCharJobName') end
+    if (args[2][11] == nil) then return ErrorMsg('Err_DBInsNoCharJobGrade') end
+    if (args[2][12] == nil) then return ErrorMsg('Err_DBInsNoCharCoords') end
+    if (args[2][13] == nil) then return ErrorMsg('Err_DBInsNoCharSkin') end
+    if (args[2][14] == nil) then return ErrorMsg('Err_DBInsNoCharClothing') end
+    DBIns(DB.Characters.Insert, {
+      Steam = args[2][1], CharID = args[2][2], Group = args[2][3],
+      cName = args[2][4], Gender = args[2][5], Nationality = args[2][6],
+      BirthDate = args[2][7], XP = args[2][8], Level = args[2][9],
+      JobName = args[2][10], JobGrade = args[2][11], Coords = args[2][12],
+      Skin = args[2][13], Clothing = args[2][14]
+    })
+  end
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Insert the user to the blacklist
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBIns:Blacklist', function(source, args)
+  if (args == nil)       then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil)    then return ErrorMsg('Err_NoAdminName') end
+  if (args[2] == nil)    then return ErrorMsg('Err_NoBanReason') end
+  if (args[3] == nil)    then return ErrorMsg('Err_NoBanTime') end
+  if (args[4] == nil)    then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[4][1] == nil) then return ErrorMsg('Err_DBInsNoSteam') end
+  if (args[4][2] == nil) then return ErrorMsg('Err_DBInsNoIP') end
+  if (args[4][3] == nil) then return ErrorMsg('Err_DBInsNoLicense') end
+  if (args[4][4] == nil) then return ErrorMsg('Err_DBInsNoXBoxID') end
+  if (args[4][5] == nil) then return ErrorMsg('Err_DBInsNoMLiveID') end
+  local Admin, Reason, Until, Steam = args[1], args[2], args[3], args[4][1]
+  local IP, License, XBoxLive, MLive = args[4][2], args[4][3], args[4][4], args[4][5]
+
+  local Date = os.time(os.date("!*t"))
+  local NewTill = (Until * 60)
+  local NewDate = math.floor((Date + NewTill))
+  if (tonumber(Until) == -1) then NewDate = -1 end
+
+  DBIns(DB.Blacklist.Insert, {
+    Steam = Steam, Reason = Reason, Admin = Admin,
+    Until = NewDate, IP = IP, License = License,
+    XBoxLive = XBoxLive, MLive = MLive
+  })
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
