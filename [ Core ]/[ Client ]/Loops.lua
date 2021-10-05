@@ -10,6 +10,7 @@ local Low = string.lower
 -- the slider bar to show in game. May this happen to much, decrease the wait time.
 --------------------------------------------------------------------------------
 CreateThread(function()
+  -- while not __CoreReady do Wait(500) end
   if (_Loops.SliderDisabler) then
     while true do Wait(Floor(_Loops.SliderDisabler.Seconds * 1000))
       DisableControlAction(0, 0xCF8A4ECA, true)
@@ -23,6 +24,7 @@ end)
 -- whenever a user loses sudden connection to the server.
 --------------------------------------------------------------------------------
 CreateThread(function()
+  -- while not __CoreReady do Wait(500) end
   if (_Loops.SaveCoords.Enabled) then
     while true do Wait(Floor(_Loops.SaveCoords.Seconds * 1000))
       local Coords = GetEntityCoords(PlayerPedId())
@@ -58,6 +60,7 @@ end)
 -- Notification for admins that there are whitelist requests.
 --------------------------------------------------------------------------------
 CreateThread(function() --Wait(3000)
+  -- while not __CoreReady do Wait(500) end
   if _Security.Whitelist.Enabled then
     if _Security.Whitelist.NotifyAdmins then
       while true do Wait(0)
@@ -87,6 +90,7 @@ end)
 -- Check whenever the user is in the settings and close down the hud.
 --------------------------------------------------------------------------------
 CreateThread(function()
+  -- while not __CoreReady do Wait(500) end
   local ShowHud = true
   while true do Wait(500)
     local InMenu = IsPauseMenuActive()

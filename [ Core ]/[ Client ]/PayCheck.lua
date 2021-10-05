@@ -7,6 +7,7 @@ local Low = string.lower
 -- This Module sends players a paycheck ever X minutes.
 --------------------------------------------------------------------------------
 CreateThread(function() Wait(10000)
+  -- while not __CoreReady do Wait(500) end
   local Int, Enabled, Payout = _PayCheck.Interval.Minutes, _PayCheck.Enabled, nil
   local Steam = TSC('DokusCore:Core:GetUserIDs', { 'user' })[1]
   local Char = TSC('DokusCore:Core:DBGet:Characters', { 'user', { Steam, UserData.CharID } })
@@ -80,10 +81,10 @@ CreateThread(function() Wait(10000)
     end
 
     -- Now do all bank transactions
-    if (Money > 0) then TSC('DokusCore:Core:DBSet:Bank', { 'money', { Steam, UserData.CharID, Money } }) end
-    if (Gold > 0) then TSC('DokusCore:Core:DBSet:Bank', { 'Gold', { Steam, UserData.CharID, Gold } }) end
-    if (BankMoney > 0) then TSC('DokusCore:Core:DBSet:Bank', { 'BankMoney', { Steam, UserData.CharID, BankMoney } }) end
-    if (BankGold > 0) then TSC('DokusCore:Core:DBSet:Bank', { 'BankGold', { Steam, UserData.CharID, BankGold } }) end
+    if (Money > 0) then TSC('DokusCore:Core:DBSet:Bank', { 'money', '+', { Steam, UserData.CharID, Money } }) end
+    if (Gold > 0) then TSC('DokusCore:Core:DBSet:Bank', { 'Gold', '+', { Steam, UserData.CharID, Gold } }) end
+    if (BankMoney > 0) then TSC('DokusCore:Core:DBSet:Bank', { 'BankMoney', '+', { Steam, UserData.CharID, BankMoney } }) end
+    if (BankGold > 0) then TSC('DokusCore:Core:DBSet:Bank', { 'BankGold', '+', { Steam, UserData.CharID, BankGold } }) end
 
     -- Notify the user
     if (_PayCheck.Notify.Enabled) then

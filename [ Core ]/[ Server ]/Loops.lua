@@ -9,6 +9,7 @@ local DBEx   = MySQL.Async.execute
 -- will be able to join the server again
 --------------------------------------------------------------------------------
 CreateThread(function()
+  -- while not __CoreReady do Wait(500) end
   while _Security.Blacklist.Enabled do Wait(0)
     DBGet(DB.Blacklist.GetAll, {}, function(r)
     if (r[1] ~= nil) then
@@ -26,6 +27,7 @@ end)
 -- Notify the owner when there are pending whitelist requests.
 --------------------------------------------------------------------------------
 CreateThread(function()
+  -- while not __CoreReady do Wait(500) end
   if _Security.Whitelist.Enabled then
     while true do Wait(0)
       local Data = TCC(-1, 'DokusCore:Core:DBGet:Whitelist', { 'All' })

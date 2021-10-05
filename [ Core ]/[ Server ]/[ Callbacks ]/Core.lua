@@ -36,9 +36,14 @@ RSC('DokusCore:Core:KickPlayer', function(source, args)
   if (args[2] == nil) then return ErrorMsg('Err_NoReason') end
   DropPlayer(args[1], args[2])
 end)
-
-
-
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:System:IsCoreReady', function(source, args) return __CoreReady end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:GetCoreUserData', function(source, args) return TCC(-1, 'DokusCore:Core:GetCoreUserData', args) end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 

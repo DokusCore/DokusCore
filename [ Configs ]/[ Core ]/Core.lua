@@ -8,6 +8,7 @@ _StartWealth    = { Money = 5, Gold = 0, BankMoney = 150, BankGold = 0 }
 _StartJob       = { Name = 'unemployed', Grade = 0 }
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
 _Time           = { TimeSync = true, FixedTime = { false, 08, 00 } }
+_ActionKey      = 0x8AAA0AD4
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _EnablePVP       = true
@@ -30,7 +31,7 @@ _Security = {
 -- data like character data as suppose to. If set incorrectly the core can bug.
 --------------------------------------------------------------------------------
 _Modules          = {
-  -- Banks        = true,
+  Banking         = false,
   MultiCharacters = false
  }
 --------------------------------------------------------------------------------

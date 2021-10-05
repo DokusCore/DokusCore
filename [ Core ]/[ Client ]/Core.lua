@@ -3,12 +3,13 @@
 --------------------------------------------------------------------------------
 -- Store user data for when ever a module or feature needs this information
 --------------------------------------------------------------------------------
-UserData = { CharID = 0, Coords = nil }
+UserData = { Steam = nil, CharID = 0, ServerID = 0, Coords = nil }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Handeling the client to server callback system
 --------------------------------------------------------------------------------
 CreateThread(function()
+	-- while not __CoreReady do Wait(500) end
 	RegisterNetEvent(__..':client')
 	AddEventHandler(__..':client', function(Event, ...)
 		local p = promise.new()
@@ -22,6 +23,7 @@ end)
 -- Wait for players network connection
 --------------------------------------------------------------------------------
 CreateThread(function()
+	-- while not __CoreReady do Wait(500) end
   local Network = NetworkIsPlayerActive(PlayerId())
   while not Loaded do Wait(1000)
     if Network then
@@ -61,6 +63,7 @@ end)
 AddEventHandler('DokusCore:Core:LoadUser', function(PedID, sName)
   -- First grab the players SteamID
   local iDs = TSC('DokusCore:Core:GetUserIDs', { 'user' })
+	UserData.Steam = iDs[1]
 
   -- Check if the players database users table is correct
   local User = TSC('DokusCore:Core:DBGet:Users', { 'User', { iDs[1] } })

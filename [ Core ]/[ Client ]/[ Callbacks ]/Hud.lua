@@ -19,7 +19,10 @@ end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 RCC('DokusCore:Core:Hud:Update', function(args)
-  SendNUIMessage({ Action = 'UpdateHud', Money = Round(args[1], 3), BankMoney = Round(args[2], 3), CharID = args[3], ServerID = args[4] })
+  local Steam = TSC('DokusCore:Core:GetUserIDs', { 'user' })[1]
+  local Banks = TSC('DokusCore:Core:DBGet:Banks', { 'user', { Steam, UserData.CharID }})
+  print("FA", Banks.Result[1].Money, Banks.Result[1].BankMoney)
+  SendNUIMessage({ Action = 'UpdateHud', Money = Round(Banks.Result[1].Money, 3), BankMoney = Round(Banks.Result[1].BankMoney, 3), CharID = UserData.CharID, ServerID = 0 })
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
