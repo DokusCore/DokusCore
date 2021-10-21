@@ -2,12 +2,12 @@
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
 _ServerName     = 'DokusCore Development Server'
-_DiscordInvite  = 'Https://Discord.io/DokusCore'
+_DiscordInvite  = 'https://Discord.io/DokusCore'
 _Language       = { Lang = 'en', Multi = true }
 _StartWealth    = { Money = 5, Gold = 0, BankMoney = 150, BankGold = 0 }
 _StartJob       = { Name = 'unemployed', Grade = 0 }
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
-_Time           = { TimeSync = true, FixedTime = { false, 08, 00 } }
+_Time           = { TimeSync = false, FixedTime = { true, 12, 00 } }
 _ActionKey      = 0x8AAA0AD4
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ _Security = {
 -- data like character data as suppose to. If set incorrectly the core can bug.
 --------------------------------------------------------------------------------
 _Modules          = {
-  Banking         = false,
+  Banking         = true,
   MultiCharacters = false
  }
 --------------------------------------------------------------------------------
@@ -40,7 +40,7 @@ _Loops = {
   SaveCoords        = { Enabled = true, Seconds = 10  },
   SliderDisabler    = { Enabled = true, Seconds = 0.1 },
   CheckBlacklist    = { Seconds = 300 },
-  WhitelistNotify   = { Seconds = 300 },
+  WhitelistNotify   = { Seconds = 120 },
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

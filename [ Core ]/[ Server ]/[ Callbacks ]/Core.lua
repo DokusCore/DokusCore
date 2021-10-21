@@ -5,6 +5,12 @@ local Low = string.lower
 --------------------------------------------------------------------------------
 -- Return the users identifiers of the source given
 --------------------------------------------------------------------------------
+-- NEEDS TO BE CHANGED!!!!!!
+-- NOTE source == requesting user --- user is past the arguments.
+-- Gives error on wrong callback setup if using the blacklist.
+-- Revice this funtion and create a 2nd index {} for the user data
+-- but only for the FetchType USER
+--------------------------------------------------------------------------------
 RSC('DokusCore:Core:GetUserIDs', function(source, args)
   if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
   if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end

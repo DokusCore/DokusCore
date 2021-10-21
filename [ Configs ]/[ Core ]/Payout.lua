@@ -10,15 +10,15 @@ _PayCheck       = {
   Notify  = { Enabled = true, Location = { Top = true, Right = true } },
 
   Jobs = {
-    { Name = 'Unemployed', Money = { true, 'Both', 10 }, Gold = { true, 'both', 5 } },
+    { Name = 'Unemployed', Money = { true, 'Wallet', 10 }, Gold = { true, 'Bank', 5 } },
     { Name = 'Police',     Money = { true, 'Wallet', 10 }, Gold = { true, 'Bank', 5 } },
   },
 
   VIPs = {
     {
       Enabled  = true, Steam = "steam:1100001042b8cd7",
-      Static   = { Enabled = false, Money = { true, 'both', 10 }, Gold  = { true, 'both', 10 } },
-      Multiply = { Enabled = true, Money = { true, 'both', 10 }, Gold  = { true, 'both', 10 } }
+      Static   = { Enabled = false, Money = { true, 'Wallet', 10 }, Gold  = { true, 'Bank', 10 } },
+      Multiply = { Enabled = true, Money = { true, 'Wallet', 10 }, Gold  = { true, 'Bank', 10 } }
     }
   }
 }

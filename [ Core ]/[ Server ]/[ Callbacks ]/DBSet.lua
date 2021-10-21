@@ -54,36 +54,53 @@ RSC('DokusCore:Core:DBSet:Bank', function(source, args)
   if (args[3][1] == nil) then return ErrorMsg('Err_DBSetNoSteam') end
   if (args[3][2] == nil) then return ErrorMsg('Err_DBSetCharID') end
   if (args[3][3] == nil) then return ErrorMsg('Err_DBSetMoneyAmount') end
-  local Type, Type2 = args[1], args[2]
   local Steam, CharID, Amount = args[3][1], args[3][2], args[3][3]
-  local Data = TCC(-1, 'DokusCore:Core:DBGet:Banks', { 'user', { Steam, CharID } })
+  local Money, BankMoney, Gold, BankGold = 0, 0, 0, 0
 
-  print("Type1", Type, Type2)
+  if (Low(args[3]) == 'money') then
+    if (Low(args[1]) == 'deposit') then
+      local Bank = TCC(-1, 'DokusCore:Core:DBGet:Banks', { 'user', { Steam, CharID } }).Result[1]
+      Money, BankMoney = tonumber(Bank.Money - Amount), tonumber(Bank.BankMoney + Amount)
+      if (Money > 0) then
+        DBSet(DB.Banks.SetBankMoney, { BankMoney = BankMoney, Steam = Steam, CharID = CharID })
+        DBSet(DB.Banks.SetMoney, { Money = Money, Steam = Steam, CharID = CharID })
+      end
+    end
 
-  -- When a value is to be added
-  if ((Low(Type2) == '+') or (Low(Type2) == 'add') or (Low(Type2) == 'plus')) then
-    print("Pas")
-    print("ul", tonumber(Data.Result[1].BankMoney + Amount))
-    if (Low(Type) == 'gold')      then Amount = tonumber(Data.Result[1].Gold + Amount) end
-    if (Low(Type) == 'gold')      then DBSet(DB.Banks.SetGold, { Gold = Amount, Steam = Steam, CharID = CharID }) end
-    if (Low(Type) == 'bankgold')  then Amount = tonumber(Data.Result[1].BankGold + Amount) end
-    if (Low(Type) == 'bankgold')  then DBSet(DB.Banks.SetBankGold, { BankGold = Amount, Steam = Steam, CharID = CharID }) end
-    if (Low(Type) == 'money')     then Amount = tonumber(Data.Result[1].Money + Amount) end
-    if (Low(Type) == 'money')     then DBSet(DB.Banks.SetMoney, { Money = Amount, Steam = Steam, CharID = CharID }) end
-    if (Low(Type) == 'bankmoney') then Amount = tonumber(Data.Result[1].BankMoney + Amount) end
-    if (Low(Type) == 'bankmoney') then DBSet(DB.Banks.SetBankMoney, { BankMoney = Amount, Steam = Steam, CharID = CharID }) end
+    if (Low(args[1]) == 'withdraw') then
+      local Bank = TCC(-1, 'DokusCore:Core:DBGet:Banks', { 'user', { Steam, CharID } }).Result[1]
+      Money, BankMoney = tonumber(Bank.Money + Amount), tonumber(Bank.BankMoney - Amount)
+      if (Money > 0) then
+        DBSet(DB.Banks.SetBankMoney, { BankMoney = BankMoney, Steam = Steam, CharID = CharID })
+        DBSet(DB.Banks.SetMoney, { Money = Money, Steam = Steam, CharID = CharID })
+      end
+    end
   end
 
-  -- When a value has to be subtracted
-  if ((Low(Type2) == '-') or (Low(Type2) == 'subtract') or (Low(Type2) == 'minus')) then
-    if (Low(Type) == 'gold')      then Amount = tonumber(Data.Result[1].Gold - Amount) end
-    if (Low(Type) == 'gold')      then DBSet(DB.Banks.SetGold, { Gold = Amount, Steam = Steam, CharID = CharID }) end
-    if (Low(Type) == 'bankgold')  then Amount = tonumber(Data.Result[1].BankGold - Amount) end
-    if (Low(Type) == 'bankgold')  then DBSet(DB.Banks.SetBankGold, { BankGold = Amount, Steam = Steam, CharID = CharID }) end
-    if (Low(Type) == 'money')     then Amount = tonumber(Data.Result[1].Money - Amount) end
-    if (Low(Type) == 'money')     then DBSet(DB.Banks.SetMoney, { Money = Amount, Steam = Steam, CharID = CharID }) end
-    if (Low(Type) == 'bankmoney') then Amount = tonumber(Data.Result[1].BankMoney - Amount) end
-    if (Low(Type) == 'bankmoney') then DBSet(DB.Banks.SetBankMoney, { BankMoney = Amount, Steam = Steam, CharID = CharID }) end
+  if (Low(args[3]) == 'gold') then
+    if (Low(args[1]) == 'deposit') then
+      local Bank = TCC(-1, 'DokusCore:Core:DBGet:Banks', { 'user', { Steam, CharID } }).Result[1]
+      Money, BankMoney = tonumber(Bank.Money - Amount), tonumber(Bank.BankMoney + Amount)
+      if (Money > 0) then
+        DBSet(DB.Banks.SetBankMoney, { BankMoney = BankMoney, Steam = Steam, CharID = CharID })
+        DBSet(DB.Banks.SetMoney, { Money = Money, Steam = Steam, CharID = CharID })
+      end
+    end
+
+    if (Low(args[1]) == 'withdraw') then
+      local Bank = TCC(-1, 'DokusCore:Core:DBGet:Banks', { 'user', { Steam, CharID } }).Result[1]
+      Money, BankMoney = tonumber(Bank.Money + Amount), tonumber(Bank.BankMoney - Amount)
+      if (Money > 0) then
+        DBSet(DB.Banks.SetBankMoney, { BankMoney = BankMoney, Steam = Steam, CharID = CharID })
+        DBSet(DB.Banks.SetMoney, { Money = Money, Steam = Steam, CharID = CharID })
+      end
+    end
+  end
+
+  -- Update Discord via Webhooks
+  if (_Webhooks.Discord[1].Enabled) then
+    print("Tyop", args[2])
+    TCC(-1, 'DokusCore:Core:Webhooks:Discord', { 'BankTrans', args[2], { Steam, CharID, args[1], Amount,  Money, BankMoney, Gold, BankGold } })
   end
 end)
 --------------------------------------------------------------------------------

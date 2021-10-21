@@ -1,7 +1,7 @@
 ---
 <p align="center">
   <img width="600" height="200" src="https://user-images.githubusercontent.com/49053928/111937011-2e9b8080-8ac7-11eb-914a-a0d94380d611.gif"><br>
- <b>Version (v0.3.1) [BETA] (WIP)</b> - The Ultimate RP Framework for RedM.
+ <b>Version (v0.3.2) [BETA] (WIP)</b> - The Ultimate RP Framework for RedM.
 </p>
 
 ---
@@ -11,7 +11,7 @@ Below you will find some info on DokusCore, once we <br>
 are further in development, we will post more information
 
 ---
-# Feature Teasers: 
+# Feature Teasers:
 - **Multi Language Support**
   - English
   - Dutch
@@ -25,7 +25,7 @@ are further in development, we will post more information
   - Polish
   - Portuguese
   - Russian
-  - 
+  -
 - **Make your server international!** <br>
 You can choose to force a server language for everyone, or you<br>
 can turn multi language support on, and let your players decide <br>
@@ -62,10 +62,10 @@ You can easly toggle this on or off, and set the time in the config.<br>
   are done internally by the Core. You only have to use one <br>
   of the callback triggers and pass on the right arguments.<br>
   No need to type out all that sql stuff!
-  
+
 ---
 # Quality over Quantity <br>
-Quality will always be the number 1 priority. 
+Quality will always be the number 1 priority.
 
 ---
 # BECOME A BETA TESTER AND GET EARLY ACCESS
@@ -88,4 +88,3 @@ Visit our [Discord](https://discord.io/dokuscore) fore more info!
 - Commands legenda with /Help https://prnt.sc/1dgl3z3
 - Changing my own client language with mutli language support on https://prnt.sc/1dgl9lm
 - Custom made chat and removed the ugly chat box https://prnt.sc/1dgm36j
-

@@ -39,6 +39,7 @@ RegisterCommand("addgold", function(source, args, rawCommand)
     if (Low(args[2]) == 'wallet') then Type = 'Gold' end
     TSC('DokusCore:Core:DBSet:Bank', { Type, '+', { Steam, UserData.CharID, args[3] } })
     ShowTopNote('Transaction Success', args[3]..' gold given to player with ID '..args[1])
+    TriggerEvent('DokusCore:Core:Hud:Update')
   end
 
   if IsForUsers  and IsUser  then DoThis() end
