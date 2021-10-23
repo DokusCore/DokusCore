@@ -57,7 +57,7 @@ RSC('DokusCore:Core:DBSet:Bank', function(source, args)
   local Steam, CharID, Amount = args[3][1], args[3][2], args[3][3]
   local Money, BankMoney, Gold, BankGold = 0, 0, 0, 0
 
-  if (Low(args[3]) == 'money') then
+  if (Low(args[2]) == 'money') then
     if (Low(args[1]) == 'deposit') then
       local Bank = TCC(-1, 'DokusCore:Core:DBGet:Banks', { 'user', { Steam, CharID } }).Result[1]
       Money, BankMoney = tonumber(Bank.Money - Amount), tonumber(Bank.BankMoney + Amount)
@@ -77,7 +77,7 @@ RSC('DokusCore:Core:DBSet:Bank', function(source, args)
     end
   end
 
-  if (Low(args[3]) == 'gold') then
+  if (Low(args[2]) == 'gold') then
     if (Low(args[1]) == 'deposit') then
       local Bank = TCC(-1, 'DokusCore:Core:DBGet:Banks', { 'user', { Steam, CharID } }).Result[1]
       Money, BankMoney = tonumber(Bank.Money - Amount), tonumber(Bank.BankMoney + Amount)
