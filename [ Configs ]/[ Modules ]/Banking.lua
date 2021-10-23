@@ -6,17 +6,17 @@
 --------------------------------------------------------------------------------
 _Banking = {
   Zones = {
-    { ID = 'Valentine',    Coords = vector3(-308.57,775.95,117.7)   },
-    { ID = 'Rhodes',       Coords = vector3(1292.48,-1301.67,77.04) },
-    { ID = 'Saint Denise', Coords = vector3(2644.23,-1292.61,52.25) },
-    { ID = 'Black Water',  Coords = vector3(-812.18,-1277.26,43.64) },
+    { ID = 'Valentine',   Coords = vector3(-308.57,775.95,117.7)   },
+    { ID = 'Rhodes',      Coords = vector3(1292.48,-1301.67,77.04) },
+    { ID = 'SaintDenis', Coords = vector3(2644.23,-1292.61,52.25) },
+    { ID = 'BlackWater',  Coords = vector3(-812.18,-1277.26,43.64) },
   },
 
   NPCs = {
-    { ID = 'Valentine',    Hash = 'S_M_M_BankClerk_01', Coords = vector3(-308.1, 774.0, 117.7), Heading = 13.4 },
-    { ID = 'Rhodes',       Hash = 'S_M_M_BankClerk_01', Coords = vector3(1291.2, -1303.4, 76.0), Heading = 332.9 },
-    { ID = 'Black Water',  Hash = 'S_M_M_BankClerk_01', Coords = vector3(2645.0, -1294.0, 51.2), Heading = 26.5 },
-    { ID = 'Saint Denise', Hash = 'S_M_M_BankClerk_01', Coords = vector3(-811.6, -1275.4, 42.6), Heading = 180.3 },
+    { ID = 'Valentine',    Hash = 'S_M_M_BankClerk_01', ActRadius = 2.5, Coords = vector3(-308.1, 774.0, 117.7), Heading = 13.4 },
+    { ID = 'Rhodes',       Hash = 'S_M_M_BankClerk_01', ActRadius = 2.4, Coords = vector3(1291.2, -1303.4, 76.0), Heading = 332.9 },
+    { ID = 'SaintDenis',   Hash = 'S_M_M_BankClerk_01', ActRadius = 2.1, Coords = vector3(2645.0, -1294.0, 51.2), Heading = 26.5 },
+    { ID = 'Blackwater',   Hash = 'S_M_M_BankClerk_01', ActRadius = 2.4, Coords = vector3(-813.3, -1275.4, 42.6), Heading = 180.3 },
   }
 }
 --------------------------------------------------------------------------------
