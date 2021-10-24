@@ -19,6 +19,7 @@ shared_scripts {
 client_scripts {
   '[ Core ]/[ Client ]/*.lua',
   '[ Core ]/[ Client ]/[ JS ]/*.js',
+  '[ Core ]/[ System ]/[ Menu ]/DokusMenu.lua',
   '[ Core ]/[ Client ]/[ Commands ]/*.lua',
   '[ Core ]/[ Client ]/[ Commands ]/[ Admin ]/*.lua',
   '[ Core ]/[ Client ]/[ Utilities ]/*.lua',
