@@ -8,6 +8,7 @@ DB.Settings   = {}
 DB.Characters = {}
 DB.Blacklist  = {}
 DB.Whitelist  = {}
+DB.Stores     = {}
 
 --------------------------------------------------------------------------------
 ---- DB GET
@@ -28,6 +29,9 @@ DB.Blacklist.GetViaIP       = 'select * from blacklist where IP=@IP'
 DB.Blacklist.GetViaLicense  = 'select * from blacklist where License=@License'
 DB.Blacklist.GetViaXBoxLive = 'select * from blacklist where XBoxLive=@XBoxLive'
 DB.Blacklist.GetViaMLive    = 'select * from blacklist where MLive=@MLive'
+
+DB.Stores.GetAll             = 'select * from stores'
+DB.Stores.GetViaType         = 'select * from stores where Type=@Type'
 
 --------------------------------------------------------------------------------
 ---- DB Insert

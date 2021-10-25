@@ -27,10 +27,12 @@ CREATE TABLE IF NOT EXISTS `banks` (
   `BankMoney` float NOT NULL,
   `BankGold` float NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table dokuscore.banks: ~0 rows (approximately)
+-- Dumping data for table dokuscore.banks: ~1 rows (approximately)
 /*!40000 ALTER TABLE `banks` DISABLE KEYS */;
+INSERT INTO `banks` (`ID`, `Steam`, `CharID`, `Money`, `Gold`, `BankMoney`, `BankGold`) VALUES
+	(1, 'steam:1100001042b8cd7', 1, 1, 0, 154, 0);
 /*!40000 ALTER TABLE `banks` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.blacklist
@@ -69,10 +71,12 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `Skin` varchar(5000) NOT NULL,
   `Clothing` varchar(5000) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table dokuscore.characters: ~0 rows (approximately)
+-- Dumping data for table dokuscore.characters: ~1 rows (approximately)
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
+INSERT INTO `characters` (`ID`, `Steam`, `CharID`, `Group`, `cName`, `Gender`, `Nationality`, `BirthDate`, `XP`, `Level`, `JobName`, `JobGrade`, `Coords`, `Skin`, `Clothing`) VALUES
+	(1, 'steam:1100001042b8cd7', 1, 'owner', '--', '--', '--', '--', 0, 0, 'unemployed', 0, '--', '--', '--');
 /*!40000 ALTER TABLE `characters` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.settings
@@ -82,11 +86,53 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `Music` int(11) NOT NULL DEFAULT 1,
   `Language` varchar(50) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table dokuscore.settings: ~0 rows (approximately)
+-- Dumping data for table dokuscore.settings: ~1 rows (approximately)
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
+INSERT INTO `settings` (`ID`, `Steam`, `Music`, `Language`) VALUES
+	(1, 'steam:1100001042b8cd7', 1, 'en');
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
+
+-- Dumping structure for table dokuscore.stores
+CREATE TABLE IF NOT EXISTS `stores` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Item` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `Name` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `Type` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `Description` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `OnUse` int(11) DEFAULT NULL,
+  `CanSell` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `CanBuy` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `BuyPrice` float DEFAULT NULL,
+  `SellPrice` float DEFAULT NULL,
+  `StockLimit` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
+  `InventLimit` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
+  `Valentine` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
+  `SaintDenis` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
+  `Blackwater` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
+  `Tumbleweed` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
+  `Rhodes` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
+  `Armadillo` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
+  `Strawberry` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
+
+-- Dumping data for table dokuscore.stores: ~11 rows (approximately)
+/*!40000 ALTER TABLE `stores` DISABLE KEYS */;
+INSERT INTO `stores` (`ID`, `Item`, `Name`, `Type`, `Description`, `OnUse`, `CanSell`, `CanBuy`, `BuyPrice`, `SellPrice`, `StockLimit`, `InventLimit`, `Valentine`, `SaintDenis`, `Blackwater`, `Tumbleweed`, `Rhodes`, `Armadillo`, `Strawberry`) VALUES
+	(1, 'carrot', 'Carrot', 'Consumable', NULL, NULL, 'true', 'false', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(2, 'cigar', 'Cigar', 'Consumable', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(3, 'cigarette', 'Cigarette Single', 'Consumable', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(4, 'cigarette_box', 'Cigarette Box (25)', 'Item', NULL, 25, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(5, 'coffee', 'Coffee', 'Consumable', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(6, 'egg', 'Egg', 'Consumable', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(7, 'egg_box', 'Egg Box (10)', 'Item', NULL, 10, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(8, 'gold_nuggets', 'Gold Nuggest', 'Mineral', NULL, NULL, 'false', 'false', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(9, 'gold_pan', 'Gold Pan', 'Tool', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(10, 'gold_bar', 'Golden Bar', 'Valuta', NULL, NULL, 'false', 'false', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(11, 'water', 'Water', 'Consumable', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true');
+/*!40000 ALTER TABLE `stores` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -98,10 +144,12 @@ CREATE TABLE IF NOT EXISTS `users` (
   `XBoxLive` varchar(50) NOT NULL,
   `MLive` varchar(50) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table dokuscore.users: ~0 rows (approximately)
+-- Dumping data for table dokuscore.users: ~1 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`ID`, `Steam`, `sName`, `IP`, `License`, `XBoxLive`, `MLive`) VALUES
+	(1, 'steam:1100001042b8cd7', 'Your Grandmother', '192.168.178.17', 'license:dd1b3193cf05e18e4b1046fd97d3b1999f06b893', 'xbl:2533275033493595', 'live:1055521335395428');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.whitelist

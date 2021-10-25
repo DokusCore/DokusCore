@@ -110,6 +110,7 @@ end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Get the whitelist information
+--------------------------------------------------------------------------------
 RSC('DokusCore:Core:DBGet:Whitelist', function(source, args)
   if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
   if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
@@ -120,11 +121,34 @@ RSC('DokusCore:Core:DBGet:Whitelist', function(source, args)
     Wait(200) return { Exist = Exist, Result = Result }
   end
 end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Get the items from the database
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBGet:Stores', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+
+  if (Low(args[1]) == 'all') then
+    DBGet(DB.Stores.GetAll, {}, function(r) if (r[1] ~= nil) then Exist = true Result = r end end)
+    Wait(200) return { Exist = Exist, Result = Result }
+  end
+
+  if ((Low(args[1]) == 'consumable') or (Low(args[1]) == 'consumables')) then
+    DBGet(DB.Stores.GetViaType, { Type = 'Consumable' }, function(r) if (r[1] ~= nil) then Exist = true Result = r end end)
+    Wait(200) return { Exist = Exist, Result = Result }
+  end
+
+  if ((Low(args[1]) == 'item') or (Low(args[1]) == 'item')) then
+    DBGet(DB.Stores.GetViaType, { Type = 'Item' }, function(r) if (r[1] ~= nil) then Exist = true Result = r end end)
+    Wait(200) return { Exist = Exist, Result = Result }
+  end
+
+end)
 
 
-
-
-
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 
