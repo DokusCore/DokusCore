@@ -57,22 +57,30 @@ RSC('DokusCore:Core:DBSet:Bank', function(source, args)
   local Steam, CharID, Amount = args[3][1], args[3][2], args[3][3]
   local Money, BankMoney, Gold, BankGold = 0, 0, 0, 0
 
+  local function Webhook()
+    if (_Webhooks.Discord[1].Enabled) then
+      TCC(-1, 'DokusCore:Core:Webhooks:Discord', { 'BankTrans', args[2], { Steam, CharID, args[1], Amount,  Money, BankMoney, Gold, BankGold } })
+    end
+  end
+
   if (Low(args[2]) == 'money') then
     if (Low(args[1]) == 'deposit') then
       local Bank = TCC(-1, 'DokusCore:Core:DBGet:Banks', { 'user', { Steam, CharID } }).Result[1]
       Money, BankMoney = tonumber(Bank.Money - Amount), tonumber(Bank.BankMoney + Amount)
-      if (Money > 0) then
+      if (Money >= 0) then
         DBSet(DB.Banks.SetBankMoney, { BankMoney = BankMoney, Steam = Steam, CharID = CharID })
         DBSet(DB.Banks.SetMoney, { Money = Money, Steam = Steam, CharID = CharID })
+        Webhook() return true else return false
       end
     end
 
     if (Low(args[1]) == 'withdraw') then
       local Bank = TCC(-1, 'DokusCore:Core:DBGet:Banks', { 'user', { Steam, CharID } }).Result[1]
       Money, BankMoney = tonumber(Bank.Money + Amount), tonumber(Bank.BankMoney - Amount)
-      if (Money > 0) then
+      if (BankMoney >= 0) then
         DBSet(DB.Banks.SetBankMoney, { BankMoney = BankMoney, Steam = Steam, CharID = CharID })
         DBSet(DB.Banks.SetMoney, { Money = Money, Steam = Steam, CharID = CharID })
+        Webhook() return true else return false
       end
     end
   end
@@ -81,26 +89,22 @@ RSC('DokusCore:Core:DBSet:Bank', function(source, args)
     if (Low(args[1]) == 'deposit') then
       local Bank = TCC(-1, 'DokusCore:Core:DBGet:Banks', { 'user', { Steam, CharID } }).Result[1]
       Money, BankMoney = tonumber(Bank.Money - Amount), tonumber(Bank.BankMoney + Amount)
-      if (Money > 0) then
+      if (Money >= 0) then
         DBSet(DB.Banks.SetBankMoney, { BankMoney = BankMoney, Steam = Steam, CharID = CharID })
         DBSet(DB.Banks.SetMoney, { Money = Money, Steam = Steam, CharID = CharID })
+        Webhook() return true else return false
       end
     end
 
     if (Low(args[1]) == 'withdraw') then
       local Bank = TCC(-1, 'DokusCore:Core:DBGet:Banks', { 'user', { Steam, CharID } }).Result[1]
       Money, BankMoney = tonumber(Bank.Money + Amount), tonumber(Bank.BankMoney - Amount)
-      if (Money > 0) then
+      if (BankMoney >= 0) then
         DBSet(DB.Banks.SetBankMoney, { BankMoney = BankMoney, Steam = Steam, CharID = CharID })
         DBSet(DB.Banks.SetMoney, { Money = Money, Steam = Steam, CharID = CharID })
+        Webhook() return true else return false
       end
     end
-  end
-
-  -- Update Discord via Webhooks
-  if (_Webhooks.Discord[1].Enabled) then
-    print("Tyop", args[2])
-    TCC(-1, 'DokusCore:Core:Webhooks:Discord', { 'BankTrans', args[2], { Steam, CharID, args[1], Amount,  Money, BankMoney, Gold, BankGold } })
   end
 end)
 --------------------------------------------------------------------------------

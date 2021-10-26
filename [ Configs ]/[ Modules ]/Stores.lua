@@ -5,14 +5,19 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Stores = {
+  Categories = {
+    Buy = { Consumables = true,  Minerals = true, Valutas = true, Tools = true, Items = true },
+    Sell = { Consumables = true, Minerals = true, Valutas = true, Tools = true, Items = true }
+  },
+
   Zones = {
-    { Enabled = true, ID = 'Valentine' ,   RentPrice = 10, Coords = vector3(-322.0, 803.4, 117.8)    },
-    { Enabled = true, ID = 'SaintDenis' ,  RentPrice = 10, Coords = vector3(2826.1, -1317.9, 45.7)   },
-    { Enabled = true, ID = 'Blackwater' ,  RentPrice = 10, Coords = vector3(-784.8, -1323.9, 43.8)   },
-    { Enabled = true, ID = 'Tumbleweed' ,  RentPrice = 10, Coords = vector3(-5487.6, -2938.9, -0.4)  },
-    { Enabled = true, ID = 'Rhodes' ,      RentPrice = 10, Coords = vector3(1328.2, -1293.5, 77.0)   },
-    { Enabled = true, ID = 'Armadillo' ,   RentPrice = 10, Coords = vector3(-3685.6, -2623.5, -13.5) },
-    { Enabled = true, ID = 'Strawberry' ,  RentPrice = 10, Coords = vector3(-1791.3, -387.2, 160.3)  },
+    { Enabled = true, ID = 'Valentine',   Coords = vector3(-322.0, 803.4, 117.8)    },
+    { Enabled = true, ID = 'SaintDenis',  Coords = vector3(2826.1, -1317.9, 45.7)   },
+    { Enabled = true, ID = 'Blackwater',  Coords = vector3(-784.8, -1323.9, 43.8)   },
+    { Enabled = true, ID = 'Tumbleweed',  Coords = vector3(-5487.6, -2938.9, -0.4)  },
+    { Enabled = true, ID = 'Rhodes',      Coords = vector3(1328.2, -1293.5, 77.0)   },
+    { Enabled = true, ID = 'Armadillo',   Coords = vector3(-3685.6, -2623.5, -13.5) },
+    { Enabled = true, ID = 'Strawberry',  Coords = vector3(-1791.3, -387.2, 160.3)  },
   },
 
   NPCs = {

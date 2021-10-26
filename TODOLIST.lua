@@ -8,5 +8,8 @@
 -- NOTE: [2] The deprecation warnings are coming from mysql-async
 -- the author does not seem to fix this, so lets do it our selfs and
 -- prepack mysql-async as own version to DokusCore dependencies
+
+-- NOTE: [3] Commands like add money / gold and Discord seem to have stopped
+-- working. Check what went wrong and corrent this issue.
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

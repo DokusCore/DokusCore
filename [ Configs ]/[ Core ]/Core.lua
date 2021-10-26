@@ -23,7 +23,7 @@ _BankDoors       = true
 --------------------------------------------------------------------------------
 _Security = {
   Blacklist = { Enabled = true },
-  Whitelist = { Enabled = false, NotifyAdmins = true },
+  Whitelist = { Enabled = true, NotifyAdmins = true },
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -67,6 +67,9 @@ _Commands = {
   Blacklist   = { Users = false, Admins = true,  SuperAdmins = true },
 }
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--  These are the keys you can ue in game. Not adviced to make changes below  --
+--               It can create a disturbance in the force!                    --
 --------------------------------------------------------------------------------
 _Keys = {
   ["MOUSE1"] = 0x07CE1E61, ["MOUSE2"] = 0xF84FA74F, ["MOUSE3"] = 0xCEE12B50, ["MWUP"] = 0x3076E97C,
