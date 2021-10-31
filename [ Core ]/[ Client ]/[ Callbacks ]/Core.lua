@@ -2,12 +2,12 @@
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
 -- Check if the core is ready so the plugins can start up
-RCC('DokusCore:Core:System:IsCoreReady', function(args) return TSC('DokusCore:Core:System:IsCoreReady') end)
+RCC('DokusCore:Core:System:IsCoreReady', function(args) return TSC('DokusCore:Core:System:IsCoreReady', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Return the users identifiers of the source given
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:GetUserIDs', function(args) return TSC('DokusCore:Core:GetUserIDs') end)
+RCC('DokusCore:Core:GetUserIDs', function(args) return TSC('DokusCore:Core:GetUserIDs', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Grab the core user data from the client side.
@@ -16,7 +16,7 @@ RCC('DokusCore:Core:GetCoreUserData', function(args) return UserData end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Grab the players blacklist information
-RCC('DokusCore:Core:DBGet:Blacklist', function(args) return TSC('DokusCore:Core:DBGet:Blacklist') end)
+RCC('DokusCore:Core:DBGet:Blacklist', function(args) return TSC('DokusCore:Core:DBGet:Blacklist', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

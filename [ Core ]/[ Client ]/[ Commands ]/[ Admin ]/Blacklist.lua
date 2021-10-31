@@ -47,7 +47,7 @@ RegisterCommand("blacklist", function(source, args, rawCommand)
       Reason = string.gsub(Reason, "_", "")
       local Data = TSC('DokusCore:Core:DBGet:Blacklist', { 'User', 'ServerID', { iD } } )
       if not (Data.Exist) then
-        local Steam = TSC('DokusCore:Core:GetUserIDs', { iD })[1]
+        local Steam = TSC('DokusCore:Core:GetUserIDs', { 'user' })[1]
         if (Steam == nil) then ShowRightNote(_('BLNoUserWithID', Lang).." "..iD) return end
         local User = TSC('DokusCore:Core:DBGet:Users', { 'User', { Steam } })
         local X = User.Result[1]
@@ -62,11 +62,12 @@ RegisterCommand("blacklist", function(source, args, rawCommand)
     if (Low(Type) == 'remove') then
       local Type2 = args[2]
       if (Low(Type2) == 'ip') then
-        if not (IsIpAddress(CharID)) then ShowRightNote(_('Err_BLIP', Lang)) return end
-        local Data = TSC('DokusCore:Core:DBGet:Blacklist', { 'User', 'IP', { CharID } } )
+        if not (IsIpAddress(Time)) then ShowRightNote(_('Err_BLIP', Lang)) return end
+        local Data = TSC('DokusCore:Core:DBGet:Blacklist', { 'User', 'IP', { Time } } )
         if not (Data.Exist) then ShowRightNote('This user is not on the blacklist!') return end
         if (Data.Exist) then
-          local Data = TSC('DokusCore:Core:DBDel:Blacklist', { 'User', 'IP', { CharID } } )
+          local Data = TSC('DokusCore:Core:DBDel:Blacklist', { 'User', 'IP', { Time } } )
+          ShowRightNote('User Removed from the blacklist')
         end
       end
 
@@ -74,6 +75,7 @@ RegisterCommand("blacklist", function(source, args, rawCommand)
         local Data = TSC('DokusCore:Core:DBGet:Blacklist', { 'User', 'SteamID', { args[3] } } )
         if not (Data.Exist) then ShowRightNote('This user is not on the blacklist!') return end
         local Data = TSC('DokusCore:Core:DBDel:Blacklist', { 'User', 'SteamID', { args[3] } } )
+        ShowRightNote('User Removed from the blacklist')
       end
     end
   end

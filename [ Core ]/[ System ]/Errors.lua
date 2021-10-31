@@ -13,16 +13,16 @@ function ErrorMsg(e, a)
   if (e == 'Err_NoUserServerID')        then print(Error..ErrMsg(3)..'^0') end
   if (e == 'Err_NoReason')              then print(Error..ErrMsg(4)..'^0') end
   if (e == 'Err_NoProvIP')              then print(Error..ErrMsg(5)..'^0') end
-  if (e == 'Err_NoCatType')           then print(Error..ErrMsg(6)..'^0') end
+  if (e == 'Err_NoCatType')             then print(Error..ErrMsg(6)..'^0') end
 
   -- Database Errors Insert
   if (e == 'Err_DBNoTableSelected')     then print(Error..ErrMsg(100)..'^0') end
   if (e == 'Err_DBInsNoSteam')          then print(Error..ErrMsg(101)..'^0') end
   if (e == 'Err_DBInsNoSteamName')      then print(Error..ErrMsg(102)..'^0') end
   if (e == 'Err_DBInsNoIP')             then print(Error..ErrMsg(103)..'^0') end
-  if (e == 'Err_DBInsNoLicense')          then print(Error..ErrMsg(104)..'^0') end
-  if (e == 'Err_DBInsNoXBoxID')           then print(Error..ErrMsg(105)..'^0') end
-  if (e == 'Err_DBInsNoMLiveID')          then print(Error..ErrMsg(106)..'^0') end
+  if (e == 'Err_DBInsNoLicense')        then print(Error..ErrMsg(104)..'^0') end
+  if (e == 'Err_DBInsNoXBoxID')         then print(Error..ErrMsg(105)..'^0') end
+  if (e == 'Err_DBInsNoMLiveID')        then print(Error..ErrMsg(106)..'^0') end
   if (e == 'Err_DBInsSettingsMusic')    then print(Error..ErrMsg(107)..'^0') end
   if (e == 'Err_DBInsSettingsLanguage') then print(Error..ErrMsg(108)..'^0') end
   if (e == 'Err_DBInsNoCharID')         then print(Error..ErrMsg(109)..'^0') end

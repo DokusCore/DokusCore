@@ -5,12 +5,6 @@ local Low = string.lower
 --------------------------------------------------------------------------------
 -- Return the users identifiers of the source given
 --------------------------------------------------------------------------------
--- NEEDS TO BE CHANGED!!!!!!
--- NOTE source == requesting user --- user is past the arguments.
--- Gives error on wrong callback setup if using the blacklist.
--- Revice this funtion and create a 2nd index {} for the user data
--- but only for the FetchType USER
---------------------------------------------------------------------------------
 RSC('DokusCore:Core:GetUserIDs', function(source, args)
   if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
   if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
@@ -23,8 +17,10 @@ RSC('DokusCore:Core:GetUserIDs', function(source, args)
   end
 
   if (Low(args[1]) == 'source') then
-    local S, L, I = G(args[1], 0), G(args[1], 1), GetPlayerEndpoint(args[1])
-    local X, M = G(args[1], 2), G(args[1], 3)
+    if (args[2] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+    if (args[2][1] == nil) then return ErrorMsg('Err_NoUserServerID') end
+    local S, L, I = G(args[2][1], 0), G(args[2][1], 1), GetPlayerEndpoint(args[2][1])
+    local X, M = G(args[2][1], 2), G(args[2][1], 3)
     return {S, L, I, X, M}
   end
 end)

@@ -16,7 +16,7 @@ RegisterCommand("discord", function(source, args, rawCommand)
   if (Group ~= Mod.SuperAdmin) then IsOwner = false end
 
   local function DoThis()
-    TriggerEvent('DokusCore:Core:ShowNote', 'Discord', _DiscordInvite)
+    TriggerEvent('DokusCore:Core:ShowTopNote', 'Discord', _DiscordInvite)
   end
 
   if IsForUsers  and IsUser  then DoThis() end

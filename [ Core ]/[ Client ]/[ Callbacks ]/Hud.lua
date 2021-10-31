@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------------
 ---------------------------------- DokusCore -----------------------------------
 local ShowUIHud = true
+local Low = string.lower
 --------------------------------------------------------------------------------
 function Round(num, numDecimalPlaces)
   local mult = 10^(numDecimalPlaces or 0)
@@ -19,9 +20,19 @@ end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 RCC('DokusCore:Core:Hud:Update', function(args)
-  local Steam = TSC('DokusCore:Core:GetUserIDs', { 'user' })[1]
-  local Banks = TSC('DokusCore:Core:DBGet:Banks', { 'user', { Steam, UserData.CharID }})
-  SendNUIMessage({ Action = 'UpdateHud', Money = Round(Banks.Result[1].Money, 3), BankMoney = Round(Banks.Result[1].BankMoney, 3), CharID = UserData.CharID, ServerID = 0 })
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+
+  if (Low(args[1]) == 'user') then
+    local Steam = TSC('DokusCore:Core:GetUserIDs', { 'user' })[1]
+    local Banks = TSC('DokusCore:Core:DBGet:Banks', { 'user', { Steam, UserData.CharID }})
+    SendNUIMessage({ Action = 'UpdateHud', Money = Round(Banks.Result[1].Money, 3), BankMoney = Round(Banks.Result[1].BankMoney, 3), CharID = UserData.CharID, ServerID = 0 })
+  end
+
+  if (Low(args[1]) == 'source') then
+    print("IN DEVELOPMENT")
+  end
+
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
