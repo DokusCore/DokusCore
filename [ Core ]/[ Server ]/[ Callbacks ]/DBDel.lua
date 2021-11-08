@@ -28,10 +28,42 @@ RSC('DokusCore:Core:DBDel:Blacklist', function(source, args)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+-- Delete an inventory item
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBDel:Inventory', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[2] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[3] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
 
+  if (Low(args[1]) == 'user') then
+    if (Low(args[2]) == 'item') then
+      if (args[3][1] == nil) then return ErrorMsg('Err_NoArgsSteam') end
+      if (args[3][2] == nil) then return ErrorMsg('Err_NoCharID') end
+      if (args[3][3] == nil) then return ErrorMsg('Err_NoItemName') end
+      local Steam, CharID, Item = args[3][1], args[3][2], args[3][3]
+      DBDel(DB.Inventory.DelUserItem, { Steam = Steam, CharID = CharID, Item = Item })
+    end
+  end
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Delete an inventory item
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBDel:Storages', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[2] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[3] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
 
-
-
+  if (Low(args[1]) == 'dropbox') then
+    if (Low(args[2]) == 'boxid') then
+      DBDel(DB.Storages.DelBoxViaID, { BoxID = args[3][1] })
+    end
+  end
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 

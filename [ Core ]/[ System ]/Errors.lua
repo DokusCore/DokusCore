@@ -14,6 +14,12 @@ function ErrorMsg(e, a)
   if (e == 'Err_NoReason')              then print(Error..ErrMsg(4)..'^0') end
   if (e == 'Err_NoProvIP')              then print(Error..ErrMsg(5)..'^0') end
   if (e == 'Err_NoCatType')             then print(Error..ErrMsg(6)..'^0') end
+  if (e == 'Err_NoCharID')              then print(Error..ErrMsg(7)..'^0') end
+  if (e == 'Err_NoDropBoxID')           then print(Error..ErrMsg(8)..'^0') end
+  if (e == 'Err_NoDropBoxItemArray')    then print(Error..ErrMsg(9)..'^0') end
+  if (e == 'Err_NoBoxCoords')           then print(Error..ErrMsg(10)..'^0') end
+  if (e == 'Err_NoItemName')            then print(Error..ErrMsg(11)..'^0') end
+  if (e == 'Err_NoItemAmount')          then print(Error..ErrMsg(12)..'^0') end
 
   -- Database Errors Insert
   if (e == 'Err_DBNoTableSelected')     then print(Error..ErrMsg(100)..'^0') end
@@ -44,7 +50,11 @@ function ErrorMsg(e, a)
   if (e == 'Err_DBInsNoCharClothing')   then print(Error..ErrMsg(125)..'^0') end
   if (e == 'Err_NoAdminName')           then print(Error..ErrMsg(126)..'^0') end
   if (e == 'Err_NoBanReason')           then print(Error..ErrMsg(127)..'^0') end
-  if (e == 'Err_NoBanTime')             then print(Error..ErrMsg(128)..'^0') end
+  if (e == 'Err_DBInsNoBanTime')        then print(Error..ErrMsg(128)..'^0') end
+  if (e == 'Err_DBInsNoItemName')       then print(Error..ErrMsg(129)..'^0') end
+  if (e == 'Err_DBInsNoItemAmount')     then print(Error..ErrMsg(130)..'^0') end
+  if (e == 'Err_DBInsNoBoxCoords')      then print(Error..ErrMsg(131)..'^0') end
+
 
   -- Database Errors Gets
   if (e == 'Err_DBGetNoSteam')          then print(Error..ErrMsg(200)..'^0') end
@@ -79,6 +89,12 @@ function ErrMsg (nr)
   if (nr == 4) then return 'There is no reason provided for this action' end
   if (nr == 5) then return 'There is no IP provided to execute this action' end
   if (nr == 6) then return 'Unable to preform the this action due to missing category type' end
+  if (nr == 7) then return 'Unable to preform the this action due to missing CharID' end
+  if (nr == 8) then return 'Unable to perform this action due to missing BoxID' end
+  if (nr == 9) then return 'Unable to perform this action due to missing Box Item Array' end
+  if (nr == 10) then return 'Unable to perform this action due to missing Box Coordinates' end
+  if (nr == 11) then return 'Unable to perform this action due to missing Item Name' end
+  if (nr == 12) then return 'Unable to perform this action due to missing Item Amount' end
 
   -- Database Inserts
   if (nr == 100) then return 'What database table would you like to use to insert this row to?' end
@@ -110,11 +126,15 @@ function ErrMsg (nr)
   if (nr == 126) then return 'Unable to insert the row due to missing Admin Name' end
   if (nr == 127) then return 'Unable to insert the row due to missing Blacklist/Ban Reason' end
   if (nr == 128) then return 'Unable to insert the row due to missing Ban Time' end
+  if (nr == 129) then return 'Unable to insert the row due to missing Item Name' end
+  if (nr == 130) then return 'Unable to insert the row due to missing Item Amount' end
+  if (nr == 131) then return 'Unable to insert the row due to missing Box Coords' end
 
   -- Database Gets
   if (nr == 200) then return 'Unable to get the row due to missing SteamID' end
   if (nr == 201) then return 'Unable to get the row due to missing CharID' end
   if (nr == 203) then return 'Unable to get the row due to missing fetch type' end
+
 
   -- Database Set
   if (nr == 300) then return 'Unable to set the new data due to unknown update type' end

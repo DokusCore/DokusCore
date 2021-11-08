@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               10.4.20-MariaDB - mariadb.org binary distribution
+-- Server version:               10.4.21-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
 -- HeidiSQL Version:             11.3.0.6295
 -- --------------------------------------------------------
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `banks` (
   `BankMoney` float NOT NULL,
   `BankGold` float NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.banks: ~0 rows (approximately)
 /*!40000 ALTER TABLE `banks` DISABLE KEYS */;
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `blacklist` (
   `XBoxLive` varchar(50) NOT NULL,
   `MLive` varchar(50) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.blacklist: ~0 rows (approximately)
 /*!40000 ALTER TABLE `blacklist` DISABLE KEYS */;
@@ -69,11 +69,68 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `Skin` varchar(5000) NOT NULL,
   `Clothing` varchar(5000) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.characters: ~0 rows (approximately)
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
 /*!40000 ALTER TABLE `characters` ENABLE KEYS */;
+
+-- Dumping structure for table dokuscore.inventory
+CREATE TABLE IF NOT EXISTS `inventory` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Steam` varchar(50) DEFAULT NULL,
+  `CharID` int(11) DEFAULT NULL,
+  `Type` varchar(50) DEFAULT NULL,
+  `Item` varchar(50) DEFAULT NULL,
+  `Amount` int(11) DEFAULT NULL,
+  `Meta` text DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table dokuscore.inventory: ~2 rows (approximately)
+/*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
+INSERT INTO `inventory` (`ID`, `Steam`, `CharID`, `Type`, `Item`, `Amount`, `Meta`) VALUES
+	(55, 'steam:1100001042b8cd7', 1, 'Consumable', 'carrot', 10, NULL),
+	(56, 'steam:1100001042b8cd7', 1, 'Consumable', 'water', 30, NULL);
+/*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
+
+-- Dumping structure for table dokuscore.items
+CREATE TABLE IF NOT EXISTS `items` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Item` varchar(50) DEFAULT NULL,
+  `Name` varchar(50) DEFAULT NULL,
+  `Type` varchar(50) DEFAULT NULL,
+  `CanUse` varchar(50) DEFAULT NULL,
+  `OnUse` int(11) DEFAULT NULL,
+  `ConvertToItem` varchar(50) DEFAULT NULL,
+  `ConvertAmount` int(11) DEFAULT NULL,
+  `InvLimit` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table dokuscore.items: ~15 rows (approximately)
+/*!40000 ALTER TABLE `items` DISABLE KEYS */;
+INSERT INTO `items` (`ID`, `Item`, `Name`, `Type`, `CanUse`, `OnUse`, `ConvertToItem`, `ConvertAmount`, `InvLimit`) VALUES
+	(1, 'carrot', 'Carrot', 'Consumable', 'true', 1, NULL, 0, 10),
+	(2, 'cigar', 'Cigar', 'Consumable', 'true', 1, NULL, 0, 50),
+	(3, 'cigarette', 'Cigarette', 'Consumable', 'true', 1, NULL, 0, 100),
+	(4, 'cigarette_box', 'Cigarette Box', 'Consumable', 'true', 1, 'cigarette', 25, 5),
+	(5, 'coffee', 'Coffee', 'Consumable', 'true', 1, NULL, 0, 5),
+	(6, 'eggs', 'Eggs', 'Consumable', 'true', 1, NULL, 0, 50),
+	(7, 'egg_box', 'Egg Box', 'Consumable', 'true', 1, 'eggs', 10, 3),
+	(8, 'goldbar', 'Goldbar', 'Valuta', 'true', 1, 'gold_coin', 35, 3),
+	(9, 'gold_nugget', 'Gold Nugget', 'Mineral', 'true', 1, NULL, 0, 120),
+	(10, 'gold_coin', 'Gold Coin', 'Valuta', 'true', 1, NULL, 0, 200),
+	(11, 'silver_nugget', 'Silver Nugget', 'Mineral', 'true', 1, 'silver_coin', 50, 200),
+	(12, 'silver_coin', 'Silver Coin', 'Valuta', 'true', 1, NULL, 0, 200),
+	(13, 'goldpan', 'Gold Pan', 'Tool', 'true', 1, NULL, 0, 2),
+	(14, 'horsebrush', 'Horse Brush', 'Tool', 'true', 1, NULL, 0, 1),
+	(15, 'lockpick', 'Lock Pick', 'Tool', 'true', 1, NULL, 0, 5),
+	(16, 'meat_cooked', 'Cooked Meat', 'Consumable', 'true', 1, NULL, 0, 10),
+	(17, 'meat_uncooked', 'Uncooked Meat', 'Consumable', 'true', 1, 'meat_cooked', 1, 10),
+	(18, 'water_clean', 'Clean Water', 'Consumable', 'true', 1, NULL, 0, 10),
+	(19, 'water_dirty', 'Dirty Water', 'Consumable', 'true', 1, 'water_clean', 1, 10);
+/*!40000 ALTER TABLE `items` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.settings
 CREATE TABLE IF NOT EXISTS `settings` (
@@ -82,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `Music` int(11) NOT NULL DEFAULT 1,
   `Language` varchar(50) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.settings: ~0 rows (approximately)
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
@@ -96,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `stocks` (
   `Price` int(11) DEFAULT NULL,
   `Stock` varchar(5000) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.stocks: ~7 rows (approximately)
 /*!40000 ALTER TABLE `stocks` DISABLE KEYS */;
@@ -110,6 +167,23 @@ INSERT INTO `stocks` (`ID`, `Store`, `Owner`, `Price`, `Stock`) VALUES
 	(7, 'Strawberry', NULL, 1800, '[{"Limit":100,"Item":"carrot","Stock":50},{"Limit":100,"Item":"cigar","Stock":50},{"Limit":100,"Item":"cigarette","Stock":50},{"Limit":30,"Item":"cigarette_box","Stock":15},{"Limit":100,"Item":"coffee","Stock":50},{"Limit":100,"Item":"eggs","Stock":50},{"Limit":10,"Item":"goldbar","Stock":5},{"Limit":10,"Item":"goldnuggets","Stock":5},{"Limit":10,"Item":"goldpan","Stock":5},{"Limit":10,"Item":"horsebrush","Stock":5},{"Limit":10,"Item":"lockpick","Stock":5},{"Limit":100,"Item":"meat","Stock":50},{"Limit":100,"Item":"water","Stock":50},{"Limit":50,"Item":"eggbox","Stock":25},{"Limit":100,"Item":"carrot","Stock":50},{"Limit":100,"Item":"cigar","Stock":50},{"Limit":100,"Item":"cigarette","Stock":50},{"Limit":30,"Item":"cigarette_box","Stock":15},{"Limit":100,"Item":"coffee","Stock":50},{"Limit":100,"Item":"eggs","Stock":50},{"Limit":10,"Item":"goldbar","Stock":5},{"Limit":10,"Item":"goldnuggets","Stock":5},{"Limit":10,"Item":"goldpan","Stock":5},{"Limit":10,"Item":"horsebrush","Stock":5},{"Limit":10,"Item":"lockpick","Stock":5},{"Limit":100,"Item":"meat","Stock":50},{"Limit":100,"Item":"water","Stock":50},{"Limit":50,"Item":"eggbox","Stock":25},{"Limit":100,"Item":"carrot","Stock":50},{"Limit":100,"Item":"cigar","Stock":50},{"Limit":100,"Item":"cigarette","Stock":50},{"Limit":30,"Item":"cigarette_box","Stock":15},{"Limit":100,"Item":"coffee","Stock":50},{"Limit":100,"Item":"eggs","Stock":50},{"Limit":10,"Item":"goldbar","Stock":5},{"Limit":10,"Item":"goldnuggets","Stock":5},{"Limit":10,"Item":"goldpan","Stock":5},{"Limit":10,"Item":"horsebrush","Stock":5},{"Limit":10,"Item":"lockpick","Stock":5},{"Limit":100,"Item":"meat","Stock":50},{"Limit":100,"Item":"water","Stock":50},{"Limit":50,"Item":"eggbox","Stock":25},{"Limit":100,"Item":"carrot","Stock":50},{"Limit":100,"Item":"cigar","Stock":50},{"Limit":100,"Item":"cigarette","Stock":50},{"Limit":30,"Item":"cigarette_box","Stock":15},{"Limit":100,"Item":"coffee","Stock":50},{"Limit":100,"Item":"eggs","Stock":50},{"Limit":10,"Item":"goldbar","Stock":5},{"Limit":10,"Item":"goldnuggets","Stock":5},{"Limit":10,"Item":"goldpan","Stock":5},{"Limit":10,"Item":"horsebrush","Stock":5},{"Limit":10,"Item":"lockpick","Stock":5},{"Limit":100,"Item":"meat","Stock":50},{"Limit":100,"Item":"water","Stock":50},{"Limit":50,"Item":"eggbox","Stock":25},{"Limit":100,"Item":"carrot","Stock":50},{"Limit":100,"Item":"cigar","Stock":50},{"Limit":100,"Item":"cigarette","Stock":50},{"Limit":30,"Item":"cigarette_box","Stock":15},{"Limit":100,"Item":"coffee","Stock":50},{"Limit":100,"Item":"eggs","Stock":50},{"Limit":10,"Item":"goldbar","Stock":5},{"Limit":10,"Item":"goldnuggets","Stock":5},{"Limit":10,"Item":"goldpan","Stock":5},{"Limit":10,"Item":"horsebrush","Stock":5},{"Limit":10,"Item":"lockpick","Stock":5},{"Limit":100,"Item":"meat","Stock":50},{"Limit":100,"Item":"water","Stock":50},{"Limit":50,"Item":"eggbox","Stock":25},{"Limit":100,"Item":"carrot","Stock":50},{"Limit":100,"Item":"cigar","Stock":50},{"Limit":100,"Item":"cigarette","Stock":50},{"Limit":30,"Item":"cigarette_box","Stock":15},{"Limit":100,"Item":"coffee","Stock":50},{"Limit":100,"Item":"eggs","Stock":50},{"Limit":10,"Item":"goldbar","Stock":5},{"Limit":10,"Item":"goldnuggets","Stock":5},{"Limit":10,"Item":"goldpan","Stock":5},{"Limit":10,"Item":"horsebrush","Stock":5},{"Limit":10,"Item":"lockpick","Stock":5},{"Limit":100,"Item":"meat","Stock":50},{"Limit":100,"Item":"water","Stock":50},{"Limit":50,"Item":"eggbox","Stock":25},{"Limit":100,"Item":"carrot","Stock":50},{"Limit":100,"Item":"cigar","Stock":50},{"Limit":100,"Item":"cigarette","Stock":50},{"Limit":30,"Item":"cigarette_box","Stock":15},{"Limit":100,"Item":"coffee","Stock":50},{"Limit":100,"Item":"eggs","Stock":50},{"Limit":10,"Item":"goldbar","Stock":5},{"Limit":10,"Item":"goldnuggets","Stock":5},{"Limit":10,"Item":"goldpan","Stock":5},{"Limit":10,"Item":"horsebrush","Stock":5},{"Limit":10,"Item":"lockpick","Stock":5},{"Limit":100,"Item":"meat","Stock":50},{"Limit":100,"Item":"water","Stock":50},{"Limit":50,"Item":"eggbox","Stock":25}]');
 /*!40000 ALTER TABLE `stocks` ENABLE KEYS */;
 
+-- Dumping structure for table dokuscore.storages
+CREATE TABLE IF NOT EXISTS `storages` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Steam` varchar(50) DEFAULT NULL,
+  `CharID` int(11) DEFAULT NULL,
+  `Type` varchar(50) DEFAULT NULL,
+  `BoxID` int(11) NOT NULL DEFAULT 0,
+  `Meta` varchar(5000) DEFAULT NULL,
+  `Coords` varchar(150) DEFAULT NULL,
+  `Expiration` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table dokuscore.storages: ~0 rows (approximately)
+/*!40000 ALTER TABLE `storages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `storages` ENABLE KEYS */;
+
 -- Dumping structure for table dokuscore.stores
 CREATE TABLE IF NOT EXISTS `stores` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -117,13 +191,11 @@ CREATE TABLE IF NOT EXISTS `stores` (
   `Name` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
   `Type` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
   `Description` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
-  `OnUse` int(11) DEFAULT NULL,
   `CanSell` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
   `CanBuy` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
   `BuyPrice` float DEFAULT NULL,
   `SellPrice` float DEFAULT NULL,
   `StockLimit` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
-  `InventLimit` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
   `Valentine` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
   `SaintDenis` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
   `Blackwater` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
@@ -136,18 +208,18 @@ CREATE TABLE IF NOT EXISTS `stores` (
 
 -- Dumping data for table dokuscore.stores: ~11 rows (approximately)
 /*!40000 ALTER TABLE `stores` DISABLE KEYS */;
-INSERT INTO `stores` (`ID`, `Item`, `Name`, `Type`, `Description`, `OnUse`, `CanSell`, `CanBuy`, `BuyPrice`, `SellPrice`, `StockLimit`, `InventLimit`, `Valentine`, `SaintDenis`, `Blackwater`, `Tumbleweed`, `Rhodes`, `Armadillo`, `Strawberry`) VALUES
-	(1, 'carrot', 'Carrot', 'Consumable', NULL, NULL, 'true', 'false', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
-	(2, 'cigar', 'Cigar', 'Consumable', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
-	(3, 'cigarette', 'Cigarette Single', 'Consumable', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
-	(4, 'cigarette_box', 'Cigarette Box (25)', 'Item', NULL, 25, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
-	(5, 'coffee', 'Coffee', 'Consumable', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
-	(6, 'egg', 'Egg', 'Consumable', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
-	(7, 'egg_box', 'Egg Box (10)', 'Item', NULL, 10, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
-	(8, 'gold_nuggets', 'Gold Nuggest', 'Mineral', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
-	(9, 'gold_pan', 'Gold Pan', 'Tool', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
-	(10, 'gold_bar', 'Golden Bar', 'Valuta', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
-	(11, 'water', 'Water', 'Consumable', NULL, NULL, 'true', 'true', 0.05, 0.02, '20', '10', 'true', 'true', 'true', 'true', 'true', 'true', 'true');
+INSERT INTO `stores` (`ID`, `Item`, `Name`, `Type`, `Description`, `CanSell`, `CanBuy`, `BuyPrice`, `SellPrice`, `StockLimit`, `Valentine`, `SaintDenis`, `Blackwater`, `Tumbleweed`, `Rhodes`, `Armadillo`, `Strawberry`) VALUES
+	(1, 'carrot', 'Carrot', 'Consumable', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(2, 'cigar', 'Cigar', 'Consumable', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(3, 'cigarette', 'Cigarette Single', 'Consumable', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(4, 'cigarette_box', 'Cigarette Box (25)', 'Item', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(5, 'coffee', 'Coffee', 'Consumable', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(6, 'egg', 'Egg', 'Consumable', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(7, 'egg_box', 'Egg Box (10)', 'Item', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(8, 'gold_nuggets', 'Gold Nuggest', 'Mineral', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(9, 'gold_pan', 'Gold Pan', 'Tool', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(10, 'gold_bar', 'Golden Bar', 'Valuta', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(11, 'water', 'Water', 'Consumable', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true');
 /*!40000 ALTER TABLE `stores` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.users
@@ -160,7 +232,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `XBoxLive` varchar(50) NOT NULL,
   `MLive` varchar(50) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.users: ~0 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
@@ -175,7 +247,7 @@ CREATE TABLE IF NOT EXISTS `whitelist` (
   `Allowed` varchar(50) DEFAULT NULL,
   `Reason` varchar(50) DEFAULT NULL,
   KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.whitelist: ~0 rows (approximately)
 /*!40000 ALTER TABLE `whitelist` DISABLE KEYS */;

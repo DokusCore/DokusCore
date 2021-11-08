@@ -18,9 +18,12 @@ RCC('DokusCore:Core:DBIns:Characters', function(args) return TSC('DokusCore:Core
 RCC('DokusCore:Core:DBIns:Blacklist', function(args) return TSC('DokusCore:Core:DBIns:Blacklist', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
-
-
+RCC('DokusCore:Core:DBIns:Inventory', function(args) return TSC('DokusCore:Core:DBIns:Inventory', args) end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RCC('DokusCore:Core:DBIns:Storages', function(args) return TSC('DokusCore:Core:DBIns:Storages', args) end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 

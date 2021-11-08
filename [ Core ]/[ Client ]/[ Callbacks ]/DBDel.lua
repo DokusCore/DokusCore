@@ -3,17 +3,12 @@
 --------------------------------------------------------------------------------
 -- Callback relays to set server data via the server files.
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:DBSet:Settings', function(args) TSC('DokusCore:Core:DBSet:Settings', args) end)
+RCC('DokusCore:Core:DBDel:Inventory', function(args) TSC('DokusCore:Core:DBDel:Inventory', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:DBSet:Storages', function(args) TSC('DokusCore:Core:DBSet:Storages', args) end)
+RCC('DokusCore:Core:DBDel:Storages', function(args) TSC('DokusCore:Core:DBDel:Storages', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:DBSet:Inventory', function(args) TSC('DokusCore:Core:DBSet:Inventory', args) end)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-
 
 
 

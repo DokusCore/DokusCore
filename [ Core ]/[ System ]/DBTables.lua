@@ -9,6 +9,8 @@ DB.Characters = {}
 DB.Blacklist  = {}
 DB.Whitelist  = {}
 DB.Stores     = {}
+DB.Inventory  = {}
+DB.Storages   = {}
 
 --------------------------------------------------------------------------------
 ---- DB GET
@@ -33,6 +35,12 @@ DB.Blacklist.GetViaMLive    = 'select * from blacklist where MLive=@MLive'
 DB.Stores.GetAll             = 'select * from stores'
 DB.Stores.GetViaType         = 'select * from stores where Type=@Type'
 
+DB.Inventory.GetUser         = 'select * from inventory where Steam=@Steam and CharID=@CharID'
+DB.Inventory.GetUserViaItem  = 'select * from inventory where Steam=@Steam and CharID=@CharID and Item=@Item'
+
+DB.Storages.GetAllDropBox    = 'select * from storages where Type=@Type'
+DB.Storages.GetUserDropBox   = 'select * from storages where Type=@Type and Steam=@Steam and CharID=@CharID'
+DB.Storages.GetDropBoxViaID  = 'select * from storages where BoxID=@BoxID'
 --------------------------------------------------------------------------------
 ---- DB Insert
 --------------------------------------------------------------------------------
@@ -42,7 +50,8 @@ DB.Banks.Insert             = 'insert into banks (Steam, CharID, Money, Gold, Ba
 DB.Characters.Insert        = 'insert into characters (Steam, CharID, `Group`, cName, Gender, Nationality, BirthDate, XP, Level, JobName, JobGrade, Coords, Skin, Clothing) values (@Steam, @CharID, @Group, @cName, @Gender, @Nationality, @BirthDate, @XP, @Level, @JobName, @JobGrade, @Coords, @Skin, @Clothing)'
 DB.Whitelist.Insert         = 'insert into whitelist (Steam, sName, Date, Allowed) values (@Steam, @sName, @Date, @Allowed)'
 DB.Blacklist.Insert         = 'insert into blacklist (Steam, Reason, Admin, Until, IP, License, XBoxLive, MLive) values (@Steam, @Reason, @Admin, @Until, @IP, @License, @XBoxLive, @MLive)'
-
+DB.Storages.InsertDropBox   = 'insert into storages (Steam, CharID, Type, BoxID, Coords, Meta) values (@Steam, @CharID, @Type, @BoxID, @Coords, @Meta)'
+DB.Inventory.InsertItem     = 'insert into inventory (Steam, CharID, Type, Item, Amount, Meta) values (@Steam, @CharID, @Type, @Item, @Amount, @Meta)'
 --------------------------------------------------------------------------------
 ---- DB Set / Update
 --------------------------------------------------------------------------------
@@ -55,30 +64,18 @@ DB.Banks.SetGold            = 'update banks set Gold=@Gold where Steam=@Steam an
 DB.Banks.SetBankMoney       = 'update banks set BankMoney=@BankMoney where Steam=@Steam and CharID=@CharID'
 DB.Banks.SetBankGold        = 'update banks set BankGold=@BankGold where Steam=@Steam and CharID=@CharID'
 DB.Users.SetSName           = 'update users set sName=@sName where Steam=@Steam'
+DB.Storages.SetDropBoxItems = 'update storages set Meta=@Meta where BoxID=@BoxID'
+DB.Storages.SetReplaceBoxes = 'update storages set BoxID=@NewBoxID where BoxID=@OldBoxID'
+DB.Storages.SetItemMeta     = 'update storages set Meta=@Meta where BoxID=@BoxID'
+DB.Inventory.SetUserItem    = 'update inventory set Amount=@Amount where Steam=@Steam and CharID=@CharID and Item=@Item'
+
 --------------------------------------------------------------------------------
 ---- DB Delete
 --------------------------------------------------------------------------------
 DB.Blacklist.DelViaSteam    = 'delete from blacklist where Steam=@Steam'
 DB.Blacklist.DelViaIP       = 'delete from blacklist where IP=@IP'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+DB.Inventory.DelUserItem    = 'delete from inventory where Steam=@Steam and CharID=@CharID and Item=@Item'
+DB.Storages.DelBoxViaID     = 'delete from storages where BoxID=@BoxID'
 
 
 --------------------------------------------------------------------------------

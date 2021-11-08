@@ -145,12 +145,64 @@ RSC('DokusCore:Core:DBGet:Stores', function(source, args)
   end
 
 end)
-
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+-- Get the users inventory data
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBGet:Inventory', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  local Exist, Result = false, nil
+  local Steam, CharID = args[3][1], args[3][2]
 
+  if (Low(args[1]) == 'user') then
+    if (args[2] == nil) then return ErrorMsg('Err_NoCatType') end
 
+    if (Low(args[2]) == 'item') then
+      if (args[3][3] == nil) then return ErrorMsg('Err_NoItemName') end
+       DBGet(DB.Inventory.GetUserViaItem, { Steam = Steam, CharID = CharID, Item = Low(args[3][3]) }, function(r) if (r[1] ~= nil) then Exist = true Result = r end end)
+       Wait(200) return { Exist = Exist, Result = Result }
+    end
+
+    if (Low(args[2]) == 'all') then
+      DBGet(DB.Inventory.GetUser, { Steam = Steam, CharID = CharID }, function(r) if (r[1] ~= nil) then Exist = true Result = r end end)
+      Wait(200) return { Exist = Exist, Result = Result }
+    end
+  end
+
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Get the users storage data
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBGet:Storages', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  local Exist, Result = false, nil
+
+  if (Low(args[1]) == 'dropbox') then
+    if (args[2] == nil) then return ErrorMsg('Err_NoCatType') end
+
+    -- if (Low(args[2]) == 'user') then
+    --   if (args[3] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+    --   if (args[3][1] == nil) then return ErrorMsg('Err_NoArgsSteam') end
+    --   if (args[3][2] == nil) then return ErrorMsg('Err_NoCharID') end
+    --   DBGet(DB.Storages.GetUserDropBox, { Type = args[1] }, function(r) if (r[1] ~= nil) then Exist = true Result = r end end)
+    --   Wait(200) return { Exist = Exist, Result = Result }
+    -- end
+
+    if (Low(args[2]) == 'all') then
+      DBGet(DB.Storages.GetAllDropBox, { Type = args[1] }, function(r) if (r[1] ~= nil) then Exist = true Result = r end end)
+      Wait(200) return { Exist = Exist, Result = Result }
+    end
+
+    if (Low(args[2]) == 'boxid') then
+      if (args[3][1] == nil) then return ErrorMsg('Err_NoDropBoxID') end
+      DBGet(DB.Storages.GetDropBoxViaID, { BoxID = args[3][1] }, function(r) if (r[1] ~= nil) then Exist = true Result = r end end)
+      Wait(200) return { Exist = Exist, Result = Result }
+    end
+  end
+end)
 
 
 

@@ -119,12 +119,61 @@ RSC('DokusCore:Core:DBIns:Blacklist', function(source, args)
     XBoxLive = XBoxLive, MLive = MLive
   })
 end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Create a entry into the storages database table
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBIns:Storages', function(source, args)
+  if (args == nil)       then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil)    then return ErrorMsg('Err_NoCatType') end
+  if (args[2] == nil)    then return ErrorMsg('Err_WrongCallbackFormat') end
 
+  if (Low(args[1]) == 'dropbox') then
+    if (args[2][1] == nil) then return ErrorMsg('Err_NoArgsSteam') end
+    if (args[2][2] == nil) then return ErrorMsg('Err_NoCharID') end
+    if (args[2][3] == nil) then return ErrorMsg('Err_DBInsNoXBoxID') end
+    if (args[2][4] == nil) then return ErrorMsg('Err_DBInsNoItemName') end
+    if (args[2][5] == nil) then return ErrorMsg('Err_DBInsNoItemAmount') end
+    if (args[2][6] == nil) then return ErrorMsg('Err_DBInsNoBoxCoords') end
+    local Steam, CharID, BoxID = args[2][1], args[2][2], args[2][3]
+    local Item, Amount, Coords = args[2][4], args[2][5], args[2][6]
+    local Meta = { Item = Item, Amount = Amount }
+    local mEncode = json.encode({ Meta })
+    local cEncode = json.encode(Coords)
 
+    DBIns(DB.Storages.InsertDropBox, {
+      Steam = Steam, CharID = CharID, Type = args[1],
+      BoxID = BoxID, Coords = cEncode, Meta = mEncode
+    })
 
+    TCC(-1, 'DokusCore:Core:DBSet:Inventory', { 'DropBox', 'RemoveItem', { Steam, CharID, Item, Amount }})
+  end
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Insert an inventory item
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBIns:Inventory', function(source, args)
+  if (args == nil)       then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil)    then return ErrorMsg('Err_NoCatType') end
+  if (args[2] == nil)    then return ErrorMsg('Err_NoCatType') end
 
+  if (Low(args[1]) == 'user') then
+    if (args[3] == nil)    then return ErrorMsg('Err_WrongCallbackFormat') end
 
-
+    if (Low(args[2]) == 'insertitem') then
+      if (args[3][1] == nil) then return ErrorMsg('Err_NoArgsSteam') end
+      if (args[3][2] == nil) then return ErrorMsg('Err_NoCharID') end
+      if (args[3][3] == nil) then return ErrorMsg('Err_NoCatType') end
+      if (args[3][4] == nil) then return ErrorMsg('Err_DBInsNoItemName') end
+      if (args[3][5] == nil) then return ErrorMsg('Err_DBInsNoItemAmount') end
+      local Steam, CharID, Type, Item, Amount = args[3][1], args[3][2], args[3][3], args[3][4], args[3][5]
+      DBIns(DB.Inventory.InsertItem, { Steam=Steam, CharID=CharID, Type=Type, Item=Item, Amount=Amount })
+    end
+  end
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 

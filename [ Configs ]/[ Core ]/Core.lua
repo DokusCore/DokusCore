@@ -34,6 +34,7 @@ _Security = {
 _Modules          = {
   Stores          = true,
   Banking         = true,
+  -- Inventory       = true,
   -- MultiCharacters = false -- Not recoded yet
  }
 --------------------------------------------------------------------------------
