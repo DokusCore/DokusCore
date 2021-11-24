@@ -64,9 +64,38 @@ RSC('DokusCore:Core:DBDel:Storages', function(source, args)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBDel:Characters', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[2] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[3] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
 
+  if (Low(args[1]) == 'user') then
+    if (Low(args[2]) == 'single') then
+      if (args[3][1] == nil) then return ErrorMsg('Err_NoArgsSteam') end
+      if (args[3][2] == nil) then return ErrorMsg('Err_NoCharID') end
+      DBDel(DB.Characters.DelViaSteam, { Steam = args[3][1], CharID = args[3][2] })
+    end
+  end
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBDel:Banks', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[2] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[3] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
 
-
+  if (Low(args[1]) == 'user') then
+    if (Low(args[2]) == 'single') then
+      if (args[3][1] == nil) then return ErrorMsg('Err_NoArgsSteam') end
+      if (args[3][2] == nil) then return ErrorMsg('Err_NoCharID') end
+      DBDel(DB.Banks.DelViaSteam, { Steam = args[3][1], CharID = args[3][2] })
+    end
+  end
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 

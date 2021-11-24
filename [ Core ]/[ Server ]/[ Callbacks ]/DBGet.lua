@@ -58,14 +58,23 @@ end)
 RSC('DokusCore:Core:DBGet:Characters', function(source, args)
   if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
   if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
-  if (args[2] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
-  local CatType, Exist, Result = args[1], false, {}
+  if (args[2] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[3] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  local CatType1, CatType2, Exist, Result = args[1], args[2], false, {}
 
-  if (Low(CatType) == 'user') then
-    if (args[2][1] == nil) then return ErrorMsg('Err_DBGetNoSteam') end
-    if (args[2][2] == nil) then return ErrorMsg('Err_DBGetNoCharID') end
-    DBGet(DB.Characters.Get, {Steam = args[2][1], CharID = args[2][2]}, function(r) if (r[1] ~= nil) then Exist = true Result = r end end)
-    Wait(200) return { Exist = Exist, Result = Result }
+  if (Low(CatType1) == 'user') then
+    if (Low(CatType2) == 'single') then
+      if (args[3][1] == nil) then return ErrorMsg('Err_DBGetNoSteam') end
+      if (args[3][2] == nil) then return ErrorMsg('Err_DBGetNoCharID') end
+      DBGet(DB.Characters.Get, {Steam = args[3][1], CharID = args[3][2]}, function(r) if (r[1] ~= nil) then Exist = true Result = r end end)
+      Wait(200) return { Exist = Exist, Result = Result }
+    end
+
+    if (Low(CatType2) == 'all') then
+      if (args[3][1] == nil) then return ErrorMsg('Err_DBGetNoSteam') end
+      DBGet(DB.Characters.GetAll, { Steam = args[3][1] }, function(r) if (r[1] ~= nil) then Exist = true Result = r end end)
+      Wait(200) return { Exist = Exist, Result = Result }
+    end
   end
 end)
 --------------------------------------------------------------------------------

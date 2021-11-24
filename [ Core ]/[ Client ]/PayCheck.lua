@@ -10,7 +10,7 @@ CreateThread(function() Wait(10000)
   -- while not __CoreReady do Wait(500) end
   local Int, Enabled, Payout = _PayCheck.Interval.Minutes, _PayCheck.Enabled, nil
   local Steam = TSC('DokusCore:Core:GetUserIDs', { 'user' })[1]
-  local Char = TSC('DokusCore:Core:DBGet:Characters', { 'user', { Steam, UserData.CharID } })
+  local Char = TSC('DokusCore:Core:DBGet:Characters', { 'user', 'single', { Steam, UserData.CharID } })
 
   while Enabled do Wait((Int * 60) * 1000)
     local Money, Gold, BankMoney, BankGold = 0, 0, 0, 0

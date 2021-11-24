@@ -146,7 +146,7 @@ RSC('DokusCore:Core:DBIns:Storages', function(source, args)
       BoxID = BoxID, Coords = cEncode, Meta = mEncode
     })
 
-    TCC(-1, 'DokusCore:Core:DBSet:Inventory', { 'DropBox', 'RemoveItem', { Steam, CharID, Item, Amount }})
+    -- TCC(-1, 'DokusCore:Core:DBSet:Inventory', { 'DropBox', 'RemoveItem', { Steam, CharID, Item, Amount }})
   end
 end)
 --------------------------------------------------------------------------------

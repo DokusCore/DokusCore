@@ -33,13 +33,21 @@ RSC('DokusCore:Core:DBSet:Characters', function(source, args)
   if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
   if (args[1] == nil) then return ErrorMsg('Err_WrongDBSetType') end
   if (args[2] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
-  if (args[2][1] == nil) then return ErrorMsg('Err_DBSetNoSteam') end
-  if (args[2][2] == nil) then return ErrorMsg('Err_DBSetCharID') end
+
 
   -- Update the Characters name
   if (Low(args[1]) == 'charname') then
+    if (args[2][1] == nil) then return ErrorMsg('Err_DBSetNoSteam') end
+    if (args[2][2] == nil) then return ErrorMsg('Err_DBSetCharID') end
     local Steam, CharID, Name = args[2][1], args[2][2], args[2][3]
     DBSet(DB.Characters.SetCharName, { cName = Name, Steam = Steam, CharID = CharID })
+  end
+
+  if (Low(args[1]) == 'coords') then
+    if (args[2][1] == nil) then return ErrorMsg('Err_NoArgsSteam') end
+    if (args[2][2] == nil) then return ErrorMsg('Err_NoCharID') end
+    if (args[2][3] == nil) then return ErrorMsg('Err_NoCoords') end
+    DBSet(DB.Characters.SetCoords, { Coords = args[2][3], Steam = args[2][1], CharID = args[2][2] })
   end
 end)
 --------------------------------------------------------------------------------
@@ -298,6 +306,18 @@ RSC('DokusCore:Core:DBSet:Inventory', function(source, args)
     end
   end
 end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBSet:Stocks', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+
+  if (Low(args[1]) == 'store') then
+
+  end
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 

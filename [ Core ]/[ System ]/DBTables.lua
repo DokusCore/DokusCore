@@ -59,6 +59,7 @@ DB.Blacklist.SetTime        = 'update blacklist set Until=@Until where Steam=@st
 DB.Settings.SetMusic        = 'update settings set Music=@Music where Steam=@Steam'
 DB.Settings.SetLanguage     = 'update settings set Language=@Language where Steam=@Steam'
 DB.Characters.SetCharName   = 'update characters set cName=@cName where Steam=@Steam'
+DB.Characters.SetCoords     = 'update characters set Coords=@Coords where Steam=@Steam and CharID=@CharID'
 DB.Banks.SetMoney           = 'update banks set Money=@Money where Steam=@Steam and CharID=@CharID'
 DB.Banks.SetGold            = 'update banks set Gold=@Gold where Steam=@Steam and CharID=@CharID'
 DB.Banks.SetBankMoney       = 'update banks set BankMoney=@BankMoney where Steam=@Steam and CharID=@CharID'
@@ -76,6 +77,6 @@ DB.Blacklist.DelViaSteam    = 'delete from blacklist where Steam=@Steam'
 DB.Blacklist.DelViaIP       = 'delete from blacklist where IP=@IP'
 DB.Inventory.DelUserItem    = 'delete from inventory where Steam=@Steam and CharID=@CharID and Item=@Item'
 DB.Storages.DelBoxViaID     = 'delete from storages where BoxID=@BoxID'
-
-
+DB.Characters.DelViaSteam   = 'delete from characters where Steam=@Steam and CharID=@CharID'
+DB.Banks.DelViaSteam        = 'delete from banks where Steam=@Steam and CharID=@CharID'
 --------------------------------------------------------------------------------

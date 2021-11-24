@@ -17,7 +17,7 @@ function ErrorMsg(e, a)
   if (e == 'Err_NoCharID')              then print(Error..ErrMsg(7)..'^0') end
   if (e == 'Err_NoDropBoxID')           then print(Error..ErrMsg(8)..'^0') end
   if (e == 'Err_NoDropBoxItemArray')    then print(Error..ErrMsg(9)..'^0') end
-  if (e == 'Err_NoBoxCoords')           then print(Error..ErrMsg(10)..'^0') end
+  if (e == 'Err_NoCoords')              then print(Error..ErrMsg(10)..'^0') end
   if (e == 'Err_NoItemName')            then print(Error..ErrMsg(11)..'^0') end
   if (e == 'Err_NoItemAmount')          then print(Error..ErrMsg(12)..'^0') end
 
@@ -92,7 +92,7 @@ function ErrMsg (nr)
   if (nr == 7) then return 'Unable to preform the this action due to missing CharID' end
   if (nr == 8) then return 'Unable to perform this action due to missing BoxID' end
   if (nr == 9) then return 'Unable to perform this action due to missing Box Item Array' end
-  if (nr == 10) then return 'Unable to perform this action due to missing Box Coordinates' end
+  if (nr == 10) then return 'Unable to perform this action due to missing Coordinates' end
   if (nr == 11) then return 'Unable to perform this action due to missing Item Name' end
   if (nr == 12) then return 'Unable to perform this action due to missing Item Amount' end
 

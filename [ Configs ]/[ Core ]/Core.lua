@@ -4,7 +4,7 @@
 _ServerName     = 'DokusCore Development Server'
 _DiscordInvite  = 'https://Discord.io/DokusCore'
 _Language       = { Lang = 'en', Multi = true }
-_StartWealth    = { Money = 5, Gold = 0, BankMoney = 150, BankGold = 0 }
+_StartWealth    = { Money = 0.010, Gold = 0.000, BankMoney = 1.500, BankGold = 0.000 }
 _StartJob       = { Name = 'unemployed', Grade = 0 }
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
 _Time           = { TimeSync = false, FixedTime = { true, 12, 00 } }
@@ -34,8 +34,8 @@ _Security = {
 _Modules          = {
   Stores          = true,
   Banking         = true,
-  -- Inventory       = true,
-  -- MultiCharacters = false -- Not recoded yet
+  Inventory       = true,
+  MultiCharacters = true
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 -- Store user data for when ever a module or feature needs this information
 --------------------------------------------------------------------------------
-UserData = { Steam = nil, CharID = 0, ServerID = 0, Coords = nil }
+UserData = { Steam = 0, CharID = 0, ServerID = 0, Coords = 0 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Handeling the client to server callback system
@@ -74,19 +74,22 @@ AddEventHandler('DokusCore:Core:LoadUser', function(PedID, sName)
   if not (Settings.Exist) then TSC('DokusCore:Core:DBIns:Settings', { 'user', { iDs[1], 1, _Language.Lang } }) end
 
   -- Check if the players database banks table is correct
-  local S = _StartWealth
-  local Bank = TSC('DokusCore:Core:DBGet:Banks', { 'user', { iDs[1], 1 }})
-  if not (Bank.Exist) then TSC('DokusCore:Core:DBIns:Banks', { 'user', { iDs[1], 1, S.Money, S.Gold, S.BankMoney, S.BankGold } }) end
+	if not (_Modules.MultiCharacters) then
+		print("Module MultiCharacters is disabled, banking table made")
+		local S = _StartWealth
+	  local Bank = TSC('DokusCore:Core:DBGet:Banks', { 'user', { iDs[1], 1 }})
+		if not (Bank.Exist) then
+			TSC('DokusCore:Core:DBIns:Banks', { 'user', { iDs[1], 1, S.Money, S.Gold, S.BankMoney, S.BankGold } })
+		end
+	end
 
 	-- Check if the players database character is correct.
 	-- Only insert user on character id 1 if MultiCharacters is not used.
 	if not (_Modules.MultiCharacters) then
-		local Char = TSC('DokusCore:Core:DBGet:Characters', { 'user', { iDs[1], 1 } })
+		local Char = TSC('DokusCore:Core:DBGet:Characters', { 'user', 'single', { iDs[1], 1 } })
 		local Index = { iDs[1], 1, _Moderation.User, '--', '--', '--', '--', 0, 0, 'unemployed', 0, '--', '--', '--' }
 		if not (Char.Exist) then TSC('DokusCore:Core:DBIns:Characters', { 'user', Index } ) end
 		UserData.CharID = 1
-
-		-- Setup the users Hud
 		TSC('DokusCore:Core:Hud:Initiate')
 	end
 

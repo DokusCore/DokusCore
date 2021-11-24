@@ -20,7 +20,7 @@ RSC('DokusCore:Core:Webhooks:Discord', function(source, args)
   local Steam, CharID, Type, Amount = args[3][1], args[3][2], args[3][3], args[3][4]
   local Money, BankMoney, Gold, BankGold = args[3][5], args[3][6], args[3][7], args[3][8]
   local sName = TCC(-1, 'DokusCore:Core:DBGet:Users', { 'user', { Steam }}).Result[1].sName
-  local cName = TCC(-1, 'DokusCore:Core:DBGet:Characters', { 'user', { Steam, CharID } }).Result[1].cName
+  local cName = TCC(-1, 'DokusCore:Core:DBGet:Characters', { 'user', 'single', { Steam, CharID } }).Result[1].cName
 
   -- Send the bank transactions to the Discord.
   local S, E = '```ini\n', '```'

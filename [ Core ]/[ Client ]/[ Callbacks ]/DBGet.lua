@@ -15,13 +15,16 @@ RCC('DokusCore:Core:DBGet:Banks', function(args) return TSC('DokusCore:Core:DBGe
 RCC('DokusCore:Core:DBGet:Characters', function(args) return TSC('DokusCore:Core:DBGet:Characters', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+RCC('DokusCore:Core:DBGet:Blacklist', function(args) return TSC('DokusCore:Core:DBGet:Blacklist', args) end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 RCC('DokusCore:Core:DBGet:Whitelist', function(args) return TSC('DokusCore:Core:DBGet:Whitelist', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:DBGet:Storages', function(args) return TSC('DokusCore:Core:DBGet:Storages', args) end)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 RCC('DokusCore:Core:DBGet:Inventory', function(args) return TSC('DokusCore:Core:DBGet:Inventory', args) end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RCC('DokusCore:Core:DBGet:Storages', function(args) return TSC('DokusCore:Core:DBGet:Storages', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

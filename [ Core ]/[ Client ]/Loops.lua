@@ -67,7 +67,7 @@ CreateThread(function() --Wait(3000)
         local White = TSC('DokusCore:Core:DBGet:Whitelist', { 'All' })
         if (White.Exist) then
           local Steam  = TSC('DokusCore:Core:GetUserIDs', { 'user' })[1]
-          local Data   = TSC('DokusCore:Core:DBGet:Characters', { 'user', { Steam, UserData.CharID } })
+          local Data   = TSC('DokusCore:Core:DBGet:Characters', { 'user', 'single', { Steam, UserData.CharID } })
           if (Data.Exist) then
             for k,v in pairs(White.Result) do
               if (Low(v.Allowed) == 'pending') then
@@ -88,16 +88,18 @@ end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Check whenever the user is in the settings and close down the hud.
+-- NOTE: Has to be remade as it enables the hud every 500 ms even if
+-- we want to have it off
 --------------------------------------------------------------------------------
-CreateThread(function()
-  -- while not __CoreReady do Wait(500) end
-  local ShowHud = true
-  while true do Wait(500)
-    local InMenu = IsPauseMenuActive()
-    if InMenu then SendNUIMessage({ Action = 'HideHud' }) end
-    if not InMenu and ShowHud then SendNUIMessage({ Action = 'ShowHud' }) end
-  end
-end)
+-- CreateThread(function()
+--   -- while not __CoreReady do Wait(500) end
+--   local ShowHud = true
+--   while true do Wait(500)
+--     local InMenu = IsPauseMenuActive()
+--     if InMenu then SendNUIMessage({ Action = 'HideHud' }) end
+--     if not InMenu and ShowHud then SendNUIMessage({ Action = 'ShowHud' }) end
+--   end
+-- end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

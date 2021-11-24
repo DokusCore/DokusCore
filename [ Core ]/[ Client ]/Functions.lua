@@ -16,7 +16,7 @@ function ShowRightNote(msg, time) Notify(msg, 'TopRight', time) end
 function GetUserGroup()
   local Table = DB.Characters.Get
   local Data = TSC('DokusCore:Core:GetUserIDs', { 'user' })
-  local Data = TSC('DokusCore:Core:DBGet:Characters', { 'user', { Data[1], UserData.CharID } })
+  local Data = TSC('DokusCore:Core:DBGet:Characters', { 'user', 'single', { Data[1], UserData.CharID } })
   if (Data.Exist) then
     local Group = Data.Result[1].Group
     return Group

@@ -36,7 +36,7 @@ RCC('DokusCore:Core:Hud:Update', function(args)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:Hud:Toggle', function(args)
+RCC('DokusCore:Core:Hud:Toggle', function(Bool)
   if Bool then ShowUIHud = Bool SendNUIMessage({ Action = 'ShowHud' }) end
   if not Bool then ShowUIHud = Bool SendNUIMessage({ Action = 'HideHud' }) end
 end)
