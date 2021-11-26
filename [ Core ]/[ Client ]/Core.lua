@@ -91,6 +91,9 @@ AddEventHandler('DokusCore:Core:LoadUser', function(PedID, sName)
 		if not (Char.Exist) then TSC('DokusCore:Core:DBIns:Characters', { 'user', Index } ) end
 		UserData.CharID = 1
 		TSC('DokusCore:Core:Hud:Initiate')
+	else
+		TSC('DokusCore:Core:Hud:Initiate')
+		TSC('DokusCore:Core:Hud:Toggle', false)
 	end
 
 	-- Check the users Steam Name and if this is chanced, update the database

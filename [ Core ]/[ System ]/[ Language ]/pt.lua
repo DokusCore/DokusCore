@@ -11,7 +11,7 @@ Lang ["pt"] = {
  ["Key_ENTER"] = "pressione ~ e ~ ENTER ~ q ~",
 
  ---- [Core] Informações
- ["MoreInfoDiscord"] = "Para obter mais informações, visite nosso Discord".._DiscordInvite,
+ ["MoreInfoDiscord"] = "Para obter mais informações, visite nosso Discord".._DiscordInvite.."",
  ["NoReason"] = "Nenhum motivo fornecido",
  ["Language"] = "Idioma",
  ["LanguageSetTo"] = "Idioma do cliente definido como",
