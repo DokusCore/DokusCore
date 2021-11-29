@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Font';
   src: url('assets/WesternBangBang.otf') format('woff2'),
-    url('assets/WesternBangBang.otf') format('woff');
+       url('assets/WesternBangBang.otf') format('woff');
 }
 
 @media screen and (width: 1600px) {

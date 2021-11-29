@@ -3,13 +3,13 @@
 --------------------------------------------------------------------------------
 -- Store user data for when ever a module or feature needs this information
 --------------------------------------------------------------------------------
-UserData = { Steam = 0, CharID = 0, ServerID = 0, Coords = 0 }
+UserData = { Steam = nil, CharID = 0, ServerID = 0, Coords = nil }
+CoreData = { ReadyToSync = false }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Handeling the client to server callback system
 --------------------------------------------------------------------------------
 CreateThread(function()
-	-- while not __CoreReady do Wait(500) end
 	RegisterNetEvent(__..':client')
 	AddEventHandler(__..':client', function(Event, ...)
 		local p = promise.new()
@@ -23,7 +23,6 @@ end)
 -- Wait for players network connection
 --------------------------------------------------------------------------------
 CreateThread(function()
-	-- while not __CoreReady do Wait(500) end
   local Network = NetworkIsPlayerActive(PlayerId())
   while not Loaded do Wait(1000)
     if Network then
@@ -75,7 +74,6 @@ AddEventHandler('DokusCore:Core:LoadUser', function(PedID, sName)
 
   -- Check if the players database banks table is correct
 	if not (_Modules.MultiCharacters) then
-		print("Module MultiCharacters is disabled, banking table made")
 		local S = _StartWealth
 	  local Bank = TSC('DokusCore:Core:DBGet:Banks', { 'user', { iDs[1], 1 }})
 		if not (Bank.Exist) then
@@ -102,10 +100,26 @@ AddEventHandler('DokusCore:Core:LoadUser', function(PedID, sName)
 		local SteamName = User.Result[1].sName
 		if (sName ~= SteamName) then TSC('DokusCore:Core:DBSet:Users', { 'sName', { iDs[1], sName } }) end
 	end
+
+	-- Set core ready to update for if it is restarted
+	CoreData.ReadyToSync = true
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
+-- Sync the core with all plugins again when the core restarts on a live server
+--------------------------------------------------------------------------------
+AddEventHandler('onResourceStart', function(resourceName)
+  while not (CoreData.ReadyToSync) do Wait(10) end
+	if (GetCurrentResourceName() ~= resourceName) then return end
+	local CharID = TSC('DokusCore:MultiChar:SyncCharID')
+	if (CharID == 0) then return end --<< Stop if the server just started
+	local Steam = TSC('DokusCore:Core:GetUserIDs', { 'User' })[1]
+	UserData.Steam = Steam UserData.CharID = CharID
+	TSC('DokusCore:Core:Hud:Toggle', true)
+	TSC('DokusCore:Core:Hud:Update', { 'User' })
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 

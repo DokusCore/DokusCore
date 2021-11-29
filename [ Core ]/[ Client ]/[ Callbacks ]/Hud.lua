@@ -12,7 +12,6 @@ end
 RCC('DokusCore:Core:Hud:Initiate', function(args)
   local Steam = TSC('DokusCore:Core:GetUserIDs', { 'user' })[1]
   local Banks = TSC('DokusCore:Core:DBGet:Banks', { 'user', { Steam, UserData.CharID }})
-  print("LALA", UserData.CharID)
   if (Banks.Exist) then
     local Money, BankMoney = Banks.Result[1].Money, Banks.Result[1].BankMoney
     SendNUIMessage({ Action = 'UpdateHud', Money = Money, BankMoney = BankMoney, CharID = CharID, ServerID = GetPlayerServerId(GetPlayerPed(-1))})
