@@ -60,7 +60,6 @@ end)
 -- Notification for admins that there are whitelist requests.
 --------------------------------------------------------------------------------
 CreateThread(function() --Wait(3000)
-  -- while not __CoreReady do Wait(500) end
   if _Security.Whitelist.Enabled then
     if _Security.Whitelist.NotifyAdmins then
       while true do Wait(0)
@@ -76,10 +75,10 @@ CreateThread(function() --Wait(3000)
                     ShowRightNote(_('WLRequestNote', _Language.Lang).." "..#White.Result)
                   end
                 end
-                Wait(_Loops.WhitelistNotify.Seconds * 1000)
               end
             end
           end
+          Wait(_Loops.WhitelistNotify.Seconds * 1000)
         end
       end
     end
