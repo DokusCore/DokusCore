@@ -17,7 +17,7 @@ RSC('DokusCore:Core:DBIns:Users', function(source, args)
   DBIns(DB.Users.Insert, {
     Steam = args[1], sName = args[2], IP = args[3],
     License = args[4], XBoxLive = args[5], MLive = args[6]
-  })
+  }, function() end)
 end)
 --------------------------------------------------------------------------------
 -----------------------``---------------------------------------------------------
@@ -32,7 +32,7 @@ RSC('DokusCore:Core:DBIns:Settings', function(source, args)
     if (args[2][1] == nil) then return ErrorMsg('Err_DBInsNoSteam') end
     if (args[2][2] == nil) then return ErrorMsg('Err_DBInsSettingsMusic') end
     if (args[2][3] == nil) then return ErrorMsg('Err_DBInsSettingsLanguage') end
-    DBIns(DB.Settings.insert, { Steam = args[2][1], Music = args[2][2], Language = args[2][3] })
+    DBIns(DB.Settings.insert, { Steam = args[2][1], Music = args[2][2], Language = args[2][3] }, function() end)
   end
 end)
 --------------------------------------------------------------------------------
@@ -54,7 +54,7 @@ RSC('DokusCore:Core:DBIns:Banks', function(source, args)
     DBIns(DB.Banks.Insert, {
       Steam = args[2][1], CharID = args[2][2], Money = args[2][3],
       Gold = args[2][4], BankMoney = args[2][5], BankGold = args[2][6]
-    })
+    }, function() end)
   end
 end)
 --------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ RSC('DokusCore:Core:DBIns:Characters', function(source, args)
       BirthDate = args[2][7], XP = args[2][8], Level = args[2][9],
       JobName = args[2][10], JobGrade = args[2][11], Coords = args[2][12],
       Skin = args[2][13], Clothing = args[2][14]
-    })
+    }, function() end)
   end
 end)
 --------------------------------------------------------------------------------
@@ -117,7 +117,7 @@ RSC('DokusCore:Core:DBIns:Blacklist', function(source, args)
     Steam = Steam, Reason = Reason, Admin = Admin,
     Until = NewDate, IP = IP, License = License,
     XBoxLive = XBoxLive, MLive = MLive
-  })
+  }, function() end)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -144,7 +144,7 @@ RSC('DokusCore:Core:DBIns:Storages', function(source, args)
     DBIns(DB.Storages.InsertDropBox, {
       Steam = Steam, CharID = CharID, Type = args[1],
       BoxID = BoxID, Coords = cEncode, Meta = mEncode
-    })
+    }, function() end)
 
     -- TCC(-1, 'DokusCore:Core:DBSet:Inventory', { 'DropBox', 'RemoveItem', { Steam, CharID, Item, Amount }})
   end
@@ -168,7 +168,7 @@ RSC('DokusCore:Core:DBIns:Inventory', function(source, args)
       if (args[3][4] == nil) then return ErrorMsg('Err_DBInsNoItemName') end
       if (args[3][5] == nil) then return ErrorMsg('Err_DBInsNoItemAmount') end
       local Steam, CharID, Type, Item, Amount = args[3][1], args[3][2], args[3][3], args[3][4], args[3][5]
-      DBIns(DB.Inventory.InsertItem, { Steam=Steam, CharID=CharID, Type=Type, Item=Item, Amount=Amount })
+      DBIns(DB.Inventory.InsertItem, { Steam=Steam, CharID=CharID, Type=Type, Item=Item, Amount=Amount }, function() end)
     end
   end
 end)

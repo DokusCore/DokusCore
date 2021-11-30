@@ -3,8 +3,8 @@
 --------------------------------------------------------------------------------
 description 'DokusCore - A RedM Framework - By DevDokus'
 author 'DevDokus Github'
-version '0.4.1'
-dependencies { 'mysql-async', 'pNotify' }
+version '0.4.2'
+dependencies { 'oxmysql', 'pNotify' }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 shared_scripts {
@@ -29,7 +29,7 @@ client_scripts {
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 server_scripts {
-  '@mysql-async/lib/MySQL.lua',
+  '@oxmysql/lib/MySQL.lua',
   '[ Core ]/[ Server ]/*.lua',
   '[ Core ]/[ Server ]/[ Callbacks ]/*.lua',
   '[ Core ]/[ System ]/[ Core ]/Server.lua',

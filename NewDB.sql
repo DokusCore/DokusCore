@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               10.4.21-MariaDB - mariadb.org binary distribution
+-- Server version:               10.6.5-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
 -- HeidiSQL Version:             11.3.0.6295
 -- --------------------------------------------------------
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `banks` (
   `BankMoney` float NOT NULL,
   `BankGold` float NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.banks: ~0 rows (approximately)
 /*!40000 ALTER TABLE `banks` DISABLE KEYS */;
@@ -36,16 +36,17 @@ CREATE TABLE IF NOT EXISTS `banks` (
 -- Dumping structure for table dokuscore.blacklist
 CREATE TABLE IF NOT EXISTS `blacklist` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Steam` varchar(50) NOT NULL,
-  `Reason` varchar(50) NOT NULL,
-  `Admin` varchar(50) NOT NULL,
+  `Steam` varchar(50) DEFAULT NULL,
+  `Reason` varchar(50) DEFAULT NULL,
+  `Admin` varchar(50) DEFAULT NULL,
   `Until` int(11) NOT NULL DEFAULT -1,
-  `IP` varchar(50) NOT NULL,
-  `License` varchar(50) NOT NULL,
-  `XBoxLive` varchar(50) NOT NULL,
-  `MLive` varchar(50) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+  `IP` varchar(50) DEFAULT NULL,
+  `License` varchar(50) DEFAULT NULL,
+  `XBoxLive` varchar(50) DEFAULT NULL,
+  `MLive` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `Steam` (`Steam`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.blacklist: ~0 rows (approximately)
 /*!40000 ALTER TABLE `blacklist` DISABLE KEYS */;
@@ -69,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `Skin` varchar(5000) NOT NULL,
   `Clothing` varchar(5000) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.characters: ~0 rows (approximately)
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
@@ -85,14 +86,10 @@ CREATE TABLE IF NOT EXISTS `inventory` (
   `Amount` int(11) DEFAULT NULL,
   `Meta` text DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table dokuscore.inventory: ~3 rows (approximately)
+-- Dumping data for table dokuscore.inventory: ~0 rows (approximately)
 /*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
-INSERT INTO `inventory` (`ID`, `Steam`, `CharID`, `Type`, `Item`, `Amount`, `Meta`) VALUES
-	(1, 'steam:1100001042b8cd7', 1, 'Consumable', 'carrot', 2, NULL),
-	(2, 'steam:1100001042b8cd7', 1, 'Consumable', 'coffee', 1, NULL),
-	(3, 'steam:1100001042b8cd7', 1, 'Mineral', 'goldbar', 10, NULL);
 /*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.items
@@ -109,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table dokuscore.items: ~15 rows (approximately)
+-- Dumping data for table dokuscore.items: ~19 rows (approximately)
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
 INSERT INTO `items` (`ID`, `Item`, `Name`, `Type`, `CanUse`, `OnUse`, `ConvertToItem`, `ConvertAmount`, `InvLimit`) VALUES
 	(1, 'carrot', 'Carrot', 'Consumable', 'true', 1, NULL, 0, 10),
@@ -118,7 +115,7 @@ INSERT INTO `items` (`ID`, `Item`, `Name`, `Type`, `CanUse`, `OnUse`, `ConvertTo
 	(4, 'cigarette_box', 'Cigarette Box', 'Consumable', 'true', 1, 'cigarette', 25, 5),
 	(5, 'coffee', 'Coffee', 'Consumable', 'true', 1, NULL, 0, 5),
 	(6, 'eggs', 'Eggs', 'Consumable', 'true', 1, NULL, 0, 50),
-	(7, 'egg_box', 'Egg Box', 'Consumable', 'true', 1, 'eggs', 10, 3),
+	(7, 'eggbox', 'Egg Box', 'Consumable', 'true', 1, 'eggs', 10, 3),
 	(8, 'goldbar', 'Goldbar', 'Valuta', 'true', 1, 'gold_coin', 35, 3),
 	(9, 'gold_nugget', 'Gold Nugget', 'Mineral', 'true', 1, NULL, 0, 120),
 	(10, 'gold_coin', 'Gold Coin', 'Valuta', 'true', 1, NULL, 0, 200),
@@ -129,8 +126,8 @@ INSERT INTO `items` (`ID`, `Item`, `Name`, `Type`, `CanUse`, `OnUse`, `ConvertTo
 	(15, 'lockpick', 'Lock Pick', 'Tool', 'true', 1, NULL, 0, 5),
 	(16, 'meat_cooked', 'Cooked Meat', 'Consumable', 'true', 1, NULL, 0, 10),
 	(17, 'meat_uncooked', 'Uncooked Meat', 'Consumable', 'true', 1, 'meat_cooked', 1, 10),
-	(18, 'water_clean', 'Clean Water', 'Consumable', 'true', 1, NULL, 0, 10),
-	(19, 'water_dirty', 'Dirty Water', 'Consumable', 'true', 1, 'water_clean', 1, 10);
+	(18, 'waterclean', 'Clean Water', 'Consumable', 'true', 1, NULL, 0, 10),
+	(19, 'waterdirty', 'Dirty Water', 'Consumable', 'true', 1, 'water_clean', 1, 10);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.settings
@@ -139,8 +136,9 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `Steam` varchar(50) NOT NULL,
   `Music` int(11) NOT NULL DEFAULT 1,
   `Language` varchar(50) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `Steam` (`Steam`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.settings: ~0 rows (approximately)
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
@@ -179,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `storages` (
   `Coords` varchar(150) DEFAULT NULL,
   `Expiration` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.storages: ~0 rows (approximately)
 /*!40000 ALTER TABLE `storages` DISABLE KEYS */;
@@ -196,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `stores` (
   `CanBuy` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
   `BuyPrice` float DEFAULT NULL,
   `SellPrice` float DEFAULT NULL,
-  `StockLimit` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
+  `StockLimit` varchar(50) COLLATE utf8mb4_bin DEFAULT '20',
   `Valentine` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
   `SaintDenis` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
   `Blackwater` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
@@ -205,9 +203,9 @@ CREATE TABLE IF NOT EXISTS `stores` (
   `Armadillo` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
   `Strawberry` varchar(50) COLLATE utf8mb4_bin DEFAULT 'true',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table dokuscore.stores: ~11 rows (approximately)
+-- Dumping data for table dokuscore.stores: ~14 rows (approximately)
 /*!40000 ALTER TABLE `stores` DISABLE KEYS */;
 INSERT INTO `stores` (`ID`, `Item`, `Name`, `Type`, `Description`, `CanSell`, `CanBuy`, `BuyPrice`, `SellPrice`, `StockLimit`, `Valentine`, `SaintDenis`, `Blackwater`, `Tumbleweed`, `Rhodes`, `Armadillo`, `Strawberry`) VALUES
 	(1, 'carrot', 'Carrot', 'Consumable', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
@@ -220,7 +218,10 @@ INSERT INTO `stores` (`ID`, `Item`, `Name`, `Type`, `Description`, `CanSell`, `C
 	(8, 'gold_nuggets', 'Gold Nuggest', 'Mineral', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
 	(9, 'gold_pan', 'Gold Pan', 'Tool', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
 	(10, 'gold_bar', 'Golden Bar', 'Valuta', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
-	(11, 'water', 'Water', 'Consumable', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true');
+	(11, 'water_clean', 'Water', 'Consumable', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(12, 'meat_uncooked', 'Meat Uncooked', 'Consumable', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(13, 'horsebrush', 'Horse Brush', 'Tool', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true'),
+	(14, 'lockpick', 'Lockpick', 'Tool', NULL, 'true', 'true', 0.05, 0.02, '20', 'true', 'true', 'true', 'true', 'true', 'true', 'true');
 /*!40000 ALTER TABLE `stores` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.users
@@ -232,8 +233,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `License` varchar(50) NOT NULL,
   `XBoxLive` varchar(50) NOT NULL,
   `MLive` varchar(50) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `Steam` (`Steam`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.users: ~0 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
@@ -247,14 +249,14 @@ CREATE TABLE IF NOT EXISTS `whitelist` (
   `Date` varchar(50) NOT NULL,
   `Allowed` varchar(50) DEFAULT NULL,
   `Reason` varchar(50) DEFAULT NULL,
+  UNIQUE KEY `Steam` (`Steam`),
   KEY `ID` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table dokuscore.whitelist: ~3 rows (approximately)
+-- Dumping data for table dokuscore.whitelist: ~1 rows (approximately)
 /*!40000 ALTER TABLE `whitelist` DISABLE KEYS */;
 INSERT INTO `whitelist` (`ID`, `Steam`, `sName`, `Date`, `Allowed`, `Reason`) VALUES
-	(1, 'steam:1100001042b8cd7', 'Your Grandmother', '2021-10-7 20:42:46', 'true', NULL),
-	(2, 'steam:11000010b589d92', 'Salty of the GODZZZZ', '2021-11-5 17:27:16', 'true', NULL);
+	(5, 'steam:1100001042b8cd7', 'Your Grandmother', '2021-11-3 10:3:31', 'true', NULL);
 /*!40000 ALTER TABLE `whitelist` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
