@@ -12,7 +12,7 @@ are further in development, we will post more information
 
 ---
 # Requirements
-[DokusCore Setting Menu](https://github.com/DokusCore/DokusCore--SettingsMenu)
+[DokusCore Setting Menu](https://github.com/DokusCore/DokusCore--SettingsMenu) <br>
 [DokusCore Multi Characters](https://github.com/DokusCore/DokusCore--MultiCharacters)
 
 ---
