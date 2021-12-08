@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 -- Store user data for when ever a module or feature needs this information
 --------------------------------------------------------------------------------
-UserData = { Steam = nil, CharID = 0, ServerID = 0, Coords = nil }
+UserData = { Steam = 0, CharID = 0, ServerID = 0, Coords = 0 }
 CoreData = { ReadyToSync = false }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -89,6 +89,7 @@ AddEventHandler('DokusCore:Core:LoadUser', function(PedID, sName)
 		if not (Char.Exist) then TSC('DokusCore:Core:DBIns:Characters', { 'user', Index } ) end
 		UserData.CharID = 1
 		TSC('DokusCore:Core:Hud:Initiate')
+		TSC('DokusCore:Core:Hud:Toggle', true)
 	else
 		TSC('DokusCore:Core:Hud:Initiate')
 		TSC('DokusCore:Core:Hud:Toggle', false)
@@ -111,12 +112,14 @@ end)
 AddEventHandler('onResourceStart', function(resourceName)
   while not (CoreData.ReadyToSync) do Wait(10) end
 	if (GetCurrentResourceName() ~= resourceName) then return end
-	local CharID = TSC('DokusCore:MultiChar:SyncCharID')
-	if (CharID == 0) then return end --<< Stop if the server just started
-	local Steam = TSC('DokusCore:Core:GetUserIDs', { 'User' })[1]
-	UserData.Steam = Steam UserData.CharID = CharID
-	TSC('DokusCore:Core:Hud:Toggle', true)
-	TSC('DokusCore:Core:Hud:Update', { 'User' })
+	if (_Modules.Inventory) then
+		local CharID = TSC('DokusCore:MultiChar:SyncCharID')
+		if (CharID == 0) then return end --<< Stop if the server just started
+		local Steam = TSC('DokusCore:Core:GetUserIDs', { 'User' })[1]
+		UserData.Steam = Steam UserData.CharID = CharID
+		TSC('DokusCore:Core:Hud:Toggle', true)
+		TSC('DokusCore:Core:Hud:Update', { 'User' })
+	end
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

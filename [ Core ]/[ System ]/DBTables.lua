@@ -16,6 +16,7 @@ DB.Storages   = {}
 ---- DB GET
 --------------------------------------------------------------------------------
 DB.Users.GetViaSteam        = 'select * from users where Steam=@Steam'
+DB.Users.GetViaSteamName    = 'select * from users where sName=@sName'
 DB.Settings.GetViaSteam     = 'select * from settings where Steam=@Steam'
 DB.Banks.Get                = 'select * from banks where Steam=@Steam and CharID=@CharID'
 

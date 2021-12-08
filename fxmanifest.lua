@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 description 'DokusCore - A RedM Framework - By DevDokus'
 author 'DevDokus Github'
-version '0.4.3'
+version '0.4.4'
 dependencies { 'oxmysql', 'pNotify' }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -40,18 +40,11 @@ server_scripts {
 ui_page 'UI/index.html'
 files {
   'UI/index.html',
-
-  'UI/ChatStyle/*.js',
-  'UI/ChatStyle/*.css',
-
-  "UI/Sounds/js/sounds.js",
-  "UI/Sounds/ogg/*.ogg",
-
-  "UI/Hud/assets/WesternBangBang.otf",
-  "UI/Hud/assets/*.png",
-  "UI/Hud/hud.html",
-  "UI/Hud/hud.css",
-  "UI/Hud/hud.js",
+  'UI/Hud/*.*',
+  'UI/Hud/assets/*.*',
+  'UI/ChatStyle/*.*',
+  'UI/Sounds/js/*.*',
+  'UI/Sounds/ogg/*.*',
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

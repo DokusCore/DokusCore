@@ -1,7 +1,7 @@
 ---
 <p align="center">
   <img width="600" height="200" src="https://user-images.githubusercontent.com/49053928/111937011-2e9b8080-8ac7-11eb-914a-a0d94380d611.gif"><br>
- <b>Version (v0.4.3) [BETA] (WIP)</b> - The Ultimate RP Framework for RedM.
+ <b>Version (v0.4.4) [BETA] (WIP)</b> - The Ultimate RP Framework for RedM.
 </p>
 
 ---
@@ -9,6 +9,10 @@
 I am currently developing a new framework for RedM. <br>
 Below you will find some info on DokusCore, once we <br>
 are further in development, we will post more information
+
+---
+# Requirements
+[DokusCore Setting Menu](https://github.com/DokusCore/DokusCore--SettingsMenu)
 
 ---
 # Feature Teasers:

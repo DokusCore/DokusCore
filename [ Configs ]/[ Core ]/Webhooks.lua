@@ -10,9 +10,10 @@
 --------------------------------------------------------------------------------
 _Webhooks = {
   Discord = {
-    { Enabled = true,  BankTrans = 'https://discord.com/api/webhooks/900514794023575572/AIED5u8rQBRQbMhGsE7ymqXzbL4yzjSR0q7AELFBOrpQwkV7Q_hBY-sfbhSKDfzlFKSn'},
+    { ID = 'BankTrans', Enabled = true,  BankTrans = 'https://discord.com/api/webhooks/900514794023575572/AIED5u8rQBRQbMhGsE7ymqXzbL4yzjSR0q7AELFBOrpQwkV7Q_hBY-sfbhSKDfzlFKSn'},
+    { ID = 'Logout',    Enabled = true,  Logout = 'https://discord.com/api/webhooks/900514794023575572/AIED5u8rQBRQbMhGsE7ymqXzbL4yzjSR0q7AELFBOrpQwkV7Q_hBY-sfbhSKDfzlFKSn'},
+    { ID = 'Login',    Enabled = true,  Login = 'https://discord.com/api/webhooks/900514794023575572/AIED5u8rQBRQbMhGsE7ymqXzbL4yzjSR0q7AELFBOrpQwkV7Q_hBY-sfbhSKDfzlFKSn'},
     -- Coords    = '',
-    -- LogInOut  = '',
     -- Deaths    = '',
   }
 }

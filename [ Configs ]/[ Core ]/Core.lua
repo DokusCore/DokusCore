@@ -32,10 +32,11 @@ _Security = {
 -- data like character data as suppose to. If set incorrectly the core can bug.
 --------------------------------------------------------------------------------
 _Modules          = {
+  SettingsMenu    = true,
+  MultiCharacters = true,
   Stores          = true,
   Banking         = true,
-  Inventory       = true,
-  MultiCharacters = true
+  Inventory       = true
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
