@@ -112,7 +112,7 @@ end)
 AddEventHandler('onResourceStart', function(resourceName)
   while not (CoreData.ReadyToSync) do Wait(10) end
 	if (GetCurrentResourceName() ~= resourceName) then return end
-	if (_Modules.Inventory) then
+	if (_Modules.MultiCharacters) then
 		local CharID = TSC('DokusCore:MultiChar:SyncCharID')
 		if (CharID == 0) then return end --<< Stop if the server just started
 		local Steam = TSC('DokusCore:Core:GetUserIDs', { 'User' })[1]
