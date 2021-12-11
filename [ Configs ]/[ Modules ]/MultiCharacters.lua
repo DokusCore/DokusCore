@@ -8,6 +8,7 @@ _MultiCharacters = {
 
   --StartRandom = true, -- Not implemented yet
   GiveStartItems = true,
+  IntroSong = { Enabled = true, Volume = 0.10 },
 
   StartPositions = {
     { ID = 'Valentine', Type = 'Train', Coords = vector3(-167.9, 629.1, 114.0), Heading = 270.1 },

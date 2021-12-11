@@ -61,6 +61,7 @@ DB.Settings.SetMusic        = 'update settings set Music=@Music where Steam=@Ste
 DB.Settings.SetLanguage     = 'update settings set Language=@Language where Steam=@Steam'
 DB.Characters.SetCharName   = 'update characters set cName=@cName where Steam=@Steam'
 DB.Characters.SetCoords     = 'update characters set Coords=@Coords where Steam=@Steam and CharID=@CharID'
+DB.Characters.SetSkin       = 'update characters set Skin=@Skin where Steam=@Steam and CharID=@CharID'
 DB.Banks.SetMoney           = 'update banks set Money=@Money where Steam=@Steam and CharID=@CharID'
 DB.Banks.SetGold            = 'update banks set Gold=@Gold where Steam=@Steam and CharID=@CharID'
 DB.Banks.SetBankMoney       = 'update banks set BankMoney=@BankMoney where Steam=@Steam and CharID=@CharID'

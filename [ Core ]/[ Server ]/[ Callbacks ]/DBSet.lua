@@ -49,6 +49,13 @@ RSC('DokusCore:Core:DBSet:Characters', function(source, args)
     if (args[2][3] == nil) then return ErrorMsg('Err_NoCoords') end
     DBSet(DB.Characters.SetCoords, { Coords = args[2][3], Steam = args[2][1], CharID = args[2][2] }, function() end)
   end
+
+  if (Low(args[1]) == 'skin') then
+    if (args[2][1] == nil) then return ErrorMsg('Err_NoArgsSteam') end
+    if (args[2][2] == nil) then return ErrorMsg('Err_NoCharID') end
+    if (args[2][3] == nil) then return ErrorMsg('Err_NoSkinValue') end
+    DBSet(DB.Characters.SetSkin, { Skin = args[2][3], Steam = args[2][1], CharID = args[2][2] }, function() end)
+  end
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

@@ -21,9 +21,11 @@ _BankDoors       = true
 --------------------------------------------------------------------------------
 -- The Security contains the Black and whitelist Module.
 --------------------------------------------------------------------------------
+-- When the whitelist is used you set `pending` to `true` to accept the player
+--------------------------------------------------------------------------------
 _Security = {
   Blacklist = { Enabled = true },
-  Whitelist = { Enabled = true, NotifyAdmins = true },
+  Whitelist = { Enabled = false, NotifyAdmins = false },
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -32,11 +34,12 @@ _Security = {
 -- data like character data as suppose to. If set incorrectly the core can bug.
 --------------------------------------------------------------------------------
 _Modules          = {
-  SettingsMenu    = true,
-  MultiCharacters = true,
-  Stores          = true,
-  Banking         = true,
-  Inventory       = true
+  SettingsMenu    = true, -- Required
+  MultiCharacters = true, -- Required
+  Inventory       = true, -- Required
+  SkinCreator     = true, -- Optional
+  Stores          = true, -- Optional
+  Banking         = true, -- Optional
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -49,6 +52,10 @@ _Loops = {
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Commands = {
+  -- NOTE: Due to the new characters menu, this will become obsolite for a moment.
+  -- It will be reimplemented at a later stage!!!! Chat commands are still working
+  -- until all commands are designed in a quick to use menu
+  --------------------------------------------------------------------------------
   -- Information Commands
   Help        = { Users = true,  Admins = true,  SuperAdmins = true },
   Discord     = { Users = true,  Admins = true,  SuperAdmins = true },
