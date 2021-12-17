@@ -4,8 +4,8 @@
 _ServerName     = 'DokusCore Development Server'
 _DiscordInvite  = 'https://Discord.io/DokusCore'
 _Language       = { Lang = 'en', Multi = true }
-_StartWealth    = { Money = 0.010, Gold = 0.000, BankMoney = 1.500, BankGold = 0.000 }
-_StartJob       = { Name = 'unemployed', Grade = 0 }
+_StartWealth    = { Money = 2.25, Gold = 0.0, BankMoney = 0.0, BankGold = 0.0 } --{{ BankMoney and BankGold are DEPRECATED and not in use anymore.
+_StartJob       = { Name = 'unemployed', Grade = 0 }                            -- These will be removed later, leave them be as it breaks the core atm. }}--
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
 _Time           = { TimeSync = false, FixedTime = { true, 12, 00 } }
 _DokusMenu      = { Position = 'right', Theme = { Dark = true, Red = false} }
@@ -37,6 +37,7 @@ _Modules          = {
   SettingsMenu    = true, -- Required
   MultiCharacters = true, -- Required
   Inventory       = true, -- Required
+  NPCInteract     = true, -- Required
   SkinCreator     = true, -- Optional
   Stores          = true, -- Optional
   Banking         = true, -- Optional

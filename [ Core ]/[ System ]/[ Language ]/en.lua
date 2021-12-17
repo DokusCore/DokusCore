@@ -42,14 +42,14 @@ Lang["en"] = {
   ["CMD_Help_Hud"] = "^3       Update, Show or hide the Hud^0",
 
   ---- [ Core ] Admin Commands
-  ["Err_AddGoldID"] = "Enter the ID of the user you would like to give gold to.",
-  ["Err_AddGoldType"] = "Does this need to go to a wallet or the bank account?",
-  ["Err_AddMoneyID"] = "Enter the ID of the user you would like to give money to.",
-  ["Err_AddMoneyType"] = "Does this need to go to a wallet or the bank account?",
-  ["Err_AddGoldAmount"] = "How much gold do you want to add?",
-  ["Err_AddMoneyAmount"] = "How much money do you want to add?",
-  ["Usage_AddGold"] = "/addgold ID [ wallet | bank ] amount",
-  ["Usage_AddMoney"] = "/addgold ID [ wallet | bank ] amount",
+  ["Err_EnterServerID"] = "Enter the server ID of the user!",
+  ["Err_EnterCharID"] = "Enter the Character ID of the user!",
+  ['Err_WalletOrBank'] = "Does this need to go to a wallet, or bank account?",
+  ['Err_MoneyMath'] = "Adding [ + ] or Removing [ - ] Money ?",
+  ['Err_GoldMath'] = "Adding [ + ] or Removing [ - ] Gold ?",
+  ["Err_CurrencyAmount"] = "How much do you want to add? You can go 2 digits behind the comma!",
+  ["Usage_Money"] = "/Money ID [ wallet | bank ] [ + | - ] amount",
+  ["Usage_Gold"] = "/Gold ID [ wallet | bank ] [ + | - ] amount",
 
   ---- [ Core ] Errors
   ["Err_NoLangEntered"] = "Unable to set the client language, no language value inserted at args 1",

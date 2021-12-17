@@ -6,7 +6,9 @@
 -- Other saloon pianos stay quite.
 --------------------------------------------------------------------------------
 local NPC_Valentine  = nil
-
+-- local NPCs = {}
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 Pianos = {
     {ID = "Valentine",    x= -312.36,  y= 799.05,   z= 118.48, h= 102.3},
     {ID = "Saint Denis", x= 2631.82,  y= -1232.31, z= 53.70,  h= 62.0},
@@ -16,12 +18,14 @@ Pianos = {
     {ID = "Tumbleweed",   x= -5516.0,  y= -2914.53, z= -2.26,  h= 121.4},
     {ID = "vHoorn",       x= 2944.12,   y= 528.87,  z= 44.85,  h= 359.03},
   }
-
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 CreateThread(function()
 	local Hash2 = GetHashKey('PROP_HUMAN_PIANO')
 	local _1 = GetHashKey('U_M_M_NbxMusician_01')
 	while not HasModelLoaded(_1) do RequestModel(_1) Wait(1) end
 	NPC_Valentine = CreatePed(_1, Pianos[1].x,Pianos[1].y,Pianos[1].z,Pianos[1].h, true, 0) Wait(1000)
+  -- table.insert(NPCs, { NPC_Valentine })
 	Citizen.InvokeNative(0x1794B4FCC84D812F, NPC_Valentine, 1) -- SetEntityVisible
 	Citizen.InvokeNative(0x0DF7692B1D9E7BA7, NPC_Valentine, 255, false) -- SetEntityAlpha
 	Citizen.InvokeNative(0x283978A15512B2FE, NPC_Valentine, true) -- SetRandomOutfitVariation
@@ -33,3 +37,11 @@ CreateThread(function()
 	Citizen.InvokeNative(0x4AD96EF928BD4F9A, NPC_Valentine) -- SetModelAsNoLongerNeeded
 	TaskStartScenarioAtPosition(NPC_Valentine, Hash2, Pianos[1].x,Pianos[1].y,Pianos[1].z,Pianos[1].h, 0, true, true, 0, true)
 end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- AddEventHandler('onResourceStop', function(resourceName)
+--   if (GetCurrentResourceName() ~= resourceName) then return end
+--   for k,v in pairs(NPCs) do DeleteEntity(v) end
+-- end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------

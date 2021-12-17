@@ -1,7 +1,8 @@
 --------------------------------------------------------------------------------
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
-RegisterCommand("discord", function(source, args, rawCommand)
+RegisterNetEvent('DokusCore:Core:Commands:Discord')
+AddEventHandler('DokusCore:Core:Commands:Discord', function()
   -- Check if command can be used by users or admins
   local IsForUsers, IsForAdmins, IsForOwners = false, false, false
   if (_Commands.Discord.Users) then IsForUsers = true end
@@ -22,6 +23,6 @@ RegisterCommand("discord", function(source, args, rawCommand)
   if IsForUsers  and IsUser  then DoThis() end
   if IsForAdmins and IsAdmin then DoThis() end
   if IsForOwners and IsOwner then DoThis() end
-end, false)
+end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

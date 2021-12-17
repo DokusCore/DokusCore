@@ -2,7 +2,8 @@
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RegisterCommand("language", function(source, args, rawCommand)
+RegisterNetEvent('DokusCore:Core:Commands:SetLanguage')
+AddEventHandler('DokusCore:Core:Commands:SetLanguage', function(args)
   local IsForUsers, IsForAdmins, IsForOwners = false, false, false
   if (_Commands.Language.Users) then IsForUsers = true end
   if (_Commands.Language.Admins) then IsForAdmins = true end
@@ -41,18 +42,16 @@ RegisterCommand("language", function(source, args, rawCommand)
   end
 
   local function DoThis()
-    print("A")
-    if not args[1] then return ShowRightNote(_('Err_NoLangEntered', Lang)) end
-    local lSupport = LangSelect(args[1])
+    if not args then return ShowRightNote(_('Err_NoLangEntered', Lang)) end
+    local lSupport = LangSelect(args)
     if not lSupport then
       ShowRightNote(_('Err_LangNotSupported1', Lang)) Wait(5000)
       ShowRightNote(_('Err_LangNotSupported2', Lang)) return
     end
-    TSC('DokusCore:Core:DBSet:Settings', { 'Language', { Steam, LangSelect(args[1])[1] } })
-    ShowTopNote(_('Language', Lang), _('LanguageSetTo', Lang).." "..LangSelect(args[1])[2])
+    TSC('DokusCore:Core:DBSet:Settings', { 'Language', { Steam, LangSelect(args)[1] } })
+    ShowTopNote(_('Language', Lang), _('LanguageSetTo', Lang).." "..LangSelect(args)[2])
   end
 
-  print("SA", _Language.Multi, IsForUsers, IsUser)
   if _Language.Multi and IsForUsers  and IsUser  then DoThis() end
   if _Language.Multi and IsForAdmins and IsAdmin then DoThis() end
   if _Language.Multi and IsForOwners and IsOwner then DoThis() end

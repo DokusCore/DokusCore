@@ -44,6 +44,13 @@ RSC('DokusCore:Core:DBDel:Inventory', function(source, args)
       local Steam, CharID, Item = args[3][1], args[3][2], args[3][3]
       DBDel(DB.Inventory.DelUserItem, { Steam = Steam, CharID = CharID, Item = Item }, function() end)
     end
+
+    if (Low(args[2]) == 'all') then
+      if (args[3][1] == nil) then return ErrorMsg('Err_NoArgsSteam') end
+      if (args[3][2] == nil) then return ErrorMsg('Err_NoCharID') end
+      local Steam, CharID = args[3][1], args[3][2]
+      DBDel(DB.Inventory.DelAllItems, { Steam = Steam, CharID = CharID }, function() end)
+    end
   end
 end)
 --------------------------------------------------------------------------------

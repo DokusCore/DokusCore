@@ -4,7 +4,7 @@
 local Low = string.lower
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RegisterCommand("addgold", function(source, args, rawCommand)
+RegisterCommand("gold", function(source, args, rawCommand)
   local IsForUsers, IsForAdmins, IsForOwners = false, false, false
   if (_Commands.AddGold.Users) then IsForUsers = true end
   if (_Commands.AddGold.Admins) then IsForAdmins = true end
@@ -29,17 +29,30 @@ RegisterCommand("addgold", function(source, args, rawCommand)
     local _source = source
     local Type, Amount = nil, nil
     local Data  = TSC('DokusCore:Core:DBGet:Settings', { 'user', { Steam } })
-    if (args[1] == nil) then Notify(_('Err_AddGoldID',  Lang), 'TopRight', 5000) Wait(3000) end
-    if (args[1] == nil) then Notify(_('Usage_AddGold', Lang), 'TopRight', 5000) return end
-    if (args[2] == nil) then Notify(_('Err_AddGoldType', Lang), 'TopRight', 5000) Wait(3000) end
-    if (args[2] == nil) then Notify(_('Usage_AddGold', Lang), 'TopRight', 5000) return end
-    if (args[3] == nil) then Notify(_('Err_AddGoldAmount', Lang), 'TopRight', 5000) Wait(3000) end
-    if (args[3] == nil) then Notify(_('Usage_AddGold', Lang), 'TopRight', 5000) return end
-    if (Low(args[2]) == 'bank') then Type = 'BankGold' end
-    if (Low(args[2]) == 'wallet') then Type = 'Gold' end
-    TSC('DokusCore:Core:DBSet:Bank', { 'Admin', { Type, '+', { Steam, UserData.CharID, args[3] } } })
-    ShowTopNote('Transaction Success', args[3]..' gold given to player with ID '..args[1])
-    TriggerEvent('DokusCore:Core:Hud:Update')
+    if (args[1] == nil) then Notify(_('Err_EnterServerID',  Lang), 'TopRight', 5000) Wait(3000) end
+    if (args[1] == nil) then Notify(_('Usage_Gold', Lang), 'TopRight', 5000) return end
+    if (args[2] == nil) then Notify(_('Err_EnterCharID',  Lang), 'TopRight', 5000) Wait(3000) end
+    if (args[2] == nil) then Notify(_('Usage_Gold', Lang), 'TopRight', 5000) return end
+    if (args[3] == nil) then Notify(_('Err_WalletOrBank', Lang), 'TopRight', 5000) Wait(3000) end
+    if (args[3] == nil) then Notify(_('Usage_Gold', Lang), 'TopRight', 5000) return end
+    if (args[4] == nil) then Notify(_('Err_GoldMath', Lang), 'TopRight', 5000) Wait(3000) end
+    if (args[4] == nil) then Notify(_('Usage_Gold', Lang), 'TopRight', 5000) return end
+    if (args[5] == nil) then Notify(_('Err_CurrencyAmount', Lang), 'TopRight', 5000) Wait(3000) end
+    if (args[5] == nil) then Notify(_('Usage_Gold', Lang), 'TopRight', 5000) return end
+    if (Low(args[3]) == 'bank') then Type = 'BankGold' end Wait(50)
+    if (Low(args[3]) == 'wallet') then Type = 'Gold' end Wait(50)
+
+    if (Type == 'BankGold') then return Notify('The add gold and money for banks accounts is still in developement!') end
+
+    TSC('DokusCore:Core:Admin:DBSet:Characters', { args[3], Type, args[4], { Steam, UserData.CharID, args[5] } })
+
+    if ((Low(args[4]) == '+') or (Low(args[4]) == 'add')) then
+      ShowTopNote('Transaction Success', args[5]..' Gold given to player with ID '..args[1])
+    elseif ((Low(args[4]) == '-') or (Low(args[4]) == 'remove')) then
+      ShowTopNote('Transaction Success', args[5]..' Gold removed to player with ID '..args[1])
+    end
+
+    TSC('DokusCore:Core:Hud:Update', { 'source', { args[1], args[2] } })
   end
 
   if IsForUsers  and IsUser  then DoThis() end

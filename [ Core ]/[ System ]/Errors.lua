@@ -20,6 +20,8 @@ function ErrorMsg(e, a)
   if (e == 'Err_NoCoords')              then print(Error..ErrMsg(10)..'^0') end
   if (e == 'Err_NoItemName')            then print(Error..ErrMsg(11)..'^0') end
   if (e == 'Err_NoItemAmount')          then print(Error..ErrMsg(12)..'^0') end
+  if (e == 'Err_NoCityName')            then print(Error..ErrMsg(13)..'^0') end
+  if (e == 'Err_NoSourceID')            then print(Error..ErrMsg(14)..'^0') end
 
   -- Database Errors Insert
   if (e == 'Err_DBNoTableSelected')     then print(Error..ErrMsg(100)..'^0') end
@@ -54,6 +56,7 @@ function ErrorMsg(e, a)
   if (e == 'Err_DBInsNoItemName')       then print(Error..ErrMsg(129)..'^0') end
   if (e == 'Err_DBInsNoItemAmount')     then print(Error..ErrMsg(130)..'^0') end
   if (e == 'Err_DBInsNoBoxCoords')      then print(Error..ErrMsg(131)..'^0') end
+  if (e == 'Err_BankSyncParameter')     then print(Error..ErrMsg(132)..'^0') end
 
 
   -- Database Errors Gets
@@ -95,6 +98,8 @@ function ErrMsg (nr)
   if (nr == 10) then return 'Unable to perform this action due to missing Coordinates' end
   if (nr == 11) then return 'Unable to perform this action due to missing Item Name' end
   if (nr == 12) then return 'Unable to perform this action due to missing Item Amount' end
+  if (nr == 13) then return 'Unable to perform this action due to missing City / Location Name' end
+  if (nr == 14) then return 'Unable to perform this action due to missing Server (source) ID' end
 
   -- Database Inserts
   if (nr == 100) then return 'What database table would you like to use to insert this row to?' end
@@ -129,6 +134,7 @@ function ErrMsg (nr)
   if (nr == 129) then return 'Unable to insert the row due to missing Item Name' end
   if (nr == 130) then return 'Unable to insert the row due to missing Item Amount' end
   if (nr == 131) then return 'Unable to insert the row due to missing Box Coords' end
+  if (nr == 132) then return 'Unable to insert the row due to missing Bank Sync Meta Data' end
 
   -- Database Gets
   if (nr == 200) then return 'Unable to get the row due to missing SteamID' end

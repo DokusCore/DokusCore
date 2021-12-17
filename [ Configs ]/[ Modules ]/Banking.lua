@@ -5,6 +5,17 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Banking = {
+
+  -- Fees will later go to the banks vault what increases the cities wealth.
+  -- The fees will also be used to pay out the employees (Players).
+  -- Account Creation is in dollars, the rest is in percentage of the total amount
+  Fees = {
+    AccountCreation = 1.0, -- Amount in $
+    Transaction     = { Money = 2.5, Gold = 5.0 }, -- Percentage % of total
+    Deposit         = { Money = 5,   Gold = 15  }, -- Percentage % of total
+    Withdraw        = { Money = 5,   Gold = 15  }, -- Percentage % of total
+  },
+
   Zones = {
     { ID = 'Valentine',   Coords = vector3(-308.57,775.95,117.7)   },
     { ID = 'Rhodes',      Coords = vector3(1292.48,-1301.67,77.04) },

@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 -- Store user data for when ever a module or feature needs this information
 --------------------------------------------------------------------------------
-UserData = { Steam = 0, CharID = 0, ServerID = 0, Coords = 0 }
+UserData = { Steam = 0, CharID = 0, ServerID = GetPlayerServerId(PlayerId(-1)), Coords = 0 }
 CoreData = { ReadyToSync = false }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -74,18 +74,18 @@ AddEventHandler('DokusCore:Core:LoadUser', function(PedID, sName)
 
   -- Check if the players database banks table is correct
 	if not (_Modules.MultiCharacters) then
-		local S = _StartWealth
 	  local Bank = TSC('DokusCore:Core:DBGet:Banks', { 'user', { iDs[1], 1 }})
 		if not (Bank.Exist) then
-			TSC('DokusCore:Core:DBIns:Banks', { 'user', { iDs[1], 1, S.Money, S.Gold, S.BankMoney, S.BankGold } })
+			TSC('DokusCore:Core:DBIns:Banks', { 'User', { iDs[1], 1, 'Bank', 'BANKNAME', 0, 0 } })
 		end
 	end
 
 	-- Check if the players database character is correct.
 	-- Only insert user on character id 1 if MultiCharacters is not used.
 	if not (_Modules.MultiCharacters) then
+		local SW = _StartWealth
 		local Char = TSC('DokusCore:Core:DBGet:Characters', { 'user', 'single', { iDs[1], 1 } })
-		local Index = { iDs[1], 1, _Moderation.User, '--', '--', '--', '--', 0, 0, 'unemployed', 0, '--', '--', '--' }
+		local Index = { iDs[1], 1, _Moderation.User, '--', '--', '--', '--', SW.Money, SW.Gold, 0, 0, 'unemployed', 0, '--', '--', '--' }
 		if not (Char.Exist) then TSC('DokusCore:Core:DBIns:Characters', { 'user', Index } ) end
 		UserData.CharID = 1
 		TSC('DokusCore:Core:Hud:Initiate')

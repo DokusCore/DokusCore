@@ -1,7 +1,8 @@
 --------------------------------------------------------------------------------
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
-RegisterCommand("tpm", function(source, args, rawCommand)
+RegisterNetEvent('DokusCore:Core:Admin:Commands:TPM')
+AddEventHandler('DokusCore:Core:Admin:Commands:TPM', function()
   local IsForUsers, IsForAdmins, IsForOwners = false, false, false
   if (_Commands.Teleport.Users) then IsForUsers = true end
   if (_Commands.Teleport.Admins) then IsForAdmins = true end
@@ -21,6 +22,7 @@ RegisterCommand("tpm", function(source, args, rawCommand)
     local Exists = DoesEntityExist(Ped)
     if Exists then
       local WP = GetWaypointCoords()
+      if ((WP.x == 0) and (WP.y == 0) and (WP.z == 0)) then Notify("You've no waypoint set!") return end
       local height = 1
       for height = 1, 1000 do
         SetEntityCoords(Ped, WP.x, WP.y, (height - 50) + 0.0)
@@ -38,7 +40,7 @@ RegisterCommand("tpm", function(source, args, rawCommand)
   if IsForUsers and IsUser then DoThis() end
   if IsForAdmins and IsAdmin then DoThis() end
   if IsForOwners and IsOwner then DoThis() end
-end, false)
+end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

@@ -3,25 +3,25 @@
 --------------------------------------------------------------------------------
 -- Callback relays to set server data via the server files.
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:DBSet:Settings', function(args) TSC('DokusCore:Core:DBSet:Settings', args) end)
+RCC('DokusCore:Core:DBSet:Settings', function(args) return TSC('DokusCore:Core:DBSet:Settings', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:DBSet:Characters', function(args) TSC('DokusCore:Core:DBSet:Characters', args) end)
+RCC('DokusCore:Core:DBSet:Characters', function(args) return TSC('DokusCore:Core:DBSet:Characters', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:DBSet:Bank', function(args) TSC('DokusCore:Core:DBSet:Bank', args) end)
+RCC('DokusCore:Core:DBSet:Bank', function(args) return TSC('DokusCore:Core:DBSet:Bank', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:DBSet:Users', function(args) TSC('DokusCore:Core:DBSet:Users', args) end)
+RCC('DokusCore:Core:DBSet:Users', function(args) return TSC('DokusCore:Core:DBSet:Users', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:DBSet:Storages', function(args) TSC('DokusCore:Core:DBSet:Storages', args) end)
+RCC('DokusCore:Core:DBSet:Storages', function(args) return TSC('DokusCore:Core:DBSet:Storages', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:DBSet:Inventory', function(args) TSC('DokusCore:Core:DBSet:Inventory', args) end)
+RCC('DokusCore:Core:DBSet:Inventory', function(args) return TSC('DokusCore:Core:DBSet:Inventory', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RCC('DokusCore:Core:DBSet:Stocks', function(args) TSC('DokusCore:Core:DBSet:Stocks', args) end)
+RCC('DokusCore:Core:DBSet:Stocks', function(args) return TSC('DokusCore:Core:DBSet:Stocks', args) end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

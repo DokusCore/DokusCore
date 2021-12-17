@@ -22,16 +22,21 @@ TriggerEvent('chat:addSuggestion', '/skin', "Users skin options", {
 --------------------------------------------------------------------------------
 -- Admin Commands
 TriggerEvent('chat:addSuggestion', '/tpm', "Teleport to a map marker", {})
-TriggerEvent('chat:addSuggestion', '/addgold', 'Add gold to a users account', {
-  { name = "ID",       help = "Enter the ID of the user" },
-  { name = "Type",     help = "Wallet or Money ?" },
-  { name = "Amount",   help = "Enter the amount you want to add" },
+
+TriggerEvent('chat:addSuggestion', '/gold', 'Add or Remove gold to/from a users account', {
+  { name = "Server ID",       help = "Enter the Server ID of the user" },
+  { name = "Character ID",    help = "Enter the Server ID of the user" },
+  { name = "Type",            help = "Wallet or Bank ?" },
+  { name = "Math",            help = "+ or - || Add - Remove" },
+  { name = "Amount",          help = "Enter the amount!" },
 })
 
-TriggerEvent('chat:addSuggestion', '/addmoney', 'Add money to a users account', {
-  { name = "ID",       help = "Enter the ID of the user" },
-  { name = "Type",     help = "Wallet or Money ?" },
-  { name = "Amount",   help = "Enter the amount you want to add" },
+TriggerEvent('chat:addSuggestion', '/money', 'Add or Remove money to/from a users account', {
+  { name = "Server ID",       help = "Enter the Server ID of the user" },
+  { name = "Character ID",    help = "Enter the Server ID of the user" },
+  { name = "Type",            help = "Wallet or Bank ?" },
+  { name = "Math",            help = "+ or - || Add - Remove" },
+  { name = "Amount",          help = "Enter the amount!" },
 })
 
 TriggerEvent('chat:addSuggestion', '/blacklist add', 'Add or Remove users on/from the blacklist', {

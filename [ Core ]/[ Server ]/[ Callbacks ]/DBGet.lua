@@ -2,7 +2,7 @@
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
 local DBGet = MySQL.Sync.fetchAll
-local Low   = string.lower
+local Low = string.lower
 --------------------------------------------------------------------------------
 -- Get a specific users out of the users table.
 --------------------------------------------------------------------------------
@@ -43,15 +43,33 @@ end)
 RSC('DokusCore:Core:DBGet:Banks', function(source, args)
   if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
   if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
-  if (args[2] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
-  local CatType, Exist, Result = args[1], false, {}
+  if (args[2] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[3] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[4] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  local Exist, Result = false, {}
 
-  if (Low(CatType) == 'user') then
-    if (args[2][1] == nil) then return ErrorMsg('Err_DBGetNoSteam') end
-    if (args[2][2] == nil) then return ErrorMsg('Err_DBGetNoCharID') end
-    local X = DBGet(DB.Banks.Get, {Steam = args[2][1], CharID = args[2][2]})
-    if (X[1] ~= nil) then Exist = true Result = X end
-    return { Exist = Exist, Result = Result }
+  -- Get bank information for a single user.
+  if (Low(args[1]) == 'user') then
+    if (Low(args[2]) == 'single') then
+      if (Low(args[3]) == 'bank') then
+        if (args[4][1] == nil) then return ErrorMsg('Err_DBGetNoSteam') end
+        if (args[4][2] == nil) then return ErrorMsg('Err_DBGetNoCharID') end
+        if (args[4][3] == nil) then return ErrorMsg('Err_NoCityName') end
+        local X = DBGet(DB.Banks.GetViaBankName, { Steam = args[4][1], CharID = args[4][2], Bank = args[4][3] })
+        if (X[1] ~= nil) then Exist = true Result = X end
+        return { Exist = Exist, Result = Result }
+      end
+
+      -- To be Made
+      if (Low(args[3]) == 'loan') then end
+      if (Low(args[3]) == 'vault') then end
+    end
+
+    if (Low(args[1]) == 'all') then
+      if (Low(args[3]) == 'bank') then end
+      if (Low(args[3]) == 'loan') then end
+      if (Low(args[3]) == 'vault') then end
+    end
   end
 end)
 --------------------------------------------------------------------------------
@@ -178,9 +196,9 @@ RSC('DokusCore:Core:DBGet:Inventory', function(source, args)
 
     if (Low(args[2]) == 'item') then
       if (args[3][3] == nil) then return ErrorMsg('Err_NoItemName') end
-       local X = DBGet(DB.Inventory.GetUserViaItem, { Steam = Steam, CharID = CharID, Item = Low(args[3][3]) })
-       if (X[1] ~= nil) then Exist = true Result = X end
-       return { Exist = Exist, Result = Result }
+      local X = DBGet(DB.Inventory.GetUserViaItem, { Steam = Steam, CharID = CharID, Item = Low(args[3][3]) })
+      if (X[1] ~= nil) then Exist = true Result = X end
+      return { Exist = Exist, Result = Result }
     end
 
     if (Low(args[2]) == 'all') then
@@ -225,9 +243,34 @@ RSC('DokusCore:Core:DBGet:Storages', function(source, args)
     end
   end
 end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Admin DBGET
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:Admin:DBGet:Characters', function(source, args)
+  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[2] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args[3] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  local CatType1, CatType2, Exist, Result = args[1], args[2], false, {}
 
+  if (Low(CatType1) == 'user') then
+    if (Low(CatType2) == 'single') then
+      if (args[3][1] == nil) then return ErrorMsg('Err_DBGetNoSteam') end
+      if (args[3][2] == nil) then return ErrorMsg('Err_DBGetNoCharID') end
+      local X = DBGet(DB.Characters.Get, {Steam = args[3][1], CharID = args[3][2]})
+      if (X[1] ~= nil) then Exist = true Result = X end
+      return { Exist = Exist, Result = Result }
+    end
 
-
+    if (Low(CatType2) == 'all') then
+      if (args[3][1] == nil) then return ErrorMsg('Err_DBGetNoSteam') end
+      local X = DBGet(DB.Characters.GetAll, { Steam = args[3][1] })
+      if (X[1] ~= nil) then Exist = true Result = X end
+      return { Exist = Exist, Result = Result }
+    end
+  end
+end)
 
 
 

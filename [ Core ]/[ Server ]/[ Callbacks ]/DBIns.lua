@@ -47,13 +47,16 @@ RSC('DokusCore:Core:DBIns:Banks', function(source, args)
   if (Low(args[1]) == 'user') then
     if (args[2][1] == nil) then return ErrorMsg('Err_DBInsNoSteam') end
     if (args[2][2] == nil) then return ErrorMsg('Err_DBInsBanksNoCharID') end
-    if (args[2][3] == nil) then return ErrorMsg('Err_DBInsBanksNoMoney') end
-    if (args[2][4] == nil) then return ErrorMsg('Err_DBInsBanksNoGold') end
-    if (args[2][5] == nil) then return ErrorMsg('Err_DBInsBanksNoBankMoney') end
-    if (args[2][6] == nil) then return ErrorMsg('Err_DBInsBanksNoBankGold') end
+    if (args[2][3] == nil) then return ErrorMsg('Err_NoCatType') end
+    if (args[2][4] == nil) then return ErrorMsg('Err_NoCatType') end
+    if (args[2][5] == nil) then return ErrorMsg('Err_DBInsBanksNoMoney') end
+    if (args[2][6] == nil) then return ErrorMsg('Err_DBInsBanksNoGold') end
+    if (args[2][7] == nil) then return ErrorMsg('Err_BankSyncParameter') end
+
     DBIns(DB.Banks.Insert, {
-      Steam = args[2][1], CharID = args[2][2], Money = args[2][3],
-      Gold = args[2][4], BankMoney = args[2][5], BankGold = args[2][6]
+      Steam = args[2][1], CharID = args[2][2], Type = args[2][3],
+      Bank = args[2][4], Money = args[2][5], Gold = args[2][6],
+      Synced = args[2][7]
     }, function() end)
   end
 end)
@@ -74,19 +77,21 @@ RSC('DokusCore:Core:DBIns:Characters', function(source, args)
     if (args[2][5] == nil) then return ErrorMsg('Err_DBInsNoCharGender') end
     if (args[2][6] == nil) then return ErrorMsg('Err_DBInsNoCharNat') end
     if (args[2][7] == nil) then return ErrorMsg('Err_DBInsNoCharBDay') end
-    if (args[2][8] == nil) then return ErrorMsg('Err_DBInsNoCharXP') end
-    if (args[2][9] == nil) then return ErrorMsg('Err_DBInsNoCharLevel') end
-    if (args[2][10] == nil) then return ErrorMsg('Err_DBInsNoCharJobName') end
-    if (args[2][11] == nil) then return ErrorMsg('Err_DBInsNoCharJobGrade') end
-    if (args[2][12] == nil) then return ErrorMsg('Err_DBInsNoCharCoords') end
-    if (args[2][13] == nil) then return ErrorMsg('Err_DBInsNoCharSkin') end
-    if (args[2][14] == nil) then return ErrorMsg('Err_DBInsNoCharClothing') end
+    if (args[2][8] == nil) then return ErrorMsg('Err_DBInsBanksNoMoney') end
+    if (args[2][9] == nil) then return ErrorMsg('Err_DBInsBanksNoGold') end
+    if (args[2][10] == nil) then return ErrorMsg('Err_DBInsNoCharXP') end
+    if (args[2][11] == nil) then return ErrorMsg('Err_DBInsNoCharLevel') end
+    if (args[2][12] == nil) then return ErrorMsg('Err_DBInsNoCharJobName') end
+    if (args[2][13] == nil) then return ErrorMsg('Err_DBInsNoCharJobGrade') end
+    if (args[2][14] == nil) then return ErrorMsg('Err_DBInsNoCharCoords') end
+    if (args[2][15] == nil) then return ErrorMsg('Err_DBInsNoCharSkin') end
+    if (args[2][16] == nil) then return ErrorMsg('Err_DBInsNoCharClothing') end
     DBIns(DB.Characters.Insert, {
       Steam = args[2][1], CharID = args[2][2], Group = args[2][3],
       cName = args[2][4], Gender = args[2][5], Nationality = args[2][6],
-      BirthDate = args[2][7], XP = args[2][8], Level = args[2][9],
-      JobName = args[2][10], JobGrade = args[2][11], Coords = args[2][12],
-      Skin = args[2][13], Clothing = args[2][14]
+      BirthDate = args[2][7], Money = args[2][8], Gold = args[2][9], XP = args[2][10],
+      Level = args[2][11], JobName = args[2][12], JobGrade = args[2][13], Coords = args[2][14],
+      Skin = args[2][15], Clothing = args[2][16]
     }, function() end)
   end
 end)
