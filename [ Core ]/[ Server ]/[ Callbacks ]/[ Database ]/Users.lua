@@ -1,23 +1,44 @@
 --------------------------------------------------------------------------------
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
-RegisterNetEvent(__..':client')
-AddEventHandler(__..':client', function(Event, ...)
-	local p = promise.new()
-	TriggerEvent((__..':C:%s'):format(Event), function(...) p:resolve({...}) end, ...)
-	local result = Citizen.Await(p)
-	TriggerServerEvent((__..':server:%s'):format(Event), table.unpack(result))
+local File = '@DokusCore/[ Core ]/[ Server ]/[ Events ]/[ Callbacks ]/[ Database ]/Users.lua'
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBGet:Users', function(source, args)
+  local Exist, Result = false, {}
+  -- if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  -- if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  -- if (args[2] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  -- if (args[2][1] == nil) then return ErrorMsg('Err_DBGetNoSteam') end
+  if (Low(args[1]) == 'user') then
+    local X = DBGet(DB.Users.GetOnlySteam, { Steam = args[2][1] })
+    if (X[1] ~= nil) then Exist = true Result = X end
+    return { Exist = Exist, Result = Result }
+  end
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RegisterNetEvent('DokusCore:Core:GetCoreUserData')
-AddEventHandler('DokusCore:Core:GetCoreUserData', function(cb) return cb(_User) end)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-RegisterNetEvent('DokusCore:Core:GetCoreData')
-AddEventHandler('DokusCore:Core:GetCoreData', function(cb) return cb(_Core) end)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

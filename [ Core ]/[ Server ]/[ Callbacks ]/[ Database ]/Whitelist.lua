@@ -1,23 +1,41 @@
 --------------------------------------------------------------------------------
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
-RegisterNetEvent(__..':client')
-AddEventHandler(__..':client', function(Event, ...)
-	local p = promise.new()
-	TriggerEvent((__..':C:%s'):format(Event), function(...) p:resolve({...}) end, ...)
-	local result = Citizen.Await(p)
-	TriggerServerEvent((__..':server:%s'):format(Event), table.unpack(result))
+local File = '@DokusCore/[ Core ]/[ Server ]/[ Events ]/[ Callbacks ]/[ Database ]/Whitelist.lua'
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+RSC('DokusCore:Core:DBGet:Whitelist', function(source, args)
+  -- if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
+  -- if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  local CatType, Exist, Result = args[1], false, {}
+
+  if (Low(CatType) == 'all') then
+    local X = DBGet(DB.Whitelist.GetAll, {})
+    if (X[1] ~= nil) then Exist = true Result = X end
+    return { Exist = Exist, Result = Result }
+  end
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RegisterNetEvent('DokusCore:Core:GetCoreUserData')
-AddEventHandler('DokusCore:Core:GetCoreUserData', function(cb) return cb(_User) end)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-RegisterNetEvent('DokusCore:Core:GetCoreData')
-AddEventHandler('DokusCore:Core:GetCoreData', function(cb) return cb(_Core) end)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

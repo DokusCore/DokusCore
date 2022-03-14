@@ -1,13 +1,22 @@
 --------------------------------------------------------------------------------
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
-local Low = string.lower
+local File = '@DokusCore/[ Core ]/[ Server ]/[ Events ]/[ Callbacks ]/[ Core ]/Core.lua'
 --------------------------------------------------------------------------------
--- Return the users identifiers of the source given
+--------------------------------------------------------------------------------
+RegisterNetEvent(__..':server')
+AddEventHandler(__..':server', function(Event, T, ...)
+local source, promise = source, promise.new()
+TriggerEvent(__..':S:'..Event, function(...)
+  promise:resolve({...}) end, source, ...)
+  local result = Citizen.Await(promise)
+  TriggerClientEvent((__..':client:%s:%s'):format(Event, T), source, table.unpack(result))
+end)
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 RSC('DokusCore:Core:GetUserIDs', function(source, args)
-  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
-  if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
+  if (args == nil) then return SysErr('SysErr_WrongFormat', File, 17) end
+  if (args[1] == nil) then return SysErr('SysErr_CatTypeMissing', File, 18) end
   local G = GetPlayerIdentifier
 
   if (Low(args[1]) == 'user') then
@@ -17,8 +26,8 @@ RSC('DokusCore:Core:GetUserIDs', function(source, args)
   end
 
   if (Low(args[1]) == 'source') then
-    if (args[2] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
-    if (args[2][1] == nil) then return ErrorMsg('Err_NoUserServerID') end
+    if (args[2] == nil) then return SysErr('SysErr_WrongFormat', File, 28) end
+    if (args[2][1] == nil) then return SysErr('SysErr_ServerIDMissing', File, 29) end
     local S, L, I = G(args[2][1], 0), G(args[2][1], 1), GetPlayerEndpoint(args[2][1])
     local X, M = G(args[2][1], 2), G(args[2][1], 3)
     return {S, L, I, X, M}
@@ -32,41 +41,6 @@ RSC('DokusCore:Core:System:Time', function(source, args)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RSC('DokusCore:Core:KickPlayer', function(source, args)
-  if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
-  if (args[1] == nil) then return ErrorMsg('Err_NoUserServerID') end
-  if (args[2] == nil) then return ErrorMsg('Err_NoReason') end
-  DropPlayer(args[1], args[2])
-end)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-RSC('DokusCore:Core:SetCoreUserData', function(source, args) return TCC(-1, 'DokusCore:Core:SetCoreUserData', args) end)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-RSC('DokusCore:Core:System:IsCoreReady', function(source, args) return __CoreReady end)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-RSC('DokusCore:Core:GetCoreUserData', function(source, args) return TCC(-1, 'DokusCore:Core:GetCoreUserData', args) end)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

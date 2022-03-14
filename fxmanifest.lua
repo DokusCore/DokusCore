@@ -3,50 +3,50 @@
 --------------------------------------------------------------------------------
 description 'DokusCore - A RedM Framework - By DevDokus'
 author 'DevDokus Github'
-version '0.4.6'
+version '0.5.1'
 dependencies { 'oxmysql', 'pNotify' }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 shared_scripts {
-  '[ Configs ]/[ Core ]/*.lua',
-  '[ Configs ]/[ Modules ]/*.lua',
-  '[ Core ]/[ System ]/*.lua',
-  '[ Core ]/[ System ]/[ Language ]/*.lua',
-  '[ Core ]/[ System ]/[ Core ]/Config.lua'
+  '[ Configs ]/[ Core ]/*.*',
+  '[ Configs ]/[ Modules ]/*.*',
+  '[ Core ]/[ System ]/[ Shared ]/*.*',
+  '[ Core ]/[ System ]/[ Shared ]/[ Language ]/*.*',
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 client_scripts {
-  '[ Core ]/[ Client ]/*.lua',
-  '[ Core ]/[ Client ]/[ JS ]/*.js',
-  '[ Core ]/[ System ]/[ Menu ]/DokusMenu.lua',
-  '[ Core ]/[ Client ]/[ Commands ]/*.lua',
-  '[ Core ]/[ Client ]/[ Commands ]/[ Admin ]/*.lua',
-  '[ Core ]/[ Client ]/[ Utilities ]/*.lua',
-  '[ Core ]/[ Client ]/[ Callbacks ]/*.lua',
-  '[ Core ]/[ System ]/[ Core ]/Client.lua',
+  '[ Core ]/[ Client ]/*.*',
+  '[ Core ]/[ System ]/[ Client ]/*.*',
+  '[ Core ]/[ Client ]/[ Utilities ]/*.*',
+  '[ Core ]/[ Client ]/[ Commands ]/*.*',
+  '[ Core ]/[ Client ]/[ Commands ]/[ Admin ]/*.*',
+  '[ Core ]/[ Client ]/[ Events ]/*.*',
+  '[ Core ]/[ Client ]/[ Callbacks ]/*.*',
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 server_scripts {
   '@oxmysql/lib/MySQL.lua',
-  '[ Core ]/[ Server ]/*.lua',
-  '[ Core ]/[ Server ]/[ Callbacks ]/*.lua',
-  '[ Core ]/[ System ]/[ Core ]/Server.lua',
-  '[ Core ]/[ System ]/[ Core ]/[ Licenses ]/*.lua',
+  '[ Core ]/[ Server ]/*.*',
+  '[ Core ]/[ Server ]/[ Utilities ]/*.*',
+  '[ Core ]/[ Server ]/[ Events ]/*.*',
+  '[ Core ]/[ System ]/[ Server ]/*.*',
+  '[ Core ]/[ Server ]/[ Callbacks ]/*.*',
+  '[ Core ]/[ Server ]/[ Events ]/[ Database ]/*.*',
+  '[ Core ]/[ Server ]/[ Events ]/[ Normal ]/*.*',
+  '[ Core ]/[ Server ]/[ Callbacks ]/[ Database ]/*.*',
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 ui_page 'UI/index.html'
 files {
   'UI/index.html',
-  'UI/Hud/*.*',
-  'UI/Hud/assets/*.*',
+  -- 'UI/Hud/*.*',
+  -- 'UI/Hud/assets/*.*',
   'UI/ChatStyle/*.*',
   'UI/Sounds/js/*.*',
   'UI/Sounds/ogg/*.*',
-  -- 'UI/Metabolism/*.*',
-  -- 'UI/Metabolism/img/Hud/*.*',
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

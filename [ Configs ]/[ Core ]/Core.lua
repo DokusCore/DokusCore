@@ -3,12 +3,12 @@
 --------------------------------------------------------------------------------
 _ServerName     = 'DokusCore Development Server'
 _DiscordInvite  = 'https://Discord.io/DokusCore'
-_Language       = { Lang = 'en', Multi = true }
-_StartWealth    = { Money = 2.25, Gold = 0.0, BankMoney = 0.0, BankGold = 0.0 } --{{ BankMoney and BankGold are DEPRECATED and not in use anymore.
+_Language       = { Lang = 'en', Multi = true } --( In Progress )
+_StartWealth    = { Money = 2.25, Gold = 0.0 } --{{ BankMoney and BankGold are DEPRECATED and not in use anymore.
 _StartJob       = { Name = 'unemployed', Grade = 0 }                            -- These will be removed later, leave them be as it breaks the core atm. }}--
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
-_Time           = { TimeSync = false, FixedTime = { true, 12, 00 } }
-_DokusMenu      = { Position = 'right', Theme = { Dark = true, Red = false} }
+_Time           = { TimeSync = false, FixedTime = { false, 12, 00 } }
+_DokusMenu      = { Position = 'right', Theme = { Dark = true, Red = false } }
 _ActionKey      = 0x8AAA0AD4
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -25,7 +25,7 @@ _BankDoors       = true
 --------------------------------------------------------------------------------
 _Security = {
   Blacklist = { Enabled = true },
-  Whitelist = { Enabled = false, NotifyAdmins = false },
+  Whitelist = { Enabled = false, NotifyAdmins = false }, --( In Progress )
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -34,25 +34,29 @@ _Security = {
 -- data like character data as suppose to. If set incorrectly the core can bug.
 --------------------------------------------------------------------------------
 _Modules          = {
-  SettingsMenu    = true, -- Required
-  MultiCharacters = true, -- Required
-  Inventory       = true, -- Required
-  NPCInteract     = true, -- Required
-  SkinCreator     = true, -- Optional
-  Stores          = true, -- Optional
-  Banking         = true, -- Optional
+  SettingsMenu    = true,  -- Required
+  MultiCharacters = true,  -- Required
+  Inventory       = true,  -- Required ( In Progress )
+  NPCInteract     = true,  -- Required
+  Metabolism      = true,  -- Required
+  SkinCreator     = true,  -- Optional
+  Banking         = true,  -- Optional
+  -- Stores          = false, -- Optional ( In Progress )
+  -- LootNPCs        = false, -- Optional ( In Progress )
+  -- WeaponShop      = false, -- Optional ( In Progress )
+
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Loops = {
-  SaveCoords        = { Enabled = true, Seconds = 10  },
-  SliderDisabler    = { Enabled = true, Seconds = 0.1 },
-  CheckBlacklist    = { Seconds = 300 },
-  WhitelistNotify   = { Seconds = 120 },
+  SaveCoords        = { Enabled = true, Seconds = 60  }, --( In Progress )
+  SliderDisabler    = { Enabled = true, Seconds = 0.1 },--( In Progress )
+  CheckBlacklist    = { Seconds = 300 },--( In Progress )
+  WhitelistNotify   = { Seconds = 120 },--( In Progress )
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-_Commands = {
+_Commands = { --( In Progress )
   -- NOTE: Due to the new characters menu, this will become obsolite for a moment.
   -- It will be reimplemented at a later stage!!!! Chat commands are still working
   -- until all commands are designed in a quick to use menu

@@ -10,7 +10,7 @@ AddEventHandler('DokusCore:Core:Admin:Commands:TPM', function()
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
   -- Check if user is admin or superadmin
-  local Group, Cmds, CMD = GetUserGroup(), {}, _Commands
+  local Group, Cmds, CMD = GetUserGroup(_User.Steam, _User.CharID), {}, _Commands
   local Mod, IsUser, IsAdmin, IsOwner = _Moderation, true, true, true
   if (Group ~= Mod.User) then IsUser = false end
   if (Group ~= Mod.Admin) then IsAdmin = false end
@@ -18,7 +18,7 @@ AddEventHandler('DokusCore:Core:Admin:Commands:TPM', function()
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
   local function DoThis()
-    local Ped = PlayerPedId()
+    local Ped = PedID()
     local Exists = DoesEntityExist(Ped)
     if Exists then
       local WP = GetWaypointCoords()

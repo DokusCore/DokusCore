@@ -9,11 +9,12 @@ _Banking = {
   -- Fees will later go to the banks vault what increases the cities wealth.
   -- The fees will also be used to pay out the employees (Players).
   -- Account Creation is in dollars, the rest is in percentage of the total amount
+  -- NOTE: Temporarily out of use
   Fees = {
     AccountCreation = 1.0, -- Amount in $
-    Transaction     = { Money = 2.5, Gold = 5.0 }, -- Percentage % of total
-    Deposit         = { Money = 5,   Gold = 15  }, -- Percentage % of total
-    Withdraw        = { Money = 5,   Gold = 15  }, -- Percentage % of total
+  --   Transaction     = { Money = 2.5, Gold = 5.0 }, -- Percentage % of total
+  --   Deposit         = { Money = 5,   Gold = 15  }, -- Percentage % of total
+  --   Withdraw        = { Money = 5,   Gold = 15  }, -- Percentage % of total
   },
 
   Zones = {
