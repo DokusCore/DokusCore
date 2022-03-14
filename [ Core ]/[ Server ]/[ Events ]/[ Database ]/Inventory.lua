@@ -24,7 +24,7 @@ AddEventHandler('DokusCore:Core:DBSet:Inventory', function(args)
       if (_Amount > 0) then
         DBSet(DB.Inventory.SetUserItem, { Amount = _Amount, Steam = Steam, CharID = CharID, Item = Item }, function() end)
       elseif (_Amount <= 0) then
-        TriggerEvent('DokusCore:Core:DBDel:Inventory', { Steam, CharID, Item })
+        TriggerEvent('DokusCore:Core:DBDel:Inventory', { 'User', 'Item', { Steam, CharID, Item } })
       end
 
       -- local DItem, DAmount = Data.Result[1].Item, Data.Result[1].Amount
@@ -42,7 +42,6 @@ AddEventHandler('DokusCore:Core:DBSet:Inventory', function(args)
       local Steam, CharID = args[3][1], args[3][2]
       local Item, Amount, InvAmount = args[3][3], args[3][4], args[3][5]
       local _Amount = ( Amount + InvAmount )
-      print("logging", Steam, CharID, Item, Amount, InvAmount)
       DBSet(DB.Inventory.SetUserItem, { Amount = _Amount, Steam = Steam, CharID = CharID, Item = Item }, function() end)
     end
   end
@@ -91,7 +90,6 @@ AddEventHandler('DokusCore:Core:DBIns:Inventory', function(args)
       -- if (args[3][4] == nil) then return ErrorMsg('Err_DBInsNoItemName') end
       -- if (args[3][5] == nil) then return ErrorMsg('Err_DBInsNoItemAmount') end
       local Steam, CharID, Type, Item, Amount = args[3][1], args[3][2], args[3][3], args[3][4], args[3][5]
-      print("Inventory", Steam, CharID, Type, Item, Amount)
       DBIns(DB.Inventory.InsertItem, { Steam=Steam, CharID=CharID, Type=Type, Item=Item, Amount=Amount, Meta=nil }, function() end)
     end
   end

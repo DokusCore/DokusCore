@@ -108,19 +108,6 @@ AddEventHandler('DokusCore:Core:DBSet:Storages', function(args)
             end
           end
         end
-
-
-
-        -- if (v.Item == Item) then
-        --   print("AAA", v.Item, Item, Amount, v.Amount)
-        --   if (v.Amount > 1) then
-        --     TriggerClientEvent('DokusCore:Inventory:PickUpBoxItem', source, { 'Retract', v.Item, v.Amount })
-        --   elseif (v.Amount == 1) then
-        --     TriggerClientEvent('DokusCore:Inventory:RemoveBoxItem', source, { 'Delete', v.Item, v.Amount })
-        --   elseif (v.Amount <= 0) then
-        --     -- TriggerClientEvent('DokusCore:Inventory:RemoveBoxItem', source, { 'Error', v.Item, v.Amount })
-        --   end
-        -- end
       end
     end
 
@@ -130,7 +117,6 @@ AddEventHandler('DokusCore:Core:DBSet:Storages', function(args)
       -- if (args[3][2] == nil) then return ErrorMsg('BoxMeta') end
       local BoxID, BoxMeta = args[3][1], args[3][2]
       DBSet(DB.Storages.SetDropBoxItems, { Meta = BoxMeta, BoxID = BoxID }, function() end)
-      print("BoxMeta Updated", BoxID, BoxMeta)
     end
   end
 end)

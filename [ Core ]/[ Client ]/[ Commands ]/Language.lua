@@ -10,7 +10,8 @@ AddEventHandler('DokusCore:Core:Commands:SetLanguage', function(args)
   if (_Commands.Language.SuperAdmins) then IsForOwners = true end
 
   -- Check if user is admin or superadmin
-  local Group, Cmds, CMD, Lang = GetUserGroup(_User.Steam, _User.CharID), {}, _Commands, _Language.Lang
+  local UserData = TCTCC('DokusCore:Sync:Get:UserData')
+  local Group, Cmds, CMD, Lang = GetUserGroup(UserData.SteamID, UserData.CharID), {}, _Commands, _Language.Lang
   local Mod, IsUser, IsAdmin, IsOwner = _Moderation, true, true, true
   if (Group ~= Mod.User) then IsUser = false end
   if (Group ~= Mod.Admin) then IsAdmin = false end
@@ -18,7 +19,7 @@ AddEventHandler('DokusCore:Core:Commands:SetLanguage', function(args)
 
   -- Get the users language
   if _Language.Multi then
-    local Data = TSC('DokusCore:Core:DBGet:Settings', { 'User', { _User.Steam } })
+    local Data = TSC('DokusCore:Core:DBGet:Settings', { 'User', { UserData.SteamID } })
     Lang = Data.Result[1].Language
   end
 
@@ -46,7 +47,7 @@ AddEventHandler('DokusCore:Core:Commands:SetLanguage', function(args)
       Notify(_('Err_LangNotSupported1', Lang)) Wait(5000)
       Notify(_('Err_LangNotSupported2', Lang)) return
     end
-    TriggerServerEvent('DokusCore:Core:DBSet:Settings', { 'Language', { _User.Steam, LangSelect(args)[1] } })
+    TriggerServerEvent('DokusCore:Core:DBSet:Settings', { 'Language', { UserData.Steam, LangSelect(args)[1] } })
     ShowTopNote(_('Language', Lang), _('LanguageSetTo', Lang).." "..LangSelect(args)[2])
   end
 

@@ -83,7 +83,6 @@ AddEventHandler('DokusCore:Core:DBDel:Characters', function(args)
 
   if (Low(args[1]) == 'user') then
     if (Low(args[2]) == 'single') then
-      print("Deleting Character", args[3][1], args[3][2])
       DBDel(DB.Characters.DelCharacter, { Steam = args[3][1], CharID = args[3][2] }, function() end)
     end
 

@@ -10,7 +10,8 @@ AddEventHandler('DokusCore:Core:Commands:Discord', function()
   if (_Commands.Discord.SuperAdmins) then IsForOwners = true end
 
   -- Check if user is admin or superadmin
-  local Group, Cmds, CMD = GetUserGroup(_User.Steam, _User.CharID), {}, _Commands
+  local UserData = TCTCC('DokusCore:Sync:Get:UserData')
+  local Group, Cmds, CMD = GetUserGroup(UserData.Steam, UserData.CharID), {}, _Commands
   local Mod, IsUser, IsAdmin, IsOwner = _Moderation, true, true, true
   if (Group ~= Mod.User) then IsUser = false end
   if (Group ~= Mod.Admin) then IsAdmin = false end

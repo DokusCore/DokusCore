@@ -40,9 +40,9 @@ AddEventHandler('DokusCore:Core:DBIns:Settings', function(args)
   -- if (args[2] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
 
   if (Low(args[1]) == 'user') then
-    if (args[2][1] == nil) then return ErrorMsg('Err_DBInsNoSteam') end
-    if (args[2][2] == nil) then return ErrorMsg('Err_DBInsSettingsMusic') end
-    if (args[2][3] == nil) then return ErrorMsg('Err_DBInsSettingsLanguage') end
+    -- if (args[2][1] == nil) then return ErrorMsg('Err_DBInsNoSteam') end
+    -- if (args[2][2] == nil) then return ErrorMsg('Err_DBInsSettingsMusic') end
+    -- if (args[2][3] == nil) then return ErrorMsg('Err_DBInsSettingsLanguage') end
     DBIns(DB.Settings.insert, { Steam = args[2][1], Music = args[2][2], Language = args[2][3] }, function() end)
   end
 end)
