@@ -19,7 +19,7 @@ DB.Metabolism = {}
 DB.Users.GetOnlySteam        = 'select * from users where Steam=@Steam'
 DB.Users.GetViaSteamName     = 'select * from users where sName=@sName'
 DB.Settings.GetOnlySteam     = 'select * from settings where Steam=@Steam'
-DB.Banks.Get                 = 'select * from banks where Steam=@Steam and CharID=@CharID'
+DB.Banks.GetAllBanks         = 'select * from banks where Steam=@Steam and CharID=@CharID'
 DB.Banks.GetViaBankName      = 'select * from banks where Steam=@Steam and CharID=@CharID and Bank=@Bank'
 DB.Characters.GetAll         = 'select * from characters'
 DB.Characters.GetOnlySteam   = 'select * from characters where Steam=@Steam'

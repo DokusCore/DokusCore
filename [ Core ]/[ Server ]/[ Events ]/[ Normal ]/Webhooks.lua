@@ -39,8 +39,8 @@ AddEventHandler('DokusCore:Core:Webhooks:Discord', function(args)
       local T  = '\n[ Webhook ID ]: Bank Transaction'
       local T1 = '\n[ Transaction Type ] '..Type..' '..args[2]
       local T2 = '\n[ SteamID ]: '..Steam
-      local T3 = '\n[ Steam Name ]: '..sName
-      local T4 = '\n[ Character Name ] '..cName
+      local T3 = '\n[ Steam Name ]: '..UserData.sName
+      local T4 = '\n[ Character Name ] '..UserData.cName
       local T5 = '\n[ Character ID ]: '..CharID
       local T6 = '\n[ Transaction Amount ]: $'..Amount
       local T7 = '\n[ Old Wallet Balance ]: $'..OldGold

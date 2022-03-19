@@ -39,8 +39,8 @@ AddEventHandler('DokusCore:Core:DBSet:Banks', function(args)
     end
   end
 
-  if (Low(args[1]) == 'auto') then
-    if (args[2] == false) then
+  if (Low(args[1]) == 'auto') then -- Auto calculate the values or not
+    if (args[2] == false) then -- Define if taxation is needed
       -- if (args[3][1] == nil) then return print('Err_MissingType') end
       -- if (args[3][2] == nil) then return print('Err_MissingType') end
       -- if (args[3][3][1] == nil) then return print('Steam') end
@@ -50,7 +50,7 @@ AddEventHandler('DokusCore:Core:DBSet:Banks', function(args)
       -- if (args[3][3][5] == nil) then return print('CharData') end
       -- if (args[3][3][6] == nil) then return print('BankData') end
       local Steam, CharID, Loc = args[3][3][1], args[3][3][2], args[3][3][3]
-      local Amount, Char, Bank = args[3][3][4], args[3][3][5], args[3][3][6]
+      local Amount, Char, Bank, aBank = args[3][3][4], args[3][3][5], args[3][3][6], args[3][3][7]
 
       if (Low(args[3][1]) == 'deposit') then
         if (Low(args[3][2]) == 'money') then
@@ -59,6 +59,34 @@ AddEventHandler('DokusCore:Core:DBSet:Banks', function(args)
           DBSet(DB.Banks.SetMoneySynced, { Money = BankMoney, Synced = Resynced, Steam = Steam, CharID = CharID, Bank = Loc }, function() end)
           DBSet(DB.Characters.SetMoney, { Money = Money, Steam = Steam, CharID = CharID }, function() end)
           WebTrans('Money', Steam, CharID, 'Deposit', Amount, Money, BankMoney, Char.Money, Bank.Money)
+          TriggerClientEvent('DokusCore:Sync:Set:UserData', source, { 'SetCharMoney', { Money } })
+
+          -- Sync Bank Money DataSync
+          local Others, Change = {}, {}
+          for k,v in pairs(aBank) do
+            if (v.Bank == Loc) then table.insert(Change, { Loc = v.Bank, Money = BankMoney }) end
+            if (v.Bank ~= Loc) then table.insert(Others, { Loc = v.Bank, Money = v.Money }) end
+          end
+          for k,v in pairs(Change) do table.insert(Others, { Loc = v.Loc, Money = v.Money }) end
+          TriggerClientEvent('DokusCore:Sync:Set:UserData', source, { 'SetBankMoney', { json.encode(Others) } })
+
+
+        elseif (Low(args[3][2]) == 'gold') then
+          local Gold, BankGold = (Char.Gold - Amount), (Bank.Gold + Amount)
+          local Resynced = ReSync(Bank.Synced, Loc)
+          DBSet(DB.Banks.SetGoldSynced, { Gold = BankGold, Synced = Resynced, Steam = Steam, CharID = CharID, Bank = Loc }, function() end)
+          DBSet(DB.Characters.SetGold, { Gold = Gold, Steam = Steam, CharID = CharID }, function() end)
+          WebTrans('Gold', Steam, CharID, 'Deposit', Amount, Gold, BankGold, Char.Gold, Bank.Gold)
+          TriggerClientEvent('DokusCore:Sync:Set:UserData', source, { 'SetCharGold', { Gold } })
+
+          -- Sync Bank Money DataSync
+          local Others, Change = {}, {}
+          for k,v in pairs(aBank) do
+            if (v.Bank == Loc) then table.insert(Change, { Loc = v.Bank, Gold = BankGold }) end
+            if (v.Bank ~= Loc) then table.insert(Others, { Loc = v.Bank, Gold = v.Gold }) end
+          end
+          for k,v in pairs(Change) do table.insert(Others, { Loc = v.Loc, Gold = v.Gold }) end
+          TriggerClientEvent('DokusCore:Sync:Set:UserData', source, { 'SetBankGold', { json.encode(Others) } })
         end
       end
 
@@ -69,6 +97,33 @@ AddEventHandler('DokusCore:Core:DBSet:Banks', function(args)
           DBSet(DB.Banks.SetMoneySynced, { Money = BankMoney, Synced = Resynced, Steam = Steam, CharID = CharID, Bank = Loc }, function() end)
           DBSet(DB.Characters.SetMoney, { Money = Money, Steam = Steam, CharID = CharID }, function() end)
           WebTrans('Money', Steam, CharID, 'Withdraw', Amount, Money, BankMoney, Char.Money, Bank.Money)
+          TriggerClientEvent('DokusCore:Sync:Set:UserData', source, { 'SetCharMoney', { Money } })
+
+          -- Sync Bank Money DataSync
+          local Others, Change = {}, {}
+          for k,v in pairs(aBank) do
+            if (v.Bank == Loc) then table.insert(Change, { Loc = v.Bank, Money = BankMoney }) end
+            if (v.Bank ~= Loc) then table.insert(Others, { Loc = v.Bank, Money = v.Money }) end
+          end
+          for k,v in pairs(Change) do table.insert(Others, { Loc = v.Loc, Money = v.Money }) end
+          TriggerClientEvent('DokusCore:Sync:Set:UserData', source, { 'SetBankMoney', { json.encode(Others) } })
+
+        elseif (Low(args[3][2]) == 'gold') then
+          local Gold, BankGold = (Char.Gold + Amount), (Bank.Gold - Amount)
+          local Resynced = ReSync(Bank.Synced, Loc)
+          DBSet(DB.Banks.SetGoldSynced, { Gold = BankGold, Synced = Resynced, Steam = Steam, CharID = CharID, Bank = Loc }, function() end)
+          DBSet(DB.Characters.SetGold, { Gold = Gold, Steam = Steam, CharID = CharID }, function() end)
+          WebTrans('Gold', Steam, CharID, 'Withdraw', Amount, Gold, BankGold, Char.Gold, Bank.Gold)
+          TriggerClientEvent('DokusCore:Sync:Set:UserData', source, { 'SetCharGold', { Gold } })
+
+          -- Sync Bank Money DataSync
+          local Others, Change = {}, {}
+          for k,v in pairs(aBank) do
+            if (v.Bank == Loc) then table.insert(Change, { Loc = v.Bank, Gold = BankGold }) end
+            if (v.Bank ~= Loc) then table.insert(Others, { Loc = v.Bank, Gold = v.Gold }) end
+          end
+          for k,v in pairs(Change) do table.insert(Others, { Loc = v.Loc, Gold = v.Gold }) end
+          TriggerClientEvent('DokusCore:Sync:Set:UserData', source, { 'SetBankGold', { json.encode(Others) } })
         end
       end
     else
