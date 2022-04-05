@@ -59,6 +59,20 @@ function DrawInfo(text, x, y, size)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+function DrawText3D(x, y, z, f, text)
+  local onScreen,_x,_y = GetScreenCoordFromWorldCoord(x, y, z)
+  local px,py,pz=table.unpack(GetGameplayCamCoord())
+  SetTextScale(0.25, 0.25)
+  SetTextFontForCurrentCommand(1)
+  SetTextColor(255, 255, 255, 215)
+  local str = CreateVarString(10, "LITERAL_STRING", text, Citizen.ResultAsLong())
+  SetTextCentre(1)
+  DisplayText(str,_x,_y)
+  local factor = (string.len(text)) / f
+  DrawSprite("generic_textures", "hud_menu_4a", _x, _y+0.0125,0.015+ factor, 0.03, 0.1, 100, 1, 1, 190, 0)
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 function IsIpAddress(ip)
   if not ip then return false end
   local a, b, c, d = ip:match("^(%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?)$")
@@ -124,8 +138,21 @@ function UserData()
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
-
+-- Adds a text entry box and returns the inserted value
+--------------------------------------------------------------------------------
+function TextEntry(Title, Type, Event, Data)
+  AddTextEntry('FMMC_MPM_NA', Title)
+  DisplayOnscreenKeyboard(0, "FMMC_MPM_NA", "", "", "", "", "", 50)
+  while (UpdateOnscreenKeyboard() == 0) do Wait(5) DisableAllControlActions(0) end
+  if (GetOnscreenKeyboardResult()) then
+    local Res = GetOnscreenKeyboardResult()
+    if (Low(Type) == 'client') then TriggerEvent(Event, { Result = Res, Data = Data }) end
+    if (Low(Type) == 'server') then TriggerServerEvent(Event, { Result = Res, Data = Data }) end
+    CancelOnscreenKeyboard()
+  end
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 

@@ -4,6 +4,7 @@
 function PedID()                 return Citizen.InvokeNative(0x096275889B8E0EE0) end
 function PlayerID()              return Citizen.InvokeNative(0x217E9DC48139933D) end
 function GetPed(Value)           return Citizen.InvokeNative(0x275F255ED201B937, Value) end
+function GetServerID(Value)      return GetPlayerFromServerId(Value) end
 function GetCoords(ID)           return Citizen.InvokeNative(0xA86D5F069399F44D, ID) end
 function SetCoords(ID, Coords)   return Citizen.InvokeNative(0x06843DA7060A026B, ID, Coords) end
 function SetHeading(ID, Bool)    return Citizen.InvokeNative(0xCF2B9C0645C4651B, ID, Heading) end
@@ -25,7 +26,7 @@ function ShowCores(Bool)         return Citizen.InvokeNative(0x50C803A4CD5932C5,
 function ApplyDamage(args)       return Citizen.InvokeNative(0x697157CED63F18D4, args[1], args[2], args[3], args[4], args[5]) end
 function GetPedVitals(args)      return Citizen.InvokeNative(0x36731AC041289BB1, args[1], args[2]) end
 function GetTemperature(Coords)  return GetTemperatureAtCoords(Coords) end
-
+function GetObjAtCoords(C,R,H,B) return Citizen.InvokeNative(0xBFA48E2FF417213F, C, R, H, B) end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

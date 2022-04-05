@@ -4,6 +4,7 @@
 DB            = {}
 DB.Users      = {}
 DB.Banks      = {}
+DB.Items      = {}
 DB.Settings   = {}
 DB.Characters = {}
 DB.Blacklist  = {}
@@ -40,6 +41,7 @@ DB.Storages.GetAllDropBox    = 'select * from storages where Type=@Type'
 DB.Storages.GetUserDropBox   = 'select * from storages where Type=@Type and Steam=@Steam and CharID=@CharID'
 DB.Storages.GetDropBoxViaID  = 'select * from storages where BoxID=@BoxID'
 DB.Metabolism.Get            = 'select * from metabolism where Steam=@Steam and CharID=@CharID'
+DB.Items.GetAll              = 'select * from items'
 --------------------------------------------------------------------------------
 ---- DB Insert
 --------------------------------------------------------------------------------

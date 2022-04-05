@@ -7,7 +7,7 @@ _Language       = { Lang = 'en', Multi = true } --( In Progress )
 _StartWealth    = { Money = 2.25, Gold = 0.0 } --{{ BankMoney and BankGold are DEPRECATED and not in use anymore.
 _StartJob       = { Name = 'unemployed', Grade = 0 }                            -- These will be removed later, leave them be as it breaks the core atm. }}--
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
-_Time           = { TimeSync = false, FixedTime = { false, 12, 00 } }
+_Time           = { TimeSync = false, FixedTime = { true, 12, 00 } }
 _DokusMenu      = { Position = 'right', Theme = { Dark = true, Red = false } }
 _ActionKey      = 0x8AAA0AD4
 --------------------------------------------------------------------------------
@@ -34,16 +34,20 @@ _Security = {
 -- data like character data as suppose to. If set incorrectly the core can bug.
 --------------------------------------------------------------------------------
 _Modules          = {
-  SettingsMenu    = true,  -- Required
-  MultiCharacters = true,  -- Required
+  SettingsMenu    = true,  -- Required ( In Progress )
+  MultiCharacters = true,  -- Required ( In Progress )
   Inventory       = true,  -- Required ( In Progress )
-  NPCInteract     = true,  -- Required
-  Metabolism      = true,  -- Required
-  SkinCreator     = true,  -- Optional
-  Banking         = true,  -- Optional
-  -- Stores          = false, -- Optional ( In Progress )
-  -- LootNPCs        = false, -- Optional ( In Progress )
-  -- WeaponShop      = false, -- Optional ( In Progress )
+  NPCInteract     = true,  -- Required ( In Progress )
+  Metabolism      = true,  -- Required ( In Progress )
+  UsableItems     = true,  -- Required ( In Progress )
+  SkinCreator     = true,  -- Optional ( In Progress )
+  Banking         = true,  -- Optional ( In Progress )
+
+  -- This is a bundle of small scripts
+  ScriptBundle    = {
+    Status        = true,  -- Optional
+    BushHarvest   = true,  -- Optional
+  }
 
  }
 --------------------------------------------------------------------------------

@@ -16,8 +16,10 @@ _MultiCharacters = {
   },
 
   StartItems = {
-    { Item = 'Coffee', Amount = 2, Type = 'Consumable' },
-    { Item = 'Carrot', Amount = 2, Type = 'Consumable' }
+    { Item = 'Coffee',   Amount = 5,  Type = 'Consumable' },
+    { Item = 'Carrot',   Amount = 10, Type = 'Consumable' },
+    { Item = 'Campfire', Amount = 1,  Type = 'Deployable' },
+    { Item = 'Whiskey',  Amount = 3,  Type = 'Consumable' }
   }
 }
 --------------------------------------------------------------------------------
