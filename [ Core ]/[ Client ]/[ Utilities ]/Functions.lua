@@ -96,6 +96,7 @@ function SpawnNPC(_, Coords, Heading)
   Citizen.InvokeNative(0x1794B4FCC84D812F, SpawnNPCs, 1) -- SetEntityVisible
   Citizen.InvokeNative(0x0DF7692B1D9E7BA7, SpawnNPCs, 255, false) -- SetEntityAlpha
   Citizen.InvokeNative(0x283978A15512B2FE, SpawnNPCs, true) -- SetRandomOutfitVariation
+  Citizen.InvokeNative(0x9587913B9E772D29, SpawnNPCs, true) -- PlaceEntityOnGroundProperly
   Citizen.InvokeNative(0x7D9EFB7AD6B19754, SpawnNPCs, true) -- FreezeEntityPosition
   Citizen.InvokeNative(0xDC19C288082E586E, SpawnNPCs, 1, 1) --SetEntityAsMissionEntity
   Citizen.InvokeNative(0x919BE13EED931959, SpawnNPCs, - 1) -- TaskStandStill
@@ -109,6 +110,12 @@ function GetDistance(Coords)
   local Ped = PedID()
   local pCoords = GetCoords(Ped)
   local Dist = Vdist(pCoords, Coords)
+  return Dist
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+function GetDistanceEnt(Position, Coords)
+  local Dist = Vdist(Position, Coords)
   return Dist
 end
 --------------------------------------------------------------------------------
@@ -153,8 +160,30 @@ function TextEntry(Title, Type, Event, Data)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+-- NEED TO MAKE THE NPC OF THE TRAIN STATIC SO THAT PEOPLE CAN NOT REMOVE THEM
+function SpawnTrain(Model, Coords, Heading)
+  local Hash = tonumber(Model)
+  local Wagons = N_0x635423d55ca84fc8(Hash)
 
+  -- Spawn the wagons
+  for Index = 0, Wagons - 1 do
+    local TrainModel = N_0x8df5f6a19f99f0d5(Hash, Index)
+    while not HasModelLoaded(TrainModel) do
+      Citizen.InvokeNative(0xFA28FE3A6246FC30, TrainModel, 1)
+      Citizen.Wait(100)
+    end
+  end
 
+  -- Spawn the train
+  local Train = N_0xc239dbd9a57d2a71(Hash, Coords, Heading, 0, 1, 1)
+  SetTrainSpeed(Train, 0.0)
+  SetTrainCruiseSpeed(Train, 0.0)
+  Citizen.InvokeNative(0xDC19C288082E586E, Train, 1, 1) --SetEntityAsMissionEntity
+  Citizen.InvokeNative(0x4AD96EF928BD4F9A, Train) -- SetModelAsNoLongerNeeded
+  return Train
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 

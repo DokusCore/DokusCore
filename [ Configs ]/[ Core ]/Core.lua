@@ -7,7 +7,7 @@ _Language       = { Lang = 'en', Multi = true } --( In Progress )
 _StartWealth    = { Money = 2.25, Gold = 0.0 } --{{ BankMoney and BankGold are DEPRECATED and not in use anymore.
 _StartJob       = { Name = 'unemployed', Grade = 0 }                            -- These will be removed later, leave them be as it breaks the core atm. }}--
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
-_Time           = { TimeSync = false, FixedTime = { true, 12, 00 } }
+_Time           = { TimeSync = false, FixedTime = { true, 10, 00 } }
 _DokusMenu      = { Position = 'right', Theme = { Dark = true, Red = false } }
 _ActionKey      = 0x8AAA0AD4
 --------------------------------------------------------------------------------
@@ -47,7 +47,11 @@ _Modules          = {
   ScriptBundle    = {
     Status        = true,  -- Optional
     BushHarvest   = true,  -- Optional
-  }
+  },
+
+  -- UNDER CONSTRUCTION
+  Telegrams = true,
+  Trains = true,
 
  }
 --------------------------------------------------------------------------------

@@ -19,7 +19,8 @@ _MultiCharacters = {
     { Item = 'Coffee',   Amount = 5,  Type = 'Consumable' },
     { Item = 'Carrot',   Amount = 10, Type = 'Consumable' },
     { Item = 'Campfire', Amount = 1,  Type = 'Deployable' },
-    { Item = 'Whiskey',  Amount = 3,  Type = 'Consumable' }
+    { Item = 'Whiskey',  Amount = 3,  Type = 'Consumable' },
+    { Item = 'Trumpet',  Amount = 1,  Type = 'Instrument' }
   }
 }
 --------------------------------------------------------------------------------
