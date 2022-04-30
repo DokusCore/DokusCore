@@ -21,8 +21,6 @@ AddEventHandler('DokusCore:Core:DBSet:Inventory', function(args)
       local Steam, CharID, Item, Amount, InvAmount = args[3][1], args[3][2], args[3][3], args[3][4], args[3][5]
       local _Amount = ( InvAmount - Amount )
 
-      print("New Inv Amount", InvAmount, Amount, _Amount, Steam, CharID, Item)
-
       if (_Amount > 0) then
         DBSet(DB.Inventory.SetUserItem, { Amount = _Amount, Steam = Steam, CharID = CharID, Item = Item }, function() end)
       elseif (_Amount <= 0) then

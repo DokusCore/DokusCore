@@ -4,12 +4,12 @@
 _ServerName     = 'DokusCore Development Server'
 _DiscordInvite  = 'https://Discord.io/DokusCore'
 _Language       = { Lang = 'en', Multi = true } --( In Progress )
-_StartWealth    = { Money = 2.25, Gold = 0.0 } --{{ BankMoney and BankGold are DEPRECATED and not in use anymore.
-_StartJob       = { Name = 'unemployed', Grade = 0 }                            -- These will be removed later, leave them be as it breaks the core atm. }}--
+_StartWealth    = { Money = 2.25, Gold = 0.0 }
+_StartJob       = { Name = 'unemployed', Grade = 0 } --( In Progress )
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
 _Time           = { TimeSync = false, FixedTime = { true, 10, 00 } }
 _DokusMenu      = { Position = 'right', Theme = { Dark = true, Red = false } }
-_ActionKey      = 0x8AAA0AD4
+_ActionKey      = 0x8AAA0AD4 -- Default LEFT ALT
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _EnablePVP       = true
@@ -42,17 +42,17 @@ _Modules          = {
   UsableItems     = true,  -- Required ( In Progress )
   SkinCreator     = true,  -- Optional ( In Progress )
   Banking         = true,  -- Optional ( In Progress )
+  Stores          = true,  -- Optional ( In Progress )
 
   -- This is a bundle of small scripts
   ScriptBundle    = {
     Status        = true,  -- Optional
-    BushHarvest   = true,  -- Optional
+    BushHarvest   = true,  -- Optional ( In Progress )
   },
 
   -- UNDER CONSTRUCTION
-  Telegrams = true,
-  Trains = true,
-
+  Telegrams       = true,  -- Optional ( In Progress )
+  Trains          = true,  -- Optional ( In Progress )
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

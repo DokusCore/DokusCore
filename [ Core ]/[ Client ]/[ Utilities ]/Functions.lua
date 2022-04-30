@@ -160,6 +160,21 @@ function TextEntry(Title, Type, Event, Data)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+-- Adds a number entry box and returns the inserted value
+--------------------------------------------------------------------------------
+function NREntry(Title, Type, Event, Data)
+  AddTextEntry('FMMC_MPM_NA', Title)
+  DisplayOnscreenKeyboard(0, "FMMC_MPM_NA", "", "", "", "", "", 50)
+  while (UpdateOnscreenKeyboard() == 0) do Wait(5) DisableAllControlActions(0) end
+  if (GetOnscreenKeyboardResult()) then
+    local Res = GetOnscreenKeyboardResult()
+    if (Low(Type) == 'client') then TriggerEvent(Event, { Result = Res, Data = Data }) end
+    if (Low(Type) == 'server') then TriggerServerEvent(Event, { Result = Res, Data = Data }) end
+    CancelOnscreenKeyboard()
+  end
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- NEED TO MAKE THE NPC OF THE TRAIN STATIC SO THAT PEOPLE CAN NOT REMOVE THEM
 function SpawnTrain(Model, Coords, Heading)
   local Hash = tonumber(Model)

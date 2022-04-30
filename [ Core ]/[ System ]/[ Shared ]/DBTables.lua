@@ -73,7 +73,14 @@ DB.Banks.SetGoldSynced       = 'update banks set Gold=@Gold, Synced=@Synced wher
 DB.Banks.SetBankMoney        = 'update banks set BankMoney=@BankMoney where Steam=@Steam and CharID=@CharID' -- DEPRECATED
 DB.Banks.SetBankGold         = 'update banks set BankGold=@BankGold where Steam=@Steam and CharID=@CharID'   -- DEPRECATED
 DB.Users.SetSName            = 'update users set sName=@sName where Steam=@Steam'
+DB.Stores.SetStoreData       = 'update stores set Stores=@Stores where Item=@Item'
+DB.Stores.SetStockData       = 'update stores set Stock=@Stock where Item=@Item'
 DB.Storages.SetDropBoxItems  = 'update storages set Meta=@Meta where BoxID=@BoxID'
+DB.Stores.SetItemData        = 'update stores set ItemData=@ItemData where Item=@Item'
+DB.Stores.SetTaxData         = 'update stores set Taxation=@Taxation where Item=@Item'
+DB.Stores.SetItemType        = 'update stores set Type=@Type where Item=@Item'
+DB.Stores.SetItemName        = 'update stores set Name=@Name where Item=@Item'
+DB.Stores.SetItemDesc        = 'update stores set Description=@Description where Item=@Item'
 DB.Storages.SetReplaceBoxes  = 'update storages set BoxID=@NewBoxID where BoxID=@OldBoxID'
 DB.Storages.SetItemMeta      = 'update storages set Meta=@Meta where BoxID=@BoxID'
 DB.Inventory.SetUserItem     = 'update inventory set Amount=@Amount where Steam=@Steam and CharID=@CharID and Item=@Item'

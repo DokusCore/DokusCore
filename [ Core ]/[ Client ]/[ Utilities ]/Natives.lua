@@ -31,6 +31,7 @@ function IsWalking(Value)           return Citizen.InvokeNative(0xDE4C184B2B9B07
 function IsRunning(Value)           return Citizen.InvokeNative(0xC5286FFC176F28A2, Value) end
 function GetHealth(Value)           return Citizen.InvokeNative(0x82368787EA73C0F7, Value) end
 function DoHealthDamage(P,V,I,B,K)  return Citizen.InvokeNative(0x697157CED63F18D4, P, V, I, B, K) end
+function ResName()                  return GetCurrentResourceName() end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 function EnablePVP()

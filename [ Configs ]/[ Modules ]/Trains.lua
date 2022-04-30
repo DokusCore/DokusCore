@@ -7,7 +7,7 @@
 _Trains = {
   ActRadius = 7.0,
   StartSpeed = 5.0,
-  StartForce = 1000,
+  StartForce = 750,
 
   -- The amount of trains on the track.
   -- More information below
