@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 description 'DokusCore - A RedM Framework - By DevDokus'
 author 'DevDokus Github'
-version '0.5.7'
+version '0.5.9'
 dependencies { 'oxmysql', 'pNotify' }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ shared_scripts {
   '[ Configs ]/[ Core ]/*.*',
   '[ Configs ]/[ Modules ]/*.*',
   '[ Core ]/[ System ]/[ Shared ]/*.*',
-  '[ Core ]/[ System ]/[ Shared ]/[ Language ]/*.*',
+  '[ Core ]/[ System ]/[ Shared ]/[ Language ]/*.*'
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -35,15 +35,13 @@ server_scripts {
   '[ Core ]/[ Server ]/[ Callbacks ]/*.*',
   '[ Core ]/[ Server ]/[ Events ]/[ Database ]/*.*',
   '[ Core ]/[ Server ]/[ Events ]/[ Normal ]/*.*',
-  '[ Core ]/[ Server ]/[ Callbacks ]/[ Database ]/*.*',
+  '[ Core ]/[ Server ]/[ Callbacks ]/[ Database ]/*.*'
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 ui_page 'UI/index.html'
 files {
   'UI/index.html',
-  -- 'UI/Hud/*.*',
-  -- 'UI/Hud/assets/*.*',
   'UI/ChatStyle/*.*',
   'UI/Sounds/js/*.*',
   'UI/Sounds/ogg/*.*',

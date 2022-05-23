@@ -7,7 +7,7 @@ function GetPed(Value)              return Citizen.InvokeNative(0x275F255ED201B9
 function GetServerID(Value)         return GetPlayerFromServerId(Value) end
 function GetCoords(ID)              return Citizen.InvokeNative(0xA86D5F069399F44D, ID) end
 function SetCoords(ID, Coords)      return Citizen.InvokeNative(0x06843DA7060A026B, ID, Coords) end
-function SetHeading(ID, Bool)       return Citizen.InvokeNative(0xCF2B9C0645C4651B, ID, Heading) end
+function SetHeading(ID, Heading)    return Citizen.InvokeNative(0xCF2B9C0645C4651B, ID, Heading) end
 function SetVisible(ID, Bool)       return Citizen.InvokeNative(0x1794B4FCC84D812F, ID, Bool) end
 function SetFreeze(ID, Bool)        return Citizen.InvokeNative(0x7D9EFB7AD6B19754, ID, Bool) end
 function UIFadeIn(Time)             return Citizen.InvokeNative(0x6A053CF596F67DF7, Time) end

@@ -25,7 +25,7 @@ _BankDoors       = true
 --------------------------------------------------------------------------------
 _Security = {
   Blacklist = { Enabled = true },
-  Whitelist = { Enabled = false, NotifyAdmins = false }, --( In Progress )
+  Whitelist = { Enabled = true, NotifyAdmins = false }, --( In Progress )
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -43,6 +43,7 @@ _Modules          = {
   SkinCreator     = true,  -- Optional ( In Progress )
   Banking         = true,  -- Optional ( In Progress )
   Stores          = true,  -- Optional ( In Progress )
+  FastTavel       = true,  -- Optional ( In Progress )
 
   -- This is a bundle of small scripts
   ScriptBundle    = {

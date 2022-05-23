@@ -29,6 +29,7 @@ AddEventHandler('DokusCore:Core:LoadUser', function(sName)
   if (User.Exist) then if (Data.sName ~= User.Result[1].sName) then TriggerServerEvent('DokusCore:Core:DBSet:Users', { 'sName', { Data.Steam, Data.sName } }) end end
   local Settings = TSC('DokusCore:Core:DBGet:Settings', { 'user', { Data.SteamID } })
   if not (Settings.Exist) then TriggerServerEvent('DokusCore:Core:DBIns:Settings', { 'user', { Data.SteamID, 1, _Language.Lang } }) end
+  TriggerServerEvent('DokusCore:Sync:Set:CoreData', { 'FrameReady', { true } })
   TriggerEvent('DokusCore:Sync:Set:CoreData', { 'FrameReady', { true } })
 end)
 --------------------------------------------------------------------------------

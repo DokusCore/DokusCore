@@ -8,15 +8,6 @@ RegisterNetEvent('DokusCore:Core:Banking:Transaction', function(args)
   local Bank  = TSC('DokusCore:Core:DBGet:Banks', { 'User', 'Single', 'Bank', { Steam, CharID, Loc } }).Result[1]
   local aBank = TSC('DokusCore:Core:DBGet:Banks', { 'User', 'All', 'Bank', { Steam, CharID } }).Result
   TriggerServerEvent('DokusCore:Core:DBSet:Banks', { Auto, Tax, { tType, mType, { Steam, CharID, Loc, Amount, Char, Bank, aBank } } })
-
-  -- Update the hud
-  -- local Bank = TSC('DokusCore:Core:DBGet:Banks', { 'User', 'Single', 'Bank', { Steam, CharID, Loc } }).Result[1]
-  -- local Money, Gold = Bank.Money, Bank.Gold
-  -- local array = { action = "showAccount", bank = string.upper(Loc), money = Money, gold = Gold }
-  -- local encoded = json.encode(array)
-  -- SetNuiFocus(true, true)
-  -- SendNuiMessage(encoded)
-  -- Wait(500)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

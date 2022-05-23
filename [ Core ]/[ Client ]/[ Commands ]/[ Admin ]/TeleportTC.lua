@@ -5,24 +5,26 @@ local PromptBack, PromptCancel = nil, nil
 local Group = GetRandomIntInRange(0, 0xffffff)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RegisterNetEvent('DokusCore:Core:Admin:Commands:TPM')
-AddEventHandler('DokusCore:Core:Admin:Commands:TPM', function()
+RegisterNetEvent('DokusCore:Core:Admin:Commands:TeleportTC', function(s,a,r)
   local IsForUsers, IsForAdmins, IsForOwners = false, false, false
   if (_Commands.Teleport.Users) then IsForUsers = true end
   if (_Commands.Teleport.Admins) then IsForAdmins = true end
   if (_Commands.Teleport.SuperAdmins) then IsForOwners = true end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
--- Check if user is admin or superadmin
-local UserData = TCTCC('DokusCore:Sync:Get:UserData')
-local Group, Cmds, CMD = GetUserGroup(UserData.SteamID, UserData.CharID), {}, _Commands
-local Mod, IsUser, IsAdmin, IsOwner = _Moderation, true, true, true
-if (Group ~= Mod.User) then IsUser = false end
-if (Group ~= Mod.Admin) then IsAdmin = false end
-if (Group ~= Mod.SuperAdmin) then IsOwner = false end
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
-local function DoThis() TriggerEvent('DokusCore:Core:Admin:Commands:DoTPM') end
+  -- Check if user is admin or superadmin
+  local UserData = TCTCC('DokusCore:Sync:Get:UserData')
+  local Group, Cmds, CMD = GetUserGroup(UserData.SteamID, UserData.CharID), {}, _Commands
+  local Mod, IsUser, IsAdmin, IsOwner = _Moderation, true, true, true
+  if (Group ~= Mod.User) then IsUser = false end
+  if (Group ~= Mod.Admin) then IsAdmin = false end
+  if (Group ~= Mod.SuperAdmin) then IsOwner = false end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+  local function DoThis()
+    local Coords = GetEntityCoords(PedID())
+    NREntry('Enter Coords X - Y', 'Client', 'DokusCore:Core:Admin:Commands:DoTeleportTC', { LastCoords = Coords })
+  end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
   if IsForUsers and IsUser then DoThis() end
@@ -72,27 +74,29 @@ local function ResetPort()
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RegisterNetEvent('DokusCore:Core:Admin:Commands:DoTPM', function()
+RegisterNetEvent('DokusCore:Core:Admin:Commands:DoTeleportTC', function(Data)
+  local Chunks = {}
   local PedID = PedID()
-  local Exists = DoesEntityExist(PedID)
-  local LCoords = GetEntityCoords(PedID)
-  if Exists then
-    local WP = GetWaypointCoords()
-    if ((WP.x == 0) and (WP.y == 0) and (WP.z == 0)) then Notify("You've no waypoint set!") return end
-    local height = 1
-    UIFadeOut(2000) Wait(2000)
-    for height = 1, 1000 do
-      SetEntityCoords(PedID, WP.x, WP.y, (height - 50) + 0.0)
-      local foundground, groundZ, normal = GetGroundZAndNormalFor_3dCoord(WP.x, WP.y, (height - 50) + 0.0)
-      if foundground then
-        SetEntityCoords(PedID, WP.x, WP.y, (height - 50) + 0.0)
-        break
-      end Wait(25)
-    end
+  local LCoords = Data.Data.LastCoords
+  for s in Data.Result:gmatch("%S+") do Tabi(Chunks, s) end
+  local x,y = tonumber(Chunks[1]), tonumber(Chunks[2])
+  if (x == nil) then Notify("No 1st parameter entry or is a none number") return end
+  if (y == nil) then Notify("No 2st parameter entry or is a none number") return end
+
+  local height = 1
+  UIFadeOut(2000) Wait(2000)
+  for height = 1, 1000 do
+    SetEntityCoords(PedID, x,y, (height - 50) + 0.0)
+    local foundground, groundZ, normal = GetGroundZAndNormalFor_3dCoord(x,y, (height - 50) + 0.0)
+    if foundground then
+      SetEntityCoords(PedID, x,y, (height - 50) + 0.0)
+      break
+    end Wait(25)
   end
 
   UIFadeIn(2000) Wait(2000)
   OpenPrompt()
+  local Count = 0
   local WaitForTel = true
   while WaitForTel do Wait(1)
     local BGroup = CreateVarString(10, 'LITERAL_STRING', 'Teleport')
@@ -103,13 +107,8 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:DoTPM', function()
     if (C) then ResetPort() WaitForTel = false end
   end
 end)
-
-
-
-
-
-
-
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 

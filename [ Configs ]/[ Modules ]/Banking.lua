@@ -18,10 +18,10 @@ _Banking = {
   },
 
   Zones = {
-    { ID = 'Valentine',   Coords = vector3(-308.57,775.95,117.7)   },
-    { ID = 'Rhodes',      Coords = vector3(1292.48,-1301.67,77.04) },
-    { ID = 'SaintDenis',  Coords = vector3(2644.23,-1292.61,52.25) },
-    { ID = 'BlackWater',  Coords = vector3(-812.18,-1277.26,43.64) },
+    { ID = 'Valentine',   cRadius = 0.0, aRadius = 0.0, Coords = vector3(-308.57,775.95,117.7)   },
+    { ID = 'Rhodes',      cRadius = 0.0, aRadius = 0.0, Coords = vector3(1292.48,-1301.67,77.04) },
+    { ID = 'SaintDenis',  cRadius = 0.0, aRadius = 0.0, Coords = vector3(2644.23,-1292.61,52.25) },
+    { ID = 'BlackWater',  cRadius = 0.0, aRadius = 0.0, Coords = vector3(-812.18,-1277.26,43.64) },
   },
 
   NPCs = {

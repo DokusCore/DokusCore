@@ -12,9 +12,13 @@ _Metabolism = {
     Damage = { Cold = { Thirst = 0.02, Hunger = 0.15  }, Hot = { Thirst = 0.15, Hunger = 0.02 } }
   },
 
-  Vitals = { LoseWhen = 10.0, DPS = 2.5 },
+  Vitals = { LoseWhen = 1.0, DPS = 1.0 },
   Hunger = { Drain = { Idle = 0.01, Walking = 0.07, Running = 0.15, Sprinting = 0.25 }},
-  Thirst = { Drain = { Idle = 0.02, Walking = 0.10, Running = 0.50, Sprinting = 0.75 }}
+  Thirst = { Drain = { Idle = 0.02, Walking = 0.10, Running = 0.50, Sprinting = 0.75 }},
+
+  -- Spice up your RP with random character farts and burps.
+  Farting = { Enabled = true, Frequention = 30 }, -- Frequency for chance in seconds.
+  Burping = { Enabled = true, Frequention = 30 }, -- Frequency for chance in seconds.
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -49,8 +53,15 @@ _Metabolism = {
 -- and a more realistic drainage, we would advice to leave the settings as it is.
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
-
+-- Farting and Burping
+--------------------------------------------------------------------------------
+-- This feature makes your character fart and burp completely random. The script
+-- picks a number between 1 / 10, if the number lands on 5 a burp or fart will
+-- be triggered. The options you have is to enable or disable this feature, and
+-- the Frequency is the amount of seconds before a new number is picked.
+-- The higher the number, the lower the chances are a player burps or farts.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 
