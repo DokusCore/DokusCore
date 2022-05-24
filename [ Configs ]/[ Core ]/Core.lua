@@ -25,7 +25,7 @@ _BankDoors       = true
 --------------------------------------------------------------------------------
 _Security = {
   Blacklist = { Enabled = true },
-  Whitelist = { Enabled = true, NotifyAdmins = false }, --( In Progress )
+  Whitelist = { Enabled = false, NotifyAdmins = false }, --( In Progress )
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
