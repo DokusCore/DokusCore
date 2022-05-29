@@ -3,13 +3,14 @@
 --------------------------------------------------------------------------------
 description 'DokusCore - A RedM Framework - By DevDokus'
 author 'DevDokus Github'
-version '0.5.9'
+version '0.6.0'
 dependencies { 'oxmysql', 'pNotify' }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 shared_scripts {
   '[ Configs ]/[ Core ]/*.*',
   '[ Configs ]/[ Modules ]/*.*',
+  '[ Configs ]/[ Dialogs ]/*.*',
   '[ Core ]/[ System ]/[ Shared ]/*.*',
   '[ Core ]/[ System ]/[ Shared ]/[ Language ]/*.*'
 }
@@ -44,7 +45,10 @@ files {
   'UI/index.html',
   'UI/ChatStyle/*.*',
   'UI/Sounds/js/*.*',
-  'UI/Sounds/ogg/*.*',
+  'UI/Sounds/ogg/Music/*.*',
+  'UI/Sounds/ogg/Sounds/*.*',
+  'UI/Sounds/ogg/Dialogs/*.*',
+  'UI/Sounds/ogg/Metabolism/*.*',
   'UI/IMG/*.*',
 }
 --------------------------------------------------------------------------------

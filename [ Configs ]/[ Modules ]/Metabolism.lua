@@ -9,7 +9,7 @@ _Metabolism = {
   Temp = {
     Format = 'C',
     Limit = { Min = -5, Max = 28 },
-    Damage = { Cold = { Thirst = 0.02, Hunger = 0.15  }, Hot = { Thirst = 0.15, Hunger = 0.02 } }
+    Damage = { Cold = { Thirst = 0.02, Hunger = 0.05  }, Hot = { Thirst = 0.05, Hunger = 0.02 } }
   },
 
   Vitals = { LoseWhen = 1.0, DPS = 1.0 },

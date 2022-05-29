@@ -2010,7 +2010,8 @@ if _EnableIMaps then
 	------------------------Wapiti & Native Stuff
 	RequestImap(1003623269) -- Tent in Wapiti
 	RequestImap(1638937672) -- tent 441.39, 2228.66, 248.03
-	RequestImap(739805687) -- something to do with tent in wapiti 441.39, 2228.66, 248.03
+	--RequestImap(739805687) something to do with tent in wapiti 441.39, 2228.66, 248.03
+	RemoveImap(739805687)
 	RequestImap(795060201) -- tent flap open
 	--RequestImap(661576070) -- tent flap closed
 	RequestImap(-395621323) -- something

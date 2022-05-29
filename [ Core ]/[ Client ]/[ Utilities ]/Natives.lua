@@ -34,20 +34,6 @@ function DoHealthDamage(P,V,I,B,K)  return Citizen.InvokeNative(0x697157CED63F18
 function ResName()                  return GetCurrentResourceName() end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-function EnablePVP()
-  Citizen.InvokeNative(0xF808475FA571D823, true)
-  Citizen.InvokeNative(0xBF25EB89375A37AD, 5, `PLAYER`, `PLAYER`)
-end
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-function SetBlip(Coords, Hash, Radius, Title)
-  local blip = N_0x554d9d53f696d002(1664425300, Coords)
-  SetBlipSprite(blip, Hash, 1)
-  SetBlipScale(blip, Radius)
-  Citizen.InvokeNative(0x9CB1A1623062F402, blip, Title)
-end
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 
 
 

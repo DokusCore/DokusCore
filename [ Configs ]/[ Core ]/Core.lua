@@ -7,20 +7,22 @@ _Language       = { Lang = 'en', Multi = true } --( In Progress )
 _StartWealth    = { Money = 2.25, Gold = 0.0 }
 _StartJob       = { Name = 'unemployed', Grade = 0 } --( In Progress )
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
-_Time           = { TimeSync = false, FixedTime = { true, 10, 00 } }
 _DokusMenu      = { Position = 'right', Theme = { Dark = true, Red = false } }
 _ActionKey      = 0x8AAA0AD4 -- Default LEFT ALT
+_EnablePVP      = true
+_ShowMap        = true
+_ShowMiniMap    = true
+_EnableIMaps    = true
+_BankDoors      = true
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-_EnablePVP       = true
-_ShowMap         = true
-_ShowMiniMap     = true
-_EnableIMaps     = true
-_BankDoors       = true
+-- NOTE: The time feature does NOT work together with the weathersync plugin!
+-- To use this feature you will need to disable weathersync!
+--------------------------------------------------------------------------------
+_Time           = { TimeSync  = false, FixedTime = { false, 00, 00 } }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- The Security contains the Black and whitelist Module.
---------------------------------------------------------------------------------
 -- When the whitelist is used you set `pending` to `true` to accept the player
 --------------------------------------------------------------------------------
 _Security = {
@@ -45,6 +47,7 @@ _Modules          = {
   Stores          = true,  -- Optional ( In Progress )
   FastTavel       = true,  -- Optional ( In Progress )
 
+
   -- This is a bundle of small scripts
   ScriptBundle    = {
     Status        = true,  -- Optional
@@ -54,6 +57,7 @@ _Modules          = {
   -- UNDER CONSTRUCTION
   Telegrams       = true,  -- Optional ( In Progress )
   Trains          = true,  -- Optional ( In Progress )
+  Bathing         = true,  -- Optional ( In Progress )
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -93,6 +97,9 @@ _Commands = { --( In Progress )
 --------------------------------------------------------------------------------
 --  These are the keys you can ue in game. Not adviced to make changes below  --
 --               It can create a disturbance in the force!                    --
+--------------------------------------------------------------------------------
+_Dialogs = {}
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Keys = {
   ["MOUSE1"] = 0x07CE1E61, ["MOUSE2"] = 0xF84FA74F, ["MOUSE3"] = 0xCEE12B50, ["MWUP"] = 0x3076E97C,

@@ -199,15 +199,27 @@ function SpawnTrain(Model, Coords, Heading)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
+function EnablePVP()
+  Citizen.InvokeNative(0xF808475FA571D823, true)
+  Citizen.InvokeNative(0xBF25EB89375A37AD, 5, `PLAYER`, `PLAYER`)
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+function SetBlip(Coords, Hash, Radius, Title)
+  local blip = N_0x554d9d53f696d002(1664425300, Coords)
+  SetBlipSprite(blip, Hash, 1)
+  SetBlipScale(blip, Radius)
+  Citizen.InvokeNative(0x9CB1A1623062F402, blip, Title)
+  return blip
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+function NoteTopCenter(Text, Loc) TriggerEvent('DokusCore:Core:ShowTopNote', Text, Loc) end
+function NoteLeft(Title, Text, Type, Time) TriggerEvent('DokusCore:Core:ShowLeftNote', Title, Text, Type, Time) Wait(Time) end
+function NoteTopLeft(Text, Time) TriggerEvent('DokusCore:Core:ShowTip', Text, Time) Wait(Time) end
+function NoteObjective(Title, Text, Type, Time) TriggerEvent('DokusCore:Core:NoteObjective', Title, Text, Type, Time) Wait(Time) end
+function NoteNPCTalk(Title, Text, Time) TriggerEvent('DokusCore:Core:NoteObjective', Title, Text, 'NPC', Time) Wait(Time) end
+function ShowtextRight(Text, Time) TriggerEvent('DokusCore:Core:ShowtextRight', Text, Time) Wait(Time) end
 
 
 

@@ -7,7 +7,7 @@
 _Stores = {
 
   Stores = {
-    { Enabled = true, ID = 'Valentine',  Radius = 6.6, Coords = vector3(-322.0, 803.4, 117.8)    },
+    { Enabled = true, ID = 'Valentine',  Radius = 7.0, Coords = vector3(-322.0, 803.4, 117.8)    },
     { Enabled = true, ID = 'SaintDenis', Radius = 8.1, Coords = vector3(2826.1, -1317.9, 45.7)   },
     { Enabled = true, ID = 'Blackwater', Radius = 8.1, Coords = vector3(-784.8, -1323.9, 43.8)   },
     { Enabled = true, ID = 'Tumbleweed', Radius = 8.1, Coords = vector3(-5487.6, -2938.9, -0.4)  },
@@ -24,7 +24,7 @@ _Stores = {
     { Enabled = true, ID = 'Rhodes',     Radius = 2.1, Coords = vector3(1329.8, -1294.2, 76.0),   Heading = 77.01,  Hash = 'U_M_M_StrGenStoreOwner_01' },
     { Enabled = true, ID = 'Armadillo',  Radius = 2.2, Coords = vector3(-3687.4, -2623.3, -14.5), Heading = 267.5,  Hash = 'U_M_M_StrGenStoreOwner_01' },
     { Enabled = true, ID = 'Strawberry', Radius = 2.2, Coords = vector3(-1789.7, -388.1, 159.36), Heading = 68.2,   Hash = 'U_M_M_StrGenStoreOwner_01' },
-  }
+  },
 }
 
 --------------------------------------------------------------------------------
