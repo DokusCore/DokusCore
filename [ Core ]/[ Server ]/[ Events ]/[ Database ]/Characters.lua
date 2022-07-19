@@ -5,7 +5,7 @@ local File = '@DokusCore/[ Core ]/[ Server ]/[ Events ]/[ Normal ]/Characters.lu
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 RegisterServerEvent('DokusCore:Core:DBIns:Characters')
-AddEventHandler('DokusCore:Core:DBIns:Characters', function(source, args)
+AddEventHandler('DokusCore:Core:DBIns:Characters', function(args)
   -- if (args == nil) then return ErrorMsg('Err_WrongCallbackFormat') end
   -- if (args[1] == nil) then return ErrorMsg('Err_NoCatType') end
   -- if (args[2] == nil) then return ErrorMsg('Err_WrongCallbackFormat') end

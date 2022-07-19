@@ -28,7 +28,6 @@ local Data = {
   { ID = 'Health',      Dict = 'menu_textures',    Icon = 'menu_icon_ability_recovery'  },
   { ID = 'Shield',      Dict = 'menu_textures',    Icon = 'menu_icon_ability_defense'   },
   { ID = 'Warning',     Dict = 'menu_textures',    Icon = 'menu_icon_info_warning'      },
-  { ID = 'Alert',       Dict = 'menu_textures',    Icon = 'menu_icon_alert'             },
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

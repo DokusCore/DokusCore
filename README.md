@@ -1,95 +1,131 @@
 ---
 <p align="center">
   <img width="600" height="200" src="https://user-images.githubusercontent.com/49053928/111937011-2e9b8080-8ac7-11eb-914a-a0d94380d611.gif"><br>
- <b>Version (v0.6.0) [BETA] (WIP)</b> - The Ultimate RP Framework for RedM.
+ <b>Version (v0.6.1) [BETA] (WIP)</b> - The Ultimate RP Framework for RedM.
 </p>
 
 ---
-# New Framework Being Build
-I am currently developing a new framework for RedM. <br>
-Below you will find some info on DokusCore, once we <br>
-are further in development, we will post more information
+# Introduction
+DokusCore is a ( Red Dead Redepmtion 2 ) RedM roleplay framework that is <br>
+designed to bring your roleplay to a new level. DokusCore is easy installed <br>
+and is maintained on a regular basis by its developers. DokusCore makes it <br>
+easy for developers as the core itself will do most of the coding calculation, <br>
+so that developers can build their plugins with the least amount of code. <br>
+DokusCore is optimized for better server performance, with most of all plugins <br>
+running 0.00ms server side and 0.00/0.01ms client side on idle. There are many <br>
+more things that we will show you below.
 
 ---
-# Requirements
-[DokusCore Setting Menu](https://github.com/DokusCore/DokusCore--SettingsMenu)
-[DokusCore Multi Characters](https://github.com/DokusCore/DokusCore--MultiCharacters)
+# Server Prebuild:
+If you do not want to build your own server you don't have to, we already did all   <br>
+the work for you! Download our [Prebuild](https://github.com/DokusCore/Server-Prebuild) server package and you will be setup  <br>
+within minutes. You also do not have to worry about dependencies or if the plugins <br>
+are started in the right order. Just insert your server artifacts, change the .cfg <br>
+and config files to your liking and off you go! For more information on how to <br>
+set up a DokusCore server, see the following video: [Installation video](https://www.youtube.com/watch?v=NlJFFRzWvDE) <br>
+
+---
+# Intergraded Callback System
+Developing on DokusCore is made easy with the callback system. You're able to <br>
+pull data from a client file into a server file and vice versa without stopping <br>
+your current event. Normally you if you want to pull server info you had to stop <br>
+your client event, go to a server event to push data back to a new client event. <br>
+This would bloat your code and make coding and your plugin complicated. The <br>
+callbacks are placed inside a variable, and it will simply wait for it to return <br>
+with data before it continues the rest of the code. This way, you are able to <br>
+write your plugin completely client sided, without even making a dedicated server <br>
+file!
+
+---
+# Edits? No need to restart ( DataSync )
+DokusCore comes with a plugin called DataSync. This plugin is solely dedicated <br>
+to store user and server data, this so that ( almost ) all plugins incl the <br>
+core framework itself can be restarted on a running server. Once a plugin <br>
+(re)starts, it will simply ask DataSync for the stored data and sets itself up <br>
+properly for use. This way no data has to be stored in the plugins themselves, <br>
+and prevents users from the need to relog on your server.  As said almost all <br>
+plugins can be restarted but of course not DataSync! If you restart DataSync on <br>
+a running server, it will lose all user data and all plugins will be unable to <br>
+continue running. A full restart need to be done, though this also can be done <br>
+on a running server. In case you accidentally restart DataSync, first restart <br>
+DokusCore then restart all other plugins. The framework will then be up-to-date <br>
+again.
+
+---
+# Realism Makes Roleplay! ( In Progress )
+You can have a full server with many plugins, but if the way it is intended to <br>
+be used is not realistic, your roleplay experience will be impaired also. <br>
+DokusCore will focus more on realism to boost your roleplay experience. Though <br>
+server owners can assign you a job, jobs will become skill and experience based <br>
+the more you do it, the better you become at it. All jobs, stores and companies <br>
+have stocks, if the stock runs empty they will not be able to operate. This <br>
+gives players a reason to continue to work jobs as this directly impacts the <br>
+economy, this also fluctuates the taxation on states and therefore the prices <br>
+of goods and services. Players will, for example, later be able to buy in at <br>
+one store cheap, and sell it to other places on the map at higher prices. When <br>
+a store is empty it will be unable to sell, when the stable is empty you will <br>
+need hunters to get some new horses. For a low populated server, we will build <br>
+in a system where NPCs will start to do the critical jobs to keep the economy <br>
+stable. The ideas listed above in this realism section are work in process and <br>
+at current time not yet build into the core, but it gives you an overview on how <br>
+we want to use the economy and environment to boost you and your players roleplay <br>
+experience
+
+---
+# Multi Languages ( In Progress )
+With DokusCore you are not bound to 1 specific language! Ever had the idea to  <br>
+set up an international server that hosts people with multiple languages? Where  <br>
+you are not able to due to the fact not everyone was able to read the same  <br>
+language? With DokusCore you do not only have the possibility to switch your  <br>
+entire server to a different language via 1 config edit, all your users  <br>
+( if you allow ) are able to set their own client language in the user settings  <br>
+menu. If a user desires a different language it can be switched in game without <br>
+restart or relog needed, instantly all text in game for this specific user will  <br>
+be switched to his/her desired language. This way you can host an international  <br>
+server and have all users read the notifications in their own languages. NOTE:  <br>
+This system is already built, but at current times it will only run on English.  <br>
+If we activate it now, we have to re-translate every file on every little change.  <br>
+If you want to use this system, you are able to if you translate the English file  <br>
+to the other language files. Not all notifications and texts at this current time  <br>
+are logged into the translation files, so expect to see English on many things  <br>
+even when switched. We will intergrade the language system to all plugins once  <br>
+we officially release them.
+
+---
+# Update notifications
+When DokusCore or one of its plugins had an update, you will see this as a <br>
+notification in your server console on server startup. DokusCore hosts a unique <br>
+way for you to track the up-to-date status of your server and all its plugins. <br>
+Currently, it will only check the version of all DokusCore plugins, but at a <br>
+later stage you will also be able to add in your own plugins to the list to keep <br>
+track off. If developers made a plugin for DokusCore and submit it to us, we <br>
+will add this plugin on the update check list if the developer is maintaining <br>
+the version numbers correctly. Below, a picture on how the notification looks.
 
 ---
 # Feature Teasers:
-- **Multi Language Support**
-  - English
-  - Dutch
-  - Bulgarian
-  - German
-  - Danish
-  - Spanish
-  - French
-  - Greek
-  - Italian
-  - Polish
-  - Portuguese
-  - Russian
-  -
-- **Make your server international!** <br>
-You can choose to force a server language for everyone, or you<br>
-can turn multi language support on, and let your players decide <br>
-their own client language. This mean that every player on your <br>
-server can have his/her own language set. Very usefull for servers<br>
-that have players from all over the world.<br><br>
-- **Build in Blacklist/Banlist** <br>
-With this build in blacklist you can be assured user can't come back<br>
-by simply changing there IP or Steam address. Our blacklist will also <br>
-ban them by the RedM license, XBox license and the Live license. If <br>
-any of these values are in the database, the user will be blocked<br>
-from joining your server.<br><br>
-- **Toggle all commands to your wish** <br>
-Every had that problem where you have admins, but you do not want<br>
-them to use every admin | chat command ? We got you covered. With <br>
-DokusCore, each chat commando can be toggled for Superadmins, Admins<br>
-and users. So you are now 100% in control! No more admin abuse!<br>
-https://prnt.sc/1dg3g0v <br> <br>
-- **Build In Anti AFK System** <br>
-The Anti AFK System will automatically kick players from your <br>
-server is they have been standing still for a x amount of minutes.<br>
-Players will recieve a warning before this happens.<br>
-You can easly toggle this on or off, and set the time in the config.<br>
+- English
+- Dutch
+- Bulgarian
+- German
+- Danish
+- Spanish
+- French
+- Greek
+- Italian
+- Polish
+- Portuguese
+- Russian
 
 ---
-# Teaser for Developers <br>
-* DokusCore will have a build in callback system. With these<br>
-  callbacks you can request data from client|server|client or <br>
-  server|client|server without the need to stop and creating<br>
-  a new event trigger. The event will simply wait for the <br>
-  callback to return it's data before it continues with<br>
-  the rest.
-* Many things like editing|inserting|deleting the database<br>
-  are done internally by the Core. You only have to use one <br>
-  of the callback triggers and pass on the right arguments.<br>
-  No need to type out all that sql stuff!
+# Discord
+On our [Discord](https://discord.io/dokuscore) you can find all Information about this<br>
+project, feel free to join. Here you can also interact with other playing and testing<br>
+the Core, as well as giving your suggestions and opinions.
 
 ---
-# Quality over Quantity <br>
-Quality will always be the number 1 priority.
+# Searching for Developers
+Do you enjoy developing, and would you like to take part into the DokusCore<br>
+project ? Join our Discord and contact one of the Administrators.
 
 ---
-# BECOME A BETA TESTER AND GET EARLY ACCESS
-I am always searching for Beta testers! If you would like to <br>
-help making this framework even better, then you are awesome!
-Visit our [Discord](https://discord.io/dokuscore) fore more info!
-
----
-# Some pictures
-- This is how the config looks https://prnt.sc/1dgawb3
-- Currently made / commands https://prnt.sc/1dga95f
-- This is your server console intro https://prnt.sc/1dgaixk
-- This is an example of the callback system https://prnt.sc/1dgbbsx
-- Countles of building and map holes fixed https://prnt.sc/1dgbl18
-- Database structure for developers https://prnt.sc/1dgbtpa
-- Multi language System takes or server language or induvidual player language https://prnt.sc/1dgce2u
-- Plugin Multi Characters teaser https://prnt.sc/1dgk3y5
-- Middle top notifications https://prnt.sc/1dgkibn
-- /Coords command looks like this https://prnt.sc/1dgkpqu
-- Commands legenda with /Help https://prnt.sc/1dgl3z3
-- Changing my own client language with mutli language support on https://prnt.sc/1dgl9lm
-- Custom made chat and removed the ugly chat box https://prnt.sc/1dgm36j

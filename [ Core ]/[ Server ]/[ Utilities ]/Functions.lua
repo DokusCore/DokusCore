@@ -7,6 +7,7 @@ DBIns   = MySQL.Async.execute
 DBSet   = MySQL.Async.execute
 DBDel   = MySQL.Async.execute
 Insert  = table.insert
+Tabi    = table.insert
 Remove  = table.remove
 Decoded = json.decode
 Encoded = json.encode

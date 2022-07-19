@@ -3,6 +3,7 @@
 --------------------------------------------------------------------------------
 Tabi = table.insert
 Low = string.lower
+Up  = string.upper
 Decoded = json.decode
 Encoded = json.encode
 Floor = math.floor
@@ -106,6 +107,14 @@ function SpawnNPC(_, Coords, Heading)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+function SpawnVehicle(_, Coords, Heading)
+  local _ = GetHashKey(_)
+  while not HasModelLoaded(_) do RequestModel(_) Wait(1) end
+  local SpawnVeh = Citizen.InvokeNative(0xAF35D0D2583051B0, _, Coords, Heading, 1, 0, 0, Citizen.ResultAsInteger())
+  return SpawnVeh
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 function GetDistance(Coords)
   local Ped = PedID()
   local pCoords = GetCoords(Ped)
@@ -133,9 +142,27 @@ function PlaySound(A1, A2) PlaySoundFrontend(A1, A2, true, 1) end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 function LoadModel(pHash)
-  if not HasModelLoaded(pHash) then RequestModel(pHash)
-    while not HasModelLoaded(pHash) do Wait(10) end
-  end
+  local Hash = GetHashKey(Up(pHash))
+  if (IsModelValid(Hash)) then
+    if (not (HasModelLoaded(Hash))) then
+      RequestModel(Hash)
+      while (not (HasModelLoaded(Hash))) do Wait(10) end
+    end
+  end Wait(100)
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+function UnloadModel(pHash)
+  local Hash = GetHashKey(Up(pHash))
+  Citizen.InvokeNative(0x4AD96EF928BD4F9A, pHash)
+  Citizen.InvokeNative(0x4AD96EF928BD4F9A, Hash)
+  Wait(100)
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+function SetModel(ID, Hash)
+  LoadModel(Hash)
+  Citizen.InvokeNative(0xED40380076A31506, Hash, true)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -211,6 +238,12 @@ function SetBlip(Coords, Hash, Radius, Title)
   SetBlipScale(blip, Radius)
   Citizen.InvokeNative(0x9CB1A1623062F402, blip, Title)
   return blip
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+function ArrayContains(Arr, Value)
+  for i,v in ipairs(Arr) do if v == Value then return true end end
+  return false
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

@@ -5,7 +5,6 @@ _ServerName     = 'DokusCore Development Server'
 _DiscordInvite  = 'https://Discord.io/DokusCore'
 _Language       = { Lang = 'en', Multi = true } --( In Progress )
 _StartWealth    = { Money = 2.25, Gold = 0.0 }
-_StartJob       = { Name = 'unemployed', Grade = 0 } --( In Progress )
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
 _DokusMenu      = { Position = 'right', Theme = { Dark = true, Red = false } }
 _ActionKey      = 0x8AAA0AD4 -- Default LEFT ALT
@@ -14,12 +13,6 @@ _ShowMap        = true
 _ShowMiniMap    = true
 _EnableIMaps    = true
 _BankDoors      = true
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- NOTE: The time feature does NOT work together with the weathersync plugin!
--- To use this feature you will need to disable weathersync!
---------------------------------------------------------------------------------
-_Time           = { TimeSync  = false, FixedTime = { false, 00, 00 } }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- The Security contains the Black and whitelist Module.
@@ -35,17 +28,26 @@ _Security = {
 -- disable these when or when not used. This to make sure the core handles the
 -- data like character data as suppose to. If set incorrectly the core can bug.
 --------------------------------------------------------------------------------
+-- NOTE: Only plugins that are set to `true` will recieve update checks!
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 _Modules          = {
   SettingsMenu    = true,  -- Required ( In Progress )
-  MultiCharacters = true,  -- Required ( In Progress )
+  Characters      = true,  -- Required ( In Progress )
   Inventory       = true,  -- Required ( In Progress )
   NPCInteract     = true,  -- Required ( In Progress )
   Metabolism      = true,  -- Required ( In Progress )
   UsableItems     = true,  -- Required ( In Progress )
-  SkinCreator     = true,  -- Optional ( In Progress )
+  Spawner         = true,  -- Required ( In Progress )
+  Skins           = true,  -- Optional ( In Progress )
   Banking         = true,  -- Optional ( In Progress )
   Stores          = true,  -- Optional ( In Progress )
-  FastTavel       = true,  -- Optional ( In Progress )
+  FastTravel      = true,  -- Optional ( In Progress )
+  Instruments     = true,  -- ( Toggle has to be made )
+  Mexico          = true,  -- Optional ( Map Edit )
+  NPCMenu         = true,  -- ( Toggle has to be made )
+  WorldEdits      = true,  -- Toggle has to be made
+
 
 
   -- This is a bundle of small scripts
@@ -54,10 +56,11 @@ _Modules          = {
     BushHarvest   = true,  -- Optional ( In Progress )
   },
 
-  -- UNDER CONSTRUCTION
-  Telegrams       = true,  -- Optional ( In Progress )
-  Trains          = true,  -- Optional ( In Progress )
-  Bathing         = true,  -- Optional ( In Progress )
+  -- UNDER CONSTRUCTION -- Leave true if you want update notices!
+  Telegrams       = true,   -- Optional ( In Progress )
+  Trains          = true,   -- Optional ( In Progress )
+  Bathing         = true,   -- Optional ( In Progress )
+  Clothing        = true,   -- Required ( In Progress )
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

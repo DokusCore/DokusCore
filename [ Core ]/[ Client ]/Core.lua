@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 CreateThread(function()
   while not Loaded do Wait(1000)
-    if (Network()) then
+    if (NetworkActive()) then
       ShowHud(true)
       EnablePVP()
       HideHudComp('HUD_CTX_INFINITE_AMMO')
@@ -12,6 +12,7 @@ CreateThread(function()
       if (_ShowMiniMap) then DisplayHudComp('HUD_CTX_INFO_CARD') end
       if not (_ShowMiniMap) then HideHudComp('HUD_CTX_INFO_CARD') end
       TriggerEvent('DokusCore:Core:LoadUser', SteamName())
+      TriggerEvent('DokusCore:Metabolism:ShowHud', false)
       Loaded = true
     end
   end

@@ -51,8 +51,8 @@ RegisterCommand("coords", function(source, args, rawCommand)
       DrawCoords(H, s.PosH.Horizon, s.PosH.Vertical, s.FontSize)
     end
   end
-
-  if IsForUsers and IsUser then DoThis() end
-  if IsForAdmins and IsAdmin then DoThis() end
-  if IsForOwners and IsOwner then DoThis() end
+  DoThis()
+  -- if IsForUsers and IsUser then DoThis() end
+  -- if IsForAdmins and IsAdmin then DoThis() end
+  -- if IsForOwners and IsOwner then DoThis() end
 end, false)
