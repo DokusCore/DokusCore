@@ -101,6 +101,8 @@ later stage you will also be able to add in your own plugins to the list to keep
 track off. If developers made a plugin for DokusCore and submit it to us, we <br>
 will add this plugin on the update check list if the developer is maintaining <br>
 the version numbers correctly. Below, a picture on how the notification looks.
+![image](https://user-images.githubusercontent.com/49053928/179832398-f8888e17-52bd-41d1-9d41-ed083c9d3c28.png)
+
 
 ---
 # Feature Teasers:
