@@ -9,13 +9,13 @@
 _FastTravel = {
 
   Zones = {
-    { ID = 'sDenis',      Radius = 1.5, Coords = vector3(2766.7, -1486.0, 45.8) },
-    { ID = 'Guarma',      Radius = 1.5, Coords = vector3(1266.3, -6852.4, 43.3) },
-    { ID = 'Sisika Jail', Radius = 1.5, Coords = vector3(3278.0, -709.9, 42.3) },
+    { ID = 'sDenis',      Radius = 2.5, Coords = vector3(2766.7, -1485.1, 44.8) },
+    { ID = 'Guarma',      Radius = 2.5, Coords = vector3(1266.3, -6852.4, 43.3) },
+    { ID = 'Sisika Jail', Radius = 2.5, Coords = vector3(3278.0, -709.9, 42.3) },
   },
 
   NPCs = {
-    { ID = 'sDenis',      Hash = 'S_M_M_BankClerk_01', Coords = vector3(2766.7, -1486.0, 44.8), Heading = 351.6 },
+    { ID = 'sDenis',      Hash = 'S_M_M_BankClerk_01', Coords = vector3(2766.7, -1485.1, 44.8), Heading = 354.4 },
     { ID = 'Guarma',      Hash = 'S_M_M_BankClerk_01', Coords = vector3(1266.3, -6852.4, 42.3), Heading = 240.6 },
     { ID = 'Sisika Jail', Hash = 'S_M_M_BankClerk_01', Coords = vector3(3278.0, -709.9,  42.3), Heading = 237.5 },
   },

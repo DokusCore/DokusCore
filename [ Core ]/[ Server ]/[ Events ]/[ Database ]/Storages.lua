@@ -31,6 +31,15 @@ AddEventHandler('DokusCore:Core:DBIns:Storages', function(args)
 
     -- TCC(-1, 'DokusCore:Core:DBSet:Inventory', { 'DropBox', 'RemoveItem', { Steam, CharID, Item, Amount }})
   end
+
+  if (Low(args[1]) == 'jackpot') then
+    print("logging", args[1])
+    local Meta = json.encode({ Reward = args[2][1] })
+    DBIns(DB.Storages.InsertJackPot, {
+      Steam = nil, CharID = nil, Type = args[1],
+      BoxID = nil, Coords = nil, Meta = Meta
+    }, function() end)
+  end
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

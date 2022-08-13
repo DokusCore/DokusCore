@@ -30,7 +30,7 @@ AddEventHandler('DokusCore:Core:DBIns:Characters', function(args)
     DBIns(DB.Characters.Insert, {
       Steam = args[2][1], CharID = args[2][2], Group = args[2][3],
       cName = args[2][4], Gender = args[2][5], Nationality = args[2][6],
-      BirthDate = args[2][7], Money = args[2][8], Gold = args[2][9], XP = args[2][10],
+      Age = args[2][7], Money = args[2][8], Gold = args[2][9], XP = args[2][10],
       Level = args[2][11], JobName = args[2][12], JobGrade = args[2][13], Coords = args[2][14],
       Skin = args[2][15], Clothing = args[2][16]
     }, function() end)
@@ -66,11 +66,18 @@ AddEventHandler('DokusCore:Core:DBSet:Characters', function(args)
     DBSet(DB.Characters.SetSkin, { Skin = args[2][3], Steam = args[2][1], CharID = args[2][2] }, function() end)
   end
 
-  if (Low(args[1]) == 'payment') then
+  if ((Low(args[1]) == 'payment') or (Low(args[1]) == 'money')) then
     -- if (args[2][1] == nil) then return ErrorMsg('Err_DBSetNoSteam') end
     -- if (args[2][2] == nil) then return ErrorMsg('Err_DBSetCharID') end
     -- if (args[2][3] == nil) then return ErrorMsg('Err_PaymentAmount') end
     DBSet(DB.Characters.SetMoney, { Money = args[2][3], Steam = args[2][1], CharID = args[2][2] }, function() end)
+  end
+
+  if (Low(args[1]) == 'clothing') then
+    -- if (args[2][1] == nil) then return ErrorMsg('Err_DBSetNoSteam') end
+    -- if (args[2][2] == nil) then return ErrorMsg('Err_DBSetCharID') end
+    -- if (args[2][3] == nil) then return ErrorMsg('Err_PaymentAmount') end
+    DBSet(DB.Characters.SetClothing, { Clothing = args[2][3], Steam = args[2][1], CharID = args[2][2] }, function() end)
   end
 end)
 --------------------------------------------------------------------------------

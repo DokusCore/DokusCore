@@ -33,6 +33,12 @@ RSC('DokusCore:Core:DBGet:Storages', function(source, args)
       return { Exist = Exist, Result = Result }
     end
   end
+
+  if (Low(args[1]) == 'jackpot') then
+    local X = DBGet(DB.Storages.GetAll, { Type = args[1] })
+    if (X[1] ~= nil) then Exist = true Result = X end
+    return { Exist = Exist, Result = Result }
+  end
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

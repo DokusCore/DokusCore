@@ -6,7 +6,7 @@ _DiscordInvite  = 'https://Discord.io/DokusCore'
 _Language       = { Lang = 'en', Multi = true } --( In Progress )
 _StartWealth    = { Money = 2.25, Gold = 0.0 }
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
-_DokusMenu      = { Position = 'right', Theme = { Dark = true, Red = false } }
+_DokusMenu      = { Position = 'right', Theme = { Dark = false, Red = true } }
 _ActionKey      = 0x8AAA0AD4 -- Default LEFT ALT
 _EnablePVP      = true
 _ShowMap        = true
@@ -44,7 +44,6 @@ _Modules          = {
   Stores          = true,  -- Optional ( In Progress )
   FastTravel      = true,  -- Optional ( In Progress )
   Instruments     = true,  -- ( Toggle has to be made )
-  Mexico          = true,  -- Optional ( Map Edit )
   NPCMenu         = true,  -- ( Toggle has to be made )
   WorldEdits      = true,  -- Toggle has to be made
 
@@ -61,6 +60,9 @@ _Modules          = {
   Trains          = true,   -- Optional ( In Progress )
   Bathing         = true,   -- Optional ( In Progress )
   Clothing        = true,   -- Required ( In Progress )
+  Boats           = true,   -- Required ( In Progress )
+  Guidance        = true,   -- Required ( In Progress )
+  ScratchCards    = true,   -- Required ( In Progress )
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

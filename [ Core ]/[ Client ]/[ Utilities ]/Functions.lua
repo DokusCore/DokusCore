@@ -1,12 +1,16 @@
 --------------------------------------------------------------------------------
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
-Tabi = table.insert
-Low = string.lower
-Up  = string.upper
+Tabi    = table.insert
+Low     = string.lower
+Up      = string.upper
 Decoded = json.decode
 Encoded = json.encode
-Floor = math.floor
+Floor   = math.floor
+Match   = string.match
+TS      = tostring
+TN      = tonumber
+Random  = math.random
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 function ShowTopNote(msg, loc) TriggerEvent('DokusCore:Core:ShowTopNote', msg, loc) end
@@ -112,6 +116,18 @@ function SpawnVehicle(_, Coords, Heading)
   while not HasModelLoaded(_) do RequestModel(_) Wait(1) end
   local SpawnVeh = Citizen.InvokeNative(0xAF35D0D2583051B0, _, Coords, Heading, 1, 0, 0, Citizen.ResultAsInteger())
   return SpawnVeh
+end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+function RandomDialog(PedID, Dialog)
+  local Txt = {}
+  local Gender = IsPedMale(PedID)
+  for k,v in pairs(Dialog) do
+    local Male = ((Low(v.Gender) == 'male') and (Gender == 1))
+    local Female = ((Low(v.Gender) == 'female') and not (Gender))
+    if (Male) then Tabi(Txt, v) end
+    if (Female) then Tabi(Txt, v) end
+  end return Txt
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -251,9 +267,19 @@ function NoteTopCenter(Text, Loc) TriggerEvent('DokusCore:Core:ShowTopNote', Tex
 function NoteLeft(Title, Text, Type, Time) TriggerEvent('DokusCore:Core:ShowLeftNote', Title, Text, Type, Time) Wait(Time) end
 function NoteTopLeft(Text, Time) TriggerEvent('DokusCore:Core:ShowTip', Text, Time) Wait(Time) end
 function NoteObjective(Title, Text, Type, Time) TriggerEvent('DokusCore:Core:NoteObjective', Title, Text, Type, Time) Wait(Time) end
-function NoteNPCTalk(Title, Text, Time) TriggerEvent('DokusCore:Core:NoteObjective', Title, Text, 'NPC', Time) Wait(Time) end
+function NoteNPCTalk(Title, Text, mWait, Time) TriggerEvent('DokusCore:Core:NoteObjective', Title, Text, 'NPC', Time) if (mWait) then Wait(Time) end end
 function ShowtextRight(Text, Time) TriggerEvent('DokusCore:Core:ShowtextRight', Text, Time) Wait(Time) end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 

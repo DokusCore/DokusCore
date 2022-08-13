@@ -31,10 +31,7 @@ RegisterCommand("coords", function(source, args, rawCommand)
     Lang = Data.Result[1].Language
   end
 
-  print("Pass", IsForUsers, IsUser, IsForAdmins, IsAdmin, IsForOwners, IsOwner)
-
   local function DoThis()
-    print("Doing This")
     SC = not SC
     while SC do Wait(1)
       local ped = GetPlayerPed(source)
@@ -51,8 +48,8 @@ RegisterCommand("coords", function(source, args, rawCommand)
       DrawCoords(H, s.PosH.Horizon, s.PosH.Vertical, s.FontSize)
     end
   end
-  DoThis()
-  -- if IsForUsers and IsUser then DoThis() end
-  -- if IsForAdmins and IsAdmin then DoThis() end
-  -- if IsForOwners and IsOwner then DoThis() end
+
+  if IsForUsers and IsUser then DoThis() end
+  if IsForAdmins and IsAdmin then DoThis() end
+  if IsForOwners and IsOwner then DoThis() end
 end, false)

@@ -15,12 +15,12 @@
 }
 
 @font-face {
-  font-family: 'Font2';
+  font-family: "Font2";
   src: url(https://runtime.fivem.net/temp/ChaletLondonNineteenSixty.otf?a);
 }
 
 @font-face {
-  font-family: 'Font2_cond';
+  font-family: "Font2_cond";
   src: url(https://runtime.fivem.net/temp/chaletcomprime-colognesixty-webfont.ttf?a);
 }
 
@@ -39,7 +39,7 @@
   height: 100%;
 }
 
-.msg>span>span>b {
+.msg > span > span > b {
   font-family: Font2_cond, sans-serif;
   font-weight: normal;
   vertical-align: baseline;
@@ -48,7 +48,7 @@
   font-size: calc(2.7vh);
 }
 
-.msg>span>span>span {
+.msg > span > span > span {
   vertical-align: baseline;
 }
 
@@ -70,10 +70,10 @@
   font-family: Font2, sans-serif;
 }
 
-.chat-input>div {
-  background-color: rgba(125, 0, 171, .6) !important;
-  border: calc(0.28vh / 2) solid rgba(180, 180, 180, .6);
-  outline: calc(0.28vh / 2) solid rgba(0, 0, 0, .8);
+.chat-input > div {
+  background-color: rgba(125, 0, 171, 0.6) !important;
+  border: calc(0.28vh / 2) solid rgba(180, 180, 180, 0.6);
+  outline: calc(0.28vh / 2) solid rgba(0, 0, 0, 0.8);
   /* to replace margin-background */
   padding: calc(0.28vh / 2);
 }
@@ -90,14 +90,14 @@
 }
 
 .chat-input .prefix.any:before {
-  content: '[';
+  content: "[";
 }
 
 .chat-input .prefix.any:after {
-  content: ']';
+  content: "]";
 }
 
-.chat-input>div+div {
+.chat-input > div + div {
   position: absolute;
   bottom: calc(3vh + 0.28vh + 0.28vh + 0.28vh + (0.28vh / 2));
   width: 99.6%;
@@ -105,7 +105,7 @@
 }
 
 .suggestions {
-  border: calc(0.28vh / 2) solid rgba(180, 180, 180, .6);
+  border: calc(0.28vh / 2) solid rgba(180, 180, 180, 0.6);
   background: transparent;
 }
 
@@ -115,26 +115,22 @@ textarea {
 }
 
 @media screen and (min-aspect-ratio: 21/9) {
-  .chat-window, .chat-input {
+  .chat-window,
+  .chat-input {
     right: calc(12.8vw);
   }
 }
 
 @media screen and (min-aspect-ratio: 32/9) {
-  .chat-window, .chat-input {
+  .chat-window,
+  .chat-input {
     right: calc(25vw);
   }
 }
 
-#Dokus-z1458-Core .contenair {
+.logo {
   position: absolute;
-  padding: none;
-  z-index: 2;
-  width: 150px;
-  height: 115px;
-  left: 90.5%;
-  bottom: 2%;
-  background: url('../IMG/Dokus-z789-Core.png');
+  right: 2%;
 }
 
 #Dokus-z1458-Core .spacer {
@@ -155,7 +151,7 @@ textarea {
 
 @media screen and (width: 1920px) {
   #Dokus-z1458-Core .contenair {
-    left: 91.0%;
+    left: 91%;
     bottom: 0.5%;
   }
 }

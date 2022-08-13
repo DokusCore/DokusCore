@@ -40,9 +40,10 @@ AddEventHandler('DokusCore:Core:DBSet:Inventory', function(args)
       -- if (args[3][4] == nil) then return ErrorMsg('Amount') end
       -- if (args[3][4] == nil) then return ErrorMsg('InvAmount') end
       local Steam, CharID = args[3][1], args[3][2]
-      local Item, Amount, InvAmount = args[3][3], args[3][4], args[3][5]
+      local Item, Amount, InvAmount, Meta = args[3][3], args[3][4], args[3][5], args[3][6]
+      if (Meta == nil) then Meta = '[]' end
       local _Amount = ( Amount + InvAmount )
-      DBSet(DB.Inventory.SetUserItem, { Amount = _Amount, Steam = Steam, CharID = CharID, Item = Item }, function() end)
+      DBSet(DB.Inventory.SetUserItem, { Amount = _Amount, Meta = Meta, Steam = Steam, CharID = CharID, Item = Item }, function() end)
     end
   end
 end)
@@ -89,8 +90,9 @@ AddEventHandler('DokusCore:Core:DBIns:Inventory', function(args)
       -- if (args[3][3] == nil) then return ErrorMsg('Err_NoCatType') end
       -- if (args[3][4] == nil) then return ErrorMsg('Err_DBInsNoItemName') end
       -- if (args[3][5] == nil) then return ErrorMsg('Err_DBInsNoItemAmount') end
-      local Steam, CharID, Type, Item, Amount = args[3][1], args[3][2], args[3][3], args[3][4], args[3][5]
-      DBIns(DB.Inventory.InsertItem, { Steam=Steam, CharID=CharID, Type=Type, Item=Item, Amount=Amount, Meta=nil }, function() end)
+      local Steam, CharID, Type, Item, Amount, Meta = args[3][1], args[3][2], args[3][3], args[3][4], args[3][5], args[3][6]
+      if (Meta == nil) then Meta = '[]' end
+      DBIns(DB.Inventory.InsertItem, { Steam=Steam, CharID=CharID, Type=Type, Item=Item, Amount=Amount, Meta=Meta }, function() end)
     end
   end
 end)
