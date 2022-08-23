@@ -1,17 +1,16 @@
-Lang ["dk"] = {
-
+Lang["dk"] = {
  ---- [Core] nøgler
- ['Key_E'] = "tryk på ~ e ~ E ~ q ~",
- ['Key_F'] = "tryk på ~ e ~ F ~ q ~",
- ['Key_G'] = "tryk på ~ e ~ G ~ q ~",
- ['Key_H'] = "tryk på ~ e ~ H ~ q ~",
- ['Key_I'] = "tryk ~ e ~ I ~ q ~",
- ['Key_L'] = "tryk på ~ e ~ L ~ q ~",
- ['Key_ALT'] = "tryk på ~ e ~ ALT ~ q ~",
- ['Key_ENTER'] = "tryk på ~ e ~ ENTER ~ q ~",
+ ['Key_E'] = "tryk på ~e~E~q~",
+ ['Key_F'] = "tryk på ~e~F~q~",
+ ['Key_G'] = "tryk på ~e~G~q~",
+ ['Key_H'] = "tryk på ~e~H~q~",
+ ['Key_I'] = "tryk ~e~I~q~",
+ ['Key_L'] = "tryk på ~e~L~q~",
+ ['Key_ALT'] = "tryk på ~e~ALT~q~",
+ ['Key_ENTER'] = "tryk på ~e~ENTER~q~",
 
  ---- [Core] Information
- ['MoreInfoDiscord'] = "For mere information besøg vores Discord" .._DiscordInvite.."",
+ ['MoreInfoDiscord'] = "For mere information besøg vores Discord - Discord Link - ",
  ['NoReason'] = "Ingen grund angivet",
  ['Language'] = "Sprog",
  ['LanguageSetTo'] = "Kundesprog indstillet til",

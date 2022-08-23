@@ -7,6 +7,10 @@ _Dialogs.Boats = {}
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Dialogs.Boats.NPCName = "Boat Dealer"
+_Dialogs.Boats.BuyBoat = "Buy a Boat"
+_Dialogs.Boats.SellBoat = "Sell a Boat"
+_Dialogs.Boats.ManageBoat = "Manage your Boats"
+_Dialogs.Boats.ExitMenu = "Exit Menu"
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Dialogs.Boats.LeaveNPC = {

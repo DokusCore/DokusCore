@@ -35,7 +35,7 @@ local function OpenPrompt()
   CreateThread(function()
     local str = 'Undo'
     PromptBack = PromptRegisterBegin()
-    PromptSetControlAction(PromptBack, _Keys['E'])
+    PromptSetControlAction(PromptBack, _Keys.E)
     str = CreateVarString(10, 'LITERAL_STRING', str)
     PromptSetText(PromptBack, str)
     PromptSetEnabled(PromptBack, true)
@@ -46,7 +46,7 @@ local function OpenPrompt()
 
     local str = 'Cancel'
     PromptCancel = PromptRegisterBegin()
-    PromptSetControlAction(PromptCancel, _ActionKey)
+    PromptSetControlAction(PromptCancel, _Keys.X)
     str = CreateVarString(10, 'LITERAL_STRING', str)
     PromptSetText(PromptCancel, str)
     PromptSetEnabled(PromptCancel, true)

@@ -50,6 +50,7 @@ AddEventHandler('DokusCore:Core:DBDel:Boats', function(args)
   if (Low(args[1]) == 'user') then
     if (Low(args[2]) == 'single') then
       if (Low(args[3]) == 'boatid')   then DBSet(DB.Boats.DelUserSingleViaBoatID,   { BID = args[4][1] }, function() end) end
+      if (Low(args[3]) == 'name')     then DBSet(DB.Boats.DelUserSingleViaName,     { Name = args[4][1] }, function() end) end
     end
 
     if (Low(args[2]) == 'all') then

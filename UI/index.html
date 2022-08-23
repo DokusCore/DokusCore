@@ -1,54 +1,20 @@
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Teko:600"
-    rel="stylesheet"
-  />
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
-    integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
-    crossorigin="anonymous"
-  ></script>
-  <link
-    href="https://fonts.googleapis.com/css?family=Work+Sans:200"
-    rel="stylesheet"
-  />
-  <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
-</head>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link href="https://fonts.googleapis.com/css?family=Teko:600" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200" rel="stylesheet" />
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+  </head>
 
-<body>
-  <div class="logo">
-    <img id="logo" src="./IMG/Dokus-z789-Core.png" alt="Logo" />
-  </div>
-  <!-- Chat Theme -->
-  <link rel="stylesheet" href="ChatStyle/style.css" type="text/css" />
-  <script src="ChatStyle/script.js" type="text/javascript"></script>
-  <div id="ChatTheme"></div>
-  <!-- End Of Chat Theme -->
-
-  <!-- Custom Sounds -->
-  <div id="Dokus-z1458-Core">
-    <div class="spacer">&nbsp;</div>
-  </div>
-
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"
-    type="text/javascript"
-  ></script>
-  <script>
-    anime({
-      targets: "#logo",
-      keyframes: [
-        { scale: 1 },
-        { scale: 1.1 },
-        { scale: 0.9 },
-        { scale: 1.1 },
-        { rotate: 360 },
-        { scale: 1 }],
-      duration: 60000,
-      loop: true,
-    });
-  </script>
-  <script src="Sounds/js/sounds.js" type="text/javascript"></script>
-  <!-- Ens of Custom Sounds -->
-</body>
+  <body>
+    <div class="logo"> <img id="logo" src="./IMG/Dokus-z789-Core.png" alt="Logo" /> </div>
+    <link rel="stylesheet" href="ChatStyle/style.css" type="text/css" />
+    <script src="ChatStyle/script.js" type="text/javascript"></script>
+    <div id="ChatTheme"></div>
+    <div id="Dokus-z1458-Core"><div class="spacer">&nbsp;</div></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
+    <script> anime({ targets: "#logo", keyframes: [ { scale: 1 }, { scale: 1.1 }, { scale: 0.9 }, { scale: 1.1 }, { rotate: 360 }, { scale: 1 }], duration: 60000, loop: true }); </script>
+    <script src="Sounds/js/sounds.js" type="text/javascript"></script>
+  </body>
+</html>

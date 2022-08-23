@@ -16,12 +16,14 @@ _Dialogs.Spawner.Welcome = {
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Dialogs.Spawner.Advice = {
-  "I'll be bringing you to Saint Denis, there is a fine Tailor that could help you out on some new clothing"
+  "I'll be bringing you to a fine Tailor that could help you out on some new clothing",
+  "After such long journey a fine Tailor is what you need. Let me do the honor and bring you to one."
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Dialogs.Spawner.Tailor = {
-  "There is a Tailor on the right. I would consider getting some new clothing."
+  "There is a Tailor close by, I would consider getting some new clothing.",
+  "You'll find a Tailor around the corner, I would consider getting some new clothing."
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

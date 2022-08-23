@@ -136,6 +136,7 @@ DB.Banks.DelViaSteam             = 'delete from banks where Steam=@Steam and Cha
 DB.Metabolism.Delete             = 'delete from metabolism where Steam=@Steam and CharID=@CharID'
 
 DB.Boats.DelUserSingleViaBoatID  = 'delete from boats where BID=@BID'
+DB.Boats.DelUserSingleViaName    = 'delete from boats where Name=@Name'
 DB.Boats.DelUserAllViaSteamID    = 'delete from boats where Steam=@Steam'
 DB.Boats.DelUserAllInHanger      = 'delete from boats where Steam=@Steam and Hanger=@Hanger'
 DB.Boats.DelAllViaHanger         = 'delete from boats where Hanger=@Hanger'

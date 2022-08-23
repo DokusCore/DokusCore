@@ -19,8 +19,10 @@ _Metabolism = {
   Thirst = { Drain = { Idle = 0.02, Walking = 0.10, Running = 0.50, Sprinting = 0.75 }},
 
   -- Spice up your RP with random character farts and burps.
-  Farting = { Enabled = true, Frequention = 60 },
-  Burping = { Enabled = true, Frequention = 60 },
+  -- The Frequention is in seconds! Every 5 minutes a number is pulled
+  -- between 1 and 10, if the number lands on 5 the character will burp or fart.
+  Farting = { Enabled = true, Frequention = 300 },
+  Burping = { Enabled = true, Frequention = 300 },
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

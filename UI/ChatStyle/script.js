@@ -81,6 +81,5 @@ $(function() {
     setInterval(function() {
       $('#logo').fadeTo(5000, 0.3).delay(1).fadeTo(30000, 0.5).delay(1).fadeIn(5000, 0.3);
     }, 1000);
-
   };
 });

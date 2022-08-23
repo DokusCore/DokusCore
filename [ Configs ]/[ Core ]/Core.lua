@@ -32,7 +32,7 @@ _Security = {
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Modules          = {
-  SettingsMenu    = true,  -- Required ( In Progress )
+  CoreMenu        = true,  -- Required ( In Progress )
   Characters      = true,  -- Required ( In Progress )
   Inventory       = true,  -- Required ( In Progress )
   NPCInteract     = true,  -- Required ( In Progress )

@@ -47,7 +47,7 @@ AddEventHandler('DokusCore:Core:Commands:SetLanguage', function(args)
       Notify(_('Err_LangNotSupported1', Lang)) Wait(5000)
       Notify(_('Err_LangNotSupported2', Lang)) return
     end
-    TriggerServerEvent('DokusCore:Core:DBSet:Settings', { 'Language', { UserData.Steam, LangSelect(args)[1] } })
+    TriggerServerEvent('DokusCore:Core:DBSet:Settings', { 'Language', { UserData.SteamID, LangSelect(args)[1] } })
     ShowTopNote(_('Language', Lang), _('LanguageSetTo', Lang).." "..LangSelect(args)[2])
   end
 
