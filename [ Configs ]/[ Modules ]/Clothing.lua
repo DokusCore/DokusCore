@@ -12,24 +12,57 @@ stores will be added to the plugin as soon as the plugin is tested for beta.
 --------------------------------------------------------------------------------
 _Clothing = {
 
+  -- This is the chance to get a dialog while changing clothes.
+  -- The number needs to be whole and goes from 1 to 100%
+  -- If set to 0, no dialogs will be displayed.
+  DialogChance = 80,
+
+  -- Kicks the user out of the menu when to long no changes where made. This prevents
+  -- users going AFK and no other players being able to interact with the store.
+  -- When a user is AFK for x amount of seconds, the menu will close and the NPC
+  -- will go back to his start position
+  AntiAFK = 60,
+
+  Dialogs = {
+    { ID = 'Saint Denis', Welcome = true,  Goodbye = true  },
+    { ID = 'Valentine',   Welcome = false, Goodbye = false },
+    { ID = 'Blackwater',  Welcome = true,  Goodbye = true },
+  },
+
   Zones = {
     { Enabled = true, ID = 'Saint Denis', Radius = 15.0, Coords = vector3(2554.4, -1166.9, 52.6) },
+    { Enabled = true, ID = 'Valentine',   Radius = 15.0, Coords = vector3(-387.4, 665.1, 114.8)  },
+    { Enabled = true, ID = 'Blackwater',  Radius = 15.0, Coords = vector3(-761.5, -1293.6, 43.8) },
   },
 
   Stores = {
     { Enabled = true, ID = 'Saint Denis', Radius = 7.35, Coords = vector3(2554.4, -1166.9, 52.6) },
+    { Enabled = true, ID = 'Valentine',   Radius = 4.00, Coords = vector3(-387.4, 665.1, 114.8)  },
+    { Enabled = true, ID = 'Blackwater',  Radius = 6.00, Coords = vector3(-761.5, -1293.6, 43.8) },
   },
 
   NPCs = {
-    { Enabled = true, ID = 'Saint Denis', Radius = 2.2, Coords = vector3(2554.4, -1166.9, 52.6),   Heading = 161.9,  Hash = 's_m_m_tailor_01' },
+    { Enabled = true, ID = 'Saint Denis', Radius = 2.2, Coords = vector3(2554.4, -1166.9, 51.6),   Heading = 161.9,  Hash = 's_m_m_tailor_01' },
+    { Enabled = true, ID = 'Valentine',   Radius = 2.2, Coords = vector3(-387.4, 665.1, 113.8),    Heading = 297.7,  Hash = 's_m_m_tailor_01' },
+    { Enabled = true, ID = 'Blackwater',  Radius = 2.2, Coords = vector3(-761.5, -1293.6, 42.8),   Heading = 353.9,  Hash = 's_m_m_tailor_01' },
   },
 
   Posing = {
-    { ID = 'Saint Denis', Coords = vec3(2552.4, -1165.6, 52.6), Heading = 146.6, Camera = { 1.0, 0.3 } }
+    { ID = 'Saint Denis', Coords = vec3(2552.4, -1165.6, 52.6), Heading = 146.6, Camera = { 1.0, 0.3 } },
+    { ID = 'Valentine',   Coords = vec3(-389.2, 655.1, 114.3),  Heading = 337.7, Camera = { 1.5, 0.3 } },
+    { ID = 'Blackwater',  Coords = vec3(-765.1, -1291.4, 43.8), Heading = 267.2, Camera = { 1.2, 0.3 } },
   },
 
   NPCPosing = {
-    { ID = 'Saint Denis', Coords = vec3(2551.8, -1163.5, 52.6), Heading = 170.0 }
+    { ID = 'Saint Denis', Coords = vec3(2551.8, -1163.5, 52.6), Heading = 170.0 },
+    { ID = 'Valentine',   Coords = vec3(-388.3, 655.1, 113.3),  Heading = 15.4  },
+    { ID = 'Blackwater',  Coords = vec3(-766.7,-1292.7, 42.8),  Heading = 294.9 },
+  },
+
+  Dressing = {
+    { ID = 'Saint Denis', Fade = 5,  Coords = vec3(2551.1, -1159.8, 53.7) },
+    { ID = 'Valentine',   Fade = 10, Coords = vec3(-405.0, 651.5, 114.8)  },
+    { ID = 'Blackwater',  Fade = 3,  Coords = vec3(-767.8, -1292.3, 43.8) },
   },
 
   Labels = {
