@@ -49,8 +49,20 @@ _Dialogs.Clothing.NearNPC = {
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Dialogs.Clothing.ClothingChoice = {
-  { Gender = 'Male', Time = 5, Msg = "That fits you will sir" },
-  { Gender = 'Male', Time = 5, Msg = "Oh look at that, seeing you like that makes me jealous." },
+  { Gender = 'Male',   Time = 5, Msg = "That fits you well sir" },
+  { Gender = 'Male',   Time = 5, Msg = "Oh look at that, seeing you like that makes me jealous." },
+  { Gender = 'Male',   Time = 5, Msg = "Oh boy, look at that, it's marvelous." },
+  { Gender = 'Male',   Time = 5, Msg = "It's the finest we have in town, you do not find better anywhere else!" },
+  { Gender = 'Male',   Time = 5, Msg = "So beautiful, so special, and I am the one able to make it for you, if you like of cause." },
+  { Gender = 'Male',   Time = 5, Msg = "That fits you marvelous" },
+  { Gender = 'Male',   Time = 5, Msg = "My gosh, as it was made specially for you!" },
+  { Gender = 'Female', Time = 5, Msg = "That fits you well sir" },
+  { Gender = 'Female', Time = 5, Msg = "Oh look at that, seeing you like that makes me jealous." },
+  { Gender = 'Female', Time = 5, Msg = "Oh boy, look at that, it's marvelous." },
+  { Gender = 'Female', Time = 5, Msg = "It's the finest we have in town, you do not find better anywhere else!" },
+  { Gender = 'Female', Time = 5, Msg = "So beautiful, so special, and I am the one able to make it for you, if you like of cause." },
+  { Gender = 'Female', Time = 5, Msg = "That fits you marvelous" },
+  { Gender = 'Female', Time = 5, Msg = "My gosh, as it was made specially for you!" },
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
