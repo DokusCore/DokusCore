@@ -7,7 +7,7 @@ _Language       = { Lang = 'en', Multi = true } --( In Progress )
 _StartWealth    = { Money = 2.25, Gold = 0.0 }
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
 _DokusMenu      = { Position = 'right', Theme = { Dark = false, Red = true } }
-_ActionKey      = 0x8AAA0AD4 -- Default LEFT ALT
+_ActionKey      = 0xCEFD9220 -- Default E
 _EnablePVP      = true
 _ShowMap        = true
 _ShowMiniMap    = true

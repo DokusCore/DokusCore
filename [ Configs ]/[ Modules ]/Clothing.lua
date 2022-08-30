@@ -15,7 +15,7 @@ _Clothing = {
   -- This is the chance to get a dialog while changing clothes.
   -- The number needs to be whole and goes from 1 to 100%
   -- If set to 0, no dialogs will be displayed.
-  DialogChance = 80,
+  DialogChance = 20,
 
   -- Kicks the user out of the menu when to long no changes where made. This prevents
   -- users going AFK and no other players being able to interact with the store.
@@ -42,7 +42,7 @@ _Clothing = {
   },
 
   NPCs = {
-    { Enabled = true, ID = 'Saint Denis', Radius = 2.2, Coords = vector3(2554.4, -1166.9, 51.6),   Heading = 161.9,  Hash = 's_m_m_tailor_01' },
+    { Enabled = true, ID = 'Saint Denis', Radius = 3.0, Coords = vector3(2554.4, -1166.9, 51.6),   Heading = 161.9,  Hash = 's_m_m_tailor_01' },
     { Enabled = true, ID = 'Valentine',   Radius = 2.2, Coords = vector3(-387.4, 665.1, 113.8),    Heading = 297.7,  Hash = 's_m_m_tailor_01' },
     { Enabled = true, ID = 'Blackwater',  Radius = 2.2, Coords = vector3(-761.5, -1293.6, 42.8),   Heading = 353.9,  Hash = 's_m_m_tailor_01' },
   },
