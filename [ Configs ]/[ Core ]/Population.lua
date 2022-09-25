@@ -8,9 +8,9 @@
 _Population = {
   AmbientPeds     = 1.0,
   ScenarioPeds    = 1.0,
-  Vehicles        = 1.0,
-  ParkedVehicles  = 1.0,
-  RandomVehicles  = 1.0,
+  Vehicles        = 0.1,
+  ParkedVehicles  = 0.1,
+  RandomVehicles  = 0.1,
   AmbientAnimals  = 1.0,
   AmbientHumans   = 1.0,
   ScenarioAnimals = 1.0,

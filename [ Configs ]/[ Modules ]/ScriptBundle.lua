@@ -33,16 +33,18 @@ _ScriptBundle = {
       { ID = 'Bush', Hash = 'rdr_bush_leafy_aa_sim'},
       { ID = 'Bush', Hash = 's_indiantobaccopicked01'},
       { ID = 'Bush', Hash = 'rdr2_bush_snakeweedflower'},
-      { ID = 'Chan', Hash = 's_inv_chanterelles'},
-      { ID = 'Tree', Hash = 'p_tree_orange_01'},
-      { ID = 'Tree', Hash = 'p_tree_maple_s_04'},
+      --{ ID = 'Flowers', Hash = 's_inv_chanterelles'},
+      { ID = 'OrangeTree', Hash = 'p_tree_orange_01'},
+      { ID = 'AppleTree', Hash = 'p_tree_maple_s_04'},
+      { ID = 'Corn', Hash = 'CRP_CORNSTALKS_AB_sim'},
     },
 
     Items = {
-      { ID = 'Bush', Min = 0, Max = 5, Item = 'blueberry',  Name = 'BlueBerry',  Type = 'Consumable' },
-      { ID = 'Bush', Min = 0, Max = 5, Item = 'blackberry', Name = 'Blackberry', Type = 'Consumable' },
-      { ID = 'Tree', Min = 0, Max = 2, Item = 'orange',     Name = 'Orange',     Type = 'Consumable' },
-      { ID = 'Tree', Min = 0, Max = 2, Item = 'apple',      Name = 'Apple',      Type = 'Consumable' },
+      { ID = 'Bush',       Min = 1, Max = 5, Item = 'blueberry',  Name = 'BlueBerry',  Type = 'Consumable' },
+      { ID = 'Bush',       Min = 1, Max = 5, Item = 'blackberry', Name = 'Blackberry', Type = 'Consumable' },
+      { ID = 'OrangeTree', Min = 1, Max = 2, Item = 'orange',     Name = 'Orange',     Type = 'Consumable' },
+      { ID = 'AppleTree',  Min = 1, Max = 2, Item = 'apple',      Name = 'Apple',      Type = 'Consumable' },
+      { ID = 'Corn',       Min = 1, Max = 2, Item = 'carrot',     Name = 'Corn',       Type = 'Consumable' }, -- Corn gives you a carrot right?
     }
   }
 }
