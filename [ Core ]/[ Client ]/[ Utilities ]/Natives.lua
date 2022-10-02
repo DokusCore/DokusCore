@@ -5,7 +5,7 @@ function PedID()                     return Citizen.InvokeNative(0x096275889B8E0
 function PlayerID()                  return Citizen.InvokeNative(0x217E9DC48139933D) end
 function GetPed(Value)               return Citizen.InvokeNative(0x275F255ED201B937, Value) end
 function GetServerID(Value)          return GetPlayerFromServerId(Value) end
-function GetCoords(ID)               return Citizen.InvokeNative(0xA86D5F069399F44D, ID) end
+function GetCoords(ID)               return GetEntityCoords(ID) end
 function SetCoords(ID, Coords)       return Citizen.InvokeNative(0x06843DA7060A026B, ID, Coords) end
 function GetHeading(ID)              return Citizen.InvokeNative(0x972CC383) end
 function SetHeading(ID, Heading)     return Citizen.InvokeNative(0xCF2B9C0645C4651B, ID, Heading) end
@@ -15,7 +15,6 @@ function SetFreeze(ID, Bool)         return Citizen.InvokeNative(0x7D9EFB7AD6B19
 function UIFadeIn(Time)              return Citizen.InvokeNative(0x6A053CF596F67DF7, Time) end
 function UIFadeOut(Time)             return Citizen.InvokeNative(0x40C719A5E410B9E4, Time) end
 function UIFocus(B1, B2)             return Citizen.InvokeNative(0x5B98AE30, B1, B2) end
-function GetCoords(ID)               return GetEntityCoords(ID) end
 function NetworkActive()             return Citizen.InvokeNative(0xB8DFD30D6973E135, PlayerID()) end
 function NetworkStarted()            return Citizen.InvokeNative(0x9DE624D2FC4B603F) end
 function VisibleToNetwork(E, T)      return Citizen.InvokeNative(0xF1CA12B18AEF5298, E, T) end

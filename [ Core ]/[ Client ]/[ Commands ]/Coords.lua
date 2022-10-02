@@ -34,7 +34,7 @@ RegisterCommand("coords", function(source, args, rawCommand)
   local function DoThis()
     SC = not SC
     while SC do Wait(1)
-      local ped = GetPlayerPed(source)
+      local ped = PedID()
       local coords = GetEntityCoords(ped)
       local head = GetEntityHeading(ped)
       local X = ('~e~X~q~ '..(math.floor(coords.x * 10) / 10))

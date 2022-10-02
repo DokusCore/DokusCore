@@ -4,10 +4,10 @@
 local File = '@DokusCore/[ Core ]/[ Server ]/[ Events ]/[ Callbacks ]/[ Database ]/Characters.lua'
 --------------------------------------------------------------------------------
 RSC('DokusCore:Core:DBGet:Characters', function(source, args)
-  if (args == nil) then return SysErr('SysErr_WrongFormat', File, 7) end
-  if (args[1] == nil) then return SysErr('SysError_CatTypeMissing', File, 8) end
-  if (args[2] == nil) then return SysErr('SysError_CatTypeMissing', File, 9) end
-  if (args[3] == nil) then return SysErr('SysErr_WrongFormat', File, 10) end
+  -- if (args == nil) then return SysErr('SysErr_WrongFormat', File, 7) end
+  -- if (args[1] == nil) then return SysErr('SysError_CatTypeMissing', File, 8) end
+  -- if (args[2] == nil) then return SysErr('SysError_CatTypeMissing', File, 9) end
+  -- if (args[3] == nil) then return SysErr('SysErr_WrongFormat', File, 10) end
   local Exist, Result = false, {}
 
   if (Low(args[1]) == 'user') then

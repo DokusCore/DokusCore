@@ -6,6 +6,7 @@ DB.Users         = {}
 DB.Banks         = {}
 DB.Boats         = {}
 DB.Items         = {}
+DB.Stables       = {}
 DB.Settings      = {}
 DB.Characters    = {}
 DB.Blacklist     = {}
@@ -15,6 +16,7 @@ DB.Inventory     = {}
 DB.Storages      = {}
 DB.Metabolism    = {}
 DB.Outfits       = {}
+DB.Zones         = {}
 DB.Data          = {}
 DB.Data.Skin     = {}
 DB.Data.Clothing = {}
@@ -22,44 +24,54 @@ DB.Data.Clothing = {}
 --------------------------------------------------------------------------------
 ---- DB GET
 --------------------------------------------------------------------------------
-DB.Users.GetOnlySteam            = 'select * from users where Steam=@Steam'
-DB.Users.GetViaSteamName         = 'select * from users where sName=@sName'
-DB.Settings.GetOnlySteam         = 'select * from settings where Steam=@Steam'
-DB.Banks.GetAllBanks             = 'select * from banks where Steam=@Steam and CharID=@CharID'
-DB.Banks.GetViaBankName          = 'select * from banks where Steam=@Steam and CharID=@CharID and Bank=@Bank'
-DB.Characters.GetAll             = 'select * from characters'
-DB.Characters.GetOnlySteam       = 'select * from characters where Steam=@Steam'
-DB.Characters.Get                = 'select * from characters where Steam=@Steam and CharID=@CharID'
-DB.Whitelist.GetAll              = 'select * from whitelist'
-DB.Whitelist.GetViaSteam         = 'select * from whitelist where Steam=@Steam'
-DB.Blacklist.GetAll              = 'select * from blacklist'
-DB.Blacklist.GetViaSteam         = 'select * from blacklist where Steam=@Steam'
-DB.Blacklist.GetViaIP            = 'select * from blacklist where IP=@IP'
-DB.Blacklist.GetViaLicense       = 'select * from blacklist where License=@License'
-DB.Blacklist.GetViaXBoxLive      = 'select * from blacklist where XBoxLive=@XBoxLive'
-DB.Blacklist.GetViaMLive         = 'select * from blacklist where MLive=@MLive'
-DB.Stores.GetAll                 = 'select * from stores'
-DB.Stores.GetViaType             = 'select * from stores where Type=@Type'
-DB.Inventory.GetUser             = 'select * from inventory where Steam=@Steam and CharID=@CharID'
-DB.Inventory.GetUserItem         = 'select * from inventory where Steam=@Steam and CharID=@CharID and Item=@Item'
-DB.Storages.GetAll               = 'select * from storages where Type=@Type'
-DB.Storages.GetAllDropBox        = 'select * from storages where Type=@Type'
-DB.Storages.GetUserDropBox       = 'select * from storages where Type=@Type and Steam=@Steam and CharID=@CharID'
-DB.Storages.GetDropBoxViaID      = 'select * from storages where BoxID=@BoxID'
-DB.Metabolism.Get                = 'select * from metabolism where Steam=@Steam and CharID=@CharID'
-DB.Items.GetAll                  = 'select * from items'
-DB.Data.Skin.GetAllMale          = 'select * from _data_skin_male'
-DB.Data.Skin.GetAllFemale        = 'select * from _data_skin_female'
-DB.Data.Clothing.GetAllMale      = 'select * from _data_clothes_male'
-DB.Data.Clothing.GetAllFemale    = 'select * from _data_clothes_female'
-DB.Boats.GetAllUser              = 'select * from boats'
-DB.Boats.GetAllUser              = 'select * from boats where Steam=@Steam'
-DB.Boats.GetSingle               = 'select * from boats where Steam=@Steam and CharID=@CharID'
-DB.Boats.GetAllViaBID            = 'select * from boats where BID=@BID'
+DB.Users.GetOnlySteam             = 'select * from users where Steam=@Steam'
+DB.Users.GetViaSteamName          = 'select * from users where sName=@sName'
+DB.Settings.GetOnlySteam          = 'select * from settings where Steam=@Steam'
+DB.Banks.GetAllBanks              = 'select * from banks where Steam=@Steam and CharID=@CharID'
+DB.Banks.GetViaBankName           = 'select * from banks where Steam=@Steam and CharID=@CharID and Bank=@Bank'
+DB.Characters.GetAll              = 'select * from characters'
+DB.Characters.GetOnlySteam        = 'select * from characters where Steam=@Steam'
+DB.Characters.Get                 = 'select * from characters where Steam=@Steam and CharID=@CharID'
+DB.Whitelist.GetAll               = 'select * from whitelist'
+DB.Whitelist.GetViaSteam          = 'select * from whitelist where Steam=@Steam'
+DB.Blacklist.GetAll               = 'select * from blacklist'
+DB.Blacklist.GetViaSteam          = 'select * from blacklist where Steam=@Steam'
+DB.Blacklist.GetViaIP             = 'select * from blacklist where IP=@IP'
+DB.Blacklist.GetViaLicense        = 'select * from blacklist where License=@License'
+DB.Blacklist.GetViaXBoxLive       = 'select * from blacklist where XBoxLive=@XBoxLive'
+DB.Blacklist.GetViaMLive          = 'select * from blacklist where MLive=@MLive'
+DB.Stores.GetAll                  = 'select * from stores'
+DB.Stores.GetViaType              = 'select * from stores where Type=@Type'
+DB.Inventory.GetUser              = 'select * from inventory where Steam=@Steam and CharID=@CharID'
+DB.Inventory.GetUserItem          = 'select * from inventory where Steam=@Steam and CharID=@CharID and Item=@Item'
+DB.Storages.GetAll                = 'select * from storages where Type=@Type'
+DB.Storages.GetAllDropBox         = 'select * from storages where Type=@Type'
+DB.Storages.GetUserDropBox        = 'select * from storages where Type=@Type and Steam=@Steam and CharID=@CharID'
+DB.Storages.GetDropBoxViaID       = 'select * from storages where BoxID=@BoxID'
+DB.Metabolism.Get                 = 'select * from metabolism where Steam=@Steam and CharID=@CharID'
+DB.Items.GetAll                   = 'select * from items'
+DB.Data.Skin.GetAllMale           = 'select * from _data_skin_male'
+DB.Data.Skin.GetAllFemale         = 'select * from _data_skin_female'
+DB.Data.Clothing.GetAllMale       = 'select * from _data_clothes_male'
+DB.Data.Clothing.GetAllFemale     = 'select * from _data_clothes_female'
+DB.Boats.GetAllUser               = 'select * from boats'
+DB.Boats.GetAllUser               = 'select * from boats where Steam=@Steam'
+DB.Boats.GetSingle                = 'select * from boats where Steam=@Steam and CharID=@CharID'
+DB.Boats.GetAllViaBID             = 'select * from boats where BID=@BID'
+DB.Boats.GetSingleByIDAndHanger   = 'select * from boats where Steam=@Steam and CharID=@CharID and BID=@BID and Hanger=@Hanger'
+DB.Outfits.GetAll                 = 'select * from outfits'
+DB.Outfits.GetAllUser             = 'select * from outfits where Steam=@Steam'
+DB.Outfits.GetSingleUser          = 'select * from outfits where Steam=@Steam and CharID=@CharID'
 
-DB.Outfits.GetAll                = 'select * from outfits'
-DB.Outfits.GetAllUser            = 'select * from outfits where Steam=@Steam'
-DB.Outfits.GetSingleUser         = 'select * from outfits where Steam=@Steam and CharID=@CharID'
+DB.Stables.GetAll                 = 'select * from stables'
+DB.Stables.GetAllUser             = 'select * from stables where SteamID=@SteamID'
+DB.Stables.GetAllCharacter        = 'select * from stables where SteamID=@SteamID and CharID=@CharID'
+DB.Stables.GetSingleUserViaName   = 'select * from stables where SteamID=@SteamID and CharID=@CharID and Name=@Name'
+DB.Stables.GetSingleUserViaType   = 'select * from stables where SteamID=@SteamID and CharID=@CharID and Type=@Type'
+DB.Stables.GetSingleUserViaStable = 'select * from stables where SteamID=@SteamID and CharID=@CharID and Stabled=@Stabled'
+
+DB.Zones.GetAll                   = 'select * from zones'
+DB.Zones.GetViaType               = 'select * from zones where Type=@Type'
 --------------------------------------------------------------------------------
 ---- DB Insert
 --------------------------------------------------------------------------------
@@ -75,6 +87,8 @@ DB.Inventory.InsertItem          = 'insert into inventory (Steam, CharID, Type, 
 DB.Metabolism.Insert             = 'insert into metabolism (Steam, CharID, Health, Hunger, Thirst) values (@Steam, @CharID, @Health, @Hunger, @Thirst)'
 DB.Boats.Insert                  = 'insert into boats (Steam, CharID, BID, Name, Hanger, Storage, Coords) values (@Steam, @CharID, @BID, @Name, @Hanger, @Storage, @Coords)'
 DB.Outfits.Insert                = 'insert into outfits (Steam, CharID, Name, Outfit) values (@Steam, @CharID, @Name, @Outfit)'
+DB.Stables.Insert                = 'insert into stables (SteamID, CharID, Type, Stabled, Name, InUse, IsStored, Model, Coords, Components, Health, Stamina, Hunger, Thirst, Dirt, Price) values (@SteamID, @CharID, @Type, @Stabled, @Name, @InUse, @IsStored, @Model, @Coords, @Components, @Health, @Stamina, @Hunger, @Thirst, @Dirt, @Price)'
+DB.Zones.Insert                  = 'insert into zones (Name, Type, City, GD, Poly, Grid, MinZ, MaxZ, OnEnter, OnExit, Vectors) values (@Name, @Type, @City, @GD, @Poly, @Grid, @MinZ, @MaxZ, @OnEnter, @OnExit, @Vectors)'
 --------------------------------------------------------------------------------
 ---- DB Set / Update
 --------------------------------------------------------------------------------
@@ -144,12 +158,9 @@ DB.Boats.DelAllViaHanger         = 'delete from boats where Hanger=@Hanger'
 DB.Outfits.DeleteAll             = 'delete from outfits'
 DB.Outfits.DeleteAllUser         = 'delete from outfits where Steam=@Steam'
 DB.Outfits.DeleteSingleUser      = 'delete from outfits where Steam=@Steam and CharID=@CharID'
+
+DB.Stables.DeleteByUserAndName   = 'delete from stables where SteamID=@SteamID and CharID=@CharID and Name=@Name'
 --------------------------------------------------------------------------------
-
-
-
-
-
 
 
 

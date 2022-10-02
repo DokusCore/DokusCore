@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 description 'DokusCore - A RedM Framework - By DevDokus'
 author 'DevDokus Github - https://DokusCore.Com'
-version '0.6.3 P1'
+version '0.6.4'
 dependencies { 'oxmysql', 'pNotify' }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -22,6 +22,7 @@ client_scripts {
   '[ Core ]/[ Client ]/[ Utilities ]/*.*',
   '[ Core ]/[ Client ]/[ Commands ]/*.*',
   '[ Core ]/[ Client ]/[ Events ]/*.*',
+  '[ Core ]/[ Client ]/[ DokusZones ]/*.*',
   '[ Core ]/[ Client ]/[ Commands ]/[ Admin ]/*.*',
   '[ Core ]/[ Client ]/[ Callbacks ]/*.*',
 }
@@ -34,6 +35,7 @@ server_scripts {
   '[ Core ]/[ Server ]/[ Events ]/*.*',
   '[ Core ]/[ System ]/[ Server ]/*.*',
   '[ Core ]/[ Server ]/[ Callbacks ]/*.*',
+  '[ Core ]/[ Server ]/[ DokusZones ]/*.*',
   '[ Core ]/[ Server ]/[ Events ]/[ Database ]/*.*',
   '[ Core ]/[ Server ]/[ Events ]/[ Normal ]/*.*',
   '[ Core ]/[ Server ]/[ Callbacks ]/[ Database ]/*.*'

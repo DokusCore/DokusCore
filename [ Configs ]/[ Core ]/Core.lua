@@ -6,71 +6,29 @@ _DiscordInvite  = 'https://Discord.io/DokusCore'
 _Language       = { Lang = 'en', Multi = true } --( In Progress )
 _StartWealth    = { Money = 2.25, Gold = 0.0 }
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
-_DokusMenu      = { Position = 'right', Theme = { Dark = false, Red = true } }
+_DokusMenu      = { Position = 'right', Theme = { Dark = true, Red = false } }
 _ActionKey      = 0xCEFD9220 -- Default E
-_EnablePVP      = true
-_ShowMap        = true
-_ShowMiniMap    = true
-_EnableIMaps    = true
-_BankDoors      = true
+_EnablePVP      = true  -- Enable PVP Damage
+_ShowMap        = true  -- Fog Of War ( Fogs the map )
+_ShowMiniMap    = true  -- Force show the minimap or not
+_EnableIMaps    = true  -- Fixes hole in map, buildings and many more
+_BankDoors      = true  -- Opens the bank doors so players can enter.
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- The Security contains the Black and whitelist Module.
 -- When the whitelist is used you set `pending` to `true` to accept the player
 --------------------------------------------------------------------------------
 _Security = {
-  Blacklist = { Enabled = true },
+  Blacklist = { Enabled = true }, --( In Progress )
   Whitelist = { Enabled = false, NotifyAdmins = false }, --( In Progress )
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
--- These are official DokusCore plugins that you can install. Please enable or
--- disable these when or when not used. This to make sure the core handles the
--- data like character data as suppose to. If set incorrectly the core can bug.
---------------------------------------------------------------------------------
--- NOTE: Only plugins that are set to `true` will recieve update checks!
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-_Modules          = {
-  CoreMenu        = true,  -- Required ( In Progress )
-  Characters      = true,  -- Required ( In Progress )
-  Inventory       = true,  -- Required ( In Progress )
-  NPCInteract     = true,  -- Required ( In Progress )
-  Metabolism      = true,  -- Required ( In Progress )
-  UsableItems     = true,  -- Required ( In Progress )
-  Spawner         = true,  -- Required ( In Progress )
-  Skins           = true,  -- Optional ( In Progress )
-  Banking         = true,  -- Optional ( In Progress )
-  Stores          = true,  -- Optional ( In Progress )
-  FastTravel      = true,  -- Optional ( In Progress )
-  Instruments     = true,  -- ( Toggle has to be made )
-  NPCMenu         = true,  -- ( Toggle has to be made )
-  WorldEdits      = true,  -- Toggle has to be made
-
-
-
-  -- This is a bundle of small scripts
-  ScriptBundle    = {
-    Status        = true,  -- Optional
-    BushHarvest   = true,  -- Optional ( In Progress )
-  },
-
-  -- UNDER CONSTRUCTION -- Leave true if you want update notices!
-  Telegrams       = true,   -- Optional ( In Progress )
-  Trains          = true,   -- Optional ( In Progress )
-  Bathing         = true,   -- Optional ( In Progress )
-  Clothing        = true,   -- Required ( In Progress )
-  Boats           = true,   -- Required ( In Progress )
-  Guidance        = true,   -- Required ( In Progress )
-  ScratchCards    = true,   -- Required ( In Progress )
- }
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 _Loops = {
-  SaveCoords        = { Enabled = true, Seconds = 60  }, --( In Progress )
   SliderDisabler    = { Enabled = true, Seconds = 0.1 },--( In Progress )
-  CheckBlacklist    = { Seconds = 300 },--( In Progress )
-  WhitelistNotify   = { Seconds = 120 },--( In Progress )
+  -- SaveCoords        = { Enabled = true, Seconds = 60  }, --( Not in Use at the moment )
+  -- CheckBlacklist    = { Seconds = 300 },--( Not in Use at the moment )
+  -- WhitelistNotify   = { Seconds = 120 },--( Not in Use at the moment )
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -80,23 +38,22 @@ _Commands = { --( In Progress )
   -- until all commands are designed in a quick to use menu
   --------------------------------------------------------------------------------
   -- Information Commands
-  Help        = { Users = true,  Admins = true,  SuperAdmins = true },
   Discord     = { Users = true,  Admins = true,  SuperAdmins = true },
-  InfoChar    = { Users = true,  Admins = true,  SuperAdmins = true },
-  InfoAcc     = { Users = true,  Admins = true,  SuperAdmins = true },
   Coords      = { Users = true,  Admins = true,  SuperAdmins = true },
   Music       = { Users = true,  Admins = true,  SuperAdmins = true },
 
   -- User Settings Commands
   SetCharName = { Users = true,  Admins = true,  SuperAdmins = true },
   Language    = { Users = true,  Admins = true,  SuperAdmins = true },
-  Hud         = { Users = true,  Admins = true,  SuperAdmins = true },
+
+  -- Other Commands
+  Scenario    = { Users = true,  Admins = true,  SuperAdmins = true },
 
   -- Admin Commands
-  AddMoney    = { Users = false, Admins = true,  SuperAdmins = true },
-  AddGold     = { Users = false, Admins = true,  SuperAdmins = true },
+  -- AddMoney    = { Users = false, Admins = true,  SuperAdmins = true }, -- Currently not in use
+  -- AddGold     = { Users = false, Admins = true,  SuperAdmins = true }, -- Currently not in use
   Teleport    = { Users = false, Admins = true,  SuperAdmins = true },
-  Blacklist   = { Users = false, Admins = true,  SuperAdmins = true },
+  -- Blacklist   = { Users = false, Admins = true,  SuperAdmins = true }, -- Currently not in use
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

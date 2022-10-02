@@ -14,9 +14,13 @@ RSC('DokusCore:Core:DBGet:Boats', function(source, args)
     end
 
     if (Low(args[2]) == 'single') then
-      local X = DBGet(DB.Boats.GetSingle, { Steam = args[3][1], CharID = args[3][2] })
-      if (X[1] ~= nil) then Exist = true Result = X end
-      return { Exist = Exist, Result = Result }
+      if (Low(args[3]) == 'bid') then
+        if (Low(args[4]) == 'hanger') then
+          local X = DBGet(DB.Boats.GetSingleByIDAndHanger, { Steam = args[5][1], CharID = args[5][2], BID = args[5][1], Hanger = args[5][2] })
+          if (X[1] ~= nil) then Exist = true Result = X end
+          return { Exist = Exist, Result = Result }
+        end
+      end
     end
   end
 

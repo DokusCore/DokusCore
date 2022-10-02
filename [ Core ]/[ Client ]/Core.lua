@@ -3,6 +3,8 @@
 --------------------------------------------------------------------------------
 CreateThread(function()
   while not Loaded do Wait(1000)
+    DisplayHudComp('HUD_CTX_INFINITE_AMMO')
+    DisplayHudComp('HUD_CTX_IN_GUARMA_AND_BROKE')
     if (NetworkActive()) then
       ShowHud(true)
       EnablePVP()
