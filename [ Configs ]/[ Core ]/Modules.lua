@@ -33,7 +33,19 @@ _Modules          = {
   ScriptBundle    = {
     Status        = true,  -- Optional
     BushHarvest   = true,  -- Optional ( In Progress )
-  }
+  },
+
+  -----------------------------------------------------
+  -- UNDER CONSTRUCTION --
+  -- These plugins are not packed within the prebuild.
+  -- They will be inserted once the plugins are made.
+  -----------------------------------------------------
+  Telegrams       = false,   -- Working on
+  Trains          = false,   -- Working on
+  Bathing         = false,   -- Working on
+  Boats           = false,   -- Working on
+  Customs         = false,   -- Working on
+  Prospecting     = false,   -- Working on
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
