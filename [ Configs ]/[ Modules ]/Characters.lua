@@ -11,7 +11,7 @@ _Characters = {
 
   -- This is the song that will be heard on fist time spawning
   -- into the character menu. You do not hear this when coming back again
-  Song  = { Enabled = false, Volume = 0.10, Song = 'ThemeSong' },
+  Song  = { Enabled = true, Volume = 0.10, Song = 'ThemeSong' },
 
   Camp = { -- These are the player and camera positions
     Camera = vec3(881.128, 1263.624, 236.630),

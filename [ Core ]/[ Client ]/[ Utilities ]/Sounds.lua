@@ -10,6 +10,10 @@ AddEventHandler('DokusCore:Core:MP:Music:PlayOnUser', function(File, Vol)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+RegisterNetEvent('DokusCore:Core:MP:Music:MusicFade')
+AddEventHandler('DokusCore:Core:MP:Music:MusicFade', function() SendNUIMessage({ Type = 'MusicFade'}) end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 RegisterNetEvent('DokusCore:Core:MP:Music:PlayOnAll')
 AddEventHandler('DokusCore:Core:MP:Music:PlayOnAll', function(File, Vol)
   SendNUIMessage({ Type = 'Music', File = File, Volume = Vol })

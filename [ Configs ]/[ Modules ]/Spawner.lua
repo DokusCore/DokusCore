@@ -10,7 +10,7 @@ _Spawner = {
 
   StartRandomizer = true,          -- Randomize the start location
   StartCutScene   = true,          -- Direct spawn or cutscene ?
-  StartPosition   = '',            -- The place to start a new character
+  StartPosition   = 'Blackwater',            -- The place to start a new character
                                    -- Leave empty to use all cities.
 
   -- These are the start items the user receives in his/her inventory.
