@@ -2,6 +2,9 @@ var Music = null;
 var Sounds = null;
 var Dialogs = null;
 var Metabolism = null;
+var CurVolume = 0;
+const timer = ms => new Promise(res => setTimeout(res, ms))
+
 window.addEventListener('message', function(event) {
   var Type = event.data.Type
   var Volume = event.data.Volume
@@ -17,8 +20,11 @@ window.addEventListener('message', function(event) {
   if (Type == "Music") {
     if (Music != null) { Music.pause(); }
     Music = new Howl({ src: ["./Sounds/ogg/Music/" +File+ ".ogg"] });
+    CurVolume = Volume;
     Music.volume(Volume);
     Music.play();
+  } else if (Type == 'MusicFade') {
+    FadeMusic()
   };
 
   if (Type == 'Metabolism') {
@@ -35,3 +41,14 @@ window.addEventListener('message', function(event) {
     Dialogs.play();
   };
 });
+
+async function FadeMusic() {
+  var Decrease = (CurVolume / 1000)
+  while (CurVolume >= 0.0002) {
+    CurVolume = (CurVolume - Decrease)
+    Music.volume(CurVolume)
+    await timer(10)
+  }
+
+  Music.stop();
+}
