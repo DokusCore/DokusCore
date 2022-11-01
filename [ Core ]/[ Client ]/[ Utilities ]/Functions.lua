@@ -271,7 +271,11 @@ function NoteNPCTalk(Title, Text, mWait, Time) TriggerEvent('DokusCore:Core:Note
 function ShowtextRight(Text, Time) TriggerEvent('DokusCore:Core:ShowtextRight', Text, Time) Wait(Time) end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
+function TabiContains(tab, val)
+  for index, value in ipairs(tab) do
+    if value == val then return true end
+  end return false
+end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

@@ -43,7 +43,7 @@ window.addEventListener('message', function(event) {
 });
 
 async function FadeMusic() {
-  var Decrease = (CurVolume / 1000)
+  var Decrease = (CurVolume / 5000)
   while (CurVolume >= 0.0002) {
     CurVolume = (CurVolume - Decrease)
     Music.volume(CurVolume)

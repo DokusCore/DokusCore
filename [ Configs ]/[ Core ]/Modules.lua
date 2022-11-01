@@ -28,11 +28,13 @@ _Modules          = {
   WorldEdits      = true,  -- Optional ( In Progress )
   ScratchCards    = true,  -- Optional ( In Progress )
   Stables         = true,  -- Optional ( In Progress )
+  GunStore        = true,  -- Optional ( In Progress )
+  Weapons         = true,  -- Optional ( In Progress )
+  Scavenger       = true,  -- Optional ( In Progress )
 
   -- This is a bundle of small scripts
   ScriptBundle    = {
     Status        = true,  -- Optional
-    BushHarvest   = true,  -- Optional ( In Progress )
   },
 
   -----------------------------------------------------
@@ -40,12 +42,12 @@ _Modules          = {
   -- These plugins are not packed within the prebuild.
   -- They will be inserted once the plugins are made.
   -----------------------------------------------------
-  Telegrams       = false,   -- Working on
-  Trains          = false,   -- Working on
-  Bathing         = false,   -- Working on
-  Boats           = false,   -- Working on
-  Customs         = false,   -- Working on
-  Prospecting     = false,   -- Working on
+  Telegrams       = false,   -- Working on ( Leave off to prevent issues )
+  Trains          = false,   -- Working on ( Leave off to prevent issues )
+  Bathing         = false,   -- Working on ( Leave off to prevent issues )
+  Boats           = false,   -- Working on ( Leave off to prevent issues )
+  Customs         = false,   -- Working on ( Leave off to prevent issues )
+  Prospecting     = false,   -- Working on ( Leave off to prevent issues )
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

@@ -20,7 +20,8 @@ DB.Zones         = {}
 DB.Data          = {}
 DB.Data.Skin     = {}
 DB.Data.Clothing = {}
-
+DB.Weapons       = {}
+DB.Animals       = {}
 --------------------------------------------------------------------------------
 ---- DB GET
 --------------------------------------------------------------------------------
@@ -72,6 +73,23 @@ DB.Stables.GetSingleUserViaStable = 'select * from stables where SteamID=@SteamI
 
 DB.Zones.GetAll                   = 'select * from zones'
 DB.Zones.GetViaType               = 'select * from zones where Type=@Type'
+
+DB.Weapons.GetAll                 = 'select * from weapons'
+DB.Weapons.GetSingleUser          = 'select * from weapons where SteamID=@SteamID and CharID=@CharID'
+DB.Weapons.GetSingleUserHex       = 'select * from weapons where SteamID=@SteamID and CharID=@CharID and Hex=@Hex'
+DB.Weapons.GetSingleUserHash      = 'select * from weapons where SteamID=@SteamID and CharID=@CharID and Hash=@Hash'
+
+
+DB.Animals.GetUSAll               = 'select * from animals where SteamID=@SteamID and CharID=@CharID'
+DB.Animals.GetUSType              = 'select * from animals where SteamID=@SteamID and CharID=@CharID and Type=@Type'
+DB.Animals.GetUSModel             = 'select * from animals where SteamID=@SteamID and CharID=@CharID and Model=@Model'
+DB.Animals.GetUAType              = 'select * from animals where SteamID=@SteamID and Type=@Type'
+DB.Animals.GetUAModel             = 'select * from animals where SteamID=@SteamID and Model=@Model'
+DB.Animals.GetAUType              = 'select * from animals where Type=@Type'
+DB.Animals.GetAUModel             = 'select * from animals where Model=@Model'
+
+
+
 --------------------------------------------------------------------------------
 ---- DB Insert
 --------------------------------------------------------------------------------
@@ -89,6 +107,9 @@ DB.Boats.Insert                  = 'insert into boats (Steam, CharID, BID, Name,
 DB.Outfits.Insert                = 'insert into outfits (Steam, CharID, Name, Outfit) values (@Steam, @CharID, @Name, @Outfit)'
 DB.Stables.Insert                = 'insert into stables (SteamID, CharID, Type, Stabled, Name, InUse, IsStored, Model, Coords, Components, Health, Stamina, Hunger, Thirst, Dirt, Price) values (@SteamID, @CharID, @Type, @Stabled, @Name, @InUse, @IsStored, @Model, @Coords, @Components, @Health, @Stamina, @Hunger, @Thirst, @Dirt, @Price)'
 DB.Zones.Insert                  = 'insert into zones (Name, Type, City, GD, Poly, Grid, MinZ, MaxZ, OnEnter, OnExit, Vectors) values (@Name, @Type, @City, @GD, @Poly, @Grid, @MinZ, @MaxZ, @OnEnter, @OnExit, @Vectors)'
+DB.Weapons.Insert                = 'insert into weapons (SteamID, CharID, Name, Type, Hash, Hex, Ammo_Regular, Equiped) values (@SteamID, @CharID, @Name, @Type, @Hash, @Hex, @Ammo_Regular, @Equiped)'
+DB.Animals.Insert                = 'insert into animals (SteamID, CharID, Type, Model, Skin, XP, Meta) values (@SteamID, @CharID, @Type, @Model, @Skin, @XP, @Meta)'
+
 --------------------------------------------------------------------------------
 ---- DB Set / Update
 --------------------------------------------------------------------------------
@@ -137,6 +158,17 @@ DB.Boats.SetStorageViaBoatID     = 'update boats set Storage=@Storage where BID=
 DB.Boats.SetNameViaBoatID        = 'update boats set Name=@Name where BID=@BID'
 
 DB.Characters.SetClothing        = 'update characters set Clothing=@Clothing where Steam=@Steam and CharID=@CharID'
+
+DB.Weapons.SetAmmoSUOnType       = 'update weapons set Ammo_Regular=@Ammo_Regular where SteamID=@SteamID and CharID=@CharID and Type=@Type'
+DB.Weapons.SetAmmoSURegular      = 'update weapons set Ammo_Regular=@Ammo_Regular where SteamID=@SteamID and CharID=@CharID and Hash=@Hash'
+DB.Weapons.SetEquiptViaHash      = 'update weapons set Equiped=@Equiped where SteamID=@SteamID and CharID=@CharID and Hash=@Hash'
+
+DB.Animals.SetUSTypeModel        = 'update animals set Type=@Type where SteamID=@SteamID and CharID=@CharID and Model=@Model'
+DB.Animals.SetUSModelModel       = 'update animals set Model=@Model where SteamID=@SteamID and CharID=@CharID and Model=@Model'
+DB.Animals.SetUSSkinModel        = 'update animals set Skin=@Skin where SteamID=@SteamID and CharID=@CharID and Model=@Model'
+DB.Animals.SetUSXPModel          = 'update animals set XP=@XP where SteamID=@SteamID and CharID=@CharID and Model=@Model'
+DB.Animals.SetUSMetaModel        = 'update animals set Meta=@Meta where SteamID=@SteamID and CharID=@CharID and Model=@Model'
+
 --------------------------------------------------------------------------------
 ---- DB Delete
 --------------------------------------------------------------------------------
@@ -160,6 +192,14 @@ DB.Outfits.DeleteAllUser         = 'delete from outfits where Steam=@Steam'
 DB.Outfits.DeleteSingleUser      = 'delete from outfits where Steam=@Steam and CharID=@CharID'
 
 DB.Stables.DeleteByUserAndName   = 'delete from stables where SteamID=@SteamID and CharID=@CharID and Name=@Name'
+
+DB.Animals.DeleteAll             = 'delete from animals'
+DB.Animals.DeleteAllType         = 'delete from animals where Type=@Type'
+DB.Animals.DeleteAllModel        = 'delete from animals where Model=@Model'
+DB.Animals.DelUAType             = 'delete from animals where SteamID=@SteamID and Type=@Type'
+DB.Animals.DelUAModel            = 'delete from animals where SteamID=@SteamID and Model=@Model'
+DB.Animals.DelUSType             = 'delete from animals where SteamID=@SteamID and CharID=@CharID and Type=@Type'
+DB.Animals.DelUSModel            = 'delete from animals where SteamID=@SteamID and CharID=@CharID and Model=@Model'
 --------------------------------------------------------------------------------
 
 
