@@ -13,7 +13,7 @@ CreateThread(function()
       if (_ShowMap) then ShowMap(true) else ShowMap(false) end
       if (_ShowMiniMap) then DisplayHudComp('HUD_CTX_INFO_CARD') end
       if not (_ShowMiniMap) then HideHudComp('HUD_CTX_INFO_CARD') end
-      TriggerEvent('DokusCore:Core:LoadUser', SteamName())
+      TriggerEvent('DokusCore:Core:LoadUser')
       TriggerEvent('DokusCore:Metabolism:ShowHud', false)
       Loaded = true
     end
@@ -21,28 +21,35 @@ CreateThread(function()
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-AddEventHandler('DokusCore:Core:LoadUser', function(sName)
-  print(System.."^3Syncing User with DokusCore^0")
-  local iDs = TSC('DokusCore:Core:GetUserIDs', { 'user' })
-  if (UserData().SteamID == nil) then TriggerEvent('DokusCore:Sync:Set:UserData', { 'SteamID', { iDs[1] } }) end
-  if (UserData().sName == nil)   then TriggerEvent('DokusCore:Sync:Set:UserData', { 'sName',   { sName }  }) end
-  local Data = UserData()
-  local User = TSC('DokusCore:Core:DBGet:Users', { 'User', { Data.SteamID } })
-  if not (User.Exist) then TriggerServerEvent('DokusCore:Core:DBIns:Users', { Data.SteamID, Data.sName, iDs[3], iDs[2], iDs[4], iDs[5] }) end
-  if (User.Exist) then if (Data.sName ~= User.Result[1].sName) then TriggerServerEvent('DokusCore:Core:DBSet:Users', { 'sName', { Data.Steam, Data.sName } }) end end
-  local Settings = TSC('DokusCore:Core:DBGet:Settings', { 'user', { Data.SteamID } })
-  if not (Settings.Exist) then TriggerServerEvent('DokusCore:Core:DBIns:Settings', { 'user', { Data.SteamID, 1, _Language.Lang } }) end
+AddEventHandler('DokusCore:Core:LoadUser', function()
+  local iDs = TSC('DokusCore:Core:GetUserIDs', { 'User' })
+  TriggerEvent('DokusCore:Sync:Set:UserData', { 'SteamID', { iDs[1] } })
+  local User = TSC('DokusCore:Core:DBGet:Users', { 'User', { iDs[1] } })
+  local Settings = TSC('DokusCore:Core:DBGet:Settings', { 'user', { iDs[1] } })
+  if (not (User.Exist)) then TriggerServerEvent('DokusCore:Core:DBIns:Users', { iDs[1], 'INOP!', iDs[3], iDs[2], iDs[4], iDs[5] }) end
+  if (not (Settings.Exist)) then TriggerServerEvent('DokusCore:Core:DBIns:Settings', { 'user', { iDs[1], 1, _Language.Lang } }) end
+
+  if ((User.Exist) and (Settings.Exist)) then
+    local Settings = TSC('DokusCore:Core:DBGet:Settings', { 'user', { iDs[1] } })
+    TriggerEvent('DokusCore:Sync:Set:UserData', { 'Language', { Settings.Result[1].Language } })
+  end
+
   TriggerServerEvent('DokusCore:Sync:Set:CoreData', { 'FrameReady', { true } })
   TriggerEvent('DokusCore:Sync:Set:CoreData', { 'FrameReady', { true } })
+  print(System.."^6------------------------------------------------------------^0")
+  print(System.."^2User and DokusCore are fully synced with DataSync!^0")
+  print(System.."^2You are now able to restart other plugins!^0")
+  print(System.."^6------------------------------------------------------------^0")
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
-
-
-
-
-
+AddEventHandler('onResourceStop', function(Name)
+  if (GetCurrentResourceName() ~= Name) then return end
+  print(System.."^6------------------------------------------------------------^0")
+  print(System.."^3Syncing Users with DokusCore^0")
+  print(System.."^3Do not restart plugins during the syncing process!^0")
+  print(System.."^6------------------------------------------------------------^0")
+end)
 
 
 

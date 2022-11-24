@@ -23,7 +23,6 @@ AddEventHandler('DokusCore:Core:Webhooks:Discord', function(args)
       local T  = '\n[ Webhook ID ]: Bank Transaction'
       local T1 = '\n[ Transaction Type ] '..Type..' '..args[2]
       local T2 = '\n[ SteamID ]: '..Steam
-      local T3 = '\n[ Steam Name ]: '..UserData.sName
       local T4 = '\n[ Character Name ] '..UserData.cName
       local T5 = '\n[ Character ID ]: '..CharID
       local T6 = '\n[ Transaction Amount ]: $'..Amount
@@ -31,7 +30,7 @@ AddEventHandler('DokusCore:Core:Webhooks:Discord', function(args)
       local T8 = '\n[ New Wallet Balance ] $'..Money
       local T9 = '\n[ Old Bank Balance ]: $'..OldBankMoney
       local T10 = '\n[ New Bank Balance ]: $'..BankMoney
-      Webhook(_Webhooks.Discord[1].Hook, S..L..T..T1..L..T3..T4..T2..T5..L..T6..L..T7..T8..L..T9..T10..L..E)
+      Webhook(_Webhooks.Discord[1].Hook, S..L..T..T1..L..T4..T2..T5..L..T6..L..T7..T8..L..T9..T10..L..E)
     end
 
     if (Low(args[2]) == 'gold') then
@@ -39,7 +38,6 @@ AddEventHandler('DokusCore:Core:Webhooks:Discord', function(args)
       local T  = '\n[ Webhook ID ]: Bank Transaction'
       local T1 = '\n[ Transaction Type ] '..Type..' '..args[2]
       local T2 = '\n[ SteamID ]: '..Steam
-      local T3 = '\n[ Steam Name ]: '..UserData.sName
       local T4 = '\n[ Character Name ] '..UserData.cName
       local T5 = '\n[ Character ID ]: '..CharID
       local T6 = '\n[ Transaction Amount ]: $'..Amount
@@ -47,7 +45,7 @@ AddEventHandler('DokusCore:Core:Webhooks:Discord', function(args)
       local T8 = '\n[ New Wallet Balance ] $'..Gold
       local T9 = '\n[ Old Bank Balance ]: $'..OldBankGold
       local T10 = '\n[ New Bank Balance ]: $'..BankGold
-      Webhook(_Webhooks.Discord[1].Hook, S..L..T..T1..L..T3..T4..T2..T5..L..T6..L..T7..T8..L..T9..T10..L..E)
+      Webhook(_Webhooks.Discord[1].Hook, S..L..T..T1..L..T4..T2..T5..L..T6..L..T7..T8..L..T9..T10..L..E)
     end
   end
 end)

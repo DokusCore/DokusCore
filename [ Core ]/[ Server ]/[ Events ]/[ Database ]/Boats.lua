@@ -49,18 +49,19 @@ RegisterServerEvent('DokusCore:Core:DBDel:Boats')
 AddEventHandler('DokusCore:Core:DBDel:Boats', function(args)
   if (Low(args[1]) == 'user') then
     if (Low(args[2]) == 'single') then
-      if (Low(args[3]) == 'boatid')   then DBSet(DB.Boats.DelUserSingleViaBoatID,   { BID = args[4][1] }, function() end) end
-      if (Low(args[3]) == 'name')     then DBSet(DB.Boats.DelUserSingleViaName,     { Name = args[4][1] }, function() end) end
+      if (Low(args[3]) == 'boatid')   then DBDel(DB.Boats.DelUserSingleViaBoatID,   { BID = args[4][1] }, function() end) end
+      if (Low(args[3]) == 'name')     then DBDel(DB.Boats.DelUserSingleViaName,     { Name = args[4][1] }, function() end) end
     end
 
     if (Low(args[2]) == 'all') then
-      if (Low(args[3]) == 'steamid') then DBSet(DB.Boats.DelUserAllViaSteamID,  { Steam = args[4][1] }, function() end) end
-      if (Low(args[3]) == 'hanger')  then DBSet(DB.Boats.DelUserAllInHanger, { Steam = args[4][1], Hanger = args[4][2] }, function() end) end
+      if (Low(args[3]) == 'steamid') then DBDel(DB.Boats.DelUserAllViaSteamID,  { Steam = args[4][1] }, function() end) end
+      if (Low(args[3]) == 'hanger')  then DBDel(DB.Boats.DelUserAllInHanger, { Steam = args[4][1], Hanger = args[4][2] }, function() end) end
+      if (Low(args[3]) == 'char')  then DBDel(DB.Boats.DelUserAllViaCharID, { SteamID = args[4][1], CharID = args[4][2] }, function() end) end
     end
   end
 
   if (Low(args[1]) == 'all') then
-    if (Low(args[2]) == 'hanger') then DBSet(DB.Boats.DelAllViaHanger,  { Hanger = args[3][1] }, function() end) end
+    if (Low(args[2]) == 'hanger') then DBDel(DB.Boats.DelAllViaHanger,  { Hanger = args[3][1] }, function() end) end
   end
 end)
 --------------------------------------------------------------------------------

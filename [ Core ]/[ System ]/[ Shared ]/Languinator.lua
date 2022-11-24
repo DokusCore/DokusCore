@@ -1,19 +1,22 @@
 --------------------------------------------------------------------------------
 ----------------------------------- DevDokus -----------------------------------
 --------------------------------------------------------------------------------
+Error    = '^4[ DataSync ]^1[ Error ]: ^3'
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 Lang = {}
-local function Multi(str, xL, ...)
-	local Check1 = (Lang[xL] ~= nil)
-	local Check2 = (Lang[xL][str] ~= nil)
-	local R = string.format(Lang[xL][str], ...)
-	local Err1 = '^0Translation [' .. xL .. '][' .. str .. '] does not exist'
-	local Err2 = '^0Locale [' .. xL .. '] does not exist'
-	if Check1 then if Check2 then	return R else	return Err1 end else return Err2 end
+local function Multi(Plugin, Item, Language)
+	local Plug = (Lang[Language][Plugin] == nil)
+	if (Plug) then return Error .. 'No plugin found with the name ^1' .. Plugin .. '^3 in the language file!^0' end
+	local Message = (Lang[Language][Plugin][Item] == nil)
+	if (Message) then return Error .. 'No object found in the language file with the name ^1' .. Item .. '!^0' end
+	return Lang[Language][Plugin][Item]
 end
-
-function _(str, xL, ...) -- Translate string first char uppercase
-	if not _Language.Multi then xL = _Language.Lang end
-	return tostring(Multi(str, xL, ...):gsub("^%l", string.upper))
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+function _(Plugin, Item, Language)
+	if (not (_Language.Multi)) then xL = _Language.Lang end
+	return Multi(Plugin, Item, Language)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

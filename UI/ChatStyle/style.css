@@ -130,6 +130,7 @@ textarea {
 
 .logo {
   position: absolute;
+  overflow: hidden;
   right: 2%;
 }
 

@@ -19,7 +19,7 @@ RegisterCommand("coords", function(source, args, rawCommand)
 
   -- Check if user is admin or superadmin
   local UserData = TCTCC('DokusCore:Sync:Get:UserData')
-  local Group, Cmds, CMD, Lang = GetUserGroup(UserData.SteamID, UserData.CharID), {}, _Commands, _Language.Lang
+  local Group, Cmds, CMD, Lang = GetUserChar(UserData.SteamID, UserData.CharID).Group, {}, _Commands, _Language.Lang
   local Mod, IsUser, IsAdmin, IsOwner = _Moderation, true, true, true
   if (Group ~= Mod.User) then IsUser = false end
   if (Group ~= Mod.Admin) then IsAdmin = false end

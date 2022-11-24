@@ -25,7 +25,7 @@ RSC('DokusCore:Core:DBGet:Weapons', function(source, args)
 
     if (Low(args[2]) == 'all') then
       local Index = { SteamID = args[3][1], CharID = args[3][2] }
-      local X = DBGet(DB.Weapons.GetAll, Index)
+      local X = DBGet(DB.Weapons.GetSingleUser, Index)
       if (X[1] ~= nil) then Exist = true Result = X end
       return { Exist = Exist, Result = Result }
     end

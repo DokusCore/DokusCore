@@ -23,6 +23,20 @@ _Metabolism = {
   -- between 1 and 10, if the number lands on 5 the character will burp or fart.
   Farting = { Enabled = true, Frequention = 300 },
   Burping = { Enabled = true, Frequention = 300 },
+
+  FartSounds = {
+    { Sound = 'fart1', Volume = 0.15 },
+    { Sound = 'fart2', Volume = 0.15 },
+    { Sound = 'fart3', Volume = 0.15 },
+    { Sound = 'fart4', Volume = 0.15 },
+    { Sound = 'fart5', Volume = 0.15 },
+  },
+
+  BurpSounds = {
+    { Sound = 'Burp1', Volume = 0.15 },
+    { Sound = 'Burp2', Volume = 0.15 },
+    { Sound = 'Burp3', Volume = 0.15 },
+  }
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

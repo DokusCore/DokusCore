@@ -12,7 +12,7 @@
 --   if (_Commands.Blacklist.SuperAdmins) then IsForOwners = true end
 --
 --   -- Check if user is admin or superadmin
---   local Group, Cmds, CMD, Lang = GetUserGroup(), {}, _Commands, _Language.Lang
+--   local Group, Cmds, CMD, Lang = GetUserChar().Group, {}, _Commands, _Language.Lang
 --   local Mod, IsUser, IsAdmin, IsOwner = _Moderation, true, true, true
 --   if (Group ~= Mod.User) then IsUser = false end
 --   if (Group ~= Mod.Admin) then IsAdmin = false end

@@ -18,7 +18,7 @@ function UIFocus(B1, B2)             return Citizen.InvokeNative(0x5B98AE30, B1,
 function NetworkActive()             return Citizen.InvokeNative(0xB8DFD30D6973E135, PlayerID()) end
 function NetworkStarted()            return Citizen.InvokeNative(0x9DE624D2FC4B603F) end
 function VisibleToNetwork(E, T)      return Citizen.InvokeNative(0xF1CA12B18AEF5298, E, T) end
-function SteamName()                 return GetPlayerName() end
+function SteamName(s)                 return GetPlayerName(s) end
 function ShowHud(Bool)               return Citizen.InvokeNative(0xD63FE3AF9FB3D53F, Bool) end
 function ShowMap(Bool)               return Citizen.InvokeNative(0x4B8F743A4A6D2FF8, Bool) end
 function GetHash(Value)              return Citizen.InvokeNative(0xFD340785ADF8CFB7, Value) end

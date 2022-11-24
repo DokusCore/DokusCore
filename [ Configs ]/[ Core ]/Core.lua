@@ -60,8 +60,6 @@ _Commands = { --( In Progress )
 --  These are the keys you can ue in game. Not adviced to make changes below  --
 --               It can create a disturbance in the force!                    --
 --------------------------------------------------------------------------------
-_Dialogs = {}
---------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Keys = {
   ["MOUSE1"] = 0x07CE1E61, ["MOUSE2"] = 0xF84FA74F, ["MOUSE3"] = 0xCEE12B50, ["MWUP"] = 0x3076E97C,

@@ -18,7 +18,7 @@ RSC('DokusCore:Core:DBGet:Inventory', function(source, args)
     end
 
     if (Low(args[2]) == 'all') then
-      local Steam, CharID, Item = args[3][1], args[3][2]
+      local Steam, CharID = args[3][1], args[3][2]
       local X = DBGet(DB.Inventory.GetUser, { Steam = Steam, CharID = CharID })
       if (X[1] ~= nil) then Exist = true Result = X end
       return { Exist = Exist, Result = Result }

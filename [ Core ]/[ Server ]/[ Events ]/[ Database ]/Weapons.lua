@@ -50,7 +50,6 @@ AddEventHandler('DokusCore:Core:DBSet:Weapons', function(args)
     if (Low(args[2]) == 'all') then
       if (Low(args[3]) == 'ammo') then
         local SteamID, CharID, Type, Ammo = args[4][1], args[4][2], args[4][3], args[4][4]
-        print("logging", SteamID, CharID, Type, Ammo)
         local Index = { Ammo_Regular = Ammo, SteamID = SteamID, CharID = CharID, Type = Low(Type) }
         local X = DBGet(DB.Weapons.SetAmmoSUOnType, Index)
         if (X[1] ~= nil) then Exist = true Result = X end
@@ -61,7 +60,19 @@ AddEventHandler('DokusCore:Core:DBSet:Weapons', function(args)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
+RegisterServerEvent('DokusCore:Core:DBDel:Weapons')
+AddEventHandler('DokusCore:Core:DBDel:Weapons', function(args)
+  local Exist, Result = false, nil
+  if (Low(args[1]) == 'user') then
+    if (Low(args[2]) == 'all') then
+      if (Low(args[3]) == 'char') then
+        local SteamID, CharID = args[3][1], args[3][2]
+        local Index = { SteamID = SteamID, CharID = CharID }
+        DBDel(DB.Weapons.DelUserAllViaCharID, Index, function() end)
+      end
+    end
+  end
+end)
 
 
 

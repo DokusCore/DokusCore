@@ -50,6 +50,13 @@ AddEventHandler('DokusCore:Core:DBDel:Stables', function(args)
         end
       end
     end
+
+    if (Low(args[2]) == 'all') then
+      if (Low(args[3]) == 'char') then
+        local Index = { SteamID = args[3][1], CharID = args[3][2] }
+        DBDel(DB.Stables.DelUserAllViaCharID, Index)
+      end
+    end
   end
 end)
 --------------------------------------------------------------------------------

@@ -30,10 +30,10 @@ function Round(num, numDecimalPlaces)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-function GetUserGroup(S,C)
+function GetUserChar(S,C)
   if not ((S == nil) or (C == nil)) then
     local Data = TSC('DokusCore:Core:DBGet:Characters', { 'user', 'single', { S, C } })
-    if (Data.Exist) then return Data.Result[1].Group end
+    if (Data.Exist) then return Data.Result[1] end
   end
 end
 --------------------------------------------------------------------------------
@@ -119,14 +119,14 @@ function SpawnVehicle(_, Coords, Heading)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-function RandomDialog(PedID, Dialog)
+function RandomDialog(Dialog)
   local Txt = {}
-  local Gender = IsPedMale(PedID)
+  local Gender = IsPedMale(PedID())
   for k,v in pairs(Dialog) do
-    local Male = ((Low(v.Gender) == 'male') and (Gender == 1))
-    local Female = ((Low(v.Gender) == 'female') and not (Gender))
-    if (Male) then Tabi(Txt, v) end
-    if (Female) then Tabi(Txt, v) end
+    if (not (v.Gender)) then Tabi(Txt, v) else
+      if ((Low(v.Gender) == 'male') and (Gender == 1))    then Tabi(Txt, v) end
+      if ((Low(v.Gender) == 'female') and (not (Gender))) then Tabi(Txt, v) end
+    end
   end return Txt
 end
 --------------------------------------------------------------------------------
@@ -191,14 +191,19 @@ end
 -- Adds a text entry box and returns the inserted value
 --------------------------------------------------------------------------------
 function TextEntry(Title, Type, Event, Data)
+  local Result = true
   AddTextEntry('FMMC_MPM_NA', Title)
   DisplayOnscreenKeyboard(0, "FMMC_MPM_NA", "", "", "", "", "", 50)
   while (UpdateOnscreenKeyboard() == 0) do Wait(5) DisableAllControlActions(0) end
-  if (GetOnscreenKeyboardResult()) then
-    local Res = GetOnscreenKeyboardResult()
-    if (Low(Type) == 'client') then TriggerEvent(Event, { Result = Res, Data = Data }) end
-    if (Low(Type) == 'server') then TriggerServerEvent(Event, { Result = Res, Data = Data }) end
+  if (UpdateOnscreenKeyboard() == 2) then Result = false end
+  if ((GetOnscreenKeyboardResult()) and (Result)) then
+    local Result = GetOnscreenKeyboardResult()
+    if (Low(Type) == 'client') then TriggerEvent(Event, { Result = Result, Data = Data }) end
+    if (Low(Type) == 'server') then TriggerServerEvent(Event, { Result = Result, Data = Data }) end
     CancelOnscreenKeyboard()
+  elseif (not (Result)) then
+    if (Low(Type) == 'client') then TriggerEvent(Event, { Result = false, Data = Data }) end
+    if (Low(Type) == 'server') then TriggerServerEvent(Event, { Result = false, Data = Data }) end
   end
 end
 --------------------------------------------------------------------------------
@@ -233,9 +238,10 @@ function SpawnTrain(Model, Coords, Heading)
   end
 
   -- Spawn the train
-  local Train = N_0xc239dbd9a57d2a71(Hash, Coords, Heading, 0, 1, 1)
+  local Train = N_0xc239dbd9a57d2a71(Hash, Coords, Heading, 1, 1, 1)
   SetTrainSpeed(Train, 0.0)
   SetTrainCruiseSpeed(Train, 0.0)
+  Citizen.InvokeNative(0xBA8818212633500A, Train, 0, 1) -- Make train undrivable
   Citizen.InvokeNative(0xDC19C288082E586E, Train, 1, 1) --SetEntityAsMissionEntity
   Citizen.InvokeNative(0x4AD96EF928BD4F9A, Train) -- SetModelAsNoLongerNeeded
   return Train
@@ -284,7 +290,6 @@ end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
 
 
 

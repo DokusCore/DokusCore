@@ -9,32 +9,34 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Modules          = {
-  CoreMenu        = true,  -- Required ( In Progress )
+  Banking         = true,  -- Optional ( In Progress )
   Characters      = true,  -- Required ( In Progress )
   Clothing        = true,  -- Required ( In Progress )
+  CoreMenu        = true,  -- Required ( In Progress )
+  FastTravel      = true,  -- Optional ( In Progress )
   Guidance        = true,  -- Required ( In Progress )
+  GunStore        = true,  -- Optional ( In Progress )
+  Instruments     = true,  -- Optional ( In Progress )
   Inventory       = true,  -- Required ( In Progress )
+  Metabolism      = true,  -- Required ( In Progress )
   NPCInteract     = true,  -- Required ( In Progress )
   NPCMenu         = true,  -- Required ( In Progress )
-  Metabolism      = true,  -- Required ( In Progress )
-  UsableItems     = true,  -- Required ( In Progress )
-  Spawner         = true,  -- Required ( In Progress )
-  Zones           = true,  -- Required ( In Progress )
-  Skins           = true,  -- Optional ( In Progress )
-  Banking         = true,  -- Optional ( In Progress )
-  Stores          = true,  -- Optional ( In Progress )
-  FastTravel      = true,  -- Optional ( In Progress )
-  Instruments     = true,  -- Optional ( In Progress )
-  WorldEdits      = true,  -- Optional ( In Progress )
-  ScratchCards    = true,  -- Optional ( In Progress )
-  Stables         = true,  -- Optional ( In Progress )
-  GunStore        = true,  -- Optional ( In Progress )
-  Weapons         = true,  -- Optional ( In Progress )
+  OneFix          = true,  -- Optional
   Scavenger       = true,  -- Optional ( In Progress )
+  ScratchCards    = true,  -- Optional ( In Progress )
+  Skins           = true,  -- Optional ( In Progress )
+  Spawner         = true,  -- Required ( In Progress )
+  Stables         = true,  -- Optional ( In Progress )
+  Stores          = true,  -- Optional ( In Progress )
+  UsableItems     = true,  -- Required ( In Progress )
+  Weapons         = true,  -- Optional ( In Progress )
+  WorldEdits      = true,  -- Optional ( In Progress )
+  Zones           = true,  -- Required ( In Progress )
 
   -- This is a bundle of small scripts
   ScriptBundle    = {
     Status        = true,  -- Optional
+    Fear          = true,  -- Optional
   },
 
   -----------------------------------------------------

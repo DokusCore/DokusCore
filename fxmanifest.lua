@@ -3,16 +3,15 @@
 --------------------------------------------------------------------------------
 description 'DokusCore - A RedM Framework - By DevDokus'
 author 'DevDokus Github - https://DokusCore.Com'
-version '0.6.5'
+version '0.6.6'
 dependencies { 'oxmysql', 'pNotify' }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 shared_scripts {
   '[ Configs ]/[ Core ]/*.*',
   '[ Configs ]/[ Modules ]/*.*',
-  '[ Configs ]/[ Dialogs ]/*.*',
   '[ Core ]/[ System ]/[ Shared ]/*.*',
-  '[ Core ]/[ System ]/[ Shared ]/[ Language ]/*.*'
+  '[ Core ]/[ System ]/[ Shared ]/[ Language ]/*.*',
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

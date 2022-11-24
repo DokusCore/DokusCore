@@ -4,7 +4,7 @@
 -- Set's the density for peds, animals, parked and random vehicles.
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do Wait(0)
     Citizen.InvokeNative(0xC0258742B034DFAF, _Population.AmbientAnimals)
 		Citizen.InvokeNative(0xBA0980B5C0A11924, _Population.AmbientHumans)

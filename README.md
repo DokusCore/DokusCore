@@ -1,7 +1,7 @@
 ---
 <p align="center">
   <img width="600" height="200" src="https://user-images.githubusercontent.com/49053928/111937011-2e9b8080-8ac7-11eb-914a-a0d94380d611.gif"><br>
- <b>Version (v0.6.5) [BETA] (WIP)</b> - The Ultimate RP Framework for RedM.
+ <b>Version (v0.6.6) [BETA] (WIP)</b> - The Ultimate RP Framework for RedM.
 </p>
 
 ---
@@ -72,7 +72,7 @@ we want to use the economy and environment to boost you and your players rolepla
 experience
 
 ---
-# Multi Languages ( In Progress )
+# Multi Languages
 With DokusCore you are not bound to 1 specific language! Ever had the idea to  <br>
 set up an international server that hosts people with multiple languages? Where  <br>
 you are not able to due to the fact not everyone was able to read the same  <br>
@@ -82,14 +82,7 @@ entire server to a different language via 1 config edit, all your users  <br>
 menu. If a user desires a different language it can be switched in game without <br>
 restart or relog needed, instantly all text in game for this specific user will  <br>
 be switched to his/her desired language. This way you can host an international  <br>
-server and have all users read the notifications in their own languages. NOTE:  <br>
-This system is already built, but at current times it will only run on English.  <br>
-If we activate it now, we have to re-translate every file on every little change.  <br>
-If you want to use this system, you are able to if you translate the English file  <br>
-to the other language files. Not all notifications and texts at this current time  <br>
-are logged into the translation files, so expect to see English on many things  <br>
-even when switched. We will intergrade the language system to all plugins once  <br>
-we officially release them.
+server and have all users read the notifications in their own languages.
 
 ---
 # Update notifications

@@ -53,7 +53,19 @@ _Spawner = {
   },
 
   -- This is the song people will hear when within the cutscene
-  Song = { Enabled = true, Volume = 0.50, Song = 'Outlaws' },
+  PlaySong = true,
+  Songs = {
+    { Volume = 0.25, Song = 'RisingSun' },
+    { Volume = 0.15, Song = 'RunHome' },
+    { Volume = 0.50, Song = 'Outlaws' },
+    { Volume = 0.20, Song = 'TheBomb' },
+    { Volume = 0.15, Song = 'CatchYou' },
+    { Volume = 0.15, Song = 'DiggingMyGrave' },
+    { Volume = 0.10, Song = 'PaleRider' },
+    { Volume = 0.20, Song = 'TenFeetTall' },
+    { Volume = 0.10, Song = 'TheDevil' },
+    { Volume = 0.20, Song = 'TheGambler' },
+  }
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

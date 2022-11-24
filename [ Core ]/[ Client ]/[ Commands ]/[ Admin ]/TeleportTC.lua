@@ -14,7 +14,7 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:TeleportTC', function(s,a,r)
 --------------------------------------------------------------------------------
   -- Check if user is admin or superadmin
   local UserData = TCTCC('DokusCore:Sync:Get:UserData')
-  local Group, Cmds, CMD = GetUserGroup(UserData.SteamID, UserData.CharID), {}, _Commands
+  local Group, Cmds, CMD = GetUserChar(UserData.SteamID, UserData.CharID).Group, {}, _Commands
   local Mod, IsUser, IsAdmin, IsOwner = _Moderation, true, true, true
   if (Group ~= Mod.User) then IsUser = false end
   if (Group ~= Mod.Admin) then IsAdmin = false end

@@ -18,6 +18,7 @@ RSC('DokusCore:Core:DBGet:Banks', function(source, args)
         -- if (args[4][1] == nil) then return ErrorMsg('Err_DBGetNoSteam') end
         -- if (args[4][2] == nil) then return ErrorMsg('Err_DBGetNoCharID') end
         -- if (args[4][3] == nil) then return ErrorMsg('Err_NoCityName') end
+        print("logging", args[4][1], args[4][2], args[4][3])
         local X = DBGet(DB.Banks.GetViaBankName, { Steam = args[4][1], CharID = args[4][2], Bank = args[4][3] })
         if (X[1] ~= nil) then Exist = true Result = X end
         return { Exist = Exist, Result = Result }
