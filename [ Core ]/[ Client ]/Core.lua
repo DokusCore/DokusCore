@@ -32,6 +32,8 @@ AddEventHandler('DokusCore:Core:LoadUser', function()
   if ((User.Exist) and (Settings.Exist)) then
     local Settings = TSC('DokusCore:Core:DBGet:Settings', { 'user', { iDs[1] } })
     TriggerEvent('DokusCore:Sync:Set:UserData', { 'Language', { Settings.Result[1].Language } })
+  else
+    TriggerEvent('DokusCore:Sync:Set:UserData', { 'Language', { _Language.Lang } })
   end
 
   TriggerServerEvent('DokusCore:Sync:Set:CoreData', { 'FrameReady', { true } })
