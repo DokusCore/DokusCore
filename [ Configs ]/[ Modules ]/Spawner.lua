@@ -9,7 +9,7 @@
 _Spawner = {
 
   StartRandomizer = true,          -- Randomize the start location
-  StartCutScene   = true,          -- Direct spawn or cutscene ?
+  StartCutScene   = true,          -- Direct spawn or cutscene ? ( NOT WORKING !)
   StartPosition   = '',            -- The place to start a new character
                                    -- Leave empty to use all cities.
 

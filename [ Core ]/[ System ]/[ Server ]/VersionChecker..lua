@@ -402,235 +402,235 @@ end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Check plugins for updates every x seconds.
-RegisterServerEvent('DokusCore:Core:System:CheckUpdates:Constant')
-AddEventHandler('DokusCore:Core:System:CheckUpdates:Constant', function()
-  local Arr = {}
-  local NeedsUpdating = false
-  local Plugin = nil
-  local PluginN, PluginV = nil, nil
-  while true do Wait(1800000)
-    PerformHttpRequest("http://dokuscore.com/API/Version.json", function(err, text, headers)
-      local enc = json.decode(text)
-      for k,v in pairs(enc.Plugins) do table.insert(Arr, SortData(k, v)) end
-    end) Wait(5000)
-
-    for k,v in pairs(Arr) do if (v.Plugin == 'DokusCore') then Plugin = { Date = v.Date, Version = v.Version } end end
-    if ((PluginV ~= nil) and (tostring(Plugin.Version) == tostring(__Version))) then NeedsUpdating = true end
-
-    if (_Modules.Banking) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Banking') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Banking') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Bathing) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Bathing') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Bathing') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Boats) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Boats') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Boats') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.DataSync) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'DataSync') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--DataSync') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Characters) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Characters') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Characters') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.CoreMenu) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'CoreMenu') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--CoreMenu') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Clothing) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Clothing') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Clothing') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Customs) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Customs') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Customs') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.FastTravel) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'FastTravel') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--FastTravel') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.GunStore) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'GunStore') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--GunStore') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Guidance) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Guidance') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Guidance') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Instruments) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Instruments') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Instruments') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Inventory) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Inventory') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Inventory') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Metabolism) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Metabolism') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Metabolism') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Mexico) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Mexico') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Mexico') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.NPCMenu) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'NPCMenu') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--NPCMenu') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.NPCInteract) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'NPCInteract') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--NPCInteract') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.OneFix) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'OneFix') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--OneFix') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Prospecting) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Prospecting') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Prospecting') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.SafeGuard) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'SafeGuard') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--SafeGuard') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Scavenger) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Scavenger') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Scavenger') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.ScratchCards) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'ScratchCards') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--ScratchCards') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.ScriptBundle) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'ScriptBundle') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--ScriptBundle') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Stables) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Stables') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Stables') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Spawner) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Spawner') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Spawner') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Skins) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Skins') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Skins') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Stores) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Stores') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Stores') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Telegrams) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Telegrams') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Telegrams') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Trains) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Trains') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Trains') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.UsableItems) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'UsableItems') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--UsableItems') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.Weapons) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'Weapons') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Weapons') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (_Modules.WorldEdits) then
-      for k,v in pairs(Arr) do if (v.Plugin == 'WorldEdits') then Plugin = { Date = v.Date, Version = v.Version } end end
-      for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--WorldEdits') then PluginN, PluginV = v.Name, v.Version end end
-      if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
-    end
-
-    if (NeedsUpdating) then
-      print("") Wait(50)
-      print("") Wait(50)
-      print("") Wait(50)
-      print("") Wait(50)
-      print([[^6################################################################################^0]])Wait(150)
-      print([[^6#^2      ___             _                       ___                             ^6#^0]])Wait(150)
-      print([[^6#^2     |   \    ___    | |__   _  _     ___    / __|    ___      _ _    ___     ^6#^0]])Wait(150)
-      print([[^6#^2     | |) |  / _ \   | / /  | +| |   (_-<   | (__    / _ \    | '_|  / -_)    ^6#^0]])Wait(150)
-      print([[^6#^2     |___/   \___/   |_\_\   \_,_|   /__/_   \___|   \___/   _|_|_   \___|    ^6#^0]])Wait(150)
-      print([[^6#^5   _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|   ^6#^0]])Wait(150)
-      print([[^6#^5   "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'   ^6#^0]])Wait(150)
-      print([[^6################################################################################^0]])Wait(150)
-      print([[^6#                              ^1Plugin Update Found!                            ^6#^0]])Wait(150)
-      print([[^6################################################################################^0]])Wait(150)
-      print([[^6#            ^3One of your plugins had a update! For more information            ^6#^0]])Wait(150)
-      print([[^6#    ^3type: ^4Dokuscore Update ^3into your console to see what plugin is updated    ^6#^0]])Wait(150)
-      print([[^6#     ^3All change notes you find at ^4Dokuscore.com/pages/InGame/Updates.html     ^6#^0]])Wait(150)
-      print([[^6################################################################################^0]])Wait(150)
-    end
-  end
-end)
+-- RegisterServerEvent('DokusCore:Core:System:CheckUpdates:Constant')
+-- AddEventHandler('DokusCore:Core:System:CheckUpdates:Constant', function()
+--   local Arr = {}
+--   local NeedsUpdating = false
+--   local Plugin = nil
+--   local PluginN, PluginV = nil, nil
+--   while true do Wait(1800000)
+--     PerformHttpRequest("http://dokuscore.com/API/Version.json", function(err, text, headers)
+--       local enc = json.decode(text)
+--       for k,v in pairs(enc.Plugins) do table.insert(Arr, SortData(k, v)) end
+--     end) Wait(5000)
+--
+--     for k,v in pairs(Arr) do if (v.Plugin == 'DokusCore') then Plugin = { Date = v.Date, Version = v.Version } end end
+--     if ((PluginV ~= nil) and (tostring(Plugin.Version) == tostring(__Version))) then NeedsUpdating = true end
+--
+--     if (_Modules.Banking) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Banking') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Banking') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Bathing) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Bathing') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Bathing') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Boats) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Boats') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Boats') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.DataSync) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'DataSync') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--DataSync') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Characters) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Characters') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Characters') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.CoreMenu) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'CoreMenu') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--CoreMenu') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Clothing) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Clothing') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Clothing') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Customs) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Customs') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Customs') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.FastTravel) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'FastTravel') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--FastTravel') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.GunStore) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'GunStore') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--GunStore') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Guidance) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Guidance') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Guidance') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Instruments) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Instruments') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Instruments') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Inventory) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Inventory') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Inventory') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Metabolism) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Metabolism') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Metabolism') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Mexico) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Mexico') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Mexico') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.NPCMenu) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'NPCMenu') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--NPCMenu') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.NPCInteract) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'NPCInteract') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--NPCInteract') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.OneFix) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'OneFix') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--OneFix') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Prospecting) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Prospecting') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Prospecting') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.SafeGuard) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'SafeGuard') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--SafeGuard') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Scavenger) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Scavenger') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Scavenger') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.ScratchCards) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'ScratchCards') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--ScratchCards') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.ScriptBundle) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'ScriptBundle') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--ScriptBundle') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Stables) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Stables') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Stables') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Spawner) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Spawner') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Spawner') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Skins) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Skins') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Skins') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Stores) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Stores') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Stores') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Telegrams) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Telegrams') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Telegrams') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Trains) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Trains') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Trains') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.UsableItems) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'UsableItems') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--UsableItems') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.Weapons) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Weapons') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Weapons') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (_Modules.WorldEdits) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'WorldEdits') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--WorldEdits') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
+--
+--     if (NeedsUpdating) then
+--       print("") Wait(50)
+--       print("") Wait(50)
+--       print("") Wait(50)
+--       print("") Wait(50)
+--       print([[^6################################################################################^0]])Wait(150)
+--       print([[^6#^2      ___             _                       ___                             ^6#^0]])Wait(150)
+--       print([[^6#^2     |   \    ___    | |__   _  _     ___    / __|    ___      _ _    ___     ^6#^0]])Wait(150)
+--       print([[^6#^2     | |) |  / _ \   | / /  | +| |   (_-<   | (__    / _ \    | '_|  / -_)    ^6#^0]])Wait(150)
+--       print([[^6#^2     |___/   \___/   |_\_\   \_,_|   /__/_   \___|   \___/   _|_|_   \___|    ^6#^0]])Wait(150)
+--       print([[^6#^5   _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|   ^6#^0]])Wait(150)
+--       print([[^6#^5   "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'   ^6#^0]])Wait(150)
+--       print([[^6################################################################################^0]])Wait(150)
+--       print([[^6#                              ^1Plugin Update Found!                            ^6#^0]])Wait(150)
+--       print([[^6################################################################################^0]])Wait(150)
+--       print([[^6#            ^3One of your plugins had a update! For more information            ^6#^0]])Wait(150)
+--       print([[^6#    ^3type: ^4Dokuscore Update ^3into your console to see what plugin is updated    ^6#^0]])Wait(150)
+--       print([[^6#     ^3All change notes you find at ^4Dokuscore.com/pages/InGame/Updates.html     ^6#^0]])Wait(150)
+--       print([[^6################################################################################^0]])Wait(150)
+--     end
+--   end
+-- end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 CreateThread(function() Wait(5000)
@@ -1034,7 +1034,7 @@ CreateThread(function() Wait(5000)
   print([[^6#  ^5DokusCore Framework console commands. Use any of them for more information  ^6#^0]])Wait(150)
   print([[^6################################################################################^0]])Wait(150)
 
-  TriggerEvent('DokusCore:Core:System:CheckUpdates:Constant')
+  -- TriggerEvent('DokusCore:Core:System:CheckUpdates:Constant')
 
   Wait(5000)
   print('')
