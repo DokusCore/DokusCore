@@ -106,6 +106,13 @@ _CoreMenu = {
     }
   },
 
+  LangList3 = {
+    Name = 'LangList3',
+    Options = {
+      { Type = 'Option', Option = 'Finnish',  Title = '[ Q ] Finnish'  },
+    }
+  },
+
   MusicMenu = {
     Name = 'MusicMenu',
     Options = {
