@@ -39,6 +39,7 @@ function NetworkGhosting(ID, Bool)   return Citizen.InvokeNative(0xF1CA12B18AEF5
 function RenderCam(R, E, ET, p3, p4) return Citizen.InvokeNative(0x33281167E4942E4F, R, E, ET, p3, p4) end
 function Cinema(Bool)                return Citizen.InvokeNative(0xCE7A90B160F75046, Bool) end
 function DriveToCoords(D, IV, C, S, E, M, F, X, B) return Citizen.InvokeNative(0xE2A2AA2F659D77A7, D, IV, C, S, E, M, F, X, B) end
+function GoToEntity(E, T, DU, DI, S) return Citizen.InvokeNative(0x6A071245EB0D1882, E, T, TN(DU), Round(TN(DI), 1), Round(TN(S), 1), 0, 0) end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

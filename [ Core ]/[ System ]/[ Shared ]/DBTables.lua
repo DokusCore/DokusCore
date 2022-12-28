@@ -169,6 +169,8 @@ DB.Animals.SetUSSkinModel        = 'update animals set Skin=@Skin where SteamID=
 DB.Animals.SetUSXPModel          = 'update animals set XP=@XP where SteamID=@SteamID and CharID=@CharID and Model=@Model'
 DB.Animals.SetUSMetaModel        = 'update animals set Meta=@Meta where SteamID=@SteamID and CharID=@CharID and Model=@Model'
 
+DB.Stables.SetUSInUse            = 'update stables set InUse=@InUse where SteamID=@SteamID and CharID=@CharID and Name=@Name'
+DB.Stables.SetUSIsStored         = 'update stables set IsStored=@IsStored where SteamID=@SteamID and CharID=@CharID and Name=@Name'
 --------------------------------------------------------------------------------
 ---- DB Delete
 --------------------------------------------------------------------------------

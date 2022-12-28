@@ -22,17 +22,23 @@ RegisterServerEvent('DokusCore:Core:DBSet:Stables')
 AddEventHandler('DokusCore:Core:DBSet:Stables', function(args)
   if (Low(args[1]) == 'user') then
     if (Low(args[2]) == 'single') then
-      if (Low(args[3][1]) == 'horse') then
-        if (Low(args[3][2]) == 'coords') then end
-        if (Low(args[3][2]) == 'stored') then end
-        if (Low(args[3][2]) == 'inuse') then end
-        if (Low(args[3][2]) == 'stabled') then end
-        if (Low(args[3][2]) == 'components') then end
-        if (Low(args[3][2]) == 'health') then end
-        if (Low(args[3][2]) == 'stamina') then end
-        if (Low(args[3][2]) == 'hunger') then end
-        if (Low(args[3][2]) == 'thirst') then end
-        if (Low(args[3][2]) == 'dirt') then end
+      if (Low(args[3]) == 'coords') then end
+      if (Low(args[3]) == 'stored') then end
+      if (Low(args[3]) == 'components') then end
+      if (Low(args[3]) == 'health') then end
+      if (Low(args[3]) == 'stamina') then end
+      if (Low(args[3]) == 'hunger') then end
+      if (Low(args[3]) == 'thirst') then end
+      if (Low(args[3]) == 'dirt') then end
+
+      if (Low(args[3]) == 'inuse') then
+        local SteamID, CharID, Name, InUse = args[4][1], args[4][2], args[4][3], args[4][4]
+        local Q = DBSet(DB.Stables.SetUSInUse, { InUse = InUse, SteamID = SteamID, CharID = CharID, Name=Name }, function() end)
+      end
+
+      if (Low(args[3]) == 'isstored') then
+        local SteamID, CharID, Name, IsStored = args[4][1], args[4][2], args[4][3], args[4][4]
+        local Q = DBSet(DB.Stables.SetUSIsStored, { IsStored = IsStored, SteamID = SteamID, CharID = CharID, Name=Name }, function() end)
       end
     end
   end
