@@ -50,6 +50,7 @@ _Modules          = {
   Boats           = false,   -- Working on ( Leave off to prevent issues )
   Customs         = false,   -- Working on ( Leave off to prevent issues )
   Prospecting     = false,   -- Working on ( Leave off to prevent issues )
+  LumberJack      = true,
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

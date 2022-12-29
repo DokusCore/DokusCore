@@ -51,6 +51,7 @@ DB.Storages.GetUserDropBox        = 'select * from storages where Type=@Type and
 DB.Storages.GetDropBoxViaID       = 'select * from storages where BoxID=@BoxID'
 DB.Metabolism.Get                 = 'select * from metabolism where Steam=@Steam and CharID=@CharID'
 DB.Items.GetAll                   = 'select * from _items'
+DB.Items.GetSingle                = 'select * from _items where Item=@Item'
 DB.Data.Skin.GetAllMale           = 'select * from _data_skin_male'
 DB.Data.Skin.GetAllFemale         = 'select * from _data_skin_female'
 DB.Data.Clothing.GetAllMale       = 'select * from _data_clothes_male'

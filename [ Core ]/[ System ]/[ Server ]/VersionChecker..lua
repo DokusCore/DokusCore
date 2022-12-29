@@ -178,6 +178,16 @@ AddEventHandler('DokusCore:Core:System:CheckUpdates', function()
     if ((VersionMatch))     then print([[^6#    ^2 Inventory        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
   end
 
+  -- DokusCore LumberJack
+  if (Mod.LumberJack) then
+    for k,v in pairs(Arr) do if (v.Plugin == 'LumberJack') then Plugin = { Date = v.Date, Version = v.Version } end end
+    for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--LumberJack') then PluginN, PluginV = v.Name, v.Version end end
+    local VersionMatch = (tostring(PluginV) == tostring(Plugin.Version))
+    if (not (VersionMatch)) then NeedsUpdating = true end
+    if (not (VersionMatch)) then print([[^6#    ^1 LumberJack       ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if ((VersionMatch))     then print([[^6#    ^2 LumberJack       ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+  end
+
   -- DokusCore Metabolism
   if (Mod.Metabolism) then
     for k,v in pairs(Arr) do if (v.Plugin == 'Metabolism') then Plugin = { Date = v.Date, Version = v.Version } end end
@@ -811,6 +821,16 @@ CreateThread(function() Wait(5000)
     if (not (VersionMatch)) then NeedsUpdating = true end
     if (not (VersionMatch)) then print([[^6#    ^1 Inventory        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
     if ((VersionMatch))     then print([[^6#    ^2 Inventory        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+  end
+
+  -- DokusCore LumberJack
+  if (Mod.LumberJack) then
+    for k,v in pairs(Arr) do if (v.Plugin == 'LumberJack') then Plugin = { Date = v.Date, Version = v.Version } end end
+    for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--LumberJack') then PluginN, PluginV = v.Name, v.Version end end
+    local VersionMatch = (tostring(PluginV) == tostring(Plugin.Version))
+    if (not (VersionMatch)) then NeedsUpdating = true end
+    if (not (VersionMatch)) then print([[^6#    ^1 LumberJack       ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if ((VersionMatch))     then print([[^6#    ^2 LumberJack       ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
   end
 
   -- DokusCore Metabolism
