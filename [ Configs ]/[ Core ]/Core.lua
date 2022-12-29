@@ -53,6 +53,7 @@ _Commands = { --( In Progress )
   -- AddMoney    = { Users = false, Admins = true,  SuperAdmins = true }, -- Currently not in use
   -- AddGold     = { Users = false, Admins = true,  SuperAdmins = true }, -- Currently not in use
   Teleport    = { Users = false, Admins = true,  SuperAdmins = true },
+  GodMode     = { Users = false, Admins = true,  SuperAdmins = true },
   -- Blacklist   = { Users = false, Admins = true,  SuperAdmins = true }, -- Currently not in use
 }
 --------------------------------------------------------------------------------

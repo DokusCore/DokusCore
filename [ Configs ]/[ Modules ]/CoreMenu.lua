@@ -26,9 +26,10 @@ _CoreMenu = {
   AdminMenu = {
     Name = 'AdminMenu',
     Options = {
-      { Type = 'Menu',   Option = 'TeleportMenu',         Title = '[ Q ] Teleport Menu'     },
-      { Type = 'Option', Option = 'WeatherSyncMenu',      Title = '[ W ] Weather Sync Menu' },
-      { Type = 'Menu',   Option = 'ModuleSyncMenu',       Title = '[ E ] Modules Sync Menu' },
+      { Type = 'Menu',   Option = 'TeleportMenu',    Title = '[ Q ] Teleport Menu'     },
+      { Type = 'Option', Option = 'WeatherSyncMenu', Title = '[ W ] Weather Sync Menu' },
+      { Type = 'Menu',   Option = 'ModuleSyncMenu',  Title = '[ E ] Modules Sync Menu' },
+      { Type = 'Option', Option = 'GodeMode',        Title = '[ A ] Toggle Godmode' },
     }
   },
 

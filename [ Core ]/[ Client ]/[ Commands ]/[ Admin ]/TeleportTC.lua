@@ -48,7 +48,7 @@ local function OpenPrompt()
 
     local str = 'Cancel'
     PromptCancel = PromptRegisterBegin()
-    PromptSetControlAction(PromptCancel, _ActionKey)
+    PromptSetControlAction(PromptCancel, _Keys['X'])
     str = CreateVarString(10, 'LITERAL_STRING', str)
     PromptSetText(PromptCancel, str)
     PromptSetEnabled(PromptCancel, true)
