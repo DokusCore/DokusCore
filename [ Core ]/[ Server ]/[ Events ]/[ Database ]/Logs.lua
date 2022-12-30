@@ -1,19 +1,23 @@
 --------------------------------------------------------------------------------
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
-local File = '@DokusCore/[ Core ]/[ Server ]/[ Events ]/[ Normal ]/Characters.lua'
+local File = '@DokusCore/[ Core ]/[ Server ]/[ Events ]/[ Normal ]/Logs.lua'
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-RegisterServerEvent('DokusCore:Core:DBIns:Blacklist')
-AddEventHandler('DokusCore:Core:DBIns:Blacklist', function(args)
-  if (Low(args[1]) == 'user') then
-    if (Low(args[2]) == 'single') then
-      DBIns(DB.Blacklist.Insert, {
-      Steam = args[3][1], Reason = args[3][2], Admin = args[3][3],
-      Until = args[3][4], IP = args[3][5], License = args[3][6],
-      XBoxLive = args[3][7], MLive = args[3][8]
+RegisterServerEvent('DokusCore:Core:DBIns:Logs')
+AddEventHandler('DokusCore:Core:DBIns:Logs', function(args)
+  if (Low(args[1]) == 'safeguard') then
+    DBIns(DB.Logs.Insert, {
+      SteamID = args[2][1], Module = 'SafeGuard',
+      Type = args[2][2], Date = args[2][3],
+      Time = args[2][4], Log = args[2][5]
     })
-    end
+  elseif (Low(args[1]) == 'dokuscore') then
+    DBIns(DB.Logs.Insert, {
+      SteamID = args[2][1], Module = 'DokusCore',
+      Type = args[2][2], Date = args[2][3],
+      Time = args[2][4], Log = args[2][5]
+    })
   end
 end)
 --------------------------------------------------------------------------------

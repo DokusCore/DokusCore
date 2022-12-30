@@ -20,6 +20,9 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:GodMode', function()
   local function DoThis()
     GodMode = not GodMode
     if (GodMode) then
+      local tData = TSC('DokusCore:Core:System:GetTimeDate')
+      local Index = { UserData.SteamID, 'GodMode', tData.Date, tData.Time, 'Admin has enabled GodMode' }
+      TriggerServerEvent('DokusCore:Core:DBIns:Logs', { 'DokusCore', Index })
       SetInvincible(PedID(), true)
       NoteObjective("God Mode", "God Mode is enabled!", "Horn", 5000)
       TriggerEvent('DokusCore:Core:Admin:AntiCheat:ShowGodMode')
@@ -34,6 +37,9 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:GodMode', function()
         TriggerEvent('DokusCore:Metabolism:Edit:Stamina', { 100 })
       end
     else
+      local tData = TSC('DokusCore:Core:System:GetTimeDate')
+      local Index = { UserData.SteamID, 'GodMode', tData.Date, tData.Time, 'Admin has disabled GodMode' }
+      TriggerServerEvent('DokusCore:Core:DBIns:Logs', { 'DokusCore', Index })
       SetInvincible(PedID(), false)
       NoteObjective("God Mode", "God Mode is disabled!", "Horn", 5000)
     end

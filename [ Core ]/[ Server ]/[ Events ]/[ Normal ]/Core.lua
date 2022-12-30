@@ -6,10 +6,9 @@ local File = '@DokusCore/[ Core ]/[ Server ]/[ Events ]/[ Normal ]/Core.lua'
 --------------------------------------------------------------------------------
 RegisterServerEvent('DokusCore:Core:KickPlayer')
 AddEventHandler('DokusCore:Core:KickPlayer', function(args)
-  -- if (args == nil) then return SysErr('SysErr_WrongFormat', File, 44) end
-  -- if (args[1] == nil) then return SysErr('SysErr_ServerIDMissing', File, 45) end
-  -- if (args[2] == nil) then return ErrorMsg('SysErr_ReasonIsMissing', File, 46) end
-  DropPlayer(args[1], args[2])
+  local ID = args[1]
+  if (args[1] == nil) then ID = source end
+  DropPlayer(ID, args[2])
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

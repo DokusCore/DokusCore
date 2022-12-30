@@ -2,6 +2,7 @@
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
 DB               = {}
+DB.Logs          = {}
 DB.Users         = {}
 DB.Banks         = {}
 DB.Boats         = {}
@@ -89,8 +90,6 @@ DB.Animals.GetUAModel             = 'select * from animals where SteamID=@SteamI
 DB.Animals.GetAUType              = 'select * from animals where Type=@Type'
 DB.Animals.GetAUModel             = 'select * from animals where Model=@Model'
 
-
-
 --------------------------------------------------------------------------------
 ---- DB Insert
 --------------------------------------------------------------------------------
@@ -110,7 +109,7 @@ DB.Stables.Insert                = 'insert into stables (SteamID, CharID, Type, 
 DB.Zones.Insert                  = 'insert into _zones (Name, Type, City, GD, Poly, Grid, MinZ, MaxZ, OnEnter, OnExit, Vectors) values (@Name, @Type, @City, @GD, @Poly, @Grid, @MinZ, @MaxZ, @OnEnter, @OnExit, @Vectors)'
 DB.Weapons.Insert                = 'insert into weapons (SteamID, CharID, Name, Type, Hash, Hex, Ammo_Regular, Equiped) values (@SteamID, @CharID, @Name, @Type, @Hash, @Hex, @Ammo_Regular, @Equiped)'
 DB.Animals.Insert                = 'insert into animals (SteamID, CharID, Type, Model, Skin, XP, Meta) values (@SteamID, @CharID, @Type, @Model, @Skin, @XP, @Meta)'
-
+DB.Logs.Insert                   = 'insert into logs (SteamID, Module, Type, Date, Time, Log) values (@SteamID, @Module, @Type, @Date, @Time, @Log)'
 --------------------------------------------------------------------------------
 ---- DB Set / Update
 --------------------------------------------------------------------------------

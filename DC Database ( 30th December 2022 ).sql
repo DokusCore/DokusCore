@@ -145,6 +145,20 @@ CREATE TABLE IF NOT EXISTS `jobs` (
 
 -- Dumping data for table dokuscore.jobs: ~0 rows (approximately)
 
+-- Dumping structure for table dokuscore.logs
+CREATE TABLE IF NOT EXISTS `logs` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SteamID` varchar(50) DEFAULT NULL,
+  `Module` text DEFAULT NULL,
+  `Type` text DEFAULT NULL,
+  `Date` date DEFAULT NULL,
+  `Time` time DEFAULT NULL,
+  `Log` text DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table dokuscore.logs: ~0 rows (approximately)
+
 -- Dumping structure for table dokuscore.metabolism
 CREATE TABLE IF NOT EXISTS `metabolism` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,

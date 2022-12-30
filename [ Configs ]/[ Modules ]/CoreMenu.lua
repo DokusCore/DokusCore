@@ -29,7 +29,15 @@ _CoreMenu = {
       { Type = 'Menu',   Option = 'TeleportMenu',    Title = '[ Q ] Teleport Menu'     },
       { Type = 'Option', Option = 'WeatherSyncMenu', Title = '[ W ] Weather Sync Menu' },
       { Type = 'Menu',   Option = 'ModuleSyncMenu',  Title = '[ E ] Modules Sync Menu' },
-      { Type = 'Option', Option = 'GodeMode',        Title = '[ A ] Toggle Godmode' },
+      { Type = 'Menu',   Option = 'AdminOptMenu',    Title = '[ A ] Admin Options Menu' },
+    }
+  },
+
+  AdminOptMenu = {
+    Name = 'AdminOptMenu',
+    Options = {
+      { Type = 'Option', Option = 'GodeMode',        Title = '[ Q ] Toggle Godmode' },
+      { Type = 'Option', Option = 'SpawnHorse',      Title = '[ W ] Spawn My Horse' },
     }
   },
 

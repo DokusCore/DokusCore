@@ -2,6 +2,16 @@
 ############################ [ DokusCore Updates ] #############################
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+# Update v0.6.8
+--------------------------------------------------------------------------------
+- Added: API for the new log system
+- Added: function for grabbing the time and dates correctly formatted.
+- Added: SafeGuard back on the modules and config lists.
+- Reworked: The blacklist system for the SafeGuard plugin.
+- Changed: The DropPlayer function now automatically takes the players source id
+  if this was not specified by the developer.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 # Update v0.6.72
 --------------------------------------------------------------------------------
 - Added: Module switch for the new plugin LumberJack

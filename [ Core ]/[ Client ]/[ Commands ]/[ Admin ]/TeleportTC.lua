@@ -83,6 +83,10 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:DoTeleportTC', function(Data)
   if (x == nil) then Notify("No 1st parameter entry or is a none number") return end
   if (y == nil) then Notify("No 2st parameter entry or is a none number") return end
 
+  local Sync = TCTCC('DokusCore:Sync:Get:UserData')
+  local tData = TSC('DokusCore:Core:System:GetTimeDate')
+  local Index = { Sync.SteamID, 'Teleport', tData.Date, tData.Time, 'Admin has teleported to specific coordinates' }
+
   local height = 1
   UIFadeOut(2000) Wait(2000)
   for height = 1, 1000 do

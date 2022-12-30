@@ -41,8 +41,14 @@ RSC('DokusCore:Core:System:Time', function(source, args)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
-
+RSC('DokusCore:Core:System:GetTimeDate', function(source, args)
+  print("Je")
+  local Time, D = os.date('%X'), os.date("*t")
+  local Date = (D.year.."-"..D.month.."-"..D.day)
+  return { Date = Date, Time = Time }
+end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 
