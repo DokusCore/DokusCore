@@ -284,7 +284,13 @@ function TabiContains(tab, val)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
+function CreateLog(Module, Event, Msg)
+  local Sync = TCTCC('DokusCore:Sync:Get:UserData')
+  local tData = TSC('DokusCore:Core:System:GetTimeDate')
+  local Group = GetUserChar(Sync.SteamID, Sync.CharID).Group
+  local Index = { Sync.SteamID, Group, Event, tData.Date, tData.Time, Msg }
+  TriggerServerEvent('DokusCore:Core:DBIns:Logs', { Module, Index })
+end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

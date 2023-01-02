@@ -23,6 +23,7 @@ DB.Data.Skin     = {}
 DB.Data.Clothing = {}
 DB.Weapons       = {}
 DB.Animals       = {}
+DB.Objects       = {}
 --------------------------------------------------------------------------------
 ---- DB GET
 --------------------------------------------------------------------------------
@@ -90,6 +91,9 @@ DB.Animals.GetUAModel             = 'select * from animals where SteamID=@SteamI
 DB.Animals.GetAUType              = 'select * from animals where Type=@Type'
 DB.Animals.GetAUModel             = 'select * from animals where Model=@Model'
 
+DB.Objects.GetAll                 = 'select * from objects'
+DB.Objects.GetByID                = 'select * from objects where ItemID=@ItemID'
+
 --------------------------------------------------------------------------------
 ---- DB Insert
 --------------------------------------------------------------------------------
@@ -109,7 +113,8 @@ DB.Stables.Insert                = 'insert into stables (SteamID, CharID, Type, 
 DB.Zones.Insert                  = 'insert into _zones (Name, Type, City, GD, Poly, Grid, MinZ, MaxZ, OnEnter, OnExit, Vectors) values (@Name, @Type, @City, @GD, @Poly, @Grid, @MinZ, @MaxZ, @OnEnter, @OnExit, @Vectors)'
 DB.Weapons.Insert                = 'insert into weapons (SteamID, CharID, Name, Type, Hash, Hex, Ammo_Regular, Equiped) values (@SteamID, @CharID, @Name, @Type, @Hash, @Hex, @Ammo_Regular, @Equiped)'
 DB.Animals.Insert                = 'insert into animals (SteamID, CharID, Type, Model, Skin, XP, Meta) values (@SteamID, @CharID, @Type, @Model, @Skin, @XP, @Meta)'
-DB.Logs.Insert                   = 'insert into logs (SteamID, Module, Type, Date, Time, Log) values (@SteamID, @Module, @Type, @Date, @Time, @Log)'
+DB.Logs.Insert                   = 'insert into logs (SteamID, `Group`, Module, Type, Date, Time, Log) values (@SteamID, @Group, @Module, @Type, @Date, @Time, @Log)'
+DB.Objects.Insert                = 'insert into objects (SteamID, InUse, Item, ItemID, HashID, Coords, Unix, Meta) values (@SteamID, @InUse, @Item, @ItemID, @HashID, @Coords, @Unix, @Meta)'
 --------------------------------------------------------------------------------
 ---- DB Set / Update
 --------------------------------------------------------------------------------
@@ -171,6 +176,10 @@ DB.Animals.SetUSMetaModel        = 'update animals set Meta=@Meta where SteamID=
 
 DB.Stables.SetUSInUse            = 'update stables set InUse=@InUse where SteamID=@SteamID and CharID=@CharID and Name=@Name'
 DB.Stables.SetUSIsStored         = 'update stables set IsStored=@IsStored where SteamID=@SteamID and CharID=@CharID and Name=@Name'
+
+DB.Objects.SetUnixViaID          = 'update objects set Unix=@Unix where ItemID=@ItemID'
+DB.Objects.SetAllToNil           = 'update objects set ItemID=null'
+DB.Objects.SetNewItemID          = 'update objects set ItemID=@ItemID where HashID=@HashID'
 --------------------------------------------------------------------------------
 ---- DB Delete
 --------------------------------------------------------------------------------
@@ -204,6 +213,8 @@ DB.Animals.DelUAType             = 'delete from animals where SteamID=@SteamID a
 DB.Animals.DelUAModel            = 'delete from animals where SteamID=@SteamID and Model=@Model'
 DB.Animals.DelUSType             = 'delete from animals where SteamID=@SteamID and CharID=@CharID and Type=@Type'
 DB.Animals.DelUSModel            = 'delete from animals where SteamID=@SteamID and CharID=@CharID and Model=@Model'
+
+DB.Objects.DelViaItemID          = 'delete from objects where ItemID=@ItemID'
 --------------------------------------------------------------------------------
 
 

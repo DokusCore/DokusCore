@@ -20,16 +20,18 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:GodMode', function()
   local function DoThis()
     GodMode = not GodMode
     if (GodMode) then
-      local tData = TSC('DokusCore:Core:System:GetTimeDate')
-      local Index = { UserData.SteamID, 'GodMode', tData.Date, tData.Time, 'Admin has enabled GodMode' }
-      TriggerServerEvent('DokusCore:Core:DBIns:Logs', { 'DokusCore', Index })
+      CreateLog('DokusCore', 'GodMode', 'Admin has enabled GodMode')
       SetInvincible(PedID(), true)
-      NoteObjective("God Mode", "God Mode is enabled!", "Horn", 5000)
       TriggerEvent('DokusCore:Core:Admin:AntiCheat:ShowGodMode')
+      TriggerEvent('DokusCore:Metabolism:Edit:Hunger',  { 100 })
+      TriggerEvent('DokusCore:Metabolism:Edit:Thirst',  { 100 })
+      TriggerEvent('DokusCore:Metabolism:Edit:Health',  { 100 })
+      TriggerEvent('DokusCore:Metabolism:Edit:Stamina', { 100 })
       TriggerEvent('DokusCore:Metabolism:Set:InnerGold:Stamina',  { 3 })
       TriggerEvent('DokusCore:Metabolism:Set:OuterGold:Stamina',  { 3 })
       TriggerEvent('DokusCore:Metabolism:Set:InnerGold:Health',   { 3 })
       TriggerEvent('DokusCore:Metabolism:Set:OuterGold:Health',   { 3 })
+      NoteObjective("God Mode", "God Mode is enabled!", "Horn", 5000)
       while (GodMode) do Wait(1000)
         TriggerEvent('DokusCore:Metabolism:Edit:Hunger',  { 100 })
         TriggerEvent('DokusCore:Metabolism:Edit:Thirst',  { 100 })
@@ -37,9 +39,7 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:GodMode', function()
         TriggerEvent('DokusCore:Metabolism:Edit:Stamina', { 100 })
       end
     else
-      local tData = TSC('DokusCore:Core:System:GetTimeDate')
-      local Index = { UserData.SteamID, 'GodMode', tData.Date, tData.Time, 'Admin has disabled GodMode' }
-      TriggerServerEvent('DokusCore:Core:DBIns:Logs', { 'DokusCore', Index })
+      CreateLog('DokusCore', 'GodMode', 'Admin has disabled GodMode')
       SetInvincible(PedID(), false)
       NoteObjective("God Mode", "God Mode is disabled!", "Horn", 5000)
     end

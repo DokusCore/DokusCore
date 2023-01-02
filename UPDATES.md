@@ -2,6 +2,17 @@
 ############################ [ DokusCore Updates ] #############################
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+# Update v0.6.9
+--------------------------------------------------------------------------------
+- Added: GodMode will now make a database log entry.
+- Added: Admin Teleport will make a database log entry.
+- Added: function `CreateLog` created for easy database logging.
+- Added: API function for getting current time and date.
+- Added: API function for getting current Unix time.
+- Added: API logics for handling object database data.
+- Added: API logics for handling logs database data.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 # Update v0.6.8
 --------------------------------------------------------------------------------
 - Added: API for the new log system

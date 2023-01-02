@@ -77,10 +77,7 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:DoTPM', function()
   local Exists = DoesEntityExist(PedID)
   local LCoords = GetEntityCoords(PedID)
   if Exists then
-    local Sync = TCTCC('DokusCore:Sync:Get:UserData')
-    local tData = TSC('DokusCore:Core:System:GetTimeDate')
-    local Index = { Sync.SteamID, 'Teleport', tData.Date, tData.Time, 'Admin has teleported to a map marker' }
-    TriggerServerEvent('DokusCore:Core:DBIns:Logs', { 'DokusCore', Index })
+    CreateLog('DokusCore', 'Teleport', 'Admin has teleported to a map marker')
     local WP = GetWaypointCoords()
     if ((WP.x == 0) and (WP.y == 0) and (WP.z == 0)) then Notify("You've no waypoint set!") return end
     local height = 1

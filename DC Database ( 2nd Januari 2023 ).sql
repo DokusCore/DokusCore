@@ -149,6 +149,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
 CREATE TABLE IF NOT EXISTS `logs` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `SteamID` varchar(50) DEFAULT NULL,
+  `Group` text DEFAULT NULL,
   `Module` text DEFAULT NULL,
   `Type` text DEFAULT NULL,
   `Date` date DEFAULT NULL,
@@ -171,6 +172,22 @@ CREATE TABLE IF NOT EXISTS `metabolism` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.metabolism: ~0 rows (approximately)
+
+-- Dumping structure for table dokuscore.objects
+CREATE TABLE IF NOT EXISTS `objects` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SteamID` varchar(50) DEFAULT '0',
+  `InUse` int(11) DEFAULT 0,
+  `Item` varchar(50) DEFAULT NULL,
+  `ItemID` int(11) DEFAULT 0,
+  `HashID` int(11) DEFAULT 0,
+  `Coords` longtext DEFAULT '[]',
+  `Unix` int(11) DEFAULT NULL,
+  `Meta` longtext DEFAULT '[]',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table dokuscore.objects: ~0 rows (approximately)
 
 -- Dumping structure for table dokuscore.outfits
 CREATE TABLE IF NOT EXISTS `outfits` (

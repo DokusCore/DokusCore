@@ -14,6 +14,9 @@ TriggerEvent(__..':S:'..Event, function(...)
 end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+RSC('DokusCore:Core:System:GetUnix', function(source, args) return GetUnix() end)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 RSC('DokusCore:Core:GetUserIDs', function(source, args)
   if (args == nil) then return SysErr('SysErr_WrongFormat', File, 17) end
   if (args[1] == nil) then return SysErr('SysErr_CatTypeMissing', File, 18) end
@@ -42,7 +45,6 @@ end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 RSC('DokusCore:Core:System:GetTimeDate', function(source, args)
-  print("Je")
   local Time, D = os.date('%X'), os.date("*t")
   local Date = (D.year.."-"..D.month.."-"..D.day)
   return { Date = Date, Time = Time }
