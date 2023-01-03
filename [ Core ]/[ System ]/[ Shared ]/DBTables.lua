@@ -24,6 +24,7 @@ DB.Data.Clothing = {}
 DB.Weapons       = {}
 DB.Animals       = {}
 DB.Objects       = {}
+DB.Events        = {}
 --------------------------------------------------------------------------------
 ---- DB GET
 --------------------------------------------------------------------------------
@@ -94,6 +95,7 @@ DB.Animals.GetAUModel             = 'select * from animals where Model=@Model'
 DB.Objects.GetAll                 = 'select * from objects'
 DB.Objects.GetByID                = 'select * from objects where ItemID=@ItemID'
 
+DB.Events.GetAllUS                = 'select * from events where SteamID=@SteamID and CharID=@CharID'
 --------------------------------------------------------------------------------
 ---- DB Insert
 --------------------------------------------------------------------------------
@@ -115,6 +117,7 @@ DB.Weapons.Insert                = 'insert into weapons (SteamID, CharID, Name, 
 DB.Animals.Insert                = 'insert into animals (SteamID, CharID, Type, Model, Skin, XP, Meta) values (@SteamID, @CharID, @Type, @Model, @Skin, @XP, @Meta)'
 DB.Logs.Insert                   = 'insert into logs (SteamID, `Group`, Module, Type, Date, Time, Log) values (@SteamID, @Group, @Module, @Type, @Date, @Time, @Log)'
 DB.Objects.Insert                = 'insert into objects (SteamID, InUse, Item, ItemID, HashID, Coords, Unix, Meta) values (@SteamID, @InUse, @Item, @ItemID, @HashID, @Coords, @Unix, @Meta)'
+DB.Events.Insert                 = 'insert into events (SteamID, CharID, Type, Employer, StartTime, EndTime, Meta) values (@SteamID, @CharID, @Type, @Employer, @StartTime, @EndTime, @Meta)'
 --------------------------------------------------------------------------------
 ---- DB Set / Update
 --------------------------------------------------------------------------------
@@ -215,6 +218,8 @@ DB.Animals.DelUSType             = 'delete from animals where SteamID=@SteamID a
 DB.Animals.DelUSModel            = 'delete from animals where SteamID=@SteamID and CharID=@CharID and Model=@Model'
 
 DB.Objects.DelViaItemID          = 'delete from objects where ItemID=@ItemID'
+
+DB.Events.DelUSViaTypeEmp        = 'delete from events where SteamID=@SteamID and CharID=@CharID and Type=@Type and Employer=@Employer'
 --------------------------------------------------------------------------------
 
 

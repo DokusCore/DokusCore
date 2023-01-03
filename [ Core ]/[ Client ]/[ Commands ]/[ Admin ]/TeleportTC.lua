@@ -100,6 +100,7 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:DoTeleportTC', function(Data)
 
   UIFadeIn(2000) Wait(2000)
   OpenPrompt()
+  TriggerEvent('DokusCore:SafeGuard:Anti:AdminAbuse', 'Teleport')
   local Count = 0
   local WaitForTel = true
   while WaitForTel do Wait(1)

@@ -20,9 +20,8 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:GodMode', function()
   local function DoThis()
     GodMode = not GodMode
     if (GodMode) then
-      CreateLog('DokusCore', 'GodMode', 'Admin has enabled GodMode')
       SetInvincible(PedID(), true)
-      TriggerEvent('DokusCore:Core:Admin:AntiCheat:ShowGodMode')
+      TriggerEvent('DokusCore:SafeGuard:Anti:AdminAbuse', 'GodMode')
       TriggerEvent('DokusCore:Metabolism:Edit:Hunger',  { 100 })
       TriggerEvent('DokusCore:Metabolism:Edit:Thirst',  { 100 })
       TriggerEvent('DokusCore:Metabolism:Edit:Health',  { 100 })
@@ -33,13 +32,15 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:GodMode', function()
       TriggerEvent('DokusCore:Metabolism:Set:OuterGold:Health',   { 3 })
       NoteObjective("God Mode", "God Mode is enabled!", "Horn", 5000)
       while (GodMode) do Wait(1000)
+        local Sync = TCTCC('DokusCore:Sync:Get:UserData')
+        if (not (Sync.UserInGame)) then GodMode = false end
         TriggerEvent('DokusCore:Metabolism:Edit:Hunger',  { 100 })
         TriggerEvent('DokusCore:Metabolism:Edit:Thirst',  { 100 })
         TriggerEvent('DokusCore:Metabolism:Edit:Health',  { 100 })
         TriggerEvent('DokusCore:Metabolism:Edit:Stamina', { 100 })
       end
     else
-      CreateLog('DokusCore', 'GodMode', 'Admin has disabled GodMode')
+      TriggerEvent('DokusCore:SafeGuard:Anti:AdminAbuse', 'GodMode')
       SetInvincible(PedID(), false)
       NoteObjective("God Mode", "God Mode is disabled!", "Horn", 5000)
     end
@@ -49,16 +50,5 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:GodMode', function()
   if IsForAdmins and IsAdmin then DoThis() end
   if IsForOwners and IsOwner then DoThis() end
 end, false)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-RegisterNetEvent('DokusCore:Core:Admin:AntiCheat:ShowGodMode', function()
-  while (GodMode) do Wait(1)
-    local sCoords = GetCoords(PedID())
-    local Dist = GetDistance(sCoords)
-    if (Dist <= 100) then
-      DrawText3D(sCoords.x, sCoords.y, sCoords.z, 225, 'God Mode Enabled')
-    end
-  end
-end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

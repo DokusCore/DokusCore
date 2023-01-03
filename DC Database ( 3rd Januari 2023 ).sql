@@ -101,6 +101,21 @@ CREATE TABLE IF NOT EXISTS `characters` (
 
 -- Dumping data for table dokuscore.characters: ~0 rows (approximately)
 
+-- Dumping structure for table dokuscore.events
+CREATE TABLE IF NOT EXISTS `events` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SteamID` varchar(50) NOT NULL,
+  `CharID` int(11) NOT NULL,
+  `Type` varchar(50) DEFAULT NULL,
+  `Employer` varchar(50) DEFAULT NULL,
+  `StartTime` int(11) DEFAULT NULL,
+  `EndTime` int(11) DEFAULT NULL,
+  `Meta` longtext DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table dokuscore.events: ~0 rows (approximately)
+
 -- Dumping structure for table dokuscore.experience
 CREATE TABLE IF NOT EXISTS `experience` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -129,21 +144,6 @@ CREATE TABLE IF NOT EXISTS `inventory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.inventory: ~0 rows (approximately)
-
--- Dumping structure for table dokuscore.jobs
-CREATE TABLE IF NOT EXISTS `jobs` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `SteamID` varchar(50) DEFAULT NULL,
-  `CharID` int(11) DEFAULT NULL,
-  `Name` text DEFAULT NULL,
-  `JobID` int(11) DEFAULT NULL,
-  `Finished` varchar(50) DEFAULT NULL,
-  `StartTime` longtext DEFAULT NULL,
-  `Meta` longtext DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- Dumping data for table dokuscore.jobs: ~0 rows (approximately)
 
 -- Dumping structure for table dokuscore.logs
 CREATE TABLE IF NOT EXISTS `logs` (
@@ -13877,9 +13877,9 @@ CREATE TABLE IF NOT EXISTS `_zones` (
   `OnExit` longtext DEFAULT NULL,
   `Vectors` longtext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
--- Dumping data for table dokuscore._zones: ~8 rows (approximately)
+-- Dumping data for table dokuscore._zones: ~10 rows (approximately)
 INSERT INTO `_zones` (`ID`, `Name`, `Type`, `City`, `GD`, `Poly`, `Grid`, `MinZ`, `MaxZ`, `OnEnter`, `OnExit`, `Vectors`) VALUES
 	(1, 'Stables', 'Zone', 'Valentine', 20, 0, 0, 115.16, 120.16, '[{"Event":"DokusCore:Stables:SayHello","Type":"client","Meta":[]}]', '[{"Event":"DokusCore:Stables:SayGoodbye","Type":"client","Meta":[]}]', '[{"x":-361.3900146484375,"y":780.2999877929688},{"x":-362.6499938964844,"y":794.2999877929688},{"x":-377.3800048828125,"y":793.7999877929688},{"x":-376.2200012207031,"y":779.2000122070313}]'),
 	(2, 'Stables', 'NPC', 'Valentine', 18, 0, 0, 115, 117.25, '[{"Event":"DokusCore:Stables:Start","Meta":[],"Type":"client"}]', '[{"Event":"DokusCore:Stables:Stop","Meta":[],"Type":"client"}]', '[{"x":-366.6400146484375,"y":790.5},{"x":-363.6300048828125,"y":789.7000122070313},{"x":-363.92999267578127,"y":792.6199951171875},{"x":-366.7900085449219,"y":792.6199951171875}]'),
@@ -13888,7 +13888,9 @@ INSERT INTO `_zones` (`ID`, `Name`, `Type`, `City`, `GD`, `Poly`, `Grid`, `MinZ`
 	(9, 'GunStore', 'Zone', 'Saint Denis', 20, 0, 0, 48, 52, '[{"Meta":[],"Type":"client","Event":"DokusCore:GunStore:EnterStore"}]', '[{"Meta":[],"Type":"client","Event":"DokusCore:Gunstore:ExitStore"}]', '[{"x":2718.199951171875,"y":-1278.5},{"x":2722.10009765625,"y":-1286.9000244140626},{"x":2711.10009765625,"y":-1292.050048828125},{"x":2707.5,"y":-1283.9000244140626}]'),
 	(10, 'GunStore Catalog', 'NPC', 'Saint Denis', 20, 0, 0, 48, 52, '[{"Type":"client","Meta":[],"Event":"DokusCore:GunStore:NearCatalog"}]', '[{"Type":"client","Meta":[],"Event":"DokusCore:GunStore:NotNearCatalog"}]', '[{"x":2717.699951171875,"y":-1285.4000244140626},{"x":2715.5,"y":-1286.4000244140626},{"x":2714.929931640625,"y":-1285.300048828125},{"x":2717.179931640625,"y":-1284.300048828125}]'),
 	(11, 'GunStore', 'Zone', 'Tumbleweed', 17, 0, 0, -2, 1.3, '[{"Meta":[],"Type":"client","Event":"DokusCore:GunStore:EnterStore"}]', '[{"Meta":[],"Type":"client","Event":"DokusCore:GunStore:ExitStore"}]', '[{"x":-5511.60986328125,"y":-2961.800048828125},{"x":-5508.60986328125,"y":-2972.449951171875},{"x":-5503.06005859375,"y":-2970.949951171875},{"x":-5506.1298828125,"y":-2960.449951171875}]'),
-	(12, 'GunStore Catalog', 'NPC', 'Tumbleweed', 17, 0, 0, -2, 1.3, '[{"Meta":[],"Type":"client","Event":"DokusCore:GunStore:NearCatalog"}]', '[{"Meta":[],"Type":"client","Event":"DokusCore:GunStore:NotNearCatalog"}]', '[{"x":-5508.0,"y":-2963.39990234375},{"x":-5507.5,"y":-2965.300048828125},{"x":-5508.5,"y":-2965.5},{"x":-5509.0,"y":-2963.60009765625}]');
+	(12, 'GunStore Catalog', 'NPC', 'Tumbleweed', 17, 0, 0, -2, 1.3, '[{"Meta":[],"Type":"client","Event":"DokusCore:GunStore:NearCatalog"}]', '[{"Meta":[],"Type":"client","Event":"DokusCore:GunStore:NotNearCatalog"}]', '[{"x":-5508.0,"y":-2963.39990234375},{"x":-5507.5,"y":-2965.300048828125},{"x":-5508.5,"y":-2965.5},{"x":-5509.0,"y":-2963.60009765625}]'),
+	(14, 'Appleseed Timber Co', 'Zone', NULL, 15, 0, 0, 98, 120, '[{"Event":"DokusCore:LumberJack:Zone:Enter","Type":"client","Meta":[]}]', '[{"Event":"DokusCore:LumberJack:Zone:Exit","Type":"client","Meta":[]}]', '[{"x":-1384.18994140625,"y":-133.02000427246095},{"x":-1356.4599609375,"y":-172.89999389648438},{"x":-1335.8299560546876,"y":-215.99000549316407},{"x":-1324.010009765625,"y":-247.4199981689453},{"x":-1334.3900146484376,"y":-276.8999938964844},{"x":-1368.989990234375,"y":-291.70001220703127},{"x":-1406.5,"y":-296.4599914550781},{"x":-1435.1500244140626,"y":-282.3999938964844},{"x":-1461.489990234375,"y":-261.07000732421877},{"x":-1477.3499755859376,"y":-238.49000549316407},{"x":-1482.8900146484376,"y":-217.55999755859376},{"x":-1481.0799560546876,"y":-190.3800048828125}]'),
+	(16, 'Appleseed Timber Co', 'NPC', NULL, 17, 0, 0, 100, 105, '[{"Event":"DokusCore:LumberJack:Zone:NPC:Enter","Meta":[],"Type":"client"}]', '[{"Event":"DokusCore:LumberJack:Zone:NPC:Exit","Meta":[],"Type":"client"}]', '[{"x":-1398.989990234375,"y":-206.8699951171875},{"x":-1401.489990234375,"y":-207.69000244140626},{"x":-1400.949951171875,"y":-208.9499969482422},{"x":-1398.5400390625,"y":-208.11000061035157}]');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

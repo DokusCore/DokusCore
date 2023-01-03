@@ -38,7 +38,7 @@ end)
 RegisterServerEvent('DokusCore:Core:DBDel:Objects')
 AddEventHandler('DokusCore:Core:DBDel:Objects', function(args)
   if (Low(args[1]) == 'itemid') then
-    DBSet(DB.Objects.DelViaItemID, { ItemID = args[2][1] }, function() end)
+    DBDel(DB.Objects.DelViaItemID, { ItemID = args[2][1] }, function() end)
   end
 end)
 

@@ -77,7 +77,6 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:DoTPM', function()
   local Exists = DoesEntityExist(PedID)
   local LCoords = GetEntityCoords(PedID)
   if Exists then
-    CreateLog('DokusCore', 'Teleport', 'Admin has teleported to a map marker')
     local WP = GetWaypointCoords()
     if ((WP.x == 0) and (WP.y == 0) and (WP.z == 0)) then Notify("You've no waypoint set!") return end
     local height = 1
@@ -94,6 +93,7 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:DoTPM', function()
 
   UIFadeIn(2000) Wait(2000)
   OpenPrompt()
+  TriggerEvent('DokusCore:SafeGuard:Anti:AdminAbuse', 'Teleport')
   local WaitForTel = true
   while WaitForTel do Wait(1)
     local BGroup = CreateVarString(10, 'LITERAL_STRING', 'Teleport')

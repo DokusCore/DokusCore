@@ -2,6 +2,14 @@
 ############################ [ DokusCore Updates ] #############################
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+# Update v0.6.91
+--------------------------------------------------------------------------------
+- Changed: All CreateLog events are transported to SafeGuard
+- Changed: All Database logs have been transported to SafeGuard
+- Changed: The Godmode text notification is now done by SafeGuard
+- Added: API for handling event / quest data
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 # Update v0.6.9
 --------------------------------------------------------------------------------
 - Added: GodMode will now make a database log entry.
