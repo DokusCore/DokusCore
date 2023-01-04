@@ -8,6 +8,7 @@ Prompt_Add    = nil
 Prompt_Undo   = nil
 Prompt_Finish = nil
 Prompt_Cancel = nil
+Prompt_Exit   = nil
 Group         = GetRandomIntInRange(0, 0xffffff)
 
 function ActPrompts()
@@ -66,6 +67,17 @@ function ActPrompts()
     PromptSetHoldMode(Prompt_Cancel, true)
     PromptSetGroup(Prompt_Cancel, Group)
     PromptRegisterEnd(Prompt_Cancel)
+
+    local str = 'Exit'
+    Prompt_Exit = PromptRegisterBegin()
+    PromptSetControlAction(Prompt_Exit, _Keys['X'])
+    str = CreateVarString(10, 'LITERAL_STRING', str)
+    PromptSetText(Prompt_Exit, str)
+    PromptSetEnabled(Prompt_Exit, true)
+    PromptSetVisible(Prompt_Exit, true)
+    PromptSetHoldMode(Prompt_Exit, true)
+    PromptSetGroup(Prompt_Exit, Group)
+    PromptRegisterEnd(Prompt_Exit)
   end)
 end
 ------------------------------------------------------------------------------
