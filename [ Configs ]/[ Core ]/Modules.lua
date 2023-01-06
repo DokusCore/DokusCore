@@ -9,6 +9,7 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 _Modules          = {
+  AdminMenu       = true,  -- Optional ( In Progress )
   Banking         = true,  -- Optional ( In Progress )
   Characters      = true,  -- Required ( In Progress )
   Clothing        = true,  -- Required ( In Progress )

@@ -50,6 +50,16 @@ AddEventHandler('DokusCore:Core:System:CheckUpdates', function()
   if (not (VersionMatch)) then print([[^6#    ^1 DokusCore        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..__Version..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
   if ((VersionMatch))     then print([[^6#    ^2 DokusCore        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..__Version..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
 
+  -- DokusCore AdminMenu
+  if (Mod.AdminMenu) then
+    for k,v in pairs(Arr) do if (v.Plugin == 'AdminMenu') then Plugin = { Date = v.Date, Version = v.Version } end end
+    for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--AdminMenu') then PluginN, PluginV = v.Name, v.Version end end
+    local VersionMatch = (tostring(PluginV) == tostring(Plugin.Version))
+    if (not (VersionMatch)) then NeedsUpdating = true end
+    if (not (VersionMatch)) then print([[^6#    ^1 AdminMenu        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if ((VersionMatch))     then print([[^6#    ^2 AdminMenu        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+  end
+
   -- DokusCore Banking
   if (Mod.Banking) then
     for k,v in pairs(Arr) do if (v.Plugin == 'Banking') then Plugin = { Date = v.Date, Version = v.Version } end end
@@ -694,6 +704,16 @@ CreateThread(function() Wait(5000)
   if (not (VersionMatch)) then NeedsUpdating = true end
   if (not (VersionMatch)) then print([[^6#    ^1 DokusCore        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..__Version..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
   if ((VersionMatch))     then print([[^6#    ^2 DokusCore        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..__Version..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+
+  -- DokusCore AdminMenu
+  if (Mod.AdminMenu) then
+    for k,v in pairs(Arr) do if (v.Plugin == 'AdminMenu') then Plugin = { Date = v.Date, Version = v.Version } end end
+    for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--AdminMenu') then PluginN, PluginV = v.Name, v.Version end end
+    local VersionMatch = (tostring(PluginV) == tostring(Plugin.Version))
+    if (not (VersionMatch)) then NeedsUpdating = true end
+    if (not (VersionMatch)) then print([[^6#    ^1 AdminMenu        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if ((VersionMatch))     then print([[^6#    ^2 AdminMenu        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+  end
 
   -- DokusCore Banking
   if (Mod.Banking) then
