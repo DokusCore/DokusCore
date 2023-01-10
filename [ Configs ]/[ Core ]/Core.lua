@@ -4,7 +4,7 @@
 _ServerName     = 'DokusCore Development Server'
 _DiscordInvite  = 'https://Discord.io/DokusCore'
 _Language       = { Lang = 'en', Multi = true } --( In Progress )
-_StartWealth    = { Money = 2.25, Gold = 0.0 }
+_StartWealth    = { Money = 100.0, Gold = 0.0 }
 _Moderation     = { SuperAdmin = 'owner', Admin = 'admin', User = 'user' }
 _DokusMenu      = { Position = 'right', Theme = { Dark = true, Red = false } }
 _ActionKey      = 0xCEFD9220 -- Default E
@@ -21,14 +21,6 @@ _BankDoors      = true  -- Opens the bank doors so players can enter.
 _Security = {
   Blacklist = { Enabled = true }, --( In Progress )
   Whitelist = { Enabled = false, NotifyAdmins = false }, --( In Progress )
-}
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-_Loops = {
-  SliderDisabler    = { Enabled = true, Seconds = 0.1 },--( In Progress )
-  -- SaveCoords        = { Enabled = true, Seconds = 60  }, --( Not in Use at the moment )
-  -- CheckBlacklist    = { Seconds = 300 },--( Not in Use at the moment )
-  -- WhitelistNotify   = { Seconds = 120 },--( Not in Use at the moment )
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

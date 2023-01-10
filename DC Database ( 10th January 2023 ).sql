@@ -13879,7 +13879,7 @@ CREATE TABLE IF NOT EXISTS `_zones` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
--- Dumping data for table dokuscore._zones: ~10 rows (approximately)
+-- Dumping data for table dokuscore._zones: ~9 rows (approximately)
 INSERT INTO `_zones` (`ID`, `Name`, `Type`, `City`, `GD`, `Poly`, `Grid`, `MinZ`, `MaxZ`, `OnEnter`, `OnExit`, `Vectors`) VALUES
 	(1, 'Stables', 'Zone', 'Valentine', 20, 0, 0, 115.16, 120.16, '[{"Event":"DokusCore:Stables:SayHello","Type":"client","Meta":[]}]', '[{"Event":"DokusCore:Stables:SayGoodbye","Type":"client","Meta":[]}]', '[{"x":-361.3900146484375,"y":780.2999877929688},{"x":-362.6499938964844,"y":794.2999877929688},{"x":-377.3800048828125,"y":793.7999877929688},{"x":-376.2200012207031,"y":779.2000122070313}]'),
 	(2, 'Stables', 'NPC', 'Valentine', 18, 0, 0, 115, 117.25, '[{"Event":"DokusCore:Stables:Start","Meta":[],"Type":"client"}]', '[{"Event":"DokusCore:Stables:Stop","Meta":[],"Type":"client"}]', '[{"x":-366.6400146484375,"y":790.5},{"x":-363.6300048828125,"y":789.7000122070313},{"x":-363.92999267578127,"y":792.6199951171875},{"x":-366.7900085449219,"y":792.6199951171875}]'),

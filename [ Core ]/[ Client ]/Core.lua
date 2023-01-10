@@ -22,6 +22,7 @@ end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 AddEventHandler('DokusCore:Core:LoadUser', function()
+  local Name = GetPlayerName(PlayerId())
   local iDs = TSC('DokusCore:Core:GetUserIDs', { 'User' })
   TriggerEvent('DokusCore:Sync:Set:UserData', { 'SteamID', { iDs[1] } })
   local User = TSC('DokusCore:Core:DBGet:Users', { 'User', { iDs[1] } })

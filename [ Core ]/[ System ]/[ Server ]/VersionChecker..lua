@@ -258,6 +258,16 @@ AddEventHandler('DokusCore:Core:System:CheckUpdates', function()
     if ((VersionMatch))     then print([[^6#    ^2 Prospecting      ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
   end
 
+  -- DokusCore Quests
+  if (Mod.Quests) then
+    for k,v in pairs(Arr) do if (v.Plugin == 'Quests') then Plugin = { Date = v.Date, Version = v.Version } end end
+    for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Quests') then PluginN, PluginV = v.Name, v.Version end end
+    local VersionMatch = (tostring(PluginV) == tostring(Plugin.Version))
+    if (not (VersionMatch)) then NeedsUpdating = true end
+    if (not (VersionMatch)) then print([[^6#    ^1 Quests           ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if ((VersionMatch))     then print([[^6#    ^2 Quests           ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+  end
+
   -- DokusCore SafeGuard
   if (Mod.SafeGuard) then
     for k,v in pairs(Arr) do if (v.Plugin == 'SafeGuard') then Plugin = { Date = v.Date, Version = v.Version } end end
@@ -911,6 +921,16 @@ CreateThread(function() Wait(5000)
     if (not (VersionMatch)) then NeedsUpdating = true end
     if (not (VersionMatch)) then print([[^6#    ^1 Prospecting      ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
     if ((VersionMatch))     then print([[^6#    ^2 Prospecting      ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+  end
+
+  -- DokusCore Quests
+  if (Mod.Quests) then
+    for k,v in pairs(Arr) do if (v.Plugin == 'Quests') then Plugin = { Date = v.Date, Version = v.Version } end end
+    for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Quests') then PluginN, PluginV = v.Name, v.Version end end
+    local VersionMatch = (tostring(PluginV) == tostring(Plugin.Version))
+    if (not (VersionMatch)) then NeedsUpdating = true end
+    if (not (VersionMatch)) then print([[^6#    ^1 Quests           ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if ((VersionMatch))     then print([[^6#    ^2 Quests           ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
   end
 
   -- DokusCore SafeGuard
