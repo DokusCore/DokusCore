@@ -1,14 +1,14 @@
 Lang['it'] = {
 
   ["System"] = {
-    ["Yes"] = { Gender = false, Time = false, MSG = "Yes" },
+    ["Yes"] = { Gender = false, Time = false, MSG = "Si" },
     ["No"] = { Gender = false, Time = false, MSG = "No"},
     ["Error"] = { Genere = false, Time = false, MSG = "ERRORE" },
     ["System"] = { Gender = false, Time = false, MSG = "Sistema"},
-    ["Success"] = { Gender = false, Time = false, MSG = "Success"},
-    ["BLCheck"] = { Gender = false, Time = false, MSG = "Checking Blacklist"},
-    ["WLCheck"] = { Gender = false, Time = false, MSG = "Checking Whitelist"},
-    ["SteamCheck"] = { Gender = false, Time = false, MSG = "Checking Steam Identification"},
+    ["Success"] = { Gender = false, Time = false, MSG = "Successo"},
+    ["BLCheck"] = { Gender = false, Time = false, MSG = "Controllo Blacklist"},
+    ["WLCheck"] = { Gender = false, Time = false, MSG = "Controllo Whitelist"},
+    ["SteamCheck"] = { Gender = false, Time = false, MSG = "Controllo Steam ID"},
     ["SteamConFail"] = { Gender = false, Time = false, MSG = "Non siamo in grado di connetterci all'API di Steam, assicurati di avere Steam aperto prima di aprire RedM!" },
     ["UserBanned"] = { Gender = false, Time = false, MSG = "Sei stato bannato da questo server." },
     ["InfoDiscord"] = { Gender = false, Time = false, MSG = "Per maggiori informazioni visita il nostro Discord ".._DiscordInvite.."" },
@@ -22,8 +22,8 @@ Lang['it'] = {
     ["LangNotEnter"] = { Gender = false, Time = false, MSG = "Il parametro della lingua era vuoto!" },
     ["LanguageSetTo"] = { Gender = false, Time = false, MSG = "La lingua del client è impostata su " },
     ["LangNoSupport"] = { Gender = false, Time = 5.0, MSG = "Questa lingua non è supportata!" },
-    ["WelcomeTo"] = { Gender = false, Time = false, MSG = "Welcome to:" },
-    ["InProgress"] = { Gender = false, Time = false, MSG = "In Progress"},
+    ["WelcomeTo"] = { Gender = false, Time = false, MSG = "Benvenuto a:" },
+    ["InProgress"] = { Gender = false, Time = false, MSG = "In corso"},
     ["OpenMenu"] = { Gender = false, Time = false, MSG = "Apri menu"},
     ["InDevelopment"] = { Gender = false, Time = 5.0, MSG = "Questa funzionalità è in fase di sviluppo!" },
 
@@ -35,20 +35,20 @@ Lang['it'] = {
 
   ["Banking"] = {
     ["Name"] = { Gender = false, Time = false, MSG = "Banking"},
-    ["NPCName"] = { Gender = false, Time = false, MSG = "Bankier Worker"},
+    ["NPCName"] = { Gender = false, Time = false, MSG = "Impiegato Banca"},
     ["NPCBusy"] = { Gender = false, Time = 3.5, MSG = "Sono attualmente impegnato con un altro cittadino, un momento per favore!" },
-    ["NoAccount"] = { Gender = false, Time = 3.5, MSG = "Mi dispiace, ma non abbiamo nessun conto bancario registrato nei nostri log. Devi aprire un conto bancario prima di poterne utilizzare uno!" },
-    ["UseBankKey"] = { Gender = false, Time = 3.5, MSG = "Use The Bank"},
+    ["NoAccount"] = { Gender = false, Time = 3.5, MSG = "Mi dispiace, ma non abbiamo nessun conto bancario registrato nei nostri libri contabili. Devi aprire un conto bancario prima di poterne utilizzare uno!" },
+    ["UseBankKey"] = { Gender = false, Time = 3.5, MSG = "Accedi alla banca"},
     ["AlAccount"] = { Gender = false, Time = 3.5, MSG = "Hai già un conto bancario presso questa banca!" },
-    ["AcCreation"] = { Gender = false, Time = 3.5, MSG = "Hai pagato la quota del tuo account, l'account viene creato!" },
-    ["AcCreated"] = { Gender = false, Time = 3.5, MSG = "Il tuo conto bancario è stato creato! Ora puoi aprire il tuo conto bancario." },
+    ["AcCreation"] = { Gender = false, Time = 3.5, MSG = "Hai pagato la quota del tuo conto, il conto viene ora creato!" },
+    ["AcCreated"] = { Gender = false, Time = 3.5, MSG = "Il tuo conto è stato creato! Ora puoi accedere al tuo conto bancario." },
     ["NoDepMoney"] = { Gender = false, Time = 3.5, MSG = "Non hai abbastanza soldi per effettuare questo deposito!" },
     ["NoDepGold"] = { Gender = false, Time = 3.5, MSG = "Non hai abbastanza oro per effettuare questo deposito!" },
     ["NoWitMoney"] = { Gender = false, Time = 3.5, MSG = "Non hai abbastanza soldi per fare questo prelievo!" },
     ["NoWitGold"] = { Gender = false, Time = 3.5, MSG = "Non hai abbastanza oro per effettuare questo prelievo!" },
-    ["DepMinMoney"] = { Gender = false, Time = 3.5, MSG = "L'importo del deposito deve essere maggiore di $ 0,01 cent!" },
+    ["DepMinMoney"] = { Gender = false, Time = 3.5, MSG = "L'importo del deposito deve essere maggiore di $ 0,01 centesimi!" },
     ["DepMinGold"] = { Gender = false, Time = 3.5, MSG = "L'importo del deposito deve essere maggiore di 0,01 oro!" },
-    ["WitMinMoney"] = { Gender = false, Time = 3.5, MSG = "L'importo del deposito deve essere maggiore di $ 0,01 cent!" },
+    ["WitMinMoney"] = { Gender = false, Time = 3.5, MSG = "L'importo del deposito deve essere maggiore di $ 0,01 centesimi!" },
     ["WitMinGold"] = { Gender = false, Time = 3.5, MSG = "L'importo del deposito deve essere maggiore di 0,01 oro!" },
     ["ToFast"] = { Gender = false, Time = 3.5, MSG = "Mi dispiace, ma posso fare solo 1 transazione alla volta. Un momento per favore!" },
     ["DepDoneMoney"] = { Gender = false, Time = 3.5, MSG = "Hai effettuato un deposito di $" },
@@ -63,34 +63,34 @@ Lang['it'] = {
 
     ["OnExit"] = {
       { Gender = false, Time = false, MSG = "Grazie per essere passato, buona giornata!" },
-      { Gender = false, Time = false, MSG = "Sono stato il mio piacere ad aiutarti oggi, fino alla prossima volta!" },
+      { Gender = false, Time = false, MSG = "E' stato un piacere aiutarti oggi, alla prossima volta!" },
       { Gender = false, Time = false, MSG = "Se c'è qualcosa in cui posso ancora aiutarti, fammelo sapere!" },
     }
   },
 
   ["Characters"] = {
-    ["NoCharSelected"] = { Gender = false, Time = 3.0, MSG = "Nessun carattere selezionato!" },
+    ["NoCharSelected"] = { Gender = false, Time = 3.0, MSG = "Nessun personaggio selezionato!" },
   },
 
   ["Clothing"] = {
     ["Name"] = { Gender = false, Time = false, MSG = "Negozio di abbigliamento"},
     ["NPCName"] = { Gender = false, Time = false, MSG = "Sarto"},
     ["NPCBusy"] = { Gender = false, Time = 3.5, MSG = "Al momento sono impegnato con un altro cliente, aspetta un momento. Sarò da te il prima possibile!" },
-    ["NeedToGo"] = { Gender = false, Time = 3.5, MSG = "Ho più cose da fare e più clienti di cui occuparmi, fammi sapere quando hai bisogno di ulteriore aiuto" },
+    ["NeedToGo"] = { Gender = false, Time = 3.5, MSG = "Ho tante cose da fare e più clienti di cui occuparmi, fammi sapere quando hai bisogno di un ulteriore aiuto" },
     ["DressingRoom"] = { Genere = false, Time = false, MSG = "Spogliatoio" },
-    ["Confirmation"] = { Gender = false, Time = false, MSG = "Confirmation" },
+    ["Confirmation"] = { Gender = false, Time = false, MSG = "Conferma" },
     ["ConfirmSwitch"] = { Gender = false, Time = 3.5, MSG = "Vuoi cambiare abbigliamento?" },
-    ["Pay"] = { Gender = false, Time = false, MSG = "Pay"},
+    ["Pay"] = { Gender = false, Time = false, MSG = "Paga"},
     ["OpenMenu"] = { Gender = false, Time = false, MSG = "Apri menu"},
-    ["Outfits"] = { Gender = false, Time = false, MSG = "Outfits"},
+    ["Outfits"] = { Gender = false, Time = false, MSG = "Abiti"},
 
     ["EnterStore"] = {
-      { Gender = 'Maschio', Time = 3.5, MSG = "Benvenuto, spero che tu entri nel mio negozio con le scarpe pulite!" },
-      { Gender = 'Maschio', Time = 3.5, MSG = "Yeee ragazzo, benvenuto nel mio negozio signore, sono felice di vederti!" },
-      { Gender = 'Maschio', Time = 3.5, MSG = "Oh, guarda, ciao. Com'è la tua giornata oggi, signore?" },
-      { Gender = 'Female', Time = 3.5, MSG = "Benvenuto, spero che tu entri nel mio negozio con le scarpe pulite!" },
-      { Gender = 'Female', Time = 3.5, MSG = "Yeee ragazzo, benvenuto nel mio negozio!. Oh, mi scusi signora, ero finita." },
-      { Genere = 'Femmina', Time = 3.5, MSG = "Oh guarda, ciao. Com'è la tua giornata oggi, mia signora?" },
+      { Gender = 'Maschio', Time = 3.5, MSG = "Benvenuto, spero che entri nel mio negozio con le scarpe pulite!" },
+      { Gender = 'Maschio', Time = 3.5, MSG = "Yeee, benvenuto nel mio negozio signore, sono felice di vederti!" },
+      { Gender = 'Maschio', Time = 3.5, MSG = "Oh, guarda, salve. Come va la giornata oggi, signore?" },
+      { Gender = 'Female', Time = 3.5, MSG = "Benvenuto, spero che entri nel mio negozio con le scarpe pulite!" },
+      { Gender = 'Female', Time = 3.5, MSG = "Yeee mister, benvenuto nel mio negozio!. Oh, mi scusi signora, ero distratto." },
+      { Genere = 'Femmina', Time = 3.5, MSG = "Oh guarda, salve. Com'è la tua giornata oggi, mia signora?" },
     },
 
     ["ExitStore"] = {
@@ -117,14 +117,14 @@ Lang['it'] = {
     },
 
     ["Reactions"] = {
-      { Gender = 'Maschio', Time = 5.0, MSG = "Ti sta bene signore" },
+      { Gender = 'Maschio', Time = 5.0, MSG = "Le sta bene signore" },
       { Gender = 'Maschio', Time = 5.0, MSG = "Oh guarda, vederti così mi rende geloso." },
       { Gender = 'Maschio', Time = 5.0, MSG = "Oh ragazzo, guarda qua, è meraviglioso." },
       { Gender = 'Maschio', Time = 5.0, MSG = "È il migliore che abbiamo in città, non trovi di meglio da nessun'altra parte!" },
       { Gender = 'Maschio', Time = 5.0, MSG = "Così bello, così speciale, e io sono l'unico in grado di farlo per te, se ti piace la causa." },
       { Gender = 'Maschio', Time = 5.0, MSG = "Ti sta benissimo" },
-      { Gender = 'Maschio', Time = 5.0, MSG = "Mio Dio, come è stato fatto apposta per te!" },
-      { Genere = 'Femmina', Time = 5.0, MSG = "Ti sta bene signore" },
+      { Gender = 'Maschio', Time = 5.0, MSG = "Mio Dio, sembra che sia stato fatto apposta per te!" },
+      { Genere = 'Femmina', Time = 5.0, MSG = "Le sta bene signore" },
       { Genere = 'Femmina', Time = 5.0, MSG = "Oh guarda, vederti così mi rende geloso." },
       { Gender = 'Female', Time = 5.0, MSG = "Oh ragazzo, guarda che meraviglia." },
       { Gender = 'Female', Time = 5.0, MSG = "È il migliore che abbiamo in città, non trovi di meglio da nessun'altra parte!" },
@@ -137,8 +137,8 @@ Lang['it'] = {
   ["Skins"] = {
     ['Male'] = { Gender = false, Time = false, MSG = "Maschio"},
     ['Female'] = { Gender = false, Time = false, MSG = "Femmina"},
-    ['Select'] = { Gender = false, Time = false, MSG = "Select"},
-    ["SetGender"] = { Gender = false, Time = false, MSG = "Scegli  Gender"},
+    ['Select'] = { Gender = false, Time = false, MSG = "Scegli"},
+    ["SetGender"] = { Gender = false, Time = false, MSG = "Scegli il genere"},
     ["ErrAge"] = { Gender = false, Time = 3.0, MSG = "Non hai impostato l'età dei tuoi personaggi!" },
     ["ErrName"] = { Gender = false, Time = 3.0, MSG = "Non hai impostato il nome del tuo personaggio!" },
     ["ErrNatio"] = { Gender = false, Time = 3.0, MSG = "Non hai impostato la nazionalità dei tuoi personaggi!" },
@@ -151,21 +151,21 @@ Lang['it'] = {
 
   ["Spawner"] = {
     ['Cutscene'] = { Genere = false, Time = false, MSG = "Filmato" },
-    ["DriverName"] = { Gender = false, Time = false, MSG = "StageCoach Driver"},
+    ["DriverName"] = { Gender = false, Time = false, MSG = "Autista diligenza"},
     ["MusicOn"] = { Gender = false, Time = 5.0, MSG = "Hai spento la musica" },
     ["MusicOff"] = { Gender = false, Time = 5.0, MSG = "Hai acceso la musica" },
     ["ErrStepOut"] = { Gender = false, Time = 5.0, MSG = "Non puoi uscire durante il filmato." },
-    ["MusicToggle"] = { Gender = false, Time = false, MSG = "Stop | Start Music"},
-    ["StepOut"] = { Gender = false, Time = false, MSG = "Step Out"},
+    ["MusicToggle"] = { Gender = false, Time = false, MSG = "Stop | Start Musica"},
+    ["StepOut"] = { Gender = false, Time = false, MSG = "Esci"},
     ["Cinema"] = { Genere = false, Time = false, MSG = "Cinema" },
 
     ["Welcome"] = {
       { Gender = false, Time = 5.0, MSG = "Benvenuto nella nostra contea, che tu possa goderti il ​​tuo soggiorno!" },
-      { Gender = false, Time = 5.0, MSG = "I cen tell you're smart, because you choose for this county! Haha, welcome my friend!" },
+      { Gender = false, Time = 5.0, MSG = "Posso affermare che hai fatto bene a scegliere questa contea! Haha, benvenuto amico mio!" },
     },
 
     ["Advice"] = {
-      { Gender = false, Time = 5.0, MSG = "Ti porterò da un buon sarto che potrebbe aiutarti con dei vestiti nuovi" },
+      { Gender = false, Time = 5.0, MSG = "Ti porterò da un buon sarto che potrà aiutarti con dei vestiti nuovi" },
       { Gender = false, Time = 5.0, MSG = "Dopo un viaggio così lungo un buon sarto è ciò di cui hai bisogno. Lasciami fare l'onore e portarti da uno." },
     },
 
@@ -322,8 +322,8 @@ Lang['it'] = {
   },
 
   ["Stables"] = {
-    ["BlipName"] = { Gender = false, Time = false, MSG = "Stabile"},
-    ["NPCName"] = { Gender = false, Time = false, MSG = "Attendant stabile"},
+    ["BlipName"] = { Gender = false, Time = false, MSG = "Stalla"},
+    ["NPCName"] = { Gender = false, Time = false, MSG = "Addetto stalla"},
     ["HorseNamed"] = { Gender = false, Time = 3.5, MSG = "Hai chiamato il tuo cavallo: " },
     ["HorseBought"] = { Gender = false, Time = 5.0, MSG = "Il tuo cavallo è pronto! È stato un piacere fare affari con te." },
     ["HorseStored"] = { Gender = false, Time = 5.0, MSG = "Il tuo cavallo è immagazzinato, ce ne prenderemo molta cura!" },
@@ -333,7 +333,7 @@ Lang['it'] = {
     ["FetchHorse"] = { Gender = false, Time = 5.0, MSG = "Certo, un momento fammi prendere il tuo cavallo!" },
     ["HorseFetched"] = { Gender = false, Time = 5.0, MSG = "Ecco signore, sano come sempre!" },
     ["OpenMenu"] = { Gender = false, Time = false, MSG = "Apri menu"},
-    ["StoreHorse"] = { Gender = false, Time = false, MSG = "Store Horse"},
+    ["StoreHorse"] = { Gender = false, Time = false, MSG = "Conserva Cavallo"},
     ["NoHorseName"] = { Gender = false, Time = 5.0, MSG = "Mi dispiace, ma devi dare un nome al tuo cavallo" },
 
     ["EnterStore"] = {
@@ -359,9 +359,9 @@ Lang['it'] = {
 
   ["Stores"] = {
     ["BlipName"] = { Gender = false, Time = false, MSG = "General Store"},
-    ["NPCName"] = { Gender = false, Time = false, MSG = "General Store Worker"},
-    ["MenuBuy"] = { Gender = false, Time = false, MSG = "General Store (Buy)" },
-    ["MenuSell"] = { Gender = false, Time = false, MSG = "Inventario (Vendita)" },
+    ["NPCName"] = { Gender = false, Time = false, MSG = "Commesso General Store"},
+    ["MenuBuy"] = { Gender = false, Time = false, MSG = "General Store (Acquista)" },
+    ["MenuSell"] = { Gender = false, Time = false, MSG = "Inventario (Vendi)" },
     ["ButtonBuy"] = { Gender = false, Time = false, MSG = "Acquista"},
     ["ButtonSell"] = { Gender = false, Time = false, MSG = "Vendi"},
     ["ButtonMan"] = { Gender = false, Time = false, MSG = "Gestisci"},
