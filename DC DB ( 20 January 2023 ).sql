@@ -101,6 +101,23 @@ CREATE TABLE IF NOT EXISTS `characters` (
 
 -- Dumping data for table dokuscore.characters: ~0 rows (approximately)
 
+-- Dumping structure for table dokuscore.doorlocks
+CREATE TABLE IF NOT EXISTS `doorlocks` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(50) NOT NULL DEFAULT '0',
+  `Hash` bigint(20) NOT NULL DEFAULT 0,
+  `Model` bigint(20) NOT NULL DEFAULT 0,
+  `State` tinyint(4) DEFAULT NULL,
+  `Owned` tinyint(4) DEFAULT NULL,
+  `HouseID` int(11) DEFAULT NULL,
+  `KeyID` int(11) DEFAULT NULL,
+  `Coords` longtext NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `KeyID` (`KeyID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table dokuscore.doorlocks: ~0 rows (approximately)
+
 -- Dumping structure for table dokuscore.events
 CREATE TABLE IF NOT EXISTS `events` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -200,6 +217,18 @@ CREATE TABLE IF NOT EXISTS `outfits` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table dokuscore.outfits: ~0 rows (approximately)
+
+-- Dumping structure for table dokuscore.properties
+CREATE TABLE IF NOT EXISTS `properties` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SteamID` varchar(50) DEFAULT NULL,
+  `CharID` int(11) DEFAULT NULL,
+  `HouseID` int(11) DEFAULT NULL,
+  `Keys` longtext DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table dokuscore.properties: ~0 rows (approximately)
 
 -- Dumping structure for table dokuscore.settings
 CREATE TABLE IF NOT EXISTS `settings` (
@@ -13862,6 +13891,15 @@ INSERT INTO `_stores` (`ID`, `Item`, `Name`, `Type`, `Description`, `Limit`, `Bu
 	(17, 'vanilla_flower', 'Vanilla Flower', 'Herbs', '--', 75, 0.2, 0.08, '[{"Buy":0.02,"Store":"Valentine","Sell":0.01},{"Buy":0.02,"Store":"SaintDenis","Sell":0.01},{"Buy":0.02,"Store":"Blackwater","Sell":0.01},{"Buy":0.02,"Store":"Tumbleweed","Sell":0.01},{"Buy":0.02,"Store":"Rhodes","Sell":0.01},{"Buy":0.02,"Store":"Armadillo","Sell":0.01},{"Buy":0.02,"Store":"Strawberry","Sell":0.01}]', '[{"Store":"Valentine","Stock":100},{"Store":"SaintDenis","Stock":100},{"Store":"Blackwater","Stock":100},{"Store":"Tumbleweed","Stock":100},{"Store":"Rhodes","Stock":100},{"Store":"Armadillo","Stock":100},{"Store":"Strawberry","Stock":100}]', '[{"Buy":true,"Store":"Valentine","Sell":true},{"Buy":true,"Store":"SaintDenis","Sell":true},{"Buy":true,"Store":"Blackwater","Sell":true},{"Buy":true,"Store":"Tumbleweed","Sell":true},{"Buy":true,"Store":"Rhodes","Sell":true},{"Buy":true,"Store":"Armadillo","Sell":true},{"Buy":true,"Store":"Strawberry","Sell":true}]', '[{"sTax":0,"Store":"Valentine","bTax":0},{"sTax":0,"Store":"SaintDenis","bTax":0},{"sTax":0,"Store":"Blackwater","bTax":0},{"sTax":0,"Store":"Tumbleweed","bTax":0},{"sTax":0,"Store":"Rhodes","bTax":0},{"sTax":0,"Store":"Armadillo","bTax":0},{"sTax":0,"Store":"Strawberry","bTax":0}]'),
 	(20, 'axe', 'Chopping Axe', 'Tool', 'For chopping those trees', 25, 1.5, 0.7, '[{"Buy":0.02,"Store":"Valentine","Sell":0.01},{"Buy":0.02,"Store":"SaintDenis","Sell":0.01},{"Buy":0.02,"Store":"Blackwater","Sell":0.01},{"Buy":0.02,"Store":"Tumbleweed","Sell":0.01},{"Buy":0.02,"Store":"Rhodes","Sell":0.01},{"Buy":0.02,"Store":"Armadillo","Sell":0.01},{"Buy":0.02,"Store":"Strawberry","Sell":0.01}]', '[{"Stock":100,"Store":"Valentine"},{"Stock":100,"Store":"SaintDenis"},{"Stock":100,"Store":"Blackwater"},{"Stock":100,"Store":"Tumbleweed"},{"Stock":100,"Store":"Rhodes"},{"Stock":100,"Store":"Armadillo"},{"Stock":100,"Store":"Strawberry"}]', '[{"Buy":true,"Store":"Valentine","Sell":true},{"Buy":true,"Store":"SaintDenis","Sell":true},{"Buy":true,"Store":"Blackwater","Sell":true},{"Buy":true,"Store":"Tumbleweed","Sell":true},{"Buy":true,"Store":"Rhodes","Sell":true},{"Buy":true,"Store":"Armadillo","Sell":true},{"Buy":true,"Store":"Strawberry","Sell":true}]', '[{"Store":"Valentine","sTax":0,"bTax":0},{"Store":"SaintDenis","sTax":0,"bTax":0},{"Store":"Blackwater","sTax":0,"bTax":0},{"Store":"Tumbleweed","sTax":0,"bTax":0},{"Store":"Rhodes","sTax":0,"bTax":0},{"Store":"Armadillo","sTax":0,"bTax":0},{"Store":"Strawberry","sTax":0,"bTax":0}]');
 
+-- Dumping structure for table dokuscore._system
+CREATE TABLE IF NOT EXISTS `_system` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Properties_Doors` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table dokuscore._system: ~0 rows (approximately)
+
 -- Dumping structure for table dokuscore._zones
 CREATE TABLE IF NOT EXISTS `_zones` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -13877,9 +13915,9 @@ CREATE TABLE IF NOT EXISTS `_zones` (
   `OnExit` longtext DEFAULT NULL,
   `Vectors` longtext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
--- Dumping data for table dokuscore._zones: ~9 rows (approximately)
+-- Dumping data for table dokuscore._zones: ~13 rows (approximately)
 INSERT INTO `_zones` (`ID`, `Name`, `Type`, `City`, `GD`, `Poly`, `Grid`, `MinZ`, `MaxZ`, `OnEnter`, `OnExit`, `Vectors`) VALUES
 	(1, 'Stables', 'Zone', 'Valentine', 20, 0, 0, 115.16, 120.16, '[{"Event":"DokusCore:Stables:SayHello","Type":"client","Meta":[]}]', '[{"Event":"DokusCore:Stables:SayGoodbye","Type":"client","Meta":[]}]', '[{"x":-361.3900146484375,"y":780.2999877929688},{"x":-362.6499938964844,"y":794.2999877929688},{"x":-377.3800048828125,"y":793.7999877929688},{"x":-376.2200012207031,"y":779.2000122070313}]'),
 	(2, 'Stables', 'NPC', 'Valentine', 18, 0, 0, 115, 117.25, '[{"Event":"DokusCore:Stables:Start","Meta":[],"Type":"client"}]', '[{"Event":"DokusCore:Stables:Stop","Meta":[],"Type":"client"}]', '[{"x":-366.6400146484375,"y":790.5},{"x":-363.6300048828125,"y":789.7000122070313},{"x":-363.92999267578127,"y":792.6199951171875},{"x":-366.7900085449219,"y":792.6199951171875}]'),
@@ -13890,7 +13928,10 @@ INSERT INTO `_zones` (`ID`, `Name`, `Type`, `City`, `GD`, `Poly`, `Grid`, `MinZ`
 	(11, 'GunStore', 'Zone', 'Tumbleweed', 17, 0, 0, -2, 1.3, '[{"Meta":[],"Type":"client","Event":"DokusCore:GunStore:EnterStore"}]', '[{"Meta":[],"Type":"client","Event":"DokusCore:GunStore:ExitStore"}]', '[{"x":-5511.60986328125,"y":-2961.800048828125},{"x":-5508.60986328125,"y":-2972.449951171875},{"x":-5503.06005859375,"y":-2970.949951171875},{"x":-5506.1298828125,"y":-2960.449951171875}]'),
 	(12, 'GunStore Catalog', 'NPC', 'Tumbleweed', 17, 0, 0, -2, 1.3, '[{"Meta":[],"Type":"client","Event":"DokusCore:GunStore:NearCatalog"}]', '[{"Meta":[],"Type":"client","Event":"DokusCore:GunStore:NotNearCatalog"}]', '[{"x":-5508.0,"y":-2963.39990234375},{"x":-5507.5,"y":-2965.300048828125},{"x":-5508.5,"y":-2965.5},{"x":-5509.0,"y":-2963.60009765625}]'),
 	(14, 'Appleseed Timber Co', 'Zone', NULL, 15, 0, 0, 98, 120, '[{"Event":"DokusCore:LumberJack:Zone:Enter","Type":"client","Meta":[]}]', '[{"Event":"DokusCore:LumberJack:Zone:Exit","Type":"client","Meta":[]}]', '[{"x":-1384.18994140625,"y":-133.02000427246095},{"x":-1356.4599609375,"y":-172.89999389648438},{"x":-1335.8299560546876,"y":-215.99000549316407},{"x":-1324.010009765625,"y":-247.4199981689453},{"x":-1334.3900146484376,"y":-276.8999938964844},{"x":-1368.989990234375,"y":-291.70001220703127},{"x":-1406.5,"y":-296.4599914550781},{"x":-1435.1500244140626,"y":-282.3999938964844},{"x":-1461.489990234375,"y":-261.07000732421877},{"x":-1477.3499755859376,"y":-238.49000549316407},{"x":-1482.8900146484376,"y":-217.55999755859376},{"x":-1481.0799560546876,"y":-190.3800048828125}]'),
-	(16, 'Appleseed Timber Co', 'NPC', NULL, 17, 0, 0, 100, 105, '[{"Event":"DokusCore:LumberJack:Zone:NPC:Enter","Meta":[],"Type":"client"}]', '[{"Event":"DokusCore:LumberJack:Zone:NPC:Exit","Meta":[],"Type":"client"}]', '[{"x":-1398.989990234375,"y":-206.8699951171875},{"x":-1401.489990234375,"y":-207.69000244140626},{"x":-1400.949951171875,"y":-208.9499969482422},{"x":-1398.5400390625,"y":-208.11000061035157}]');
+	(16, 'Appleseed Timber Co', 'NPC', NULL, 17, 0, 0, 100, 105, '[{"Event":"DokusCore:LumberJack:Zone:NPC:Enter","Meta":[],"Type":"client"}]', '[{"Event":"DokusCore:LumberJack:Zone:NPC:Exit","Meta":[],"Type":"client"}]', '[{"x":-1398.989990234375,"y":-206.8699951171875},{"x":-1401.489990234375,"y":-207.69000244140626},{"x":-1400.949951171875,"y":-208.9499969482422},{"x":-1398.5400390625,"y":-208.11000061035157}]'),
+	(27, 'House 34306 Property', 'Zone', NULL, 15, 0, 0, 49, 60, '[{"Meta":{"HouseID":34306},"Type":"client","Event":"DokusCore:Properties:Zone:Enter"}]', '[{"Meta":{"HouseID":34306},"Type":"client","Event":"DokusCore:Properties:Zone:Exit"}]', '[{"x":1106.4599609375,"y":-1992.550048828125},{"x":1109.1500244140626,"y":-1997.6099853515626},{"x":1111.56005859375,"y":-2002.699951171875},{"x":1123.52001953125,"y":-2000.6400146484376},{"x":1131.68994140625,"y":-1999.1800537109376},{"x":1129.06005859375,"y":-1973.25},{"x":1118.2099609375,"y":-1976.5799560546876},{"x":1104.8299560546876,"y":-1983.75}]'),
+	(29, 'House 55298 Property', 'Zone', NULL, 12, 0, 0, 180, 200, '[{"Event":"DokusCore:Properties:Zone:Enter","Meta":{"HouseID":55298},"Type":"client"}]', '[{"Event":"DokusCore:Properties:Zone:Exit","Meta":[],"Type":"client"}]', '[{"x":193.82000732421876,"y":1012.8400268554688},{"x":201.27999877929688,"y":1014.530029296875},{"x":207.52999877929688,"y":1013.280029296875},{"x":218.9499969482422,"y":1010.3599853515625},{"x":226.67999267578126,"y":1007.72998046875},{"x":230.02000427246095,"y":1004.8400268554688},{"x":231.55999755859376,"y":1001.4000244140625},{"x":232.1999969482422,"y":994.0499877929688},{"x":237.72999572753907,"y":993.5700073242188},{"x":237.7899932861328,"y":989.1699829101563},{"x":230.89999389648438,"y":989.0700073242188},{"x":227.3699951171875,"y":977.4199829101563},{"x":220.7899932861328,"y":967.2000122070313},{"x":216.6300048828125,"y":964.25},{"x":206.41000366210938,"y":964.1199951171875},{"x":198.33999633789063,"y":965.8599853515625},{"x":191.89999389648438,"y":971.969970703125},{"x":189.08999633789063,"y":980.8400268554688},{"x":187.25,"y":996.6599731445313},{"x":189.3000030517578,"y":1005.2100219726563},{"x":190.8300018310547,"y":1011.280029296875}]'),
+	(30, 'House 32514 Property', 'Zone', NULL, 10, 0, 0, 75, 95, '[{"Type":"client","Meta":{"HouseID":32514},"Event":"DokusCore:Properties:Zone:Enter"}]', '[{"Type":"client","Meta":[],"Event":"DokusCore:Properties:Zone:Exit"}]', '[{"x":-612.52001953125,"y":4.01000022888183},{"x":-602.2000122070313,"y":-10.84000015258789},{"x":-595.469970703125,"y":-40.84000015258789},{"x":-600.719970703125,"y":-63.20999908447265},{"x":-621.8900146484375,"y":-78.3499984741211},{"x":-638.5399780273438,"y":-78.61000061035156},{"x":-646.719970703125,"y":-55.52999877929687},{"x":-640.3200073242188,"y":-32.04999923706055},{"x":-628.8699951171875,"y":-6.57999992370605}]');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

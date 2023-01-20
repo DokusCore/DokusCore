@@ -2,6 +2,25 @@
 ############################ [ DokusCore Updates ] #############################
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+# Update v0.7.0
+--------------------------------------------------------------------------------
+- Added: First time installment check. This sets some of the required database
+  data for plugins. This runs once on server start and only if the right plugins
+  are enabled.
+- Added: Database table that keeps track of first install statuses.
+- Added: All possible doors that could be set to open / closed are added to the
+  config. You will be able to interact with 1707 doors in the system.
+- Added: We've generated a unique ID for each door that is the KeyID. Each door
+  needs a key with the same unique ID for it to be opened or closed, the door
+  only works with the right key.
+- Changed: Config for the inventory for the new command / keybind opening.
+- Added: Config for the new plugin properties
+- Added: Network boolean to the SpawnNPC function.
+- Added: API logic for handling door lock data
+- Added: API logic for handling property data
+- Added: New plugins to the version checker.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 # Update v0.6.94
 --------------------------------------------------------------------------------
 - Added: Added the new Quests plugin to the version checker file.

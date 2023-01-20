@@ -25,6 +25,9 @@ DB.Weapons       = {}
 DB.Animals       = {}
 DB.Objects       = {}
 DB.Events        = {}
+DB.Properties    = {}
+DB.System        = {}
+DB.DoorLocks     = {}
 --------------------------------------------------------------------------------
 ---- DB GET
 --------------------------------------------------------------------------------
@@ -96,6 +99,15 @@ DB.Objects.GetAll                 = 'select * from objects'
 DB.Objects.GetByID                = 'select * from objects where ItemID=@ItemID'
 
 DB.Events.GetAllUS                = 'select * from events where SteamID=@SteamID and CharID=@CharID'
+
+DB.Properties.GetByHouseID        = 'select * from properties where HouseID=@HouseID'
+DB.Properties.GetByKeyID          = 'select * from properties where KeyID=@KeyID'
+DB.Properties.GetAllUser          = 'select * from properties where SteamID=@SteamID'
+
+DB.System.GetAll                  = 'select * from _system'
+DB.DoorLocks.GetAll               = 'select * from doorlocks'
+DB.DoorLocks.GetViaHash           = 'select * from doorlocks where Hash=@Hash'
+DB.DoorLocks.GetAllViaHouseID     = 'select * from doorlocks where HouseID=@HouseID'
 --------------------------------------------------------------------------------
 ---- DB Insert
 --------------------------------------------------------------------------------
@@ -118,6 +130,9 @@ DB.Animals.Insert                = 'insert into animals (SteamID, CharID, Type, 
 DB.Logs.Insert                   = 'insert into logs (SteamID, `Group`, Module, Type, Date, Time, Log) values (@SteamID, @Group, @Module, @Type, @Date, @Time, @Log)'
 DB.Objects.Insert                = 'insert into objects (SteamID, InUse, Item, ItemID, HashID, Coords, Unix, Meta) values (@SteamID, @InUse, @Item, @ItemID, @HashID, @Coords, @Unix, @Meta)'
 DB.Events.Insert                 = 'insert into events (SteamID, CharID, Type, Employer, StartTime, EndTime, Meta) values (@SteamID, @CharID, @Type, @Employer, @StartTime, @EndTime, @Meta)'
+DB.Properties.Insert             = 'insert into properties (SteamID, CharID, HouseID, `Keys`) values (@SteamID, @CharID, @HouseID, @Keys)'
+DB.System.Insert                 = 'insert into _system (Properties_Doors) values (@Properties_Doors)'
+DB.DoorLocks.Insert              = 'insert into doorlocks (Name, Hash, Model, State, Owned, HouseID, KeyID, Coords) values (@Name, @Hash, @Model, @State, @Owned, @HouseID, @KeyID, @Coords)'
 --------------------------------------------------------------------------------
 ---- DB Set / Update
 --------------------------------------------------------------------------------
@@ -183,6 +198,13 @@ DB.Stables.SetUSIsStored         = 'update stables set IsStored=@IsStored where 
 DB.Objects.SetUnixViaID          = 'update objects set Unix=@Unix where ItemID=@ItemID'
 DB.Objects.SetAllToNil           = 'update objects set ItemID=null'
 DB.Objects.SetNewItemID          = 'update objects set ItemID=@ItemID where HashID=@HashID'
+
+DB.Properties.SetDoorsByID       = 'update properties set Doors=@Doors where HouseID=@HouseID'
+
+DB.System.SetPropertyDoors       = 'update _system set Properties_Doors=@Properties_Doors'
+DB.DoorLocks.SetKeyIDViaHash     = 'update doorlocks set KeyID=@KeyID where Hash=@Hash'
+DB.DoorLocks.SetStatusViaHash    = 'update doorlocks set State=@State where Hash=@Hash'
+DB.DoorLocks.SetHouseIDViaHash   = 'update doorlocks set HouseID=@HouseID where Hash=@Hash'
 --------------------------------------------------------------------------------
 ---- DB Delete
 --------------------------------------------------------------------------------

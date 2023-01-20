@@ -94,10 +94,10 @@ function IsIpAddress(ip)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-function SpawnNPC(_, Coords, Heading)
+function SpawnNPC(_, Coords, Heading, Network)
   local _ = GetHashKey(_)
   while not HasModelLoaded(_) do RequestModel(_) Wait(1) end
-  local SpawnNPCs = Citizen.InvokeNative(0xD49F9B0955C367DE, _, Coords, Heading, true, 0, 0, Citizen.ResultAsInteger())
+  local SpawnNPCs = Citizen.InvokeNative(0xD49F9B0955C367DE, _, Coords, Heading, Network, 0, 0, Citizen.ResultAsInteger())
   Citizen.InvokeNative(0x1794B4FCC84D812F, SpawnNPCs, 1) -- SetEntityVisible
   Citizen.InvokeNative(0x0DF7692B1D9E7BA7, SpawnNPCs, 255, false) -- SetEntityAlpha
   Citizen.InvokeNative(0x283978A15512B2FE, SpawnNPCs, true) -- SetRandomOutfitVariation

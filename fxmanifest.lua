@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 description 'DokusCore - A RedM Framework - By DevDokus'
 author 'DevDokus Github - https://DokusCore.Com'
-version '0.6.94'
+version '0.7.0'
 -- version '-----' -- For development
 dependencies { 'oxmysql', 'pNotify' }
 --------------------------------------------------------------------------------

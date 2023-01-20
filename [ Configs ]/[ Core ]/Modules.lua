@@ -14,15 +14,20 @@ _Modules          = {
   Characters      = true,  -- Required ( In Progress )
   Clothing        = true,  -- Required ( In Progress )
   CoreMenu        = true,  -- Required ( In Progress )
+  DoorLocks       = true,  -- Required ( In Progress )
   FastTravel      = true,  -- Optional ( In Progress )
   Guidance        = true,  -- Required ( In Progress )
   GunStore        = true,  -- Optional ( In Progress )
   Instruments     = true,  -- Optional ( In Progress )
   Inventory       = true,  -- Required ( In Progress )
+  LumberJack      = true,  -- Optional ( In Progress )
   Metabolism      = true,  -- Required ( In Progress )
   NPCInteract     = true,  -- Required ( In Progress )
   NPCMenu         = true,  -- Required ( In Progress )
-  OneFix          = true,  -- Optional
+  OneFix          = true,  -- Optional ( In Progress )
+  Properties      = true,  -- Optional ( In Progress )
+  Quests          = true,  -- Required ( In Progress )
+  SafeGuard       = true,  -- Optional ( In Progress )
   Scavenger       = true,  -- Optional ( In Progress )
   ScratchCards    = true,  -- Optional ( In Progress )
   Skins           = true,  -- Optional ( In Progress )
@@ -51,8 +56,6 @@ _Modules          = {
   Boats           = false,   -- Working on ( Leave off to prevent issues )
   Customs         = false,   -- Working on ( Leave off to prevent issues )
   Prospecting     = false,   -- Working on ( Leave off to prevent issues )
-  LumberJack      = true,
-  SafeGuard       = true,
  }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

@@ -138,6 +138,16 @@ AddEventHandler('DokusCore:Core:System:CheckUpdates', function()
     if ((VersionMatch))     then print([[^6#    ^2 Customs        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
   end
 
+  -- DokusCore DoorLocks
+  if (Mod.DoorLocks) then
+    for k,v in pairs(Arr) do if (v.Plugin == 'DoorLocks') then Plugin = { Date = v.Date, Version = v.Version } end end
+    for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--DoorLocks') then PluginN, PluginV = v.Name, v.Version end end
+    local VersionMatch = (tostring(PluginV) == tostring(Plugin.Version))
+    if (not (VersionMatch)) then NeedsUpdating = true end
+    if (not (VersionMatch)) then print([[^6#    ^1 DoorLocks        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if ((VersionMatch))     then print([[^6#    ^2 DoorLocks        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+  end
+
   -- DokusCore FastTravel
   if (Mod.FastTravel) then
     for k,v in pairs(Arr) do if (v.Plugin == 'FastTravel') then Plugin = { Date = v.Date, Version = v.Version } end end
@@ -246,6 +256,16 @@ AddEventHandler('DokusCore:Core:System:CheckUpdates', function()
     if (not (VersionMatch)) then NeedsUpdating = true end
     if (not (VersionMatch)) then print([[^6#    ^1 OneFix           ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
     if ((VersionMatch))     then print([[^6#    ^2 OneFix           ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+  end
+
+  -- DokusCore Properties
+  if (Mod.Properties) then
+    for k,v in pairs(Arr) do if (v.Plugin == 'Properties') then Plugin = { Date = v.Date, Version = v.Version } end end
+    for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Properties') then PluginN, PluginV = v.Name, v.Version end end
+    local VersionMatch = (tostring(PluginV) == tostring(Plugin.Version))
+    if (not (VersionMatch)) then NeedsUpdating = true end
+    if (not (VersionMatch)) then print([[^6#    ^1 Properties       ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if ((VersionMatch))     then print([[^6#    ^2 Properties       ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
   end
 
   -- DokusCore Prospecting
@@ -554,6 +574,11 @@ end)
 --       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--OneFix') then PluginN, PluginV = v.Name, v.Version end end
 --       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
 --     end
+--     if (_Modules.Properties) then
+--       for k,v in pairs(Arr) do if (v.Plugin == 'Properties') then Plugin = { Date = v.Date, Version = v.Version } end end
+--       for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Properties') then PluginN, PluginV = v.Name, v.Version end end
+--       if ((PluginV ~= nil) and (tostring(PluginV) ~= tostring(Plugin.Version))) then NeedsUpdating = true end
+--     end
 --
 --     if (_Modules.Prospecting) then
 --       for k,v in pairs(Arr) do if (v.Plugin == 'Prospecting') then Plugin = { Date = v.Date, Version = v.Version } end end
@@ -803,6 +828,16 @@ CreateThread(function() Wait(5000)
     if ((VersionMatch))     then print([[^6#    ^2 Customs          ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
   end
 
+  -- DokusCore DoorLocks
+  if (Mod.DoorLocks) then
+    for k,v in pairs(Arr) do if (v.Plugin == 'DoorLocks') then Plugin = { Date = v.Date, Version = v.Version } end end
+    for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--DoorLocks') then PluginN, PluginV = v.Name, v.Version end end
+    local VersionMatch = (tostring(PluginV) == tostring(Plugin.Version))
+    if (not (VersionMatch)) then NeedsUpdating = true end
+    if (not (VersionMatch)) then print([[^6#    ^1 DoorLocks        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if ((VersionMatch))     then print([[^6#    ^2 DoorLocks        ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+  end
+
   -- DokusCore FastTravel
   if (Mod.FastTravel) then
     for k,v in pairs(Arr) do if (v.Plugin == 'FastTravel') then Plugin = { Date = v.Date, Version = v.Version } end end
@@ -913,14 +948,24 @@ CreateThread(function() Wait(5000)
     if ((VersionMatch))     then print([[^6#    ^2 OneFix           ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
   end
 
+  -- DokusCore Properties
+  if (Mod.Properties) then
+    for k,v in pairs(Arr) do if (v.Plugin == 'Properties') then Plugin = { Date = v.Date, Version = v.Version } end end
+    for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Properties') then PluginN, PluginV = v.Name, v.Version end end
+    local VersionMatch = (tostring(PluginV) == tostring(Plugin.Version))
+    if (not (VersionMatch)) then NeedsUpdating = true end
+    if (not (VersionMatch)) then print([[^6#    ^1 Properties       ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if ((VersionMatch))     then print([[^6#    ^2 Properties       ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+  end
+
   -- DokusCore Prospecting
   if (Mod.Prospecting) then
     for k,v in pairs(Arr) do if (v.Plugin == 'Prospecting') then Plugin = { Date = v.Date, Version = v.Version } end end
     for k,v in pairs(PluginVersions) do if (v.Name == 'DokusCore--Prospecting') then PluginN, PluginV = v.Name, v.Version end end
     local VersionMatch = (tostring(PluginV) == tostring(Plugin.Version))
     if (not (VersionMatch)) then NeedsUpdating = true end
-    if (not (VersionMatch)) then print([[^6#    ^1 Prospecting      ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
-    if ((VersionMatch))     then print([[^6#    ^2 Prospecting      ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if (not (VersionMatch)) then print([[^6#    ^1 Prospecting     ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^1]]..tostring(PluginV)..[[      ^6|         ^2]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
+    if ((VersionMatch))     then print([[^6#    ^2 Prospecting     ^6| ^5]]..tostring(Plugin.Date)..[[ ^6|      ^5]]..tostring(PluginV)..[[      ^6|         ^5]]..tostring(Plugin.Version)..[[          ^6#^0]])Wait(150) end
   end
 
   -- DokusCore Quests
