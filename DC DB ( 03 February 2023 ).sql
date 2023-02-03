@@ -1,22 +1,20 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               10.4.25-MariaDB - mariadb.org binary distribution
+-- Server version:               10.11.1-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
--- HeidiSQL Version:             12.2.0.6576
+-- HeidiSQL Version:             11.3.0.6295
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
 -- Dumping database structure for dokuscore
-CREATE DATABASE IF NOT EXISTS `dokuscore` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE IF NOT EXISTS `dokuscore` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
 USE `dokuscore`;
 
 -- Dumping structure for table dokuscore.animals
@@ -30,9 +28,11 @@ CREATE TABLE IF NOT EXISTS `animals` (
   `XP` int(11) DEFAULT 0,
   `Meta` longtext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dumping data for table dokuscore.animals: ~0 rows (approximately)
+/*!40000 ALTER TABLE `animals` DISABLE KEYS */;
+/*!40000 ALTER TABLE `animals` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.banks
 CREATE TABLE IF NOT EXISTS `banks` (
@@ -45,9 +45,11 @@ CREATE TABLE IF NOT EXISTS `banks` (
   `Gold` float NOT NULL,
   `Synced` varchar(5000) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.banks: ~0 rows (approximately)
+/*!40000 ALTER TABLE `banks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `banks` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.blacklist
 CREATE TABLE IF NOT EXISTS `blacklist` (
@@ -62,9 +64,11 @@ CREATE TABLE IF NOT EXISTS `blacklist` (
   `MLive` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `Steam` (`Steam`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.blacklist: ~0 rows (approximately)
+/*!40000 ALTER TABLE `blacklist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `blacklist` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.boats
 CREATE TABLE IF NOT EXISTS `boats` (
@@ -77,9 +81,11 @@ CREATE TABLE IF NOT EXISTS `boats` (
   `Storage` longtext DEFAULT '[]',
   `Coords` longtext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.boats: ~0 rows (approximately)
+/*!40000 ALTER TABLE `boats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `boats` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.characters
 CREATE TABLE IF NOT EXISTS `characters` (
@@ -97,9 +103,11 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `Skin` varchar(5000) DEFAULT NULL,
   `Clothing` varchar(5000) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.characters: ~0 rows (approximately)
+/*!40000 ALTER TABLE `characters` DISABLE KEYS */;
+/*!40000 ALTER TABLE `characters` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.doorlocks
 CREATE TABLE IF NOT EXISTS `doorlocks` (
@@ -114,9 +122,11 @@ CREATE TABLE IF NOT EXISTS `doorlocks` (
   `Coords` longtext NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `KeyID` (`KeyID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dumping data for table dokuscore.doorlocks: ~0 rows (approximately)
+/*!40000 ALTER TABLE `doorlocks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `doorlocks` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.events
 CREATE TABLE IF NOT EXISTS `events` (
@@ -129,9 +139,11 @@ CREATE TABLE IF NOT EXISTS `events` (
   `EndTime` int(11) DEFAULT NULL,
   `Meta` longtext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.events: ~0 rows (approximately)
+/*!40000 ALTER TABLE `events` DISABLE KEYS */;
+/*!40000 ALTER TABLE `events` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.experience
 CREATE TABLE IF NOT EXISTS `experience` (
@@ -144,9 +156,11 @@ CREATE TABLE IF NOT EXISTS `experience` (
   `Farming` longtext DEFAULT NULL,
   `Skills` longtext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.experience: ~0 rows (approximately)
+/*!40000 ALTER TABLE `experience` DISABLE KEYS */;
+/*!40000 ALTER TABLE `experience` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.inventory
 CREATE TABLE IF NOT EXISTS `inventory` (
@@ -158,9 +172,11 @@ CREATE TABLE IF NOT EXISTS `inventory` (
   `Amount` int(11) DEFAULT NULL,
   `Meta` text DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.inventory: ~0 rows (approximately)
+/*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
+/*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.logs
 CREATE TABLE IF NOT EXISTS `logs` (
@@ -173,9 +189,11 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `Time` time DEFAULT NULL,
   `Log` text DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dumping data for table dokuscore.logs: ~0 rows (approximately)
+/*!40000 ALTER TABLE `logs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `logs` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.metabolism
 CREATE TABLE IF NOT EXISTS `metabolism` (
@@ -186,9 +204,11 @@ CREATE TABLE IF NOT EXISTS `metabolism` (
   `Hunger` float NOT NULL DEFAULT 100,
   `Thirst` float NOT NULL DEFAULT 100,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.metabolism: ~0 rows (approximately)
+/*!40000 ALTER TABLE `metabolism` DISABLE KEYS */;
+/*!40000 ALTER TABLE `metabolism` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.objects
 CREATE TABLE IF NOT EXISTS `objects` (
@@ -202,9 +222,11 @@ CREATE TABLE IF NOT EXISTS `objects` (
   `Unix` int(11) DEFAULT NULL,
   `Meta` longtext DEFAULT '[]',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dumping data for table dokuscore.objects: ~0 rows (approximately)
+/*!40000 ALTER TABLE `objects` DISABLE KEYS */;
+/*!40000 ALTER TABLE `objects` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.outfits
 CREATE TABLE IF NOT EXISTS `outfits` (
@@ -214,9 +236,11 @@ CREATE TABLE IF NOT EXISTS `outfits` (
   `Name` text DEFAULT NULL,
   `Outfit` longtext NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.outfits: ~0 rows (approximately)
+/*!40000 ALTER TABLE `outfits` DISABLE KEYS */;
+/*!40000 ALTER TABLE `outfits` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.properties
 CREATE TABLE IF NOT EXISTS `properties` (
@@ -226,9 +250,11 @@ CREATE TABLE IF NOT EXISTS `properties` (
   `HouseID` int(11) DEFAULT NULL,
   `Keys` longtext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.properties: ~0 rows (approximately)
+/*!40000 ALTER TABLE `properties` DISABLE KEYS */;
+/*!40000 ALTER TABLE `properties` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.settings
 CREATE TABLE IF NOT EXISTS `settings` (
@@ -239,9 +265,11 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `Volume` float DEFAULT 0.3,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `Steam` (`Steam`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.settings: ~0 rows (approximately)
+/*!40000 ALTER TABLE `settings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.stables
 CREATE TABLE IF NOT EXISTS `stables` (
@@ -263,9 +291,11 @@ CREATE TABLE IF NOT EXISTS `stables` (
   `Dirt` int(10) unsigned DEFAULT NULL,
   `Price` float DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dumping data for table dokuscore.stables: ~0 rows (approximately)
+/*!40000 ALTER TABLE `stables` DISABLE KEYS */;
+/*!40000 ALTER TABLE `stables` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.storages
 CREATE TABLE IF NOT EXISTS `storages` (
@@ -278,9 +308,11 @@ CREATE TABLE IF NOT EXISTS `storages` (
   `Coords` varchar(150) DEFAULT NULL,
   `Expiration` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.storages: ~0 rows (approximately)
+/*!40000 ALTER TABLE `storages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `storages` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -293,9 +325,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   `MLive` varchar(50) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `Steam` (`Steam`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.users: ~0 rows (approximately)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.weapons
 CREATE TABLE IF NOT EXISTS `weapons` (
@@ -309,9 +343,11 @@ CREATE TABLE IF NOT EXISTS `weapons` (
   `Ammo_Regular` int(11) DEFAULT NULL,
   `Equiped` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dumping data for table dokuscore.weapons: ~0 rows (approximately)
+/*!40000 ALTER TABLE `weapons` DISABLE KEYS */;
+/*!40000 ALTER TABLE `weapons` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore.whitelist
 CREATE TABLE IF NOT EXISTS `whitelist` (
@@ -323,9 +359,11 @@ CREATE TABLE IF NOT EXISTS `whitelist` (
   `Reason` varchar(50) DEFAULT NULL,
   UNIQUE KEY `Steam` (`Steam`),
   KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore.whitelist: ~0 rows (approximately)
+/*!40000 ALTER TABLE `whitelist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `whitelist` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore._data_clothes_female
 CREATE TABLE IF NOT EXISTS `_data_clothes_female` (
@@ -336,9 +374,10 @@ CREATE TABLE IF NOT EXISTS `_data_clothes_female` (
   `cHash` varchar(50) DEFAULT NULL,
   `Name` tinytext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5448 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5448 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore._data_clothes_female: ~5,617 rows (approximately)
+/*!40000 ALTER TABLE `_data_clothes_female` DISABLE KEYS */;
 INSERT INTO `_data_clothes_female` (`ID`, `Price`, `Type`, `Hash`, `cHash`, `Name`) VALUES
 	(1, 0, 'eyewear', '25757734', '98860198', ''),
 	(2, 0, 'eyewear', '232285778', '98860198', ''),
@@ -5787,6 +5826,7 @@ INSERT INTO `_data_clothes_female` (`ID`, `Price`, `Type`, `Hash`, `cHash`, `Nam
 	(5445, 0, 'belt_buckles', '4069732429', '4209578111', 'clothing_item_f_season_buckle_003_var_003'),
 	(5446, 0, 'belt_buckles', '2794616614', '4209578111', 'clothing_item_f_season_buckle_001_var_004'),
 	(5447, 0, 'belt_buckles', '3839726818', '4209578111', 'clothing_item_f_season_buckle_003_var_004');
+/*!40000 ALTER TABLE `_data_clothes_female` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore._data_clothes_male
 CREATE TABLE IF NOT EXISTS `_data_clothes_male` (
@@ -5797,9 +5837,10 @@ CREATE TABLE IF NOT EXISTS `_data_clothes_male` (
   `cHash` varchar(50) DEFAULT NULL,
   `Name` tinytext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5381 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5381 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore._data_clothes_male: ~5,544 rows (approximately)
+/*!40000 ALTER TABLE `_data_clothes_male` DISABLE KEYS */;
 INSERT INTO `_data_clothes_male` (`ID`, `Price`, `Type`, `Hash`, `cHash`, `Name`) VALUES
 	(1, 0, 'eyewear', '143997640', '98860198', ''),
 	(2, 0, 'eyewear', '442424923', '98860198', ''),
@@ -11181,6 +11222,7 @@ INSERT INTO `_data_clothes_male` (`ID`, `Price`, `Type`, `Hash`, `cHash`, `Name`
 	(5378, 0, 'belt_buckles', '1772586428', '4209578111', 'clothing_item_m_season_buckle_003_var_004'),
 	(5379, 0, 'belt_buckles', '2553701081', '4209578111', 'clothing_item_m_season_buckle_003_var_003'),
 	(5380, 0, 'belt_buckles', '1635771202', '4209578111', 'clothing_m_r4_buckle_000_tint_001');
+/*!40000 ALTER TABLE `_data_clothes_male` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore._data_horse
 CREATE TABLE IF NOT EXISTS `_data_horse` (
@@ -11191,9 +11233,10 @@ CREATE TABLE IF NOT EXISTS `_data_horse` (
   `cHash` varchar(50) DEFAULT NULL,
   `Name` tinytext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=749 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=749 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore._data_horse: ~748 rows (approximately)
+/*!40000 ALTER TABLE `_data_horse` DISABLE KEYS */;
 INSERT INTO `_data_horse` (`ID`, `Price`, `Type`, `Hash`, `cHash`, `Name`) VALUES
 	(1, 0, 'saddle_horns', '59106054', '88372018', ''),
 	(2, 0, 'saddle_horns', '685478682', '88372018', ''),
@@ -11943,6 +11986,7 @@ INSERT INTO `_data_horse` (`ID`, `Price`, `Type`, `Hash`, `cHash`, `Name`) VALUE
 	(746, 0, 'horse_bedrolls', '1266550546', '4021492001', 'HORSE_EQUIPMENT_HORSE_BEDROLL_02_USED_000'),
 	(747, 0, 'horse_bedrolls', '2216458314', '4021492001', 'HORSE_EQUIPMENT_HORSE_BEDROLL_02_USED_003'),
 	(748, 0, 'horse_bedrolls', '659832507', '4021492001', 'HORSE_EQUIPMENT_HORSE_BEDROLL_02_USED_002');
+/*!40000 ALTER TABLE `_data_horse` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore._data_skin_female
 CREATE TABLE IF NOT EXISTS `_data_skin_female` (
@@ -11953,9 +11997,10 @@ CREATE TABLE IF NOT EXISTS `_data_skin_female` (
   `cHash` varchar(50) DEFAULT NULL,
   `Name` tinytext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=1904350297 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1904350297 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore._data_skin_female: ~702 rows (approximately)
+/*!40000 ALTER TABLE `_data_skin_female` DISABLE KEYS */;
 INSERT INTO `_data_skin_female` (`ID`, `Price`, `Type`, `Hash`, `cHash`, `Name`) VALUES
 	(6, 0, 'BODIES_UPPER', '2458758467', '188311241', 'CLOTHING_ITEM_F_BODIES_UPPER_001_V_001'),
 	(7, 0, 'BODIES_UPPER', '2161838558', '188311241', 'CLOTHING_ITEM_F_BODIES_UPPER_001_V_002'),
@@ -12659,6 +12704,7 @@ INSERT INTO `_data_skin_female` (`ID`, `Price`, `Type`, `Hash`, `cHash`, `Name`)
 	(717, 0, 'eyes', '2210319017', '3928274014', 'CLOTHING_ITEM_F_EYES_001_TINT_013'),
 	(718, 0, 'eyes', '2451302243', '3928274014', 'CLOTHING_ITEM_F_EYES_001_TINT_014'),
 	(719, 0, 'BODIES_UPPER', '1218117202', '188311241', '');
+/*!40000 ALTER TABLE `_data_skin_female` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore._data_skin_male
 CREATE TABLE IF NOT EXISTS `_data_skin_male` (
@@ -12669,9 +12715,10 @@ CREATE TABLE IF NOT EXISTS `_data_skin_male` (
   `cHash` varchar(50) DEFAULT NULL,
   `Name` tinytext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=1496 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1496 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore._data_skin_male: ~1,074 rows (approximately)
+/*!40000 ALTER TABLE `_data_skin_male` DISABLE KEYS */;
 INSERT INTO `_data_skin_male` (`ID`, `Price`, `Type`, `Hash`, `cHash`, `Name`) VALUES
 	(1, 0, 'BODIES_UPPER', '543187419', '188311241', ''),
 	(2, 0, 'BODIES_UPPER', '3212342147', '188311241', 'CLOTHING_ITEM_M_BODIES_UPPER_001_V_002'),
@@ -13747,6 +13794,7 @@ INSERT INTO `_data_skin_male` (`ID`, `Price`, `Type`, `Hash`, `cHash`, `Name`) V
 	(1084, 0, 'beard', '484622924', '4160842698', 'CLOTHING_ITEM_M_BEARD_018_SALT_PEPPER'),
 	(1085, 0, 'beard', '1050007297', '4160842698', 'CLOTHING_ITEM_M_BEARD_018_STRAWBERRY_BLONDE'),
 	(1086, 0, 'beard', '261793413', '4160842698', 'CLOTHING_ITEM_M_BEARD_018_UNCLE_GREY');
+/*!40000 ALTER TABLE `_data_skin_male` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore._items
 CREATE TABLE IF NOT EXISTS `_items` (
@@ -13775,9 +13823,10 @@ CREATE TABLE IF NOT EXISTS `_items` (
   `Event` varchar(100) DEFAULT NULL,
   `Meta` longtext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table dokuscore._items: ~73 rows (approximately)
+/*!40000 ALTER TABLE `_items` DISABLE KEYS */;
 INSERT INTO `_items` (`ID`, `Item`, `Name`, `Type`, `Description`, `CTI`, `CA`, `InvLimit`, `CanPlace`, `Delete`, `UseMeta`, `UseEvent`, `UseAnim`, `Hunger`, `Thirst`, `Health`, `Stamina`, `GHI`, `GHO`, `GSI`, `GSO`, `Animation`, `Event`, `Meta`) VALUES
 	(1, 'carrot', 'Carrot', 'Consumable', 'Its orange! Its healty!', NULL, 0, 10, 0, 1, 1, 0, 1, 5, 2, 0, 0, 0, 0, 0, 0, '{"Anim":"EAT_MULTI_BITE_FOOD_SPHERE_D8-2_SANDWICH_QUICK_LEFT_HAND"}', NULL, NULL),
 	(2, 'cigar', 'Cigar', 'Consumable', 'Be the boss, and smoke one of these fine brands!', NULL, 0, 50, 0, 1, 1, 0, 0, -5, -15, -8, -15, 30, 0, 0, 0, NULL, NULL, NULL),
@@ -13852,25 +13901,27 @@ INSERT INTO `_items` (`ID`, `Item`, `Name`, `Type`, `Description`, `CTI`, `CA`, 
 	(74, 'bark', 'Tree Bark', 'Mineral', 'The skin of the tree', NULL, 0, 30, 0, 0, 0, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{"Type":"Client", "Event":"DokusCore:UsableItems:ItemNoUse"}', NULL),
 	(75, 'treesap', 'Tree Sap', 'Mineral', 'Sap from a tree', NULL, 0, 50, 0, 0, 0, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{"Type":"Client", "Event":"DokusCore:UsableItems:ItemNoUse"}', NULL),
 	(76, 'stick', 'Tree Stick', 'Mineral', 'A stick from a tree', NULL, 0, 30, 0, 0, 0, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '{"Type":"Client", "Event":"DokusCore:UsableItems:ItemNoUse"}', NULL);
+/*!40000 ALTER TABLE `_items` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore._stores
 CREATE TABLE IF NOT EXISTS `_stores` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Item` varchar(50) COLLATE utf8mb4_bin NOT NULL,
-  `Name` varchar(50) COLLATE utf8mb4_bin NOT NULL DEFAULT '--',
-  `Type` varchar(50) COLLATE utf8mb4_bin DEFAULT '--',
-  `Description` longtext COLLATE utf8mb4_bin DEFAULT '--',
+  `Item` varchar(50) NOT NULL,
+  `Name` varchar(50) NOT NULL DEFAULT '--',
+  `Type` varchar(50) DEFAULT '--',
+  `Description` longtext DEFAULT '--',
   `Limit` int(11) NOT NULL DEFAULT 25,
   `Buy` float NOT NULL DEFAULT 0.1,
   `Sell` float NOT NULL DEFAULT 0.05,
-  `ItemData` longtext COLLATE utf8mb4_bin DEFAULT '--',
-  `Stock` longtext COLLATE utf8mb4_bin DEFAULT '--',
-  `Stores` longtext COLLATE utf8mb4_bin DEFAULT '--',
-  `Taxation` longtext COLLATE utf8mb4_bin DEFAULT '--',
+  `ItemData` longtext DEFAULT '--',
+  `Stock` longtext DEFAULT '--',
+  `Stores` longtext DEFAULT '--',
+  `Taxation` longtext DEFAULT '--',
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
 -- Dumping data for table dokuscore._stores: ~18 rows (approximately)
+/*!40000 ALTER TABLE `_stores` DISABLE KEYS */;
 INSERT INTO `_stores` (`ID`, `Item`, `Name`, `Type`, `Description`, `Limit`, `Buy`, `Sell`, `ItemData`, `Stock`, `Stores`, `Taxation`) VALUES
 	(1, 'carrot', 'Carrot', 'Consumable', 'Its orange! Its healty!', 100, 0.02, 0.01, '[{"Sell":0.01,"Buy":0.02,"Store":"Valentine"},{"Sell":0.01,"Buy":0.02,"Store":"SaintDenis"},{"Sell":0.01,"Buy":0.02,"Store":"Blackwater"},{"Sell":0.01,"Buy":0.02,"Store":"Tumbleweed"},{"Sell":0.01,"Buy":0.02,"Store":"Rhodes"},{"Sell":0.01,"Buy":0.02,"Store":"Armadillo"},{"Sell":0.01,"Buy":0.02,"Store":"Strawberry"}]', '[{"Stock":100,"Store":"Valentine"},{"Stock":100,"Store":"SaintDenis"},{"Stock":100,"Store":"Blackwater"},{"Stock":100,"Store":"Tumbleweed"},{"Stock":100,"Store":"Rhodes"},{"Stock":100,"Store":"Armadillo"},{"Stock":100,"Store":"Strawberry"}]', '[{"Buy":true,"Sell":true,"Store":"Valentine"},{"Buy":true,"Sell":true,"Store":"SaintDenis"},{"Buy":true,"Sell":true,"Store":"Blackwater"},{"Buy":true,"Sell":true,"Store":"Tumbleweed"},{"Buy":true,"Sell":true,"Store":"Rhodes"},{"Buy":true,"Sell":true,"Store":"Armadillo"},{"Buy":true,"Sell":true,"Store":"Strawberry"}]', '[{"bTax":0,"sTax":0,"Store":"Valentine"},{"bTax":0,"sTax":0,"Store":"SaintDenis"},{"bTax":0,"sTax":0,"Store":"Blackwater"},{"bTax":0,"sTax":0,"Store":"Tumbleweed"},{"bTax":0,"sTax":0,"Store":"Rhodes"},{"bTax":0,"sTax":0,"Store":"Armadillo"},{"bTax":0,"sTax":0,"Store":"Strawberry"}]'),
 	(2, 'cigar', 'Cigar', 'Consumable', 'Be the boss, and smoke one of these fine brands!', 50, 0.08, 0.03, '[{"Sell":0.01,"Buy":0.02,"Store":"Valentine"},{"Sell":0.01,"Buy":0.02,"Store":"SaintDenis"},{"Sell":0.01,"Buy":0.02,"Store":"Blackwater"},{"Sell":0.01,"Buy":0.02,"Store":"Tumbleweed"},{"Sell":0.01,"Buy":0.02,"Store":"Rhodes"},{"Sell":0.01,"Buy":0.02,"Store":"Armadillo"},{"Sell":0.01,"Buy":0.02,"Store":"Strawberry"}]', '[{"Stock":100,"Store":"Valentine"},{"Stock":100,"Store":"SaintDenis"},{"Stock":100,"Store":"Blackwater"},{"Stock":100,"Store":"Tumbleweed"},{"Stock":100,"Store":"Rhodes"},{"Stock":100,"Store":"Armadillo"},{"Stock":100,"Store":"Strawberry"}]', '[{"Buy":true,"Sell":true,"Store":"Valentine"},{"Buy":true,"Sell":true,"Store":"SaintDenis"},{"Buy":true,"Sell":true,"Store":"Blackwater"},{"Buy":true,"Sell":true,"Store":"Tumbleweed"},{"Buy":true,"Sell":true,"Store":"Rhodes"},{"Buy":true,"Sell":true,"Store":"Armadillo"},{"Buy":true,"Sell":true,"Store":"Strawberry"}]', '[{"bTax":0,"sTax":0,"Store":"Valentine"},{"bTax":0,"sTax":0,"Store":"SaintDenis"},{"bTax":0,"sTax":0,"Store":"Blackwater"},{"bTax":0,"sTax":0,"Store":"Tumbleweed"},{"bTax":0,"sTax":0,"Store":"Rhodes"},{"bTax":0,"sTax":0,"Store":"Armadillo"},{"bTax":0,"sTax":0,"Store":"Strawberry"}]'),
@@ -13890,15 +13941,20 @@ INSERT INTO `_stores` (`ID`, `Item`, `Name`, `Type`, `Description`, `Limit`, `Bu
 	(16, 'trumpet', 'Trumpet', 'Instrument', 'Its from brass, its annoying, don\'t buy it, don\'t play it!', 10, 12.75, 5.7, '[{"Sell":0.01,"Buy":0.02,"Store":"Valentine"},{"Sell":0.01,"Buy":0.02,"Store":"SaintDenis"},{"Sell":0.01,"Buy":0.02,"Store":"Blackwater"},{"Sell":0.01,"Buy":0.02,"Store":"Tumbleweed"},{"Sell":0.01,"Buy":0.02,"Store":"Rhodes"},{"Sell":0.01,"Buy":0.02,"Store":"Armadillo"},{"Sell":0.01,"Buy":0.02,"Store":"Strawberry"}]', '[{"Stock":100,"Store":"Valentine"},{"Stock":100,"Store":"SaintDenis"},{"Stock":100,"Store":"Blackwater"},{"Stock":100,"Store":"Tumbleweed"},{"Stock":100,"Store":"Rhodes"},{"Stock":100,"Store":"Armadillo"},{"Stock":100,"Store":"Strawberry"}]', '[{"Buy":true,"Sell":true,"Store":"Valentine"},{"Buy":true,"Sell":true,"Store":"SaintDenis"},{"Buy":true,"Sell":true,"Store":"Blackwater"},{"Buy":true,"Sell":true,"Store":"Tumbleweed"},{"Buy":true,"Sell":true,"Store":"Rhodes"},{"Buy":true,"Sell":true,"Store":"Armadillo"},{"Buy":true,"Sell":true,"Store":"Strawberry"}]', '[{"bTax":0,"sTax":0,"Store":"Valentine"},{"bTax":0,"sTax":0,"Store":"SaintDenis"},{"bTax":0,"sTax":0,"Store":"Blackwater"},{"bTax":0,"sTax":0,"Store":"Tumbleweed"},{"bTax":0,"sTax":0,"Store":"Rhodes"},{"bTax":0,"sTax":0,"Store":"Armadillo"},{"bTax":0,"sTax":0,"Store":"Strawberry"}]'),
 	(17, 'vanilla_flower', 'Vanilla Flower', 'Herbs', '--', 75, 0.2, 0.08, '[{"Buy":0.02,"Store":"Valentine","Sell":0.01},{"Buy":0.02,"Store":"SaintDenis","Sell":0.01},{"Buy":0.02,"Store":"Blackwater","Sell":0.01},{"Buy":0.02,"Store":"Tumbleweed","Sell":0.01},{"Buy":0.02,"Store":"Rhodes","Sell":0.01},{"Buy":0.02,"Store":"Armadillo","Sell":0.01},{"Buy":0.02,"Store":"Strawberry","Sell":0.01}]', '[{"Store":"Valentine","Stock":100},{"Store":"SaintDenis","Stock":100},{"Store":"Blackwater","Stock":100},{"Store":"Tumbleweed","Stock":100},{"Store":"Rhodes","Stock":100},{"Store":"Armadillo","Stock":100},{"Store":"Strawberry","Stock":100}]', '[{"Buy":true,"Store":"Valentine","Sell":true},{"Buy":true,"Store":"SaintDenis","Sell":true},{"Buy":true,"Store":"Blackwater","Sell":true},{"Buy":true,"Store":"Tumbleweed","Sell":true},{"Buy":true,"Store":"Rhodes","Sell":true},{"Buy":true,"Store":"Armadillo","Sell":true},{"Buy":true,"Store":"Strawberry","Sell":true}]', '[{"sTax":0,"Store":"Valentine","bTax":0},{"sTax":0,"Store":"SaintDenis","bTax":0},{"sTax":0,"Store":"Blackwater","bTax":0},{"sTax":0,"Store":"Tumbleweed","bTax":0},{"sTax":0,"Store":"Rhodes","bTax":0},{"sTax":0,"Store":"Armadillo","bTax":0},{"sTax":0,"Store":"Strawberry","bTax":0}]'),
 	(20, 'axe', 'Chopping Axe', 'Tool', 'For chopping those trees', 25, 1.5, 0.7, '[{"Buy":0.02,"Store":"Valentine","Sell":0.01},{"Buy":0.02,"Store":"SaintDenis","Sell":0.01},{"Buy":0.02,"Store":"Blackwater","Sell":0.01},{"Buy":0.02,"Store":"Tumbleweed","Sell":0.01},{"Buy":0.02,"Store":"Rhodes","Sell":0.01},{"Buy":0.02,"Store":"Armadillo","Sell":0.01},{"Buy":0.02,"Store":"Strawberry","Sell":0.01}]', '[{"Stock":100,"Store":"Valentine"},{"Stock":100,"Store":"SaintDenis"},{"Stock":100,"Store":"Blackwater"},{"Stock":100,"Store":"Tumbleweed"},{"Stock":100,"Store":"Rhodes"},{"Stock":100,"Store":"Armadillo"},{"Stock":100,"Store":"Strawberry"}]', '[{"Buy":true,"Store":"Valentine","Sell":true},{"Buy":true,"Store":"SaintDenis","Sell":true},{"Buy":true,"Store":"Blackwater","Sell":true},{"Buy":true,"Store":"Tumbleweed","Sell":true},{"Buy":true,"Store":"Rhodes","Sell":true},{"Buy":true,"Store":"Armadillo","Sell":true},{"Buy":true,"Store":"Strawberry","Sell":true}]', '[{"Store":"Valentine","sTax":0,"bTax":0},{"Store":"SaintDenis","sTax":0,"bTax":0},{"Store":"Blackwater","sTax":0,"bTax":0},{"Store":"Tumbleweed","sTax":0,"bTax":0},{"Store":"Rhodes","sTax":0,"bTax":0},{"Store":"Armadillo","sTax":0,"bTax":0},{"Store":"Strawberry","sTax":0,"bTax":0}]');
+/*!40000 ALTER TABLE `_stores` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore._system
 CREATE TABLE IF NOT EXISTS `_system` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Properties_Doors` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dumping data for table dokuscore._system: ~0 rows (approximately)
+-- Dumping data for table dokuscore._system: ~1 rows (approximately)
+/*!40000 ALTER TABLE `_system` DISABLE KEYS */;
+INSERT INTO `_system` (`ID`, `Properties_Doors`) VALUES
+	(1, 1);
+/*!40000 ALTER TABLE `_system` ENABLE KEYS */;
 
 -- Dumping structure for table dokuscore._zones
 CREATE TABLE IF NOT EXISTS `_zones` (
@@ -13915,9 +13971,10 @@ CREATE TABLE IF NOT EXISTS `_zones` (
   `OnExit` longtext DEFAULT NULL,
   `Vectors` longtext DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dumping data for table dokuscore._zones: ~13 rows (approximately)
+/*!40000 ALTER TABLE `_zones` DISABLE KEYS */;
 INSERT INTO `_zones` (`ID`, `Name`, `Type`, `City`, `GD`, `Poly`, `Grid`, `MinZ`, `MaxZ`, `OnEnter`, `OnExit`, `Vectors`) VALUES
 	(1, 'Stables', 'Zone', 'Valentine', 20, 0, 0, 115.16, 120.16, '[{"Event":"DokusCore:Stables:SayHello","Type":"client","Meta":[]}]', '[{"Event":"DokusCore:Stables:SayGoodbye","Type":"client","Meta":[]}]', '[{"x":-361.3900146484375,"y":780.2999877929688},{"x":-362.6499938964844,"y":794.2999877929688},{"x":-377.3800048828125,"y":793.7999877929688},{"x":-376.2200012207031,"y":779.2000122070313}]'),
 	(2, 'Stables', 'NPC', 'Valentine', 18, 0, 0, 115, 117.25, '[{"Event":"DokusCore:Stables:Start","Meta":[],"Type":"client"}]', '[{"Event":"DokusCore:Stables:Stop","Meta":[],"Type":"client"}]', '[{"x":-366.6400146484375,"y":790.5},{"x":-363.6300048828125,"y":789.7000122070313},{"x":-363.92999267578127,"y":792.6199951171875},{"x":-366.7900085449219,"y":792.6199951171875}]'),
@@ -13932,8 +13989,8 @@ INSERT INTO `_zones` (`ID`, `Name`, `Type`, `City`, `GD`, `Poly`, `Grid`, `MinZ`
 	(27, 'House 34306 Property', 'Zone', NULL, 15, 0, 0, 49, 60, '[{"Meta":{"HouseID":34306},"Type":"client","Event":"DokusCore:Properties:Zone:Enter"}]', '[{"Meta":{"HouseID":34306},"Type":"client","Event":"DokusCore:Properties:Zone:Exit"}]', '[{"x":1106.4599609375,"y":-1992.550048828125},{"x":1109.1500244140626,"y":-1997.6099853515626},{"x":1111.56005859375,"y":-2002.699951171875},{"x":1123.52001953125,"y":-2000.6400146484376},{"x":1131.68994140625,"y":-1999.1800537109376},{"x":1129.06005859375,"y":-1973.25},{"x":1118.2099609375,"y":-1976.5799560546876},{"x":1104.8299560546876,"y":-1983.75}]'),
 	(29, 'House 55298 Property', 'Zone', NULL, 12, 0, 0, 180, 200, '[{"Event":"DokusCore:Properties:Zone:Enter","Meta":{"HouseID":55298},"Type":"client"}]', '[{"Event":"DokusCore:Properties:Zone:Exit","Meta":[],"Type":"client"}]', '[{"x":193.82000732421876,"y":1012.8400268554688},{"x":201.27999877929688,"y":1014.530029296875},{"x":207.52999877929688,"y":1013.280029296875},{"x":218.9499969482422,"y":1010.3599853515625},{"x":226.67999267578126,"y":1007.72998046875},{"x":230.02000427246095,"y":1004.8400268554688},{"x":231.55999755859376,"y":1001.4000244140625},{"x":232.1999969482422,"y":994.0499877929688},{"x":237.72999572753907,"y":993.5700073242188},{"x":237.7899932861328,"y":989.1699829101563},{"x":230.89999389648438,"y":989.0700073242188},{"x":227.3699951171875,"y":977.4199829101563},{"x":220.7899932861328,"y":967.2000122070313},{"x":216.6300048828125,"y":964.25},{"x":206.41000366210938,"y":964.1199951171875},{"x":198.33999633789063,"y":965.8599853515625},{"x":191.89999389648438,"y":971.969970703125},{"x":189.08999633789063,"y":980.8400268554688},{"x":187.25,"y":996.6599731445313},{"x":189.3000030517578,"y":1005.2100219726563},{"x":190.8300018310547,"y":1011.280029296875}]'),
 	(30, 'House 32514 Property', 'Zone', NULL, 10, 0, 0, 75, 95, '[{"Type":"client","Meta":{"HouseID":32514},"Event":"DokusCore:Properties:Zone:Enter"}]', '[{"Type":"client","Meta":[],"Event":"DokusCore:Properties:Zone:Exit"}]', '[{"x":-612.52001953125,"y":4.01000022888183},{"x":-602.2000122070313,"y":-10.84000015258789},{"x":-595.469970703125,"y":-40.84000015258789},{"x":-600.719970703125,"y":-63.20999908447265},{"x":-621.8900146484375,"y":-78.3499984741211},{"x":-638.5399780273438,"y":-78.61000061035156},{"x":-646.719970703125,"y":-55.52999877929687},{"x":-640.3200073242188,"y":-32.04999923706055},{"x":-628.8699951171875,"y":-6.57999992370605}]');
+/*!40000 ALTER TABLE `_zones` ENABLE KEYS */;
 
-/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

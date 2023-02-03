@@ -118,7 +118,8 @@ _CoreMenu = {
   LangList3 = {
     Name = 'LangList3',
     Options = {
-      { Type = 'Option', Option = 'Finnish',  Title = '[ Q ] Finnish'  },
+      { Type = 'Option', Option = 'Finnish',   Title = '[ Q ] Finnish'  },
+      { Type = 'Option', Option = 'Romanian',  Title = '[ W ] Romanian'  },
     }
   },
 

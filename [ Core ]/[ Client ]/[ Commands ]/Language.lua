@@ -37,6 +37,7 @@ AddEventHandler('DokusCore:Core:Commands:SetLanguage', function(args)
     if ((L == 'nl') or (L == 'dutch') or (L == 'nederlands')) then return {'nl', 'Dutch'} end
     if ((L == 'es') or (L == 'espanol') or (L == 'spanish')) then return {'es', 'Spanish'} end
     if ((L == 'fi') or (L == 'finnish')) then return {'fi', 'Finnish'} end
+    if ((L == 'ro') or (L == 'romanian')) then return {'ro', 'Romanian'} end
     return false
   end
 

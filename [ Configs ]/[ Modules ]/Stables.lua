@@ -50,6 +50,7 @@ _Stables = {
   Horse = {
     Call   = { Radius = 100.0, Speed = 2.0, Dist = 5.0 },
     Follow = { Radius = 30.0,  Speed = 1.0 },
+    Stay   = { Radius = 10.0 },
   },
 
   HorsePos = {
