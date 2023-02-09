@@ -3,6 +3,9 @@
 --------------------------------------------------------------------------------
 local Low = string.lower
 local GodMode = false
+local IsDead = false
+local Coords = nil
+local IsRespawning = false
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 RegisterNetEvent('DokusCore:Core:Admin:Commands:GodMode', function()
@@ -31,13 +34,31 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:GodMode', function()
       TriggerEvent('DokusCore:Metabolism:Set:InnerGold:Health',   { 3 })
       TriggerEvent('DokusCore:Metabolism:Set:OuterGold:Health',   { 3 })
       NoteObjective("God Mode", "God Mode is enabled!", "Horn", 5000)
+
       while (GodMode) do Wait(1000)
+        local Dead = IsPedDeadOrDying(PedID())
+        Coords = GetCoords(PedID())
+        if ((Dead == 1) or (Dead) and (not (IsRespawning))) then IsDead, IsRespawning = true, true end
+        if ((Dead == 1) or (Dead)) then SetVisible(PedID(), false) end
         local Sync = TCTCC('DokusCore:Sync:Get:UserData')
         if (not (Sync.UserInGame)) then GodMode = false end
-        TriggerEvent('DokusCore:Metabolism:Edit:Hunger',  { 100 })
-        TriggerEvent('DokusCore:Metabolism:Edit:Thirst',  { 100 })
-        TriggerEvent('DokusCore:Metabolism:Edit:Health',  { 100 })
-        TriggerEvent('DokusCore:Metabolism:Edit:Stamina', { 100 })
+        if (not (IsDead) and (not (IsRespawning))) then
+          TriggerEvent('DokusCore:Metabolism:Edit:Hunger',  { 100 })
+          TriggerEvent('DokusCore:Metabolism:Edit:Thirst',  { 100 })
+          TriggerEvent('DokusCore:Metabolism:Edit:Health',  { 100 })
+          TriggerEvent('DokusCore:Metabolism:Edit:Stamina', { 100 })
+        else
+          while (IsRespawning) do Wait(0)
+            local Dead = IsPlayerDead(PedID())
+            while (Dead) do Wait(0) print("Dead") end
+            IsDead, IsRespawning = true, true
+            SetVisible(PedID(), false) Wait(2000)
+            SetCoords(PedID(), Coords)
+            SetVisible(PedID(), true)
+            IsDead, IsRespawning = false, false
+            Wait(100)
+          end
+        end
       end
     else
       TriggerEvent('DokusCore:SafeGuard:Anti:AdminAbuse', 'GodMode')
@@ -50,5 +71,8 @@ RegisterNetEvent('DokusCore:Core:Admin:Commands:GodMode', function()
   if IsForAdmins and IsAdmin then DoThis() end
   if IsForOwners and IsOwner then DoThis() end
 end, false)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

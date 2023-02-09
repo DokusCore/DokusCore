@@ -17,6 +17,10 @@
 CREATE DATABASE IF NOT EXISTS `dokuscore` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
 USE `dokuscore`;
 
+-- Drop tables that are altered.
+DROP TABLE IF EXISTS `_items`;
+DROP TABLE IF EXISTS `_stores`;
+
 -- Dumping structure for table dokuscore._items
 CREATE TABLE IF NOT EXISTS `_items` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,

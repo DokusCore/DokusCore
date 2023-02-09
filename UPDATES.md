@@ -2,10 +2,19 @@
 ############################ [ DokusCore Updates ] #############################
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+# Update v0.7.12
+--------------------------------------------------------------------------------
+- Fixed: Invincibility would exclude fall damage. If you would die whilst having
+  god mode on, you would infinite black screen. This is now solved, and you'll
+  also be teleported back to your death location.
+- Added: Function `GetItemName(Label)` that will retrieve the item name of the
+  database, via the items hash instead of scripting multiple lines of code.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 # Update v0.7.11
 --------------------------------------------------------------------------------
 - Changed: Discord Rich preset is opened up and can now be changed by server
-  owners to their own settins.
+  owners to their own settings.
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 # Update v0.7.1

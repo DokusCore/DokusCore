@@ -293,7 +293,13 @@ function CreateLog(Module, Event, Msg)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
+function GetItemName(ID)
+  local Name = nil
+  local Items = TSC('DokusCore:Core:DBGet:Items')
+  for k,v in pairs(Items) do
+    if (Low(v.Item) == Low(ID)) then Name = v.Name end
+  end return Name
+end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
