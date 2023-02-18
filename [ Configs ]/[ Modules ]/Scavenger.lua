@@ -70,6 +70,24 @@ _Scavenger = {
       { ID = 'River', Hash = -1308233316, Name = 'No Name' },
       { ID = 'River', Hash = -196675805,  Name = 'No Name' },
     }
+  },
+
+  Mining = {
+    Locations = {
+      { ID = 'Mine1', Range = 50.0, MaxRocks = 10, Coords = vec3(2307.2, 1113.7, 122.0)  },
+      { ID = 'Mine2', Range = 50.0, MaxRocks = 10, Coords = vec3(729.7, 2209.0, 231.5)   },
+      { ID = 'Mine3', Range = 50.0, MaxRocks = 10, Coords = vec3(-2146.1, -140.0, 217.7) },
+      { ID = 'Mine4', Range = 50.0, MaxRocks = 10, Coords = vec3(-1769.1, -3908.4, 36.9) },
+      { ID = 'Mine5', Range = 50.0, MaxRocks = 10, Coords = vec3(-5590.4, -4932.8, -1.8) },
+    },
+
+    Rewards = {
+      { ID = 'mineral_copper', Name = 'Copper',        LuckNr = 3,  Chance = { Min = 1, Max = 3  },  Amount = { Min = 1, Max = 3 } },
+      { ID = 'mineral_iron',   Name = 'Iron',          LuckNr = 2,  Chance = { Min = 1, Max = 3  },  Amount = { Min = 1, Max = 5 } },
+      { ID = 'mineral_sulfur', Name = 'sulfur',        LuckNr = 2,  Chance = { Min = 1, Max = 3  },  Amount = { Min = 1, Max = 5 } },
+      { ID = 'silver_nugget',  Name = 'Silver Nugget', LuckNr = 5,  Chance = { Min = 1, Max = 10 },  Amount = { Min = 1, Max = 3 } },
+      { ID = 'gold_nugget',    Name = 'Gold Nugget',   LuckNr = 15, Chance = { Min = 1, Max = 30 },  Amount = { Min = 1, Max = 3 } },
+    }
   }
 }
 

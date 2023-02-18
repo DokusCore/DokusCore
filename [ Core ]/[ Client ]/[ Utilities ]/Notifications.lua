@@ -42,7 +42,7 @@ end)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 RegisterNetEvent('DokusCore:Core:ShowtextRight', function(Msg, Time)
-  exports.DokusCore:ShowtextRight(tostring(Msg), tonumber(Time))
+  exports.DokusCore:ShowSimpleRightText(tostring(Msg), tonumber(Time))
 end)
 
 

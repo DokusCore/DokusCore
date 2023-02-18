@@ -1,0 +1,39 @@
+--------------------------------------------------------------------------------
+---------------------------------- DokusCore -----------------------------------
+--------------------------------------------------------------------------------
+
+These are the database update files you need for the new released plugins on the
+DokusCore Framework. These files are made to make your life a lot easier, as
+these files will update and alter the database for you whilst not touching your
+server data.
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+# When you have no DokusCore server running - First installment:
+--------------------------------------------------------------------------------
+If this is the first time you setup a DokusCore server, you do not need to worry
+about the update files!!! The updates are already integrated into the database
+installation files within the `[ Install ]` folder.
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+# Backup your database!
+--------------------------------------------------------------------------------
+Make sure you have a backup of your database BEFORE running one of the update
+files. we do not touch your custom plugin or user data, but might anything go
+wrong on the update, you want to able to revert!
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+# How to update:
+--------------------------------------------------------------------------------
+You take the file with your current prebuild server version, this will be containing
+all the data you need to convert your database to the latest prebuild. Just run
+this data within the query, and your database will automatically updated. The version
+of the prebuild you are using is located at the bottom of the credentials.cfg
+
+If you want to play save, you can also implement the full new database. Then you
+can inject the tables for the characters ect. back into the server. However only
+take this option if you know what your are doing.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------

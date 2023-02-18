@@ -2,6 +2,16 @@
 ############################ [ DokusCore Updates ] #############################
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+# Update v0.7.2
+--------------------------------------------------------------------------------
+- Fixed: the `ShowtextRight` event is renamed to `ShowSimpleRightText` as the old
+  API call was not working anymore.
+- Added: API function to fetch an single item from the _items database table.
+- Added: Extension to the `CreateLog` API and it can now insert on any plugin name.
+- Changed: The old DokusCore logo to our new logo, we also changed the scale sizes
+  on the image animation.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 # Update v0.7.12 + v0.7.13
 --------------------------------------------------------------------------------
 - Fixed: Invincibility would exclude fall damage. If you would die whilst having
