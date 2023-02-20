@@ -55,6 +55,15 @@ _Stores = {
         { Item = 'wintergreen_berry',  Stock = { Limit = 100 }, Price = { Buy = { true, 0.08  }, Sell = { true, 0.04  }} },
       }
     },
+    {
+      Type = 'Tools',
+      Items = {
+        { Item = 'axe',               Stock = { Limit = 50 }, Price = { Buy = { true, 2.5  }, Sell = { true, 1.0  }} },
+        { Item = 'pickaxe',           Stock = { Limit = 50 }, Price = { Buy = { true, 2.8  }, Sell = { true, 1.1  }} },
+        { Item = 'weapon_fishingrod', Stock = { Limit = 50 }, Price = { Buy = { true, 1.5  }, Sell = { true, 0.7  }} },
+        { Item = 'gold_pan',          Stock = { Limit = 50 }, Price = { Buy = { true, 3.0  }, Sell = { true, 1.2  }} },
+      }
+    }
   },
 
   -- The stores under the GENERAL tab are using the Zones plugin to catch the
@@ -184,6 +193,73 @@ _Stores = {
       }
     },
 
+    -- Tools Shop
+    {
+      ID = 107,
+      Enabled = true,
+      Type = 'Tools',
+      City = 'Valentine',
+      NPCName = 'Tools Shop',
+      BlipHash = 819673798,
+      Coords = vector3(-373.6, 683.4, 117.2),
+      NPC = { Heading = 68.3, Model = 'MP_U_F_M_LEGENDARYBOUNTY_001' },
+      Items = {}
+    },
+    {
+      ID = 108,
+      Enabled = true,
+      Type = 'Tools',
+      City = 'Saint Denis',
+      NPCName = 'Tools Shop',
+      BlipHash = 819673798,
+      Coords = vector3(2838.1, -1302.7, 46.6),
+      NPC = { Heading = 4.9, Model = 'MP_U_F_M_LEGENDARYBOUNTY_001' },
+      Items = {}
+    },
+    {
+      ID = 109,
+      Enabled = true,
+      Type = 'Tools',
+      City = 'Rhodes',
+      NPCName = 'Tools Shop',
+      BlipHash = 819673798,
+      Coords = vector3(1398.8, -1290.8, 78.2),
+      NPC = { Heading = 162.4, Model = 'MP_U_F_M_LEGENDARYBOUNTY_001' },
+      Items = {}
+    },
+    {
+      ID = 110,
+      Enabled = true,
+      Type = 'Tools',
+      City = 'Blackwater',
+      NPCName = 'Tools Shop',
+      BlipHash = 819673798,
+      Coords = vector3(-729.1, -1284.5, 43.5),
+      NPC = { Heading = 82.8, Model = 'MP_U_F_M_LEGENDARYBOUNTY_001' },
+      Items = {}
+    },
+    {
+      ID = 111,
+      Enabled = true,
+      Type = 'Tools',
+      City = 'Strawberry',
+      NPCName = 'Tools Shop',
+      BlipHash = 819673798,
+      Coords = vector3(-1816.2, -423.3, 159.9),
+      NPC = { Heading = 347.0, Model = 'MP_U_F_M_LEGENDARYBOUNTY_001' },
+      Items = {}
+    },
+    {
+      ID = 112,
+      Enabled = true,
+      Type = 'Tools',
+      City = 'Tumbleweed',
+      NPCName = 'Tools Shop',
+      BlipHash = 819673798,
+      Coords = vector3(-5501.4, -2959.3, -0.7),
+      NPC = { Heading = 12.3, Model = 'MP_U_F_M_LEGENDARYBOUNTY_001' },
+      Items = {}
+    },
 
     -- Others ( WILL BE SORTED IN THE FUTURE)
     {
