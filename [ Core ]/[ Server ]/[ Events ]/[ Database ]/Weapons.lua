@@ -31,11 +31,19 @@ AddEventHandler('DokusCore:Core:DBSet:Weapons', function(args)
   if (Low(args[1]) == 'user') then
     if (Low(args[2]) == 'single') then
       if (Low(args[3]) == 'ammo') then
-        local SteamID, CharID, Hash, Ammo = args[4][1], args[4][2], args[4][3], args[4][4]
-        local Index = { Ammo_Regular = Ammo, SteamID = SteamID, CharID = CharID, Hash = Low(Hash) }
-        local X = DBGet(DB.Weapons.SetAmmoSURegular, Index)
-        if (X[1] ~= nil) then Exist = true Result = X end
-        return { Exist = Exist, Result = Result }
+        if (Low(args[4]) == 'regular') then
+          local SteamID, CharID, Hash, Ammo = args[5][1], args[5][2], args[5][3], args[5][4]
+          local Index = { Ammo_Regular = Ammo, SteamID = SteamID, CharID = CharID, Hash = Low(Hash) }
+          local X = DBGet(DB.Weapons.SetAmmoSURegular, Index)
+          if (X[1] ~= nil) then Exist = true Result = X end
+          return { Exist = Exist, Result = Result }
+        elseif (Low(args[4]) == 'highvel') then
+          local SteamID, CharID, Hash, Ammo = args[5][1], args[5][2], args[5][3], args[5][4]
+          local Index = { Ammo_High_Vel = Ammo, SteamID = SteamID, CharID = CharID, Hash = Low(Hash) }
+          local X = DBGet(DB.Weapons.SetAmmoSUHighVel, Index)
+          if (X[1] ~= nil) then Exist = true Result = X end
+          return { Exist = Exist, Result = Result }
+        end
       end
 
       if (Low(args[3]) == 'equipt') then

@@ -18,7 +18,7 @@ _Stables = {
     {
       ID = 'Valentine',
       NPCTakesHorse = true,
-      Coords = vec3(-364.4, 791.8, 115.1),
+      Coords = vec3(-364.4, 791.8, 116.8),
       CamPos = { Coords = vec3(-367.73, 787.72, 116.26), Heading = 182.3 },
       OffSet = { 0.5, -1.5, 0.5 },
       Heading = 133.8,

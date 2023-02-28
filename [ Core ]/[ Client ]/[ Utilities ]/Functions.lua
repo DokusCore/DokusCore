@@ -302,7 +302,12 @@ function GetItemName(ID)
 end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
+function GetPedOrMount()
+	local PedID = PedID()
+	local Veh = GetVehiclePedIsIn(PedID, false)
+	local MNT = GetMount(PedID)
+	return (Veh == 0 and (MNT == 0 and PedID or MNT) or Veh)
+end
 
 
 

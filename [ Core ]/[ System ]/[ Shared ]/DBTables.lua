@@ -184,6 +184,7 @@ DB.Characters.SetClothing        = 'update characters set Clothing=@Clothing whe
 
 DB.Weapons.SetAmmoSUOnType       = 'update weapons set Ammo_Regular=@Ammo_Regular where SteamID=@SteamID and CharID=@CharID and Type=@Type'
 DB.Weapons.SetAmmoSURegular      = 'update weapons set Ammo_Regular=@Ammo_Regular where SteamID=@SteamID and CharID=@CharID and Hash=@Hash'
+DB.Weapons.SetAmmoSUHighVel      = 'update weapons set Ammo_High_Vel=@Ammo_High_Vel where SteamID=@SteamID and CharID=@CharID and Hash=@Hash'
 DB.Weapons.SetEquiptViaHash      = 'update weapons set Equiped=@Equiped where SteamID=@SteamID and CharID=@CharID and Hash=@Hash'
 
 DB.Animals.SetUSTypeModel        = 'update animals set Type=@Type where SteamID=@SteamID and CharID=@CharID and Model=@Model'

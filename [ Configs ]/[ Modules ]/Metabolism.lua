@@ -16,7 +16,7 @@ _Metabolism = {
 
   Vitals = { LoseWhen = 1.0, DPS = 1 },
   Hunger = { Drain = { Idle = 0.01, Walking = 0.07, Running = 0.15, Sprinting = 0.25 }},
-  Thirst = { Drain = { Idle = 0.02, Walking = 0.10, Running = 0.50, Sprinting = 0.75 }},
+  Thirst = { Drain = { Idle = 0.02, Walking = 0.05, Running = 0.20, Sprinting = 0.30 }},
 
   -- Spice up your RP with random character farts and burps.
   -- The Frequention is in seconds! Every 5 minutes a number is pulled

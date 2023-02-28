@@ -2,6 +2,22 @@
 ############################ [ DokusCore Updates ] #############################
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+# Update v0.7.22
+--------------------------------------------------------------------------------
+- Added: Function `GetPedOrMount()` what will return either your PedID, or the
+  vehicle | horse ID if you're mounted.
+- Added: New text to the language files for the new bridges.
+- Changed: Metabolism Thirst set 3 times slower by default.
+- Fixed: General stores was not loading in on startup as there where no
+  min | max Z axis in the database for the zones. I've added them in and now
+  the general store are loading in correctly.
+- Fixed: The stables has the same zone loading issue as the General Stores.
+- Fixed: Corrected the valentine general store NPCs position.
+- Added: New Bridges with thanks to `EpicWonder`
+- Added: Balloon Ride with thanks to `Mack`
+- Added: Language Arabic provided by `!LeXar` in Discord!
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 # Update v0.7.21
 --------------------------------------------------------------------------------
 - Added: Edited the config of the stores plugin.

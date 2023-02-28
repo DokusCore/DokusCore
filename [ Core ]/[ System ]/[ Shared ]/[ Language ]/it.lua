@@ -408,17 +408,37 @@ Lang['it'] = {
     ["Interactable"] = { Gender = false, Time = false, MSG = "Interagibile"}
   },
 
-  ["WorldEdits"] = {
-    ["GuarmaFishBar"] = { Gender = false, Time = false, MSG = "Guarma Fishers Bar"},
-    ["GuarmaHideout"] = { Gender = false, Time = false, MSG = "Guarma Hideout"},
-    ["GuarmaArena"] = { Gender = false, Time = false, MSG = "Gladiator Arena"},
-    ["MexicoBridge1"] = { Gender = false, Time = false, MSG = "The Mexico Bridge"},
-    ["HangingBridge"] = { Gender = false, Time = false, MSG = "The Hanging Bridge"},
-    ["NakotaNatCamp"] = { Gender = false, Time = false, MSG = "Nakota Native Camp"},
-    ["ApacheNatCamp"] = { Gender = false, Time = false, MSG = "Apache Native Camp"},
-    ["LakotaNatCamp"] = { Gender = false, Time = false, MSG = "Lakota Native Camp"},
-    ["ArthurGraveSt"] = { Genere = false, Time = false, MSG = "Lapide di Arthur" },
-  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    -- NEEDS TRANSLATION
+    ["WorldEdits"] = {
+      ["GuarmaFishBar"] = { Gender = false, Time = false, MSG = "Guarma Fishers Bar" },
+      ["GuarmaHideout"] = { Gender = false, Time = false, MSG = "Guarma Hideout" },
+      ["GuarmaArena"]   = { Gender = false, Time = false, MSG = "Gladiator Arena" },
+      ["MexicoBridge1"] = { Gender = false, Time = false, MSG = "Mexico High Bridge" },
+      ["MexicoBridge2"] = { Gender = false, Time = false, MSG = "Victoria Long Bridge"},
+      ["MexicoBridge3"] = { Gender = false, Time = false, MSG = "Mexico Low Bridge" },
+      ["HangingBridge"] = { Gender = false, Time = false, MSG = "The Hanging Bridge" },
+      ["NakotaNatCamp"] = { Gender = false, Time = false, MSG = "Nakota Native Camp" },
+      ["ApacheNatCamp"] = { Gender = false, Time = false, MSG = "Apache Native Camp" },
+      ["LakotaNatCamp"] = { Gender = false, Time = false, MSG = "Lakota Native Camp" },
+      ["ArthurGraveSt"] = { Gender = false, Time = false, MSG = "Arthur's Gravestone" },
+    },
 
 
 
