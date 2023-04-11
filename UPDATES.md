@@ -2,6 +2,13 @@
 ############################ [ DokusCore Updates ] #############################
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+# Update v0.7.23
+--------------------------------------------------------------------------------
+- Updated: Whitelist to work again and is now enabled by default.
+- Redesigned the console start up procedure.
+- Added: Checks to make sure the config cfg files are correct and up-to-date.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 # Update v0.7.22
 --------------------------------------------------------------------------------
 - Added: Function `GetPedOrMount()` what will return either your PedID, or the
@@ -16,6 +23,7 @@
 - Added: New Bridges with thanks to `EpicWonder`
 - Added: Balloon Ride with thanks to `Mack`
 - Added: Language Arabic provided by `!LeXar` in Discord!
+- Added: Weapon API logic for ammo variations.
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 # Update v0.7.21
