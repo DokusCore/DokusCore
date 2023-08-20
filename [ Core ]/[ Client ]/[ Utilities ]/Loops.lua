@@ -2,7 +2,7 @@
 ---------------------------------- DokusCore -----------------------------------
 --------------------------------------------------------------------------------
 CreateThread(function()
-  while true do Wait(150)
+  while true do Wait(1)
     local size = GetNumberOfEvents(0)
     DisableControlAction(0, 0xCF8A4ECA, true)
     DisableControlAction(0, INPUT_QUICK_SHORTCUT_ABILITIES_MENU, true)
