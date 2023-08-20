@@ -21,7 +21,7 @@ _BankDoors      = true  -- Opens the bank doors so players can enter.
 _Security = {
   Blacklist = { Enabled = true }, --( In Progress )
   Whitelist = {
-    Enabled = true,
+    Enabled = false,
     Notify = { Console = true },
   },
 }
