@@ -5,7 +5,7 @@ Lang['ru'] = {
     ["No"] = { Gender = false, Time = false, MSG = "Нет"},
     ["Error"] = { Gender = false, Time = false, MSG = "ОШИБКА" },
     ["System"] = { Gender = false, Time = false, MSG = "Система"},
-    ["Success"] = { Gender = false, Time = false, MSG = "Успех" },
+    ["Success"] = { Gender = false, Time = false, MSG = "Готово" },
     ["BLCheck"] = { Gender = false, Time = false, MSG = "Проверка черного списка" },
     ["WLCheck"] = { Gender = false, Time = false, MSG = "Проверка белого списка" },
     ["SteamCheck"] = { Gender = false, Time = false, MSG = "Проверка идентификации Steam" },
@@ -16,7 +16,7 @@ Lang['ru'] = {
     ["WLPending"] = { Gender = false, Time = false, MSG = "Ваш запрос на белый список все еще находится на рассмотрении..." },
     ["WLDenied"] = { Gender = false, Time = false, MSG = "Ваш запрос на белый список был отклонен по причине:" },
     ["WLMade1"] = { Gender = false, Time = false, MSG = "Для доступа к этому серверу вы должны быть в белом списке" },
-    ["WLMade2"] = { Gender = false, Time = false, MSG = "Запрос на белый список был сделан автоматически и сейчас находится на рассмотрении." },
+    ["WLMade2"] = { Gender = false, Time = false, MSG = "Запрос на белый список был отправлен автоматически и сейчас находится на рассмотрении." },
     ["NoCharFound"] = { Gender = false, Time = false, MSG = "Невозможно выполнить это действие, символ не найден!" },
     ["Language"] = { Gender = false, Time = false, MSG = "Язык" },
     ["LangNotEnter"] = { Gender = false, Time = false, MSG = "Параметр языка был пуст!" },
@@ -29,23 +29,23 @@ Lang['ru'] = {
 
     -- Города
     ["Guarma"] = { Gender = false, Time = false, MSG = "Гуарма"},
-    ["Sisika"] = { Gender = false, Time = false, MSG = "Тюрьма Сисика"},
+    ["Sisika"] = { Gender = false, Time = false, MSG = "Тюрьма Шишика"},
     ["SaintDenis"] = { Gender = false, Time = false, MSG = "Сен-Дени"},
   },
 
   ["Banking"] = {
     ["Name"] = { Gender = false, Time = false, MSG = "Банковское дело"},
-    ["NPCName"] = { Gender = false, Time = false, MSG = "Банкирский работник"},
+    ["NPCName"] = { Gender = false, Time = false, MSG = "Банковский работник"},
     ["NPCBusy"] = { Gender = false, Time = 3.5, MSG = "В настоящее время я занят другим гражданином, подождите, пожалуйста!" },
-    ["NoAccount"] = { Gender = false, Time = 3.5, MSG = "Извините, но в наших журналах нет зарегистрированного банковского счета. Вам нужно открыть банковский счет, прежде чем вы сможете его использовать!" },
+    ["NoAccount"] = { Gender = false, Time = 3.5, MSG = "Извините, но в наших журналах нет зарегистрированного Вами банковского счета. Вам нужно открыть счет, прежде чем вы сможете его использовать!" },
     ["UseBankKey"] = { Gender = false, Time = 3.5, MSG = "Использовать банк" },
-    ["AlAccount"] = { Gender = false, Time = 3.5, MSG = "У вас уже есть банковский счет в этом банке!" },
+    ["AlAccount"] = { Gender = false, Time = 3.5, MSG = "У вас уже есть счет в этом банке!" },
     ["AcCreation"] = { Gender = false, Time = 3.5, MSG = "Вы оплатили сбор за учетную запись, учетная запись создается!" },
-    ["AcCreated"] = { Gender = false, Time = 3.5, MSG = "Ваш банковский счет открыт! Теперь вы можете открыть свой банковский счет." },
-    ["NoDepMoney"] = { Gender = false, Time = 3.5, MSG = "У вас недостаточно денег, чтобы внести этот депозит!" },
-    ["NoDepGold"] = { Gender = false, Time = 3.5, MSG = "У вас недостаточно золота, чтобы внести этот депозит!" },
-    ["NoWitMoney"] = { Gender = false, Time = 3.5, MSG = "У вас недостаточно денег, чтобы снять это!" },
-    ["NoWitGold"] = { Gender = false, Time = 3.5, MSG = "У вас недостаточно золота, чтобы снять это!" },
+    ["AcCreated"] = { Gender = false, Time = 3.5, MSG = "Ваш банковский счет открыт! Теперь вы можете им воспользоваться." },
+    ["NoDepMoney"] = { Gender = false, Time = 3.5, MSG = "У вас недостаточно денег, чтобы пополнить депозит!" },
+    ["NoDepGold"] = { Gender = false, Time = 3.5, MSG = "У вас недостаточно золота, чтобы пополнить депозит!" },
+    ["NoWitMoney"] = { Gender = false, Time = 3.5, MSG = "У вас недостаточно денег, чтобы произвести снятие!" },
+    ["NoWitGold"] = { Gender = false, Time = 3.5, MSG = "У вас недостаточно золота, чтобы произвести снятие!" },
     ["DepMinMoney"] = { Gender = false, Time = 3.5, MSG = "Сумма депозита должна быть больше 0,01 цента!" },
     ["DepMinGold"] = { Gender = false, Time = 3.5, MSG = "Сумма депозита должна быть больше 0,01 золота!" },
     ["WitMinMoney"] = { Gender = false, Time = 3.5, MSG = "Сумма депозита должна быть больше 0,01 цента!" },
@@ -63,7 +63,7 @@ Lang['ru'] = {
 
     ["OnExit"] = {
       { Gender = false, Time = false, MSG = "Спасибо, что заглянули, хорошего дня!" },
-      { Gender = false, Time = false, MSG = "Я был рад помочь вам сегодня, до следующего раза!" },
+      { Gender = false, Time = false, MSG = "Я был рад Вам помочь, всего доброго!" },
       { Gender = false, Time = false, MSG = "Если я еще чем-то могу вам помочь, просто дайте мне знать!" },
     }
   },
@@ -76,68 +76,68 @@ Lang['ru'] = {
     ["Name"] = { Gender = false, Time = false, MSG = "Магазин одежды" },
     ["NPCName"] = { Gender = false, Time = false, MSG = "Портной"},
     ["NPCBusy"] = { Gender = false, Time = 3.5, MSG = "В настоящее время я занят другим клиентом, подождите минутку. Я буду с вами как можно скорее!" },
-    ["NeedToGo"] = { Gender = false, Time = 3.5, MSG = "У меня есть еще дела и больше клиентов, которым нужно уделить внимание, дайте мне знать, когда вам понадобится дополнительная помощь" },
-    ["DressingRoom"] = { Gender = false, Time = false, MSG = "Гардеробная"},
+    ["NeedToGo"] = { Gender = false, Time = 3.5, MSG = "У меня еще много дел и клиентов, которым уделить время. Дайте мне знать, если вам понадобится помощь" },
+    ["DressingRoom"] = { Gender = false, Time = false, MSG = "Гардероб"},
     ["Confirmation"] = { Gender = false, Time = false, MSG = "Подтверждение"},
     ["ConfirmSwitch"] = { Gender = false, Time = 3.5, MSG = "Хотите сменить одежду?" },
-    ["Pay"] = { Gender = false, Time = false, MSG = "Платить"},
+    ["Pay"] = { Gender = false, Time = false, MSG = "Оплата"},
     ["OpenMenu"] = { Gender = false, Time = false, MSG = "Открыть меню" },
     ["Outfits"] = { Gender = false, Time = false, MSG = "Одежда"},
 
     ['EnterStore'] = {
-      { Gender = 'Male', Time = 3.5, MSG = "Добро пожаловать, надеюсь, вы пришли в мой магазин в чистой обуви!" },
-      { Gender = 'Male', Time = 3.5, MSG = "Да, мальчик, добро пожаловать в мой магазин, сэр, я рад вас видеть!" },
-      { Gender = 'Male', Time = 3.5, MSG = "О, посмотри на это, здравствуйте. Как ваш день сегодня, сэр?" },
-      { Gender = 'Female', Time = 3.5, MSG = "Добро пожаловать, надеюсь, вы пришли в мой магазин в чистой обуви!" },
-      { Gender = 'Female', Time = 3.5, MSG = "Да, мальчик, добро пожаловать в мой магазин! О, простите меня, моя леди, я пережил." },
-      { Gender = 'Female', Time = 3.5, MSG = "О, посмотри на это, здравствуй. Как твой день сегодня, моя леди?" },
+      { Gender = 'Male', Time = 3.5, MSG = "Добро пожаловать! Надеюсь, Вы пришли в мой магазин в чистой обуви!" },
+      { Gender = 'Male', Time = 3.5, MSG = "Приветствую! Добро пожаловать в мой магазин! Сэр, я так рад вас видеть!" },
+      { Gender = 'Male', Time = 3.5, MSG = "Здравствуйте! Как ваше настроение, сэр?" },
+      { Gender = 'Female', Time = 3.5, MSG = "Добро пожаловать! Надеюсь, Вы пришли в мой магазин в чистой обуви!" },
+      { Gender = 'Female', Time = 3.5, MSG = "Добро пожаловать в мой магазин! Вы прекрасно выглядите!" },
+      { Gender = 'Female', Time = 3.5, MSG = "О, Здравствуй! Чем могу Вам помочь?" },
     },
 
     ['ExitStore'] = {
-      { Gender = 'Male', Time = 3.5, MSG = "Спасибо за визит! Безопасные путешествия, мой друг!" },
-      { Gender = 'Male', Time = 3.5, MSG = "Желаю вам хорошего дня, наслаждайтесь вашим днем, сэр!" },
-      { Gender = 'Male', Time = 3.5, MSG = "Наслаждайтесь днем, сэр, спасибо за визит." },
-      { Gender = 'Male', Time = 3.5, MSG = "Доброго пути, друг мой, спасибо за визит" },
-      { Gender = 'Female', Time = 3.5, MSG = "Спасибо за визит! Безопасные путешествия, миледи!" },
-      { Gender = 'Female', Time = 3.5, MSG = "Желаю вам хорошего дня, наслаждайтесь этим днем, мэм!" },
-      { Gender = 'Female', Time = 3.5, MSG = "Наслаждайтесь днем, мэм, спасибо за визит." },
-      { Gender = 'Female', Time = 3.5, MSG = "Доброго пути, миледи, спасибо за визит" },
+      { Gender = 'Male', Time = 3.5, MSG = "Спасибо за визит, мой друг!" },
+      { Gender = 'Male', Time = 3.5, MSG = "Желаю вам хорошего дня, сэр!" },
+      { Gender = 'Male', Time = 3.5, MSG = "Сэр, спасибо за визит!" },
+      { Gender = 'Male', Time = 3.5, MSG = "Доброго пути, спасибо за визит!" },
+      { Gender = 'Female', Time = 3.5, MSG = "Спасибо за визит, миледи!" },
+      { Gender = 'Female', Time = 3.5, MSG = "Желаю вам хорошего дня, мэм!" },
+      { Gender = 'Female', Time = 3.5, MSG = "Счастливого пути, мэм." },
+      { Gender = 'Female', Time = 3.5, MSG = "Доброго пути, миледи! Спасибо за визит" },
     },
 
     ["NearNPC"] = {
       { Gender = 'Male', Time = 3, MSG = "Чем я могу вам помочь, сэр?" },
-      { Gender = 'Female', Time = 3, MSG = "Чем я могу вам помочь, моя леди?" }
+      { Gender = 'Female', Time = 3, MSG = "Чем я могу вам помочь, миледи?" }
     },
 
     ["EnterMenu"] = {
-      { Gender = 'Male', Time = 3.5, MSG = "Конечно, я смогу помочь вам, уважаемый сэр. Пожалуйста, подойдите к прилавку, и я буду с вами как можно скорее." },
-      { Gender = 'Male', Time = 3.5, MSG = "Ах, да, одежда. Сэр, вы попали в нужное место, пожалуйста, следуйте за мной." },
+      { Gender = 'Male', Time = 3.5, MSG = "Конечно, я смогу помочь вам, уважаемый. Пожалуйста, подойдите к прилавку." },
+      { Gender = 'Male', Time = 3.5, MSG = "Нужна одежда? Сэр, вы попали в нужное место. Пожалуйста, следуйте за мной." },
       { Gender = 'Female', Time = 3.5, MSG = "Как вам будет угодно, миледи, я с большим удовольствием помогу вам!" },
-      { Gender = 'Female', Time = 3.5, MSG = "Ах, да, одежда. Мэм, вы попали в нужное место, пожалуйста, следуйте за мной." },
+      { Gender = 'Female', Time = 3.5, MSG = "Нужна одежда? Мэм, вы попали в нужное место. Пожалуйста, следуйте за мной." },
     },
 
     ["Reactions"] = {
       { Gender = 'Male', Time = 5.0, MSG = "Это вам подходит, сэр" },
-      { Gender = 'Male', Time = 5.0, MSG = "О, посмотри на это, видя тебя таким, я завидую." },
-      { Gender = 'Male', Time = 5.0, MSG = "О боже, посмотри на это, это чудесно." },
-      { Gender = 'Male', Time = 5.0, MSG = "Это лучшее, что есть в нашем городе, вы не найдете лучше нигде!" },
-      { Gender = "Male", Time = 5.0, MSG = "Такой красивый, такой особенный, и я единственный, кто может сделать это для вас, если хотите." },
-      { Gender = 'Male', Time = 5.0, MSG = "Это вам прекрасно подходит" },
-      { Gender = 'Male', Time = 5.0, MSG = "Боже мой, это было сделано специально для вас!" },
+      { Gender = 'Male', Time = 5.0, MSG = "Вам это к лицу! Я даже немного завидую." },
+      { Gender = 'Male', Time = 5.0, MSG = "О боже, выглядит потрясающе!" },
+      { Gender = 'Male', Time = 5.0, MSG = "Это лучшее, что есть в нашем городе!" },
+      { Gender = "Male", Time = 5.0, MSG = "Вы вряд-ли найдете предложение лучше моего!" },
+      { Gender = 'Male', Time = 5.0, MSG = "Вам так это идет!" },
+      { Gender = 'Male', Time = 5.0, MSG = "Боже мой, на Вас это сидит идеально!" },
       { Gender = 'Female', Time = 5.0, MSG = "Это вам подходит, сэр" },
-      { Gender = 'Female', Time = 5.0, MSG = "О, посмотри на это, видя тебя таким, я завидую." },
-      { Gender = 'Female', Time = 5.0, MSG = "О боже, посмотри на это, это чудесно." },
-      { Gender = 'Female', Time = 5.0, MSG = "Это лучшее, что есть в нашем городе, вы не найдете лучше нигде!" },
-      { Gender = 'Female', Time = 5.0, MSG = "Такая красивая, такая особенная, и я единственный, кто может сделать это для вас, если хотите." },
-      { Gender = 'Female', Time = 5.0, MSG = "Это вам прекрасно подходит" },
-      { Gender = 'Female', Time = 5.0, MSG = "Боже мой, как это было сделано специально для вас!" },
+      { Gender = 'Female', Time = 5.0, MSG = "О, Вы так прекрасно выглядите!" },
+      { Gender = 'Female', Time = 5.0, MSG = "О боже, смотрится очень стильно!" },
+      { Gender = 'Female', Time = 5.0, MSG = "Это лучшее, что есть в нашем городе!" },
+      { Gender = 'Female', Time = 5.0, MSG = "Такая красивая, такая особенная, божественная!" },
+      { Gender = 'Female', Time = 5.0, MSG = "Это прекрасно сочетается с Вашим гардеробом" },
+      { Gender = 'Female', Time = 5.0, MSG = "Боже мой, Вы так прекрасны!" },
     }
   },
 
   ["Skins"] = {
-    ['Male'] = { Gender = false, Time = false, MSG = "Male"},
+    ['Male'] = { Gender = false, Time = false, MSG = "Мужчина"},
     ['Female'] = { Gender = false, Time = false, MSG = "Женщина"},
-    ['Select'] = { Gender = false, Time = false, MSG = "Select"},
+    ['Select'] = { Gender = false, Time = false, MSG = "Выбрать"},
     ["SetGender"] = { Gender = false, Time = false, MSG = "Выбрать пол" },
     ["ErrAge"] = { Gender = false, Time = 3.0, MSG = "Вы не указали возраст своих персонажей!" },
     ["ErrName"] = { Gender = false, Time = 3.0, MSG = "Вы не указали имя своего персонажа!" },
@@ -150,18 +150,18 @@ Lang['ru'] = {
   },
 
   ["Spawner"] = {
-    ['Cutscene'] = { Gender = false, Time = false, MSG = "Cutscene"},
-    ["DriverName"] = { Gender = false, Time = false, MSG = "Драйвер дилижанса" },
+    ['Cutscene'] = { Gender = false, Time = false, MSG = "Кат-сцена"},
+    ["DriverName"] = { Gender = false, Time = false, MSG = "Кучер дилижанса" },
     ["MusicOn"] = { Gender = false, Time = 5.0, MSG = "Вы выключили музыку" },
     ["MusicOff"] = { Gender = false, Time = 5.0, MSG = "Вы включили музыку" },
     ["ErrStepOut"] = { Gender = false, Time = 5.0, MSG = "Вы не можете выходить из кат-сцены." },
     ["MusicToggle"] = { Gender = false, Time = false, MSG = "Стоп | Включить музыку" },
-    ["StepOut"] = { Gender = false, Time = false, MSG = "Шаг вперед"},
+    ["StepOut"] = { Gender = false, Time = false, MSG = "Далее"},
     ["Cinema"] = { Gender = false, Time = false, MSG = "Кинотеатр"},
 
     ['Welcome'] = {
-      { Gender = false, Time = 5.0, MSG = "Добро пожаловать в наш округ, желаю вам приятного пребывания!" },
-      { Gender = false, Time = 5.0, MSG = "Я ценю, что ты умный, потому что ты выбрал для этого округа! Ха-ха, добро пожаловать, мой друг!" },
+      { Gender = false, Time = 5.0, MSG = "Добро пожаловать в наш округ, желаю вам увлекательного путешествия!" },
+      { Gender = false, Time = 5.0, MSG = "Вы основательно подготовились к приключениям. Добро пожаловать, мой друг!" },
     },
 
     ["Advice"] = {
@@ -175,18 +175,18 @@ Lang['ru'] = {
     },
 
     ["Goodbye"] = {
-      { Gender = false, Time = 5.0, MSG = "До свидания, друг, приятно было познакомиться! Приятного вам пребывания!" },
-      { Gender = false, Time = 5.0, MSG = "Было приятно познакомиться с вами, желаю вам приятного пребывания!" },
-      { Gender = false, Time = 5.0, MSG = "Тогда это $12,25... ха, шучу, приятного пребывания, мой друг!" },
+      { Gender = false, Time = 5.0, MSG = "До свидания, друг, приятно было познакомиться! Приятного тебе путешествия!" },
+      { Gender = false, Time = 5.0, MSG = "Было приятно познакомиться с вами, желаю вам приятного путешествия!" },
+      { Gender = false, Time = 5.0, MSG = "С тебя $12,25... ха, шучу, друг!" },
     },
 
     ["DriverTalk"] = {
-      { Gender = false, Time = 5.0, MSG = "Это хороший округ, в который вы приехали, в городе есть чем заняться, вам может понравиться." },
-      { Gender = false, Time = 7.0, MSG = "Разве не забавно, какая погода бывает иногда, она может меняться как сумасшедшая! Ты серьезно не хочешь попасть в один из этих штормов, я тебе скажу ." },
+      { Gender = false, Time = 5.0, MSG = "В городе есть чем заняться, вы обязательно найдете тут занятие по душе" },
+      { Gender = false, Time = 7.0, MSG = "В этих краях погода может меняться как сумасшедша! Бывают иногда такие штормы - ужас!" },
       { Gender = false, Time = 5.0, MSG = "Похоже, вы путешествовали довольно долго. Надеюсь, ваше путешествие прошло без каких-либо проблем." },
-      { Gender = false, Time = 5.0, MSG = "Это не только я, или у нас очень вонючий." },
-      { Gender = false, Time = 5.0, MSG = "Посмотрите на эту погоду, разве она не прекрасна" },
-      { Gender = false, Time = 5.0, MSG = "Мы почти у цели. Надеюсь, вам пока нравится." },
+      { Gender = false, Time = 5.0, MSG = "Мне кажется, или тут чем-то воняет?" },
+      { Gender = false, Time = 5.0, MSG = "Посмотрите на эту погоду, разве она не прекрасна?" },
+      { Gender = false, Time = 5.0, MSG = "Мы почти у цели. Надеюсь, вы не успели задремать" },
     }
   },
 
@@ -197,20 +197,20 @@ Lang['ru'] = {
     ["Zoning"] = { Gender = false, Time = false, MSG = "Зонирование" },
     ["AutoMove"] = { Gender = false, Time = false, MSG = "Начать автоперемещение" },
     ["StopMove"] = { Gender = false, Time = false, MSG = "Остановить автоматическое перемещение" },
-    ["Unequipt"] = { Gender = false, Time = false, MSG = "Неэкипированное оружие" },
+    ["Unequipt"] = { Gender = false, Time = false, MSG = "Оружие в инвентаре" },
     ["Error"] = { Gender = false, Time = false, MSG = "Ошибка" },
     ["System"] = { Gender = false, Time = false, MSG = "Система"},
-    ["Initialize"] = { Gender = false, Time = 3.0, MSG = "Меню настроек инициализировано!" },
+    ["Initialize"] = { Gender = false, Time = 3.0, MSG = "Меню настроек инициализировано" },
     ["Initialize2"] = { Gender = false, Time = 5.0, MSG = "Теперь вы можете открыть меню настроек с помощью левой клавиши Alt!" },
-    ["NoNextPage"] = { Gender = false, Time = 3.0, MSG = "Сейчас нет следующей страницы" },
-    ["NoBackPage"] = { Gender = false, Time = 3.0, MSG = "На данный момент нет задней страницы" },
-    ["CoordsSave"] = { Gender = false, Time = 5.0, MSG = "Вы сохранили свои координаты!" },
-    ["ErrSkin"] = { Gender = false, Time = 5.0, MSG = "У вас нет скина для загрузки! Сначала создайте скин!" },
+    ["NoNextPage"] = { Gender = false, Time = 3.0, MSG = "Нет следующей страницы" },
+    ["NoBackPage"] = { Gender = false, Time = 3.0, MSG = "На данный нет такой страницы" },
+    ["CoordsSave"] = { Gender = false, Time = 5.0, MSG = "Вы сохранили свои координаты" },
+    ["ErrSkin"] = { Gender = false, Time = 5.0, MSG = "У вас нет скина для загрузки. Сначала создайте скин" },
     ["LogOut"] = { Gender = false, Time = 5.0, MSG = "Выход из системы"},
     ["LogOutCoords"] = { Gender = false, Time = 5.0, MSG = "Сохранение позиции вашего персонажа" },
-    ["MusicOn"] = { Gender = false, Time = 5.0, MSG = "Включена вся музыка в игре!" },
-    ["MusicOff"] = { Gender = false, Time = 5.0, MSG = "Вся музыка в игре отключена!" },
-    ["MusicUnable"] = { Gender = false, Time = 5.0, MSG = "Вы отключили музыку в настройках, не можете воспроизводить музыку!" },
+    ["MusicOn"] = { Gender = false, Time = 5.0, MSG = "Включена вся музыка в игре" },
+    ["MusicOff"] = { Gender = false, Time = 5.0, MSG = "Вся музыка в игре отключена" },
+    ["MusicUnable"] = { Gender = false, Time = 5.0, MSG = "Вы отключили музыку в настройках!" },
     ["VolSet"] = { Gender = false, Time = 5.0, MSG = "Громкость установлена ​​на %" },
     ["VolSet2"] = { Gender = false, Time = 5.0, MSG = "Громкость повлияет на следующую песню!" },
     ["CharDel"] = { Gender = false, Time = 10.0, MSG = "Выполняется удаление персонажа" },
@@ -219,13 +219,13 @@ Lang['ru'] = {
 
   ["FastTravel"] = {
     ["ZoneName"] = { Gender = false, Time = false, MSG = "Быстрое путешествие" },
-    ["NPCName"] = { Gender = false, Time = false, MSG = "Dokus Travel Agency" },
+    ["NPCName"] = { Gender = false, Time = false, MSG = "Агенство путешествий" },
 
     ["GoodTravels"] = {
-      { Gender = false, Time = 5.0, MSG = "Приятного путешествия и спасибо, что путешествовали, Dokus Industries" },
-      { Gender = false, Time = 5.0, MSG = "Мы надеемся, что вам понравится ваше путешествие, безопасное путешествие" },
-      { Gender = false, Time = 5.0, MSG = "Мы рады, что вы выбрали Dokus Industries для путешествий!" },
-      { Gender = false, Time = 5.0, MSG = "Вы можете войти в лодку в доке, безопасное путешествие" },
+      { Gender = false, Time = 5.0, MSG = "Приятного путешествия!" },
+      { Gender = false, Time = 5.0, MSG = "Мы надеемся, что вам понравится ваше путешествие!" },
+      { Gender = false, Time = 5.0, MSG = "Мы рады, что вы выбрали наше агенство путешествий!" },
+      { Gender = false, Time = 5.0, MSG = "Вы можете войти в лодку в доке для начала путешествия" },
     }
 
   },
@@ -235,44 +235,44 @@ Lang['ru'] = {
     ["BlipName"] = { Gender = false, Time = false, MSG = "Оружейный магазин"},
     ["NoMoney"] = { Gender = false, Time = 3.0, MSG = "У вас недостаточно денег!" },
     ["BoughtAmmo1"] = { Gender = false, Time = 3.0, MSG = "Вы купили" },
-    ["BoughtAmmo2"] = { Gender = false, Time = 3.0, MSG = "Боеприпасы!" },
+    ["BoughtAmmo2"] = { Gender = false, Time = 3.0, MSG = "Боеприпасы" },
     ["OpenMenu"] = { Gender = false, Time = false, MSG = "Открыть меню" },
-    ['ErrNotWorking'] = { Gender = false, Time = 5.0, MSG = "Этот товар в настоящее время не работает должным образом и в данный момент не продается!" },
+    ['ErrNotWorking'] = { Gender = false, Time = 5.0, MSG = "Этот товар в данный момент не продается!" },
 
     ["EnterStore"] = {
-      { Gender = 'Male', Time = 3.5, MSG = "Добро пожаловать, надеюсь, вы пришли в мой магазин в чистой обуви!" },
-      { Gender = 'Male', Time = 3.5, MSG = "Да, мальчик, добро пожаловать в мой магазин, сэр!" },
-      { Gender = 'Male', Time = 3.5, MSG = "О, посмотри на это, здравствуйте. Как ваш день сегодня, сэр?" },
-      { Gender = 'Female', Time = 3.5, MSG = "Добро пожаловать, надеюсь, вы пришли в мой магазин в чистой обуви!" },
-      { Gender = 'Female', Time = 3.5, MSG = "Да, мальчик, добро пожаловать в мой магазин! О, простите меня, моя леди, я пережил." },
-      { Gender = 'Female', Time = 3.5, MSG = "О, посмотри на это, здравствуй. Как твой день сегодня, моя леди?" },
+      { Gender = 'Male', Time = 3.5, MSG = "Добро пожаловать, надеюсь, вы пришли в мой магазин в чистой обуви?" },
+      { Gender = 'Male', Time = 3.5, MSG = "Мой мальчик, добро пожаловать в мой магазин!" },
+      { Gender = 'Male', Time = 3.5, MSG = "Здравствуйте. Как ваш день сегодня, сэр?" },
+      { Gender = 'Female', Time = 3.5, MSG = "Добро пожаловать, надеюсь, вы пришли в мой магазин в чистой обуви?" },
+      { Gender = 'Female', Time = 3.5, MSG = "Мальчик мой! Добро пожаловать в магазин! О, простите меня, моя леди, я обознался!" },
+      { Gender = 'Female', Time = 3.5, MSG = "Здравствуйте. Как Ваш день сегодня, моя леди?" },
     },
 
     ["ExitStore"] = {
-      { Gender = 'Male', Time = 3.5, MSG = "Спасибо за визит! Безопасные путешествия, мой друг!" },
-      { Gender = 'Male', Time = 3.5, MSG = "Желаю вам хорошего дня, наслаждайтесь вашим днем, сэр!" },
-      { Gender = 'Male', Time = 3.5, MSG = "Наслаждайтесь днем, сэр, спасибо за визит." },
+      { Gender = 'Male', Time = 3.5, MSG = "Спасибо за визит! Береги себя, мой друг!" },
+      { Gender = 'Male', Time = 3.5, MSG = "Желаю вам хорошего дня, сэр!" },
+      { Gender = 'Male', Time = 3.5, MSG = "Сэр, спасибо за визит." },
       { Gender = 'Male', Time = 3.5, MSG = "Доброго пути, друг мой, спасибо за визит" },
-      { Gender = 'Female', Time = 3.5, MSG = "Спасибо за визит! Безопасные путешествия, миледи!" },
-      { Gender = 'Female', Time = 3.5, MSG = "Желаю вам хорошего дня, наслаждайтесь этим днем, мэм!" },
-      { Gender = 'Female', Time = 3.5, MSG = "Наслаждайтесь днем, мэм, спасибо за визит." },
+      { Gender = 'Female', Time = 3.5, MSG = "Спасибо за визит, миледи!" },
+      { Gender = 'Female', Time = 3.5, MSG = "Желаю вам хорошего дня, мэм!" },
+      { Gender = 'Female', Time = 3.5, MSG = "Мэм, спасибо за визит." },
       { Gender = 'Female', Time = 3.5, MSG = "Доброго пути, миледи, спасибо за визит" },
     },
 
     ["NearNPC"] = {
       { Gender = 'Male', Time = 3.5, MSG = "Чем я могу вам помочь, сэр?" },
-      { Gender = 'Female', Time = 3.5, MSG = "Чем я могу вам помочь, моя леди?" },
+      { Gender = 'Female', Time = 3.5, MSG = "Чем я могу вам помочь, миледи?" },
     }
   },
 
   ["Inventory"] = {
-    ["DropBox"] = { Gender = false, Time = false, MSG = "DropBox" },
+    ["DropBox"] = { Gender = false, Time = false, MSG = "ДропБокс" },
     ["LootBox"] = { Gender = false, Time = false, MSG = "Лутбокс"},
     ["OpenBox"] = { Gender = false, Time = false, MSG = "Нажмите ~color_green~E~q~, чтобы открыть" },
-    ["NoSelectDrop"] = { Gender = false, Time = false, MSG = "У вас нет выбранного предмета для падения на землю! Сначала выберите предмет!" },
-    ["NotEnough"] = { Gender = false, Time = false, MSG = "У вас недостаточно этого предмета в вашем инвентаре!" },
-    ["NoAmount"] = { Gender = false, Time = false, MSG = "У вас не указана сумма в параметре суммы. Невозможно выбросить ваш предмет!" },
-    ["ToClose"] = { Gender = false, Time = 5.0, MSG = "Вы находитесь рядом с другим DropBox. Подойдите ближе или дальше!" },
+    ["NoSelectDrop"] = { Gender = false, Time = false, MSG = "У вас нет выбранного предмета для сброса на землю! Сначала выберите предмет!" },
+    ["NotEnough"] = { Gender = false, Time = false, MSG = "У Вас недостаточное количество этого предмета в инвентаре!" },
+    ["NoAmount"] = { Gender = false, Time = false, MSG = "У Вас не указана сумма в параметре суммы. Невозможно выбросить это!" },
+    ["ToClose"] = { Gender = false, Time = 5.0, MSG = "Вы находитесь рядом с другим ДропБоксом. Подойдите ближе или наоборот отойдите!" },
   },
 
   ["Metabolism"] = {
@@ -293,10 +293,10 @@ Lang['ru'] = {
   },
 
   ["Scavenger"] = {
-    ["Name"] = { Gender = false, Time = false, MSG = "Мусорщик"},
+    ["Name"] = { Gender = false, Time = false, MSG = "Собиратель"},
     ["Rewards"] = { Gender = false, Time = 3.0, MSG = "Вы собрали урожай" },
     ["AlreadyHarv"] = { Gender = false, Time = 3.0, MSG = "Этот куст уже собран" },
-    ["PromptHarv"] = { Gender = false, Time = false, MSG = "Урожай"},
+    ["PromptHarv"] = { Gender = false, Time = false, MSG = "Добыча"},
   },
 
   ["ScratchCards"] = {
@@ -304,7 +304,7 @@ Lang['ru'] = {
     ["NoTickets"] = { Gender = false, Time = 5.0, MSG = "У вас нет лотерейных билетов!" },
     ["WonCard"] = { Gender = false, Time = 5.0, MSG = "Вы выиграли $" },
     ["WonTotal"] = { Gender = false, Time = 5.0, MSG = "Вы выиграли в общей сложности $" },
-    ["PromptHarv"] = { Gender = false, Time = false, MSG = "Урожай"},
+    ["PromptHarv"] = { Gender = false, Time = false, MSG = "Лоттерейный счет"},
     ["BetterLuck"] = { Gender = false, Time = false, MSG = "Удачи в следующий раз" },
     ["NoWin"] = { Gender = false, Time = 5.0, MSG = "К сожалению, на этот раз вы ничего не выиграли" },
   },
@@ -316,7 +316,7 @@ Lang['ru'] = {
     ["MenuBack"] = { Gender = false, Time = false, MSG = "Назад"},
     ["ShowFear"] = { Gender = false, Time = false, MSG = "Показать/выразить страх"},
     ["StopTrumpet"] = { Gender = false, Time = 5.0, MSG = "Вы можете остановить воспроизведение, нажав Backspace - Пробел или X" },
-    ["TrumpWarning"] = { Gender = false, Time = 5.0, MSG = "Если труба застревает в вашей руке, перезагрузите скин через меню, чтобы исправить это" },
+    ["TrumpWarning"] = { Gender = false, Time = 5.0, MSG = "Если что-то застряло в руках (визуально), перезагрузите скин через меню, чтобы исправить это" },
     ["ScenarioStop"] = { Gender = false, Time = 5.0, MSG = "Вы можете остановить сценарий, набрав [ /scenario stop ] в чате" },
     ["SetStatus"] = { Gender = false, Time = false, MSG = "Установите свой статус!" },
   },
@@ -329,30 +329,30 @@ Lang['ru'] = {
     ["HorseStored"] = { Gender = false, Time = 5.0, MSG = "Ваша лошадь сохранена, мы о ней позаботимся!" },
     ["NameHorse"] = { Gender = false, Time = false, MSG = "Назовите свою лошадь" },
     ["NoMoney"] = { Gender = false, Time = 3.5, MSG = "Боюсь, у вас недостаточно денег, чтобы купить эту лошадь!" },
-    ["HorseReady"] = { Gender = false, Time = 5.0, MSG = "Твоя лошадь готова в своей конюшне!" },
-    ["FetchHorse"] = { Gender = false, Time = 5.0, MSG = "Конечно, один момент, дай мне твою лошадь!" },
-    ["HorseFetched"] = { Gender = false, Time = 5.0, MSG = "Вот вам, сэр, как никогда здоров!" },
+    ["HorseReady"] = { Gender = false, Time = 5.0, MSG = "Твоя лошадь готова!" },
+    ["FetchHorse"] = { Gender = false, Time = 5.0, MSG = "Конечно, один момент, давай я посмотрю твою лошадь!" },
+    ["HorseFetched"] = { Gender = false, Time = 5.0, MSG = "Вот вам, сэр!" },
     ["OpenMenu"] = { Gender = false, Time = false, MSG = "Открыть меню" },
-    ["StoreHorse"] = { Gender = false, Time = false, MSG = "Хранить лошадь"},
+    ["StoreHorse"] = { Gender = false, Time = false, MSG = "Сохранить лошадь"},
     ["NoHorseName"] = { Gender = false, Time = 5.0, MSG = "Извините, но вам нужно дать вашей лошади имя" },
 
     ["EnterStore"] = {
       { Gender = 'Male', Time = 5.0, MSG = "Добро пожаловать, надеюсь, вы пришли в мой магазин в чистой обуви!" },
-      { Gender = 'Male', Time = 5.0, MSG = "Да, мальчик, добро пожаловать в мой магазин, у меня есть для вас лошади, сэр!" },
-      { Gender = 'Male', Time = 5.0, MSG = "О, посмотри на это, здравствуйте. Как ваш день сегодня, сэр?" },
+      { Gender = 'Male', Time = 5.0, MSG = "Добро пожаловать, у меня есть для вас лошади, сэр!" },
+      { Gender = 'Male', Time = 5.0, MSG = "Здравствуйте. Как Вы, сэр?" },
       { Gender = 'Female', Time = 5.0, MSG = "Добро пожаловать, надеюсь, вы зайдете в мой магазин в чистой обуви!" },
-      { Gender = 'Female', Time = 5.0, MSG = "Да, мальчик, добро пожаловать в мой магазин! О, простите меня, моя леди, я пережил." },
-      { Gender = 'Female', Time = 5.0, MSG = "О, посмотри на это, здравствуй. Как твой день сегодня, моя леди?" },
+      { Gender = 'Female', Time = 5.0, MSG = "Добро пожаловать в мой магазин! Миледи, я к Вашим услугам!" },
+      { Gender = 'Female', Time = 5.0, MSG = "Как Ваш день сегодня, миледи?" },
     },
 
     ["ExitStore"] = {
-      { Gender = 'Male', Time = 5.0, MSG = "Спасибо за визит! Безопасные путешествия, мой друг!" },
-      { Gender = 'Male', Time = 5.0, MSG = "Желаю вам хорошего дня, желаю вам приятного дня, сэр!" },
-      { Gender = 'Male', Time = 5.0, MSG = "Наслаждайтесь днем, сэр, спасибо за визит." },
-      { Gender = 'Male', Time = 5.0, MSG = "Доброго пути, друг мой, спасибо за визит" },
-      { Gender = 'Female', Time = 5.0, MSG = "Спасибо за визит! Безопасные путешествия, миледи!" },
-      { Gender = 'Female', Time = 5.0, MSG = "Желаю вам хорошего дня, наслаждайтесь этим днем, мэм!" },
-      { Gender = 'Female', Time = 5.0, MSG = "Наслаждайтесь днем, мэм, спасибо за визит." },
+      { Gender = 'Male', Time = 5.0, MSG = "Спасибо за визит!" },
+      { Gender = 'Male', Time = 5.0, MSG = "Желаю вам хорошего дня, сэр!" },
+      { Gender = 'Male', Time = 5.0, MSG = "Сэр, спасибо за визит." },
+      { Gender = 'Male', Time = 5.0, MSG = "Доброго пути, спасибо за визит" },
+      { Gender = 'Female', Time = 5.0, MSG = "Спасибо за визит, миледи!" },
+      { Gender = 'Female', Time = 5.0, MSG = "Желаю вам хорошего дня, мэм!" },
+      { Gender = 'Female', Time = 5.0, MSG = "Мэм, спасибо за визит." },
       { Gender = 'Female', Time = 5.0, MSG = "Доброго пути, миледи, спасибо за визит" },
     }
   },
@@ -360,41 +360,41 @@ Lang['ru'] = {
   ["Stores"] = {
     ["BlipName"] = { Gender = false, Time = false, MSG = "Универсальный магазин"},
     ["NPCName"] = { Gender = false, Time = false, MSG = "Работник универсального магазина"},
-    ["MenuBuy"] = { Gender = false, Time = false, MSG = "Универсальный магазин (Купить)"},
+    ["MenuBuy"] = { Gender = false, Time = false, MSG = "Универсальный магазин (Покупка)"},
     ["MenuSell"] = { Gender = false, Time = false, MSG = "Инвентаризация (Продажа)"},
     ["ButtonBuy"] = { Gender = false, Time = false, MSG = "Купить" },
     ["ButtonSell"] = { Gender = false, Time = false, MSG = "Продать" },
     ["ButtonMan"] = { Gender = false, Time = false, MSG = "Управление" },
-    ["NotInInvent"] = { Gender = false, Time = 3.5, MSG = "У вас нет столько в вашем инвентаре!" },
+    ["NotInInvent"] = { Gender = false, Time = 3.5, MSG = "У вас нет столько места в вашем инвентаре!" },
     ["Bought"] = { Gender = false, Time = 3.5, MSG = "Вы купили" },
     ["Sold"] = { Gender = false, Time = 3.5, MSG = "Вы продали" },
-    ["NoMoney"] = { Gender = false, Time = 3.5, MSG = "У вас недостаточно денег, чтобы купить это / это количество предметов!" },
-    ["NoItem"] = { Gender = false, Time = false, MSG = "Вы еще не выбрали элемент!" },
+    ["NoMoney"] = { Gender = false, Time = 3.5, MSG = "У вас недостаточно денег, чтобы купить это!" },
+    ["NoItem"] = { Gender = false, Time = false, MSG = "Вы еще ничего не выбрали!" },
 
     ["EnterStore"] = {
       { Gender = false, Time = 5.0, MSG = "Добро пожаловать! Надеюсь, вы вошли в мой магазин в чистой обуви!" },
-      { Gender = false, Time = 5.0, MSG = "Эй, клиент, это чертовски круто!" },
-      { Gender = false, Time = 5.0, MSG = "О, посмотри на это, привет." },
+      { Gender = false, Time = 5.0, MSG = "Эй, привет!" },
+      { Gender = false, Time = 5.0, MSG = "О, посмотри на это!" },
     },
 
     ["ExitStore"] = {
-      { Gender = false, Time = 5.0, MSG = "Спасибо за визит! Безопасных путешествий!" },
-      { Gender = false, Time = 5.0, MSG = "Желаю вам хорошего дня, пусть вам понравится!" },
-      { Gender = false, Time = 5.0, MSG = "Наслаждайтесь днем, спасибо за визит." },
+      { Gender = false, Time = 5.0, MSG = "Спасибо за визит!" },
+      { Gender = false, Time = 5.0, MSG = "Желаю вам хорошего дня!" },
+      { Gender = false, Time = 5.0, MSG = "Спасибо за визит." },
       { Gender = false, Time = 5.0, MSG = "Доброго пути, друг, спасибо за визит" },
     },
 
     ["MenuBuy"] = {
       { Gender = false, Time = 2.5, MSG = "Чем я могу вам помочь?" },
-      { Gender = false, Time = 2.5, MSG = "А, ты хочешь что-нибудь купить, да?" },
+      { Gender = false, Time = 2.5, MSG = "А, Вы хотите что-нибудь купить, да?" },
       { Gender = false, Time = 2.5, MSG = "Вы ищете что-то особенное?" },
     },
 
     ["MenuSell"] = {
       { Gender = false, Time = 2.5, MSG = "Чем я могу вам помочь?" },
-      { Gender = false, Time = 2.5, MSG = "Я поставлю несколько тегов, у меня в кармане только двадцать долларов!" },
+      { Gender = false, Time = 2.5, MSG = "У меня в кармане только двадцать долларов!" },
       { Gender = false, Time = 2.5, MSG = "А, ты хочешь что-то продать, да?" },
-      { Gender = false, Time = 2.5, MSG = "Я беру все, от рыбы до хлеба, от хлеба до кофе. Вы называете это!" },
+      { Gender = false, Time = 2.5, MSG = "Я беру все, от рыбы до хлеба, от хлеба до кофе" },
     },
 
     ["MenuExit"] = {
@@ -405,7 +405,7 @@ Lang['ru'] = {
   },
 
   ["UsableItems"] = {
-    ["Interactable"] = { Gender = false, Time = false, MSG = "Интерактивный" }
+    ["Interactable"] = { Gender = false, Time = false, MSG = "Интерактив" }
   },
 
 
